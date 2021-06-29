@@ -164,7 +164,7 @@ class splitHeader extends Component {
           window.localStorage.removeItem('onepaytoken');
           window.localStorage.removeItem('username');
           window.localStorage.removeItem('emailid');
-          window.location.href = "/onePayAdminLogin";
+          window.location.href = "/admin";
         } else {
           NotificationManager.error("Not able to logout.");
         }

@@ -100,7 +100,7 @@ class Header extends Component {
         if (res.status) {
           cookies.remove("onepaymerchanttoken");
           window.localStorage.removeItem('onepaymerchanttoken');
-          window.location.href = "/onePayMerchantLogin";
+          window.location.href = "/merchant";
         } else {
           NotificationManager.error("Not able to logout.");
         }

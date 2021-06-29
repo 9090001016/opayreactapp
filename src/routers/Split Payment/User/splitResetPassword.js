@@ -97,7 +97,7 @@ class splitResetPassword extends Component {
               1500
             );
             setTimeout(function () {
-              self.props.history.push("/onePayUserLogin");
+              self.props.history.push("/customer");
             }, 1600);
           }
           self.setState({

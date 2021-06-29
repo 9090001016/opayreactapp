@@ -15,7 +15,7 @@ class splitAPIDoc extends Component {
             <div className="apibg">
                 <Header />
                 <div className="back__btn mt-3 mb-3" >
-                    <a href="./onePayHome"><img src={leftarrow} alt="backarrow" /></a>
+                    <a href="./"><img src={leftarrow} alt="backarrow" /></a>
                 </div>
                 <section class="container-fluid apitab__section">
                     <div class="row">

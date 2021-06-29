@@ -97,7 +97,7 @@ class ResetPassword extends Component {
               1500
             );
             setTimeout(function () {
-              self.props.history.push("/onePayAdminLogin");
+              self.props.history.push("/admin");
             }, 1600);
           }
           self.setState({

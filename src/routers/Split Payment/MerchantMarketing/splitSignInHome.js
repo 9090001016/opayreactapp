@@ -272,7 +272,7 @@ class splitSignUpHome extends Component {
                             <h4>For You</h4>
                             <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
                             <div className="signup">
-                                <Link to="/onePayUserLogin">
+                                <Link to="/customer">
                                     <button type="button">Sign In Now</button>
                                 </Link>
                             </div>
@@ -296,7 +296,7 @@ class splitSignUpHome extends Component {
                                     (<Link onClick={this.handleMerchantStripPopOpen.bind(this)}>
                                         <button type="button">Sign Up Now</button>
                                     </Link>) : ( */}
-                                    <Link to="/OnePayMerchantLogin">
+                                    <Link to="/merchant">
                                         <button type="button">Sign In Now</button>
                                     </Link>
                                     {/* )

@@ -96,7 +96,7 @@ import forbusiness from "./routers/MerchantMarketing/forbusiness";
 
 ReactDOM.render(
   <Router>
-    <Route exact path="/admin" component={SignIn} />
+    <Route exact path="/instantPayAdminLogin" component={SignIn} />
     <Route exact path="/instantPayAdminForgotPassword" component={AdminForgotPassword} />
     <Route exact path="/instantPayAdminResetPassword" component={ResetPassword} />
     <Route exact path="/instantPayAdminChangePassword" component={ChangePassword} />
@@ -104,7 +104,7 @@ ReactDOM.render(
     <Route path="/instantPayMerchant" component={Merchant} />
     <Route path="/instantPayUser" component={User} />
     {/* MerchantMarketing Pages */}
-    <Route exact path="/" component={home} />
+    <Route exact path="/merchantHome" component={home} />
     <Route exact path="/instantPayforbusiness" component={forbusiness} />
     <Route exact path="/instantPayContactUs" component={contactus} />
     <Route exact path="/instantPayApiInformation" component={apiInformation} />
@@ -116,13 +116,13 @@ ReactDOM.render(
     <Route exact path="/onePay" component={splitpay} />
     <Route exact path="/onePayPlanPayment" component={splitPlanPayment} />
     {/* Merchant Pages */}
-    <Route exact path="/merchant" component={merchantLogin} />
+    <Route exact path="/instantPayMerchantLogin" component={merchantLogin} />
     <Route exact path="/instantPayMerchantForgotPassword" component={MerchantForgotPassword} />
     <Route exact path="/instantPayMerchantResetPassword" component={MerchantResetPassword} />
     <Route exact path="/instantPayMerchantChangePassword" component={MerchantChangePassword} />
     {/* User Pages */}
     <Route exact path="/instantPayUserSignUp" component={UserSignUp} />
-    <Route exact path="/customer" component={UserLogin} />
+    <Route exact path="/instantPayUserLogin" component={UserLogin} />
     <Route exact path="/instantPayLogin" component={MerchantUserLogin} />
     <Route exact path="/instantPayUserChangePassword" component={UserChangePassword} />
     <Route exact path="/instantPayUserForgotPassword" component={UserForgotPassword} />
@@ -137,12 +137,12 @@ ReactDOM.render(
     <Route exact path="/apiDocMerchant" component={apiDocMerchant} />
     {/* Split Admin Pages */}
     <Route path="/onePayAdmin" component={SplitAdmin} />
-    <Route exact path="/onePayAdminLogin" component={SplitSignIn} />
+    <Route exact path="/admin" component={SplitSignIn} />
     <Route exact path="/onePayAdminForgotPassword" component={SplitAdminForgotPassword} />
     <Route exact path="/onePayAdminResetPassword" component={SplitResetPassword} />
     <Route exact path="/onePayAdminChangePassword" component={SplitChangePassword} />
     {/* Split Merchant Marketing Pages */}
-    <Route exact path="/onePayHome" component={SplitHome} />
+    <Route exact path="/" component={SplitHome} />
     <Route exact path="/onePayforbusiness" component={splitforbusiness} />
     <Route exact path="/onePaySignUp" component={SplitSignUp} />
     <Route exact path="/onePayUserSignUp" component={SplitUserSignUp} />
@@ -160,13 +160,13 @@ ReactDOM.render(
     <Route exact path="/splitAPIDoc" component={splitAPIDoc} />
     {/* Split Merchant Pages */}
     <Route path="/onePayMerchant" component={SplitMerchant} />
-    <Route exact path="/onePayMerchantLogin" component={SplitMerchantSignIn} />
+    <Route exact path="/merchant" component={SplitMerchantSignIn} />
     <Route exact path="/onePayMerchantForgotPassword" component={SplitMerchantForgotPassword} />
     <Route exact path="/onePayMerchantResetPassword" component={SplitMerchantResetPassword} />
     <Route exact path="/onePayMerchantChangePassword" component={SplitMerchantChangePassword} />
     {/* Split Customer Pages */}
     <Route path="/onePayUser" component={SplitUser} />
-    <Route exact path="/onePayUserLogin" component={SplitUserLogin} />
+    <Route exact path="/customer" component={SplitUserLogin} />
     <Route exact path="/onePayUserForgotPassword" component={SplitUserForgotPassword} />
     <Route exact path="/onePayUserResetPassword" component={SplitUserResetPassword} />
     <Route exact path="/onePayUserChangePassword" component={SplitUserChangePassword} />

@@ -97,7 +97,7 @@ class ResetPassword extends Component {
               1500
             );
             setTimeout(function () {
-              self.props.history.push("/merchant");
+              self.props.history.push("/instantPayMerchantLogin");
             }, 1600);
           }
           self.setState({

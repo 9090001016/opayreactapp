@@ -519,7 +519,7 @@ class splitSignUp extends Component {
             <div className="outer-sign-in signup">
                 <NotificationContainer />
                 <div className="text-center w-100">
-                <Link to="/onePayHome">
+                <Link to="/">
                     <img src={OnePayLogo} width="150px" className="onepay__logo" />
                 </Link>
                     <div className="sign-in-card">
@@ -885,7 +885,7 @@ class splitSignUp extends Component {
                                 )}Sign Up</button>
                             <button className="butn rgtbtn" onClick={this.handleMerchantBack}>Back</button>
                         </div>
-                        <p className="already"><Link to="/OnePayMerchantLogin">Login</Link></p>
+                        <p className="already"><Link to="/merchant">Login</Link></p>
                     </div>
                 </div>
             </div>

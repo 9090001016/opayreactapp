@@ -400,7 +400,7 @@ class userSignUp extends Component {
                     NotificationManager.success("Record Saved Successfully");
                     NotificationManager.success(data);
                     setTimeout(function () {
-                        self.props.history.push({ pathname: "/customer" });
+                        self.props.history.push({ pathname: "/instantPayUserLogin" });
                     }, 1000);
                     self.setState({
                         loading: false,
@@ -928,7 +928,7 @@ class userSignUp extends Component {
                             <button className="butn rgtbtn" onClick={this.handleMerchantBack}>Back</button>
                         </div>
                         <p className="already">
-                            <Link to="/customer">Login</Link>
+                            <Link to="/instantPayUserLogin">Login</Link>
                         </p>
                     </div>
                 </div>

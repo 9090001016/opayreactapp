@@ -108,7 +108,7 @@ class splitUserLogin extends Component {
       <div className="outer-sign-in">
         <NotificationContainer />
         <div className="text-center w-100">
-        <Link to="/onePayHome">
+        <Link to="/">
             <img src={OnePayLogo} width="150px" className="onepay__logo" />
         </Link>
           <div className="sign-in-card">

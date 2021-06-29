@@ -164,7 +164,7 @@ class Header extends Component {
           window.localStorage.removeItem('token');
           window.localStorage.removeItem('username');
           window.localStorage.removeItem('emailid');
-          window.location.href = "/admin";
+          window.location.href = "/instantPayAdminLogin";
         } else {
           NotificationManager.error("Not able to logout.");
         }

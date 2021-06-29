@@ -101,7 +101,7 @@ class Header extends Component {
         if (res.status) {
           cookies.remove("instantmerchanttoken");
           window.localStorage.removeItem('instantmerchanttoken');
-          window.location.href = "/merchant";
+          window.location.href = "/instantPayMerchantLogin";
         } else {
           NotificationManager.error("Not able to logout.");
         }

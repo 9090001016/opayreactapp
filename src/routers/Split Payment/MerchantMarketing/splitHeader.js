@@ -253,14 +253,14 @@ class splitHeader extends Component {
         return (
             <header>
                 <div className="inpay">
-                    <Link to="/onePayHome">
+                    <Link to="/">
                         <img src={OnePayLogo} width="150px" className="logo__img" />
                     </Link>
                 </div>
                 <div className="foryou">
                     <ul>
                         <li>
-                            <Link to="/onePayHome">
+                            <Link to="/">
                                 <a>For You</a>
                             </Link>
                         </li>

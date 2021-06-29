@@ -13,7 +13,7 @@ export function authHeader(token = "token") {
     var _token = window.localStorage.getItem("onepaytoken");
     if (_cookietoken === null || _cookietoken === "" || _cookietoken === undefined) {
       window.localStorage.removeItem('onepaytoken');
-      window.location.href = "/onePayAdminLogin";
+      window.location.href = "/admin";
     } else {
       return {
         "X-Authorized-Token": _token,

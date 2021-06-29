@@ -13,7 +13,7 @@ export function merchantAuthHeader(token = "token") {
     var _token = window.localStorage.getItem("onepaymerchanttoken");
     if (_cookietoken === null || _cookietoken === "" || _cookietoken === undefined) {
       window.localStorage.removeItem('onepaymerchanttoken');
-      window.location.href = "/onePayMerchantLogin";
+      window.location.href = "/merchant";
     } else {
       return {
         "X-Authorized-Token": _token,

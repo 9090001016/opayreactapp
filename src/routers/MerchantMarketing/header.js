@@ -258,7 +258,7 @@ class Header extends Component {
             <header>
                 <NotificationContainer />
                 <div className="inpay">
-                    <Link to="/">
+                    <Link to="/merchantHome">
                         <img src={InstantLogo} width="150px" className="logo__img" />
                         <p className="tagline">Simply Buy</p>
                     </Link>
@@ -266,7 +266,7 @@ class Header extends Component {
                 <div className="foryou">
                     <ul>
                         <li>
-                            <Link to="/customer">
+                            <Link to="/instantPayUserLogin">
                                 <a>For You</a>
                             </Link>
                         </li>
@@ -281,7 +281,7 @@ class Header extends Component {
                                 (<Link onClick={this.handleMerchantStripPopOpen.bind(this)}>
                                     <a>For Your Business</a>
                                 </Link>) : ( */}
-                                <Link to="/merchant">
+                                <Link to="/instantPayMerchantLogin">
                                     <a>For Business</a>
                                 </Link>
                                 {/* )

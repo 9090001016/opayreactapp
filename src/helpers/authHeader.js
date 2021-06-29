@@ -12,7 +12,7 @@ export function authHeader(token = "token") {
     var _token = window.localStorage.getItem("token");
     if (_cookietoken === null || _cookietoken === "" || _cookietoken === undefined) {
       window.localStorage.removeItem('token');
-      window.location.href = "/admin";
+      window.location.href = "/instantPayAdminLogin";
     } else {
       return {
         "X-Authorized-Token": _token,

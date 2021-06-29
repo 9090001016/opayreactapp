@@ -76,7 +76,7 @@ class splitMerchantStripeAccount extends Component {
                     message: "Your stripe account has been activated. Please login to k2 portal."
                 });
                 setTimeout(
-                    window.location.href = "./onePayMerchantLogin"
+                    window.location.href = "./merchant"
                 , 1000);
                 
             } else {

@@ -115,7 +115,7 @@ export class Header extends Component {
         if (res.status) {
           cookies.remove("instantusertoken");
           window.localStorage.removeItem('instantusertoken');
-          window.location.href = "/customer";       
+          window.location.href = "/instantPayUserLogin";       
         } else {
           NotificationManager.error("Not able to logout.");
         }

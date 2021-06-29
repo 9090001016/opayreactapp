@@ -12,7 +12,7 @@ export function userAuthHeader(token = "token") {
     var _token = window.localStorage.getItem("instantusertoken");
     if (_cookietoken === null || _cookietoken === "" || _cookietoken === undefined) {
       window.localStorage.removeItem('instantusertoken');
-      window.location.href = "/customer";
+      window.location.href = "/instantPayUserLogin";
     } else {
       return {
         "X-Authorized-Token": _token,

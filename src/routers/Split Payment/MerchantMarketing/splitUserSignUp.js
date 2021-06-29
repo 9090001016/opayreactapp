@@ -400,7 +400,7 @@ class splitUserSignUp extends Component {
                     NotificationManager.success("Record Saved Successfully");
                     NotificationManager.success(data);
                     setTimeout(function () {
-                        self.props.history.push({ pathname: "/onePayUserLogin" });
+                        self.props.history.push({ pathname: "/customer" });
                     }, 1000);
                     self.setState({
                         loading: false,
@@ -445,7 +445,7 @@ class splitUserSignUp extends Component {
             <div className="outer-sign-in signup">
                 <NotificationContainer />
                 <div className="text-center w-100">
-                <Link to="/onePayHome">
+                <Link to="/">
                     <img src={OnePayLogo} width="150px" className="onepay__logo" />
                 </Link>
                     
@@ -928,7 +928,7 @@ class splitUserSignUp extends Component {
                             <button className="butn rgtbtn" onClick={this.handleMerchantBack}>Back</button>
                         </div>
                         <p className="already">
-                            <Link to="/onePayUserLogin">Login</Link>
+                            <Link to="/customer">Login</Link>
                         </p>
                     </div>
                 </div>

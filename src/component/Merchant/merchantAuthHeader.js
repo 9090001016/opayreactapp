@@ -13,7 +13,7 @@ export function merchantAuthHeader(token = "token") {
     var _token = window.localStorage.getItem("instantmerchanttoken");
     if (_cookietoken === null || _cookietoken === "" || _cookietoken === undefined) {
       window.localStorage.removeItem('instantmerchanttoken');
-      window.location.href = "/merchant";
+      window.location.href = "/instantPayMerchantLogin";
     } else {
       return {
         "X-Authorized-Token": _token,

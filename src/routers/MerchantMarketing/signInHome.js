@@ -273,7 +273,7 @@ class signInHome extends Component {
                             <h4>For You</h4>
                             <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
                             <div className="signup">
-                                <Link to="/customer">
+                                <Link to="/instantPayUserLogin">
                                     <button type="button">Sign In Now</button>
                                 </Link>
                             </div>
@@ -300,7 +300,7 @@ class signInHome extends Component {
                                     >
                                         <button type="button">Sign Up Now</button>
                                     </Link> */}
-                                    <Link to="/merchant">
+                                    <Link to="/instantPayMerchantLogin">
                                          <button type="button">Sign In Now</button>
                                     </Link>)
                                 

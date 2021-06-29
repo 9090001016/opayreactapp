@@ -77,7 +77,7 @@ class merchantStripeAccount extends Component {
                     message: "Your stripe account has been activated. Please login to k2 portal."
                 });
                 setTimeout(
-                    window.location.href = "./merchant"
+                    window.location.href = "./instantPayMerchantLogin"
                 , 1000);
             } else {
                 self.setState({

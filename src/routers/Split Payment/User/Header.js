@@ -115,7 +115,7 @@ export class Header extends Component {
         if (res.status) {
           cookies.remove("onepayusertoken");
           window.localStorage.removeItem('onepayusertoken');
-          window.location.href = "/onePayUserLogin";       
+          window.location.href = "/customer";       
         } else {
           NotificationManager.error("Not able to logout.");
         }
