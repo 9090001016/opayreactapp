@@ -1,0 +1,4612 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+
+.forgotpassLbl {
+  color: #47525e;
+  font-family: Lato;
+  font-size: 35px;
+  font-weight: 800;
+  line-height: 34px;
+  text-align: center;
+  display: block;
+  margin-bottom: 40px;
+}
+.add_user {
+  background-color: #2561a8;
+  border-radius: 4px;
+  width: 45%;
+  height: 43px;
+  cursor: pointer;
+  color: #fff;
+  border: 0px;
+  margin-top: 25px;
+}
+/* chetan css starts */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label {
+  padding: 0;
+  margin: 0;
+}
+input:focus,
+button:focus {
+  outline: 0;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input::placeholder {
+  color: #000;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a:hover {
+  text-decoration: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 0 0 0 30px white inset !important;
+}
+input:-webkit-autofill::first-line {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.butn {
+  cursor: pointer;
+  color: #fff;
+  border: 0px;
+  min-width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  /* background: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  padding: 10px 20px;
+  /* display: block; */
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 30px;
+  background: #3636ba;
+}
+.flex-parted {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.font-14-500 {
+  font-size: 14px;
+  font-weight: 500;
+}
+.color-dark-blue {
+  color: #003280;
+}
+.underlined-link {
+  text-decoration: underline;
+}
+.mt-45 {
+  margin-top: 45px;
+}
+.custom-link {
+  color: #009bdd;
+  cursor: pointer;
+}
+
+/* sign in starts */
+
+.outer-sign-in .logo__img {
+  margin-bottom: 2rem;
+}
+.outer-sign-in {
+  /* background: url("./../Images/sign-in-bg.jpg") no-repeat center center; */
+  background:#fff;
+  min-height: 100vh;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.logo-text {
+  font-size: 48px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.sign-in-card {
+  background-color: #ffffff;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 50px 70px;
+  width: 550px;
+  border-radius: 10px;
+  margin: auto;
+}
+.sign-in {
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #3636ba;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 45px;
+  display: block;
+  line-height: 1;
+}
+.input-cntr {
+  height: 51px;
+  border-radius: 5px;
+  border: 1px solid #7a7a7a;
+  padding: 10px;
+  display: flex;
+  /* align-items: center; */
+  margin-bottom: 25px;
+}
+.newcountry .input-cntr {
+  padding: 0;
+  border: 0;
+}
+.contry .input-cntr{
+  padding: 0;
+  border: 0;
+}
+.contry .select-country{
+ width: 100%;
+}
+.contry .css-yk16xz-control{
+  height: 51px;
+  width: 100%;
+  border: 1px solid #7a7a7a;
+}
+.contry .css-g1d714-ValueContainer{
+  height: 51px;
+}
+.bustype select{
+  padding: 0;
+  border: 0;
+}
+.bustype select:focus{
+  outline: 0;
+}
+.bustype select{
+  width: 100%;
+}
+.countrtselect  select:focus{
+  outline: 0;
+}
+.select-country.css-2b097c-container:focus {
+  outline: 0;
+}
+.countrtselect  .css-1pahdxg-control {
+  box-shadow: none;
+}
+.countrtselect  .css-1pahdxg-control:hover{
+  border-color: transparent;
+}
+.countrtselect .css-yk16xz-control{
+  padding: 0;
+  border: 0;
+}
+.phonepincode .react-tel-input .form-control{
+  height: 51px;
+  width: 100%;
+  border: 1px solid #7a7a7a;
+}
+.phonepincode .react-tel-input .flag-dropdown{
+  background-color: #ffffff;
+  border: 1px solid #7a7a7a;
+  border-right: none;
+  border-radius: 5px;
+}
+.phonepincode .react-tel-input .selected-flag{
+  padding: 0 0 0 11px;
+}
+.newcountry .react-tel-input .form-control {
+  height: 51px;
+  width: 100%;
+  border: 1px solid #7a7a7a;
+}
+.newcountry .react-tel-input .flag-dropdown{
+  background-color: #ffffff;
+  border: 1px solid #7a7a7a;
+  border-right: none;
+}
+.newcountry .react-tel-input .country-list{
+  left: 75px;
+}
+.input-icons {
+  margin-right: 10px;
+  width: 24px;
+}
+.input-icons img {
+  width: 100%;
+}
+.input-cntr input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+}
+.rem-me label {
+  font-size: 12px;
+  cursor: pointer;
+  position: relative;
+  padding-left: 22px;
+}
+.rem-me label::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid #7a7a7a;
+  position: absolute;
+  left: 0;
+}
+.rem-me input:checked + label::after {
+  content: "\2713";
+  position: absolute;
+  left: 0px;
+  width: 16px;
+  height: 16px;
+  color: #009bdd;
+  text-align: center;
+  font-weight: 700;
+}
+/* Forgorpassword OTP Modal Start Kalpesh */
+#ForgotPasswordOtp {
+  margin: 80px auto 0;
+  border-radius: 10px;
+  width: 400px;
+  padding: 0;
+}
+#ForgotPasswordOtp .margin input {
+  margin: 0;
+}
+#ForgotPasswordOtp .margin .Verify {
+  font-size: 14px;
+  color: #003280;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding-top: 5px;
+  text-decoration: underline;
+}
+/* sign in ends */
+
+/* header starts */
+.header {
+  box-shadow: 1.338px 1.486px 5px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+.header-logo {
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #fefefe;
+  font-weight: 700;
+  flex: 0 0 264px;
+  height: 100%;
+  background-color: #009bdd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-icons {
+  width: 24px;
+  line-height: 1;
+}
+.header-icons img {
+  width: 100%;
+}
+/* .header-left li { */
+.header-left a {
+  font-size: 18px;
+  color: #7a7a7a;
+  display: flex;
+  align-items: center;
+  margin: 0 22px;
+  height: 60px;
+}
+.header-left a:hover,
+.header-left a.active {
+  color:#ff4800;
+}
+.header-left {
+  display: flex;
+  margin-left: 55px;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.header-right li {
+  margin: 0 15px;
+}
+.profile-img {
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  /* position: relative; */
+  /* padding-right: 20px; */
+  box-sizing: content-box;
+  cursor: pointer;
+  overflow: hidden;
+}
+/* .profile-img::after { */
+.profile-img-arrow {
+  /* content: ""; */
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid #009bdd;
+  /* position: absolute; */
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+  /* right: 0; */
+  margin-left: 8px;
+  cursor: pointer;
+}
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.user-profile {
+  padding-right: 40px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.notification-count {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #ff7240;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  position: absolute;
+  bottom: 100%;
+  left: 5px;
+  line-height: 28px;
+}
+/* header ends */
+
+.cards-icon {
+  width: 35px;
+}
+.read-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #009bdd;
+  border-radius: 50%;
+  left: -7px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.disable-otp {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* responsive starts */
+@media screen and (max-width: 1500px) {
+  /* sign in starts */
+  .logo-text {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+  .sign-in-card {
+    padding: 45px 40px;
+    width: 500px;
+  }
+  .sign-in {
+    margin-bottom: 30px;
+  }
+  .mt-45 {
+    margin-top: 30px;
+  }
+  .butn {
+    height: 45px;
+    font-size: 16px;
+    min-width: 140px;
+  }
+  .input-cntr {
+    margin-bottom: 20px;
+  }
+  /* sign in ends */
+
+  /* header starts */
+  .header {
+    height: 80px;
+  }
+
+  .onepay__logo,
+  .instant__logo {
+  width:150px;
+  margin:1rem;
+  }
+  .header-logo {
+    font-size: 20px;
+    flex: 0 0 180px;
+  }
+  .header-icons {
+    width: 20px;
+  }
+  .header-left a {
+    font-size: 16px;
+    margin: 0 15px;
+  }
+  .header-left {
+    margin-left: 20px;
+  }
+  .header-right li {
+    margin: 0 10px;
+  }
+  .user-profile {
+    padding-right: 20px;
+    margin-left: 15px;
+  }
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    /* padding-right: 18px; */
+  }
+  /* .profile-img::after { */
+  .profile-img-arrow {
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-width: 8px;
+  }
+  .notification-count {
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    left: 7px;
+    bottom: 75%;
+  }
+  /* header ends */
+
+  
+}
+
+@media screen and (max-width: 576px) {
+  /* sign in starts */
+  .sign-in-card {
+    width: 100%;
+    padding: 40px 30px;
+  }
+  .logo-text {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .sign-in {
+    font-size: 20px;
+  }
+  /* sign in ends */
+}
+
+@media screen and (max-width: 420px) {
+  /* sign in starts */
+  .outer-sign-in {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .sign-in-card {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .input-cntr input {
+    font-size: 14px;
+  }
+  .dashboard .card {
+    margin-bottom: 15px;
+  }
+  /* sign in ends */
+}
+/* responsive ends */
+
+/* chetan css ends */
+
+/* Kalpesh CSS Start Dashboard */
+.dashboard,
+.Merchantdashboard,
+.Notification,
+.Userdashboard,
+.userpayment,
+.mainprofile {
+  padding: 25px 30px;
+  margin: 10px 0 0 0;
+  background: #fff;
+}
+.dash {
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #4f4f4f;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: block;
+  line-height: 1;
+}
+.dashboard .card,
+.Merchantdashboard .card,
+.Userdashboard .card {
+  border: 0;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 10px;
+}
+.back1 {
+  background:#3636ba;
+}
+.back2 {
+  background:#3636ba;
+}
+.back3 {
+  background:#3636ba;
+}
+.back4 {
+  background:#3636ba;
+}
+.image {
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 90px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+.image img {
+  width: 40px;
+  height: 40px;
+}
+.text {
+  margin-top: 20px;
+}
+.text label {
+  display: block;
+}
+.text label:nth-child(1) {
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+.text label:nth-child(2) {
+  color: #ff4800;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 50px;
+  text-align: center;
+}
+/* Kalpesh CSS End Dashboard */
+
+/* Kalpesh CSS for HeaderUser Modal Start */
+#HeaderUserModal {
+  margin-right: 40px;
+  margin-top: 45px;
+  width: 310px;
+  border-radius: 10px;
+}
+#HeaderUserModal .react-responsive-modal-closeButton {
+  display: none;
+}
+#HeaderUserModal .usericon {
+  width: 40px;
+  height: 40px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #47525e;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+}
+#HeaderUserModal .usericon img {
+  /* width: 20px;
+  height: 20px; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#HeaderUserModal .usertext {
+  display: inline-block;
+  margin-left: 15px;
+}
+#HeaderUserModal .usertext label {
+  display: block;
+}
+#HeaderUserModal .usertext label img {
+  width: 15px;
+  height: 15px;
+  margin: 0 0 3px 10px;
+  cursor: pointer;
+}
+#HeaderUserModal .usertext label a:focus {
+  outline: 0;
+}
+#HeaderUserModal .usertext label:nth-child(1) {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #47525e;
+  line-height: 20px;
+  text-transform: capitalize;
+}
+#HeaderUserModal .usertext label:nth-child(2) {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: #47525e;
+  line-height: 25px;
+  text-transform: capitalize;
+}
+#HeaderUserModal .Logout {
+  text-align: center;
+  margin: 25px auto 0;
+}
+#HeaderUserModal .Logout button {
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background:#3636ba;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+  text-align: center;
+  margin: 0;
+  padding: 10px 60px;
+  text-transform: capitalize;
+}
+/* Kalpesh CSS for HeaderUser Modal End */
+
+/* Kalpesh CSS for Profile Page Start */
+.mainprofile {
+  background: #fff;
+  padding: 30px 35px;
+}
+.profile {
+  border-radius: 5px;
+  background-color: rgb(245, 248, 249);
+  border-radius: 6px;
+}
+.profile .card {
+  height: auto;
+  border: 0;
+  background-color: rgb(245, 248, 249);
+}
+.profile .prof {
+  margin: auto;
+}
+.mainprofile h3 {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 0 0 20px 0;
+  color: #4f4f4f;
+  text-transform: capitalize;
+}
+.profile .closeicon {
+  position: relative;
+}
+.profile .closeicon img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 6px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background: #3636ba;
+  cursor: pointer;
+}
+.profile .profileimg {
+  border: 1px solid #eaeced;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.profile .profileimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile .upload {
+  margin: 40px auto 0;
+  position: relative;
+}
+.profile .uploadicon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  background:#3636ba;
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  cursor: pointer;
+}
+.profile .uploadicon img {
+  width: 15px;
+  height: 15px;
+}
+.formdata {
+  padding-top: 25px;
+}
+.formdata label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25px;
+  padding: 0 0 0 10px;
+  opacity: 0.8;
+}
+.formdata input {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 40px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  /* font-family: Lato; */
+  color: #47525e;
+}
+.formdata input:disabled {
+  color: #c5bcbc;
+  cursor: not-allowed;
+}
+.formdata input::placeholder {
+  color: #47525e;
+  opacity: 0.7;
+}
+.save {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin: 0 0 20px 0;
+}
+.save button {
+  background: #3636ba;
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+  text-align: center;
+  margin: 0;
+  padding: 10px 50px;
+  text-transform: capitalize;
+  height: 40px;
+  font-family: Montserrat, sans-serif;
+  line-height: 10px;
+}
+.btn:hover {
+  color: #fff;
+}
+.save p {
+  margin: 0 0;
+  color: #3636ba;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 20px 0;
+  line-height: 20px;
+  text-align: right;
+  cursor: pointer;
+}
+/* Kalpesh CSS for Profile Page End */
+
+/* UserManagement,MerchantManagemnt CSS Start UserManagement  */
+.userManagement,
+.merchManagement,
+.usermanadetail,
+.mermanadetail,
+.adminsetting,
+.MerTraHistory,
+.MerSaleReport,
+.merSubsc,
+.merPlanPayment,
+.UserTrans,
+.instalmentDetail {
+  background: #fff;
+  padding: 30px 35px;
+  margin-top: 10px;
+}
+.userManagement .Usermana,
+.merchManagement .Usermana,
+.usermanadetail .Usermana,
+.mermanadetail .Usermana,
+.adminsetting .Usermana,
+.MerTraHistory .Usermana,
+.MerSaleReport .Usermana,
+.merSubsc .Usermana,
+.merPlanPayment .Usermana,
+.UserTrans .Usermana,
+.instalmentDetail .Usermana {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 0 0 20px 0;
+  color: #4f4f4f;
+  text-transform: capitalize;
+  display: inline;
+}
+.userManagement .exfilter,
+.merchManagement .exfilter,
+.MerTraHistory .exfilter,
+.MerSaleReport .exfilter,
+.UserTrans .exfilter,
+.instalmentDetail .exfilter {
+  float: right;
+  margin-bottom: 25px;
+}
+.exfilter label img {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  vertical-align: bottom;
+}
+
+.exfilter a img {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+.exfilter label .WhDrop {
+  width: 13px;
+  height: 13px;
+  margin-left: 15px;
+  margin-right: 0;
+  vertical-align: baseline;
+  /* transform: rotate(60deg); */
+}
+.exfilter label .WhDrop1 {
+  width: 13px;
+  height: 13px;
+  margin-left: 15px;
+  margin-right: 0;
+  vertical-align: baseline;
+  transform: rotate(180deg);
+}
+.exfilter label:first-child {
+  background-image: #fff;
+  color: #009bdd;
+  border-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+  border: 1px solid;
+  padding: 10px 15px 10px 15px;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.exfilter a:first-child {
+  background: #3636ba;
+  color: #fff;
+  /* border-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  border: 1px solid;
+  padding: 10px 15px 10px 15px;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.exfilter label:last-child {
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background:#3636ba;
+  color: #fff;
+  padding: 10px 15px 10px 15px;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.userManagement .back,
+.merchManagement .back,
+.paymentmana .back,
+.MerTraHistory .back,
+.MerSaleReport .back,
+.UserTrans .back {
+  background-color: rgb(245, 248, 249);
+  border-radius: 5px;
+  padding: 25px 0 20px 0;
+}
+.userManagement .back input,
+.merchManagement .back input,
+.paymentmana .back input,
+.MerTraHistory .back input,
+.MerSaleReport .back input,
+.UserTrans .back input {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 45px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: #47525e;
+}
+.userManagement .back input::placeholder,
+.merchManagement .back input::placeholder,
+.paymentmana .back input::placeholder,
+.MerTraHistory .back input::placeholder,
+.MerSaleReport .back input::placeholder,
+.UserTrans .back input::placeholder,
+.userManagement .back select::placeholder,
+.merchManagement .back select::placeholder,
+.paymentmana .back select::placeholder,
+.MerTraHistory .back select::placeholder,
+.MerSaleReport .back select::placeholder,
+.UserTrans .back select::placeholder {
+  color: #000;
+}
+.userManagement .back .calendar,
+.merchManagement .back .calendar,
+.paymentmana .back .calendar,
+.MerTraHistory .back .calendar,
+.MerSaleReport .back .calendar,
+.UserTrans .back .calendar {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 19px;
+  height: 45px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #47525e;
+  background: #fff url("./../Images/calendar.png") no-repeat right 15px center;
+  line-height: 14px;
+  background-size: 15px 15px;
+}
+.userManagement .calendar input,
+.UserTrans .calendar input,
+.MerTraHistory .calendar input,
+.merchManagement .calendar input,
+.paymentmana .calendar input,
+.MerSaleReport .calendar input {
+  margin: 0;
+  border: 0;
+}
+.ant-picker-focused {
+  box-shadow: none;
+}
+.userManagement .calendar .ant-picker-suffix,
+.UserTrans .calendar .ant-picker-suffix,
+.MerTraHistory .calendar .ant-picker-suffix,
+.merchManagement .calendar .ant-picker-suffix,
+.paymentmana
+  .calendar
+  .ant-picker-suffix
+  .MerSaleReport
+  .calendar
+  .ant-picker-suffix {
+  display: none;
+}
+.userManagement .back .calendar .ant-picker-active-bar,
+.userManagement .back .calendar .ant-picker-active-bar,
+.UserTrans .back .calendar .ant-picker-active-bar,
+.MerTraHistory .back .calendar .ant-picker-active-bar,
+.merchManagement .back .calendar .ant-picker-active-bar,
+.paymentmana .back .calendar .ant-picker-active-bar,
+.MerSaleReport .back .calendar .ant-picker-active-bar {
+  margin-left: 0px !important;
+}
+.userManagement .back select,
+.merchManagement .back select,
+.paymentmana .back select,
+.MerTraHistory .back select {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 45px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #47525e;
+  background: #fff url("./../Images/dropdown.png") no-repeat right 15px center;
+  appearance: none;
+  line-height: 20px;
+  background-size: 12px 12px;
+}
+.userManagement .back select:focus,
+.merchManagement .back select:focus,
+.paymentmana .back select:focus,
+.MerTraHistory .back select:focus {
+  outline: 0;
+}
+.userManagement .back .Totalamount,
+.merchManagement .back .Totalamount {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  display: block;
+  color: #4f4f4f;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+/* .progress {
+  height: 2px;
+} */
+.slidecontainer {
+  width: 100%;
+  margin-top: -15px;
+}
+.userManagement .back .search,
+.merchManagement .back .search,
+.paymentmana .back .search,
+.MerTraHistory .back .search,
+.MerSaleReport .back .search,
+.UserTrans .back .search {
+  text-align: center;
+}
+.userManagement .back .search button,
+.merchManagement .back .search button,
+.paymentmana .back .search button,
+.MerTraHistory .back .search button,
+.MerSaleReport .back .search button,
+.UserTrans .back .search button {
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background:#3636ba;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: 0;
+  margin: 20px 0 0 0;
+}
+.usmanatable,
+.mermanatable,
+.paymenttable,
+.roletable,
+.instantpaytable,
+.subscriptiontable,
+.alerttable,
+.Merchantdashtable,
+.MerchantrHistorytable,
+.notifitable,
+.Userdashtable,
+.userpaymenttable {
+  margin-top: 25px;
+}
+.usmanatable .ant-table-thead > tr > th,
+.mermanatable .ant-table-thead > tr > th,
+.usermanadetailtable .ant-table-thead > tr > th,
+.merchmanadetailtable .ant-table-thead > tr > th,
+.paymenttable .ant-table-thead > tr > th {
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background:#ff4800;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+  padding: 15px 15px;
+}
+.usmanatable tr.ant-table-row:nth-child(odd),
+.mermanatable tr.ant-table-row:nth-child(odd),
+.usermanadetailtable tr.ant-table-row:nth-child(odd),
+.merchmanadetailtable tr.ant-table-row:nth-child(odd),
+.splitpaymenttable tr.ant-table-row:nth-child(odd),
+.paymenttable tr.ant-table-row:nth-child(odd),
+.roletable tr.ant-table-row:nth-child(odd),
+.instantpaytable tr.ant-table-row:nth-child(odd),
+.subscriptiontable tr.ant-table-row:nth-child(odd),
+.alerttable tr.ant-table-row:nth-child(odd),
+.Merchantdashtable tr.ant-table-row:nth-child(odd),
+.MerchantrHistorytable tr.ant-table-row:nth-child(odd),
+.merroletable tr.ant-table-row:nth-child(odd),
+.merusermanatable tr.ant-table-row:nth-child(odd),
+.notifitable tr.ant-table-row:nth-child(odd),
+.MerSaleRepTable tr.ant-table-row:nth-child(odd),
+.Userdashtable tr.ant-table-row:nth-child(odd),
+.userpaymenttable tr.ant-table-row:nth-child(odd),
+.instalmentDetailtable tr.ant-table-row:nth-child(odd) {
+  background: #fff;
+  cursor: pointer;
+}
+.usmanatable tr.ant-table-row:nth-child(even),
+.mermanatable tr.ant-table-row:nth-child(even),
+.usermanadetailtable tr.ant-table-row:nth-child(even),
+.merchmanadetailtable tr.ant-table-row:nth-child(even),
+.splitpaymenttable tr.ant-table-row:nth-child(even),
+.paymenttable tr.ant-table-row:nth-child(even),
+.roletable tr.ant-table-row:nth-child(even),
+.instantpaytable tr.ant-table-row:nth-child(even),
+.subscriptiontable tr.ant-table-row:nth-child(even),
+.alerttable tr.ant-table-row:nth-child(even),
+.Merchantdashtable tr.ant-table-row:nth-child(even),
+.MerchantrHistorytable tr.ant-table-row:nth-child(even),
+.merroletable tr.ant-table-row:nth-child(even),
+.merusermanatable tr.ant-table-row:nth-child(even),
+.notifitable tr.ant-table-row:nth-child(even),
+.MerSaleRepTable tr.ant-table-row:nth-child(even),
+.Userdashtable tr.ant-table-row:nth-child(even),
+.userpaymenttable tr.ant-table-row:nth-child(even),
+.instalmentDetailtable tr.ant-table-row:nth-child(even) {
+  background: #f3fbff;
+  cursor: pointer;
+}
+.instalmentDetailtable tr.ant-table-row.disabled-row {
+  background: #eee;
+  pointer-events: none;
+}
+.usmanatable .ant-table-container table > thead > tr:first-child th:first-child,
+.mermanatable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.usermanadetailtable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.merchmanadetailtable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.splitpaymenttable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.paymenttable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.roletable .ant-table-container table > thead > tr:first-child th:first-child,
+.instantpaytable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.subscriptiontable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.alerttable .ant-table-container table > thead > tr:first-child th:first-child,
+.Merchantdashtable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.MerchantrHistorytable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.merroletable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.merusermanatable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.notifitable .ant-table-container table > thead > tr:first-child th:first-child,
+.MerSaleRepTable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.Userdashtable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.userpaymenttable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child,
+.instalmentDetailtable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:first-child {
+  border-top-left-radius: 10px;
+}
+.usmanatable .ant-table-container table > thead > tr:first-child th:last-child,
+.mermanatable .ant-table-container table > thead > tr:first-child th:last-child,
+.usermanadetailtable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:last-child,
+.merchmanadetailtable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:last-child,
+.splitpaymenttable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:last-child,
+.paymenttable .ant-table-container table > thead > tr:first-child th:last-child,
+.roletable .ant-table-container table > thead > tr:first-child th:last-child,
+.instantpaytable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:last-child,
+.subscriptiontable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:last-child,
+.alerttable .ant-table-container table > thead > tr:first-child th:last-child,
+.Merchantdashtable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:last-child,
+.MerchantrHistorytable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:last-child,
+.merroletable .ant-table-container table > thead > tr:first-child th:last-child,
+.merusermanatable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:last-child,
+.notifitable .ant-table-container table > thead > tr:first-child th:last-child,
+.MerSaleRepTable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:last-child,
+.Userdashtable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:last-child,
+.userpaymenttable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:last-child,
+.instalmentDetailtable
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  th:last-child {
+  border-top-right-radius: 10px;
+}
+.usmanatable .ant-table-tbody > tr > td,
+.mermanatable .ant-table-tbody > tr > td,
+.usermanadetailtable .ant-table-tbody > tr > td,
+.merchmanadetailtable .ant-table-tbody > tr > td,
+.paymenttable .ant-table-tbody > tr > td {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4f4f4f;
+  line-height: 20px;
+  /* text-transform: capitalize; */
+  opacity: 0.8;
+}
+.mermanatable .amazontext img,
+.splitpayment .amazontext img,
+.paymenttable .amazontext img,
+.roletable .amazontext img,
+.instantpaytable .amazontext img,
+.subscriptiontable .amazontext img,
+.alerttable .amazontext img,
+.Merchantdashtable .amazontext img,
+.MerchantrHistorytable .amazontext img,
+.merroletable .amazontext img,
+.merusermanatable .amazontext img,
+.Userdashtable .amazontext img,
+.instalmentDetailtable .amazontext img,
+.usermanadetailtable .amazontext img{
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 7px;
+  cursor: pointer;
+}
+.usmanatable .totalTran,
+.mermanatable .totalTran {
+  text-align: center;
+}
+.usmanatable .totalAmoun,
+.mermanatable .totalAmoun {
+  text-align: center;
+}
+.usmanatable .status .switch,
+.mermanatable .status .switch,
+.splitpaymenttable .status .switch,
+.roletable .status .switch,
+.instantpaytable .status .switch,
+.subscriptiontable .status .switch,
+.alerttable .status .switch,
+.merroletable .status .switch,
+.merusermanatable .status .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+.usmanatable .status .switch input,
+.mermanatable .status .switch input,
+.splitpaymenttable .status .switch input,
+.roletable .status .switch input,
+.instantpaytable .status .switch input,
+.subscriptiontable .status .switch input,
+.alerttable .status .switch input,
+.merroletable .status .switch input,
+.merusermanatable .status .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.usmanatable .status .slider,
+.mermanatable .status .slider,
+.splitpaymenttable .status .slider,
+.roletable .status .slider,
+.instantpaytable .status .slider,
+.subscriptiontable .status .slider,
+.alerttable .status .slider,
+.merroletable .status .slider,
+.merusermanatable .status .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #797979;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.usmanatable .status .slider:before,
+.mermanatable .status .slider:before,
+.splitpaymenttable .status .slider:before,
+.roletable .status .slider:before,
+.instantpaytable .status .slider:before,
+.subscriptiontable .status .slider:before,
+.alerttable .status .slider:before,
+.merroletable .status .slider:before,
+.merusermanatable .status .slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 5px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.usmanatable .status input:checked + .slider,
+.mermanatable .status input:checked + .slider,
+.splitpaymenttable .status input:checked + .slider,
+.roletable .status input:checked + .slider,
+.instantpaytable .status input:checked + .slider,
+.subscriptiontable .status input:checked + .slider,
+.alerttable .status input:checked + .slider,
+.merroletable .status input:checked + .slider,
+.merusermanatable .status input:checked + .slider {
+  background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+}
+.usmanatable .status input:focus + .slider,
+.mermanatable .status input:focus + .slider,
+.splitpaymenttable .status input:focus + .slider,
+.roletable .status input:focus + .slider,
+.instantpaytable .status input:focus + .slider,
+.subscriptiontable .status input:focus + .slider,
+.alerttable .status input:focus + .slider,
+.merroletable .status input:focus + .slider,
+.merusermanatable .status input:focus + .slider {
+  box-shadow: 0 0 1px #009bdd;
+}
+.usmanatable .status input:checked + .slider:before,
+.mermanatable .status input:checked + .slider:before,
+.splitpaymenttable .status input:checked + .slider:before,
+.roletable .status input:checked + .slider:before,
+.instantpaytable .status input:checked + .slider:before,
+.subscriptiontable .status input:checked + .slider:before,
+.alerttable .status input:checked + .slider:before,
+.merroletable .status input:checked + .slider:before,
+.merusermanatable .status input:checked + .slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+.usmanatable .status .slider.round,
+.mermanatable .status .slider.round,
+.splitpaymenttable .status .slider.round,
+.roletable .status .slider.round,
+.instantpaytable .status .slider.round,
+.subscriptiontable .status .slider.round,
+.alerttable .status .slider.round,
+.merroletable .status .slider.round,
+.merusermanatable .status .slider.round {
+  border-radius: 34px;
+}
+.usmanatable .status .slider.round:before,
+.mermanatable .status .slider.round:before,
+.splitpaymenttable .status .slider.round:before,
+.roletable .status .slider.round:before,
+.instantpaytable .status .slider.round:before,
+.subscriptiontable .status .slider.round:before,
+.alerttable .status .slider.round:before,
+.merroletable .status .slider.round:before,
+.merusermanatable .status .slider.round:before {
+  border-radius: 50%;
+}
+.usmanatable .action .editdele,
+.mermanatable .action .editdele,
+.paymenttable .action .editdele,
+.roletable .action .editdele,
+.instantpaytable .action .editdele,
+.subscriptiontable .action .editdele,
+.alerttable .action .editdele,
+.merroletable .action .editdele,
+.merusermanatable .action .editdele,
+.userpaymenttable .action .editdele {
+  display: flex;
+  align-items: center;
+}
+.usmanatable .action .editdele img,
+.mermanatable .action .editdele img,
+.splitpaymenttable .action .editdele img,
+.paymenttable .action .editdele img,
+.roletable .action .editdele img,
+.instantpaytable .action .editdele img,
+.subscriptiontable .action .editdele img,
+.alerttable .action .editdele img,
+.merroletable .action .editdele img,
+.merusermanatable .action .editdele img,
+.userpaymenttable .action .editdele img {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+.mermanatable .approve button {
+  background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.usermanadetailtable .against,
+.merchmanadetailtable .against {
+  color: #4dc0ff;
+}
+.usermanadetailtable .pending,
+.merchmanadetailtable .pending,
+.Userdashtable .pending {
+  color: #4dc0ff;
+}
+.usermanadetailtable .failed,
+.merchmanadetailtable .failed,
+.paymenttable .failed,
+.Merchantdashtable .failed,
+.MerchantrHistorytable .failed,
+.MerSaleRepTable .failed,
+.Userdashtable .failed,
+.instalmentDetailtable .failed {
+  color: #f9777a;
+}
+.usermanadetailtable .success,
+.merchmanadetailtable .success,
+.paymenttable .success,
+.Merchantdashtable .success,
+.MerchantrHistorytable .success,
+.MerSaleRepTable .success,
+.Userdashtable .success,
+.instalmentDetailtable .success {
+  color: #95dc79;
+}
+/* Pagination */
+.pagination {
+  justify-content: center;
+  margin-top: 30px;
+  position: relative;
+}
+.pagination ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.pagination ul li {
+  margin: 0 0;
+  padding: 5px 12px;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+}
+.pagination ul li.active {
+  background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+  color: #fff;
+}
+.pagination ul li:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.pagination ul li:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.pagination .selectopt select {
+  padding: 6px 2px;
+  border: 1px solid #ededed;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.pagination .selectopt {
+  position: absolute;
+  right: 0;
+}
+/* Edit User Modal */
+#EditUserModal {
+  margin: 100px auto 0;
+  border-radius: 10px;
+  width: 550px;
+}
+#EditUserMerModal {
+  margin: 40px auto 0;
+  border-radius: 10px;
+  width: 550px;
+}
+#EditUserModal label,
+#EditUserMerModal label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25px;
+  opacity: 0.8;
+}
+#EditUserModal input,
+#EditUserMerModal input {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 40px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #47525e;
+}
+#EditUserMerModal select {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 40px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #47525e;
+}
+#EditUserMerModal select:focus {
+  outline: 0;
+}
+#EditUserModal input::placeholder,
+#EditUserMerModal input::placeholder {
+  color: #47525e;
+  opacity: 0.7;
+}
+#EditUserModal .switch,
+#EditUserMerModal .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  margin: 5px 0 0 10px;
+}
+#EditUserModal .switch input,
+#EditUserMerModal .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+#EditUserModal .slider,
+#EditUserMerModal .slider,
+#addcardModal .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #797979;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+#EditUserModal .slider:before,
+#EditUserMerModal .slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 5px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+#EditUserModal input:checked + .slider,
+#EditUserMerModal input:checked + .slider {
+  background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+}
+#EditUserModal input:focus + .slider,
+#EditUserMerModal input:focus + .slider {
+  box-shadow: 0 0 1px #009bdd;
+}
+#EditUserModal input:checked + .slider:before,
+#EditUserMerModal input:checked + .slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+#EditUserModal .slider.round,
+#EditUserMerModal .slider.round {
+  border-radius: 34px;
+}
+#EditUserModal .slider.round:before,
+#EditUserMerModal .slider.round:before {
+  border-radius: 50%;
+}
+#EditUserModal .active,
+#EditUserMerModal .active {
+  margin: 5px 0 0 20px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25px;
+  opacity: 0.8;
+  vertical-align: top;
+}
+#EditUserModal .react-responsive-modal-closeButton,
+#EditUserMerModal .react-responsive-modal-closeButton {
+  display: none;
+}
+#EditUserModal .eduser,
+#EditUserMerModal .eduser {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 25px;
+  margin-bottom: 30px;
+}
+#EditUserModal .edituser,
+#EditUserMerModal .edituser {
+  padding: 20px 0;
+}
+#EditUserModal .closeicon,
+#EditUserMerModal .closeicon {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  float: right;
+}
+#EditUserModal .Editbtn,
+#EditUserMerModal .Editbtn {
+  text-align: center;
+}
+#EditUserModal .Editbtn button,
+#EditUserMerModal .Editbtn button {
+  background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: 0;
+  width: 170px;
+  height: 40px;
+  margin: 15px 0 0 0;
+}
+/*User Delete popover */
+.deletepopover h3 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+.deletepopover .delete {
+  background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+  color: #fff;
+  padding: 7px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: 0;
+  margin-right: 10px;
+}
+.deletepopover {
+  padding: 8px 5px;
+}
+.deletepopover .subsc label:first-child {
+  width: 140px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4f4f4f;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+.deletepopover .subsc label:last-child {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4f4f4f;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+.ant-popover-inner {
+  border-radius: 10px !important;
+}
+/* Kalpesh CSS Start UserManagement */
+
+/* User Management Detail,Merchant Management Detail Css Start Kalpesh */
+.usdetailtext {
+  margin-bottom: 15px;
+}
+.usdetailtext label:first-child {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4f4f4f;
+  line-height: 30px;
+  text-transform: capitalize;
+  display: block;
+  opacity: 0.9;
+}
+.usdetailtext label:last-child {
+  font-size: 14px;
+  font-weight: 400;
+  color: #4f4f4f;
+  line-height: 20px;
+  /* text-transform: capitalize; */
+  display: block;
+}
+.usermanadetail .exfilter,
+.mermanadetail .exfilter {
+  float: right;
+  margin-bottom: 15px;
+}
+.usermanadetail .exfilter label,
+.mermanadetail .exfilter label {
+  background-image: #fff;
+  color: #009bdd;
+  border-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+  border: 1px solid;
+  padding: 10px 15px 10px 15px;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+  background: #fff;
+}
+
+.usermanadetail .exfilter a,
+.mermanadetail .exfilter a {
+  background-image: #fff;
+  color: #009bdd;
+  border-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+  border: 1px solid;
+  padding: 10px 15px 10px 15px;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+  background: #fff;
+}
+
+.usermanadetail .exfilter input,
+.mermanadetail .exfilter input {
+  background: #fff url("./../Images/Search.png") no-repeat left 15px center;
+  background-size: 15px 15px;
+  color: #4f4f4f;
+  border: 1px solid #ededed;
+  padding: 10px 15px 10px 40px;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: capitalize;
+  opacity: 0.7;
+}
+/* User Management Detail,Merchant Management Detail Css End Kalpesh */
+/* AdminSettings CSS Start Kalpesh */
+.setting .card {
+  background: #f4f6fd;
+  border: 0;
+  /* box-shadow: 0 0 5px #F4F6FD; */
+  padding: 20px;
+  display: block;
+  cursor: pointer;
+  color: #4a4a4a;
+  margin-bottom: 25px;
+  transition: all 0.3s ease-in-out;
+}
+.setting .card:hover,
+.setting .card:focus {
+  background: #3636ba;
+  color: #fff;
+}
+.setting .card .totalmain {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.setting .card .total {
+  background: #fff;
+  width: 60px;
+  height: 60px;
+  line-height: 55px;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 15px;
+  flex: 0 0 60px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+.setting .card .total img {
+  width: 30px;
+  height: 30px;
+}
+.setting .card label {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.setting .card p {
+  font-size: 12px;
+  margin: 20px 0 0 0;
+  line-height: 15px;
+}
+/* AdminSettings CSS End Kalpesh */
+/* Split payment Management CSS Start Kalpesh */
+.splitpayment,
+.paymentmana,
+.roles,
+.instantpay,
+.subscription,
+.alerttemplate,
+.merrole,
+.merusermana {
+  background: #fff;
+  padding: 30px 35px;
+  margin-top: 10px;
+}
+.splitpayment .Usermana,
+.paymentmana .Usermana,
+.roles .Usermana,
+.instantpay .Usermana,
+.subscription .Usermana,
+.alerttemplate .Usermana,
+.merrole .Usermana,
+.merusermana .Usermana,
+.Notification .Usermana,
+.userpayment .Usermana {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 35px;
+  /* padding: 0 0 15px 0; */
+  color:#4f4f4f;
+  text-transform: capitalize;
+  display: inline;
+  margin: 0;
+}
+.splitpayment .exfilter,
+.paymentmana .exfilter,
+.roles .exfilter,
+.instantpay .exfilter,
+.subscription .exfilter,
+.alerttemplate .exfilter,
+.merrole .exfilter,
+.merusermana .exfilter {
+  float: right;
+  margin-bottom: 25px;
+}
+.splitpayment .exfilter input,
+.roles .exfilter input,
+.instantpay .exfilter input,
+.subscription .exfilter input,
+.alerttemplate .exfilter input,
+.merrole .exfilter input,
+.merusermana .exfilter input,
+.instalmentDetail .exfilter input {
+  background: #fff url("./../Images/Search.png") no-repeat left 15px center;
+  background-size: 15px 15px;
+  color: #4f4f4f;
+  border: 1px solid #ededed;
+  padding: 10px 15px 10px 40px;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: capitalize;
+  opacity: 0.7;
+}
+.splitpayment .exfilter .csv,
+.paymentmana .exfilter .csv,
+.roles .exfilter .csv,
+.instantpay .exfilter .csv,
+.subscription .exfilter .csv,
+.alerttemplate .exfilter .csv,
+.merrole .exfilter .csv,
+.merusermana .exfilter .csv,
+.instalmentDetail .exfilter .csv {
+  background: #fff;
+  color: #3636ba;
+  border-color: #3636ba; 
+  /* border-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  border: 1px solid;
+  padding: 10px 15px 10px 15px;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+  display: inline-block;
+}
+.splitpayment .exfilter .add {
+  background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+  color: #fff;
+  padding: 10px 15px 10px 15px;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.Notification .add,
+.userpayment .add {
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background: #3636ba;
+  color: #fff;
+  padding: 10px 15px 10px 15px;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+  float: right;
+}
+.splitpaymenttable .ant-table-tbody > tr > td,
+.roletable .ant-table-tbody > tr > td,
+.instantpaytable .ant-table-tbody > tr > td,
+.subscriptiontable .ant-table-tbody > tr > td,
+.alerttable .ant-table-tbody > tr > td,
+.Merchantdashtable .ant-table-tbody > tr > td,
+.MerchantrHistorytable .ant-table-tbody > tr > td,
+.merroletable .ant-table-tbody > tr > td,
+.merusermanatable .ant-table-tbody > tr > td,
+.notifitable .ant-table-tbody > tr > td,
+.MerSaleRepTable .ant-table-tbody > tr > td,
+.Userdashtable .ant-table-tbody > tr > td,
+.userpaymenttable .ant-table-tbody > tr > td,
+.instalmentDetailtable .ant-table-tbody > tr > td {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4f4f4f;
+  line-height: 20px;
+  /* text-transform: capitalize; */
+  opacity: 0.8;
+  text-align: center;
+}
+.splitpaymenttable .ant-table-thead > tr > th,
+.roletable .ant-table-thead > tr > th,
+.instantpaytable .ant-table-thead > tr > th,
+.subscriptiontable .ant-table-thead > tr > th,
+.alerttable .ant-table-thead > tr > th,
+.Merchantdashtable .ant-table-thead > tr > th,
+.MerchantrHistorytable .ant-table-thead > tr > th,
+.merroletable .ant-table-thead > tr > th,
+.merusermanatable .ant-table-thead > tr > th,
+.notifitable .ant-table-thead > tr > th,
+.MerSaleRepTable .ant-table-thead > tr > th,
+.Userdashtable .ant-table-thead > tr > th,
+.userpaymenttable .ant-table-thead > tr > th,
+.instalmentDetailtable .ant-table-thead > tr > th {
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background:#ff4800;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+  padding: 15px 15px;
+  text-align: center;
+}
+.splitpaymenttable .action .editdele,
+.roletable .action .editdele,
+.instantpaytable .action .editdele,
+.subscriptiontable .action .editdele,
+.alerttable .action .editdele,
+.merroletable .action .editdele,
+.merusermanatable .action .editdele,
+.userpaymenttable .action .editdele {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.paymenttable .refund button,
+.Merchantdashtable .refund button,
+.MerchantrHistorytable .refund button {
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background: #ffba5c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 10px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.deletepopover .refundbt {
+  background: #ffba5c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+  padding: 7px 20px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.paymenttable .refundtext,
+.Merchantdashtable .refundtext,
+.MerchantrHistorytable .refundtext,
+.Userdashtable .refundtext,
+.usermanadetailtable .refundtext,
+.instalmentDetailtable .refundtext{
+  color: #ffba5c;
+}
+.userpopover .subsc label:first-child {
+  width: 105px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4f4f4f;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+.userpopover .subsc label:last-child {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4f4f4f;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+.subinfo p {
+  width: 250px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4f4f4f;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+.refundpopover .subsc label:first-child {
+  width: 150px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4f4f4f;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+.refundpopover .subsc label:last-child {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4f4f4f;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+#EditUserModal {
+  margin: 100px auto 0;
+  border-radius: 10px;
+  width: 550px;
+}
+#EditUserSplitModal,
+#addroleModal,
+#addinstantuserModal,
+#subscriptionmodal,
+#alerttempmodal,
+#contentmodal,
+#meraddroleModal,
+#meradduserModal,
+#PlanPaymentModal,
+#addcardModal {
+  margin: 40px auto 0;
+  border-radius: 10px;
+  width: 550px;
+  padding: 0;
+}
+#dashmodaluser {
+  margin: auto;
+  border-radius: 10px;
+  width: 550px;
+  padding: 0;
+}
+#addinstantuserModal .backtext,
+#addroleModal .backtext,
+#EditUserSplitModal .backtext,
+#subscriptionmodal .backtext,
+#alerttempmodal .backtext,
+#contentmodal .backtext,
+#ForgotPasswordOtp .backtext,
+#meraddroleModal .backtext,
+#meradduserModal .backtext,
+#PlanPaymentModal .backtext,
+#addcardModal .backtext,
+#dashmodaluser .backtext {
+  background: #3636ba;
+  color: #fff;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#EditUserSplitModal label,
+#addroleModal label,
+#addinstantuserModal label,
+#subscriptionmodal label,
+#alerttempmodal label,
+#contentmodal label,
+#ForgotPasswordOtp label,
+#meraddroleModal label,
+#meradduserModal label,
+#PlanPaymentModal label,
+#addcardModal label,
+#addcardModal label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25px;
+  opacity: 0.8;
+}
+#EditUserSplitModal input,
+#addroleModal input,
+#addinstantuserModal input,
+#subscriptionmodal input,
+#alerttempmodal input,
+#ForgotPasswordOtp input,
+#meraddroleModal input,
+#meradduserModal input,
+#addcardModal input {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 40px;
+  font-weight: 400;
+  /* margin-bottom: 20px; */
+  color: #47525e;
+}
+#EditUserSplitModal .split input {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 35%;
+  font-size: 14px;
+  height: 40px;
+  font-weight: 400;
+  /* margin-bottom: 20px; */
+  margin-right: 10px;
+  color: #47525e;
+}
+#EditUserSplitModal .split select {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 60%;
+  font-size: 14px;
+  height: 40px;
+  font-weight: 400;
+  /* margin-bottom: 20px; */
+  color: #47525e;
+}
+/* #EditUserSplitModal select, */
+#addroleModal select,
+#subscriptionmodal select,
+#alerttempmodal select {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 40px;
+  font-weight: 400;
+  /* margin-bottom: 20px; */
+  color: #47525e;
+}
+#addinstantuserModal select,
+#meradduserModal select,
+#addcardModal select {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 40px;
+  font-weight: 400;
+  /* margin-bottom: 20px; */
+  color: #47525e;
+}
+#subscriptionmodal textarea {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 80px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #47525e;
+}
+#subscriptionmodal textarea:focus {
+  outline: 0;
+}
+#EditUserSplitModal select:focus,
+#addroleModal select:focus,
+#addinstantuserModal select:focus,
+#subscriptionmodal select:focus,
+#alerttempmodal select:focus,
+#meradduserModal select:focus #addcardModal select:focus {
+  outline: 0;
+}
+#EditUserSplitModal input::placeholder,
+#addroleModal input::placeholder,
+#addinstantuserModal input::placeholder,
+#subscriptionmodal input::placeholder,
+#alerttempmodal input::placeholder,
+#meraddroleModal input::placeholder,
+#meradduserModal input::placeholder {
+  color: #47525e;
+  opacity: 0.7;
+}
+#EditUserSplitModal .switch,
+#addroleModal .switch,
+#addinstantuserModal .switch,
+#subscriptionmodal .switch,
+#alerttempmodal .switch,
+#meraddroleModal .switch,
+#meradduserModal .switch,
+#addcardModal .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  margin: 5px 0 0 10px;
+}
+#EditUserSplitModal .switch input,
+#addroleModal .switch input,
+#addinstantuserModal .switch input,
+#subscriptionmodal .switch input,
+#alerttempmodal .switch input,
+#meraddroleModal .switch input,
+#meradduserModal .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+#EditUserSplitModal .slider,
+#addroleModal .slider,
+#addinstantuserModal .slider,
+#subscriptionmodal .slider,
+#alerttempmodal .slider,
+#meraddroleModal .slider,
+#meradduserModal .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #797979;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+#EditUserSplitModal .slider:before,
+#addroleModal .slider:before,
+#addinstantuserModal .slider:before,
+#subscriptionmodal .slider:before,
+#alerttempmodal .slider:before,
+#meraddroleModal .slider:before,
+#meradduserModal .slider:before,
+#addcardModal .slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 5px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+#EditUserSplitModal input:checked + .slider,
+#addroleModal input:checked + .slider,
+#addinstantuserModal input:checked + .slider,
+#subscriptionmodal input:checked + .slider,
+#alerttempmodal input:checked + .slider,
+#meraddroleModal input:checked + .slider,
+#meradduserModal input:checked + .slider,
+#addcardModal input:checked + .slider {
+  background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+}
+#EditUserSplitModal input:focus + .slider,
+#addroleModal input:focus + .slider,
+#addinstantuserModal input:focus + .slider,
+#subscriptionmodal input:focus + .slider,
+#alerttempmodal input:focus + .slider,
+#meraddroleModal input:focus + .slider,
+#meradduserModal input:focus + .slider,
+#addcardModal input:focus + .slider {
+  box-shadow: 0 0 1px #009bdd;
+}
+#EditUserSplitModal input:checked + .slider:before,
+#addroleModal input:checked + .slider:before,
+#addinstantuserModal input:checked + .slider:before,
+#subscriptionmodal input:checked + .slider:before,
+#alerttempmodal input:checked + .slider:before,
+#meraddroleModal input:checked + .slider:before,
+#meradduserModal input:checked + .slider:before,
+#addcardModal input:checked + .slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+#EditUserSplitModal .slider.round,
+#addroleModal .slider.round,
+#addinstantuserModal .slider.round,
+#subscriptionmodal .slider.round,
+#alerttempmodal .slider.round,
+#meraddroleModal .slider.round,
+#meradduserModal .slider.round,
+#addcardModal .slider.round {
+  border-radius: 34px;
+}
+#EditUserSplitModal .slider.round:before,
+#addroleModal .slider.round:before,
+#addinstantuserModal .slider.round:before,
+#subscriptionmodal .slider.round:before,
+#alerttempmodal .slider.round:before,
+#meraddroleModal .slider.round:before,
+#meradduserModal .slider.round:before,
+#addcardModal .slider.round:before {
+  border-radius: 50%;
+}
+#EditUserSplitModal .react-responsive-modal-closeButton,
+#addroleModal .react-responsive-modal-closeButton,
+#addinstantuserModal .react-responsive-modal-closeButton,
+#subscriptionmodal .react-responsive-modal-closeButton,
+#alerttempmodal .react-responsive-modal-closeButton,
+#contentmodal .react-responsive-modal-closeButton,
+#ForgotPasswordOtp .react-responsive-modal-closeButton,
+#meraddroleModal .react-responsive-modal-closeButton,
+#meradduserModal .react-responsive-modal-closeButton,
+#PlanPaymentModal .react-responsive-modal-closeButton,
+#addcardModal .react-responsive-modal-closeButton,
+#dashmodaluser .react-responsive-modal-closeButton {
+  display: none;
+}
+#EditUserSplitModal .eduser,
+#addroleModal .eduser,
+#addinstantuserModal .eduser,
+#subscriptionmodal .eduser,
+#alerttempmodal .eduser,
+#contentmodal .eduser,
+#meraddroleModal .eduser,
+#meradduserModal .eduser,
+#PlanPaymentModal .eduser,
+#ForgotPasswordOtp .eduser,
+#addcardModal .eduser,
+#dashmodaluser .eduser {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 25px;
+  margin: 0;
+}
+#EditUserSplitModal .edituser,
+#addroleModal .edituser,
+#addinstantuserModal .edituser,
+#subscriptionmodal .edituser,
+#alerttempmodal .edituser,
+#contentmodal .edituser,
+#ForgotPasswordOtp .edituser,
+#meraddroleModal .edituser,
+#meradduserModal .edituser,
+#PlanPaymentModal .edituser,
+#addcardModal .edituser,
+#dashmodaluser .edituser {
+  padding: 20px;
+}
+#EditUserSplitModal .closeicon,
+#addroleModal .closeicon,
+#addinstantuserModal .closeicon,
+#subscriptionmodal .closeicon,
+#alerttempmodal .closeicon,
+#contentmodal .closeicon,
+#ForgotPasswordOtp .closeicon,
+#meraddroleModal .closeicon,
+#meradduserModal .closeicon,
+#PlanPaymentModal .closeicon,
+#addcardModal .closeicon,
+#dashmodaluser .closeicon {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+#EditUserSplitModal .Editbtn,
+#addroleModal .Editbtn,
+#addinstantuserModal .Editbtn,
+#subscriptionmodal .Editbtn,
+#alerttempmodal .Editbtn,
+#contentmodal .Editbtn,
+#ForgotPasswordOtp .Editbtn,
+#meraddroleModal .Editbtn,
+#meradduserModal .Editbtn,
+#PlanPaymentModal .Editbtn,
+#addcardModal .Editbtn,
+#dashmodaluser .Editbtn {
+  text-align: center;
+}
+#EditUserSplitModal .Editbtn button,
+#addroleModal .Editbtn button,
+#addinstantuserModal .Editbtn button,
+#subscriptionmodal .Editbtn button,
+#alerttempmodal .Editbtn button,
+#contentmodal .Editbtn button,
+#ForgotPasswordOtp .Editbtn button,
+#meraddroleModal .Editbtn button,
+#meradduserModal .Editbtn button,
+#PlanPaymentModal .Editbtn button,
+#addcardModal .Editbtn button,
+#dashmodaluser .Editbtn button {
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background:#3636ba;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: 0;
+  width: 100px;
+  height: 40px;
+  margin: 15px 0 0 0;
+}
+#ForgotPasswordOtp .Editbtn button {
+  min-width: 100px;
+  width: auto;
+}
+#ForgotPasswordOtp .Editbtn button {
+  padding: 10px 15px;
+}
+.subscriptiontable .free {
+  background-image: linear-gradient(to right, #ffb52f, #fff, #ffb52f);
+  padding: 5px 20px;
+  border-radius: 15px;
+  color: #000;
+  font-size: 12px;
+  line-height: 15px;
+  border: 1px solid #ffb52f;
+}
+.subscriptiontable .oneclick {
+  background-image: linear-gradient(to right, #489af7, #fff, #489af7);
+  padding: 5px 20px;
+  border-radius: 15px;
+  color: #000;
+  font-size: 12px;
+  line-height: 15px;
+  border: 1px solid #489af7;
+}
+.subscriptiontable .splitpay {
+  background-image: linear-gradient(to right, #2f907d, #fff, #2f907d);
+  padding: 5px 20px;
+  border-radius: 15px;
+  color: #000;
+  line-height: 15px;
+  font-size: 12px;
+  border: 1px solid #2f907d;
+}
+.subscriptiontable .combo {
+  background-image: linear-gradient(to right, #ff8484, #fff, #ff8484);
+  padding: 5px 20px;
+  border-radius: 15px;
+  color: #000;
+  line-height: 15px;
+  font-size: 12px;
+  border: 1px solid #ff8484;
+}
+.alerttable .CommNoti img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px 0 0;
+}
+#alerttempmodal input[type="checkbox"] {
+  display: block;
+  border: 1px solid #ededed;
+  color: #47525e;
+  width: auto;
+  height: auto;
+}
+#alerttempmodal .emailcheck {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 20px;
+}
+#alerttempmodal .emailcheck label {
+  display: inline-block;
+  cursor: pointer;
+}
+#alerttempmodal .emailcheck .em {
+  margin-right: 40px;
+  margin-bottom: 10px;
+}
+#alerttempmodal .commode {
+  font-weight: 600;
+}
+.secondtab ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+}
+.secondtab .nav-tabs .nav-item.show .nav-link,
+.secondtab .nav-tabs .nav-link.active {
+  background: #009bdd;
+  color: #fff;
+  font-size: 14px;
+  border: 1px solid #009bdd;
+  border-radius: 0;
+}
+.secondtab .nav-tabs .nav-link {
+  font-size: 14px;
+  color: #4a4a4a;
+  border: 1px solid #ededed;
+  border-radius: 0;
+}
+#contentmodal .emailarea {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 80px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #47525e;
+}
+#contentmodal .emailarea:focus {
+  outline: 0;
+}
+#contentmodal .editorte {
+  padding: 20px 0 5px 5px;
+}
+.emailimg {
+  width: 18px;
+  height: 18px;
+}
+/* Split payment Management CSS End Kalpesh */
+#addroleModal .edituser .ant-select-selector,
+#meraddroleModal .edituser .ant-select-selector {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  /* padding: 10px; */
+  padding: 3px 3px;
+  width: 100%;
+  font-size: 14px;
+  /* height: 40px; */
+  font-weight: 400;
+  /* margin-bottom: 20px; */
+  color: #47525e;
+}
+#addroleModal .edituser .ant-select-selector input,
+#meraddroleModal .edituser .ant-select-selector input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height: auto;
+}
+.Error {
+  font-size: 12px;
+  color: red;
+  display: block;
+  /* display: none; */
+  text-align: left;
+}
+.mersign .input-cntr {
+  margin-bottom: 0;
+}
+.mersign {
+  margin-bottom: 20px;
+}
+.marginbot {
+  margin-bottom: 15px;
+}
+/* Split payment Management CSS End Kalpesh */
+
+/* Merchant Marketing */
+.merchantMar {
+  position: relative;
+}
+header {
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 2px 2px 2px #ccc;
+}
+header .inpay a h4 {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+header .foryou ul li {
+  display: inline;
+  margin: 0 30px;
+}
+header .foryou ul li a {
+  font-size: 14px;
+  color:#4a4a4a;
+}
+header .signbtn .sigin {
+  background: #3636ba;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  margin: 0 0 0 15px;
+  padding: 5px 20px;
+  line-height: 20px;
+}
+header .signbtn .sigup {
+  background: #ff4800;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  margin: 0 0 0 15px;
+  padding: 5px 20px;
+  line-height: 20px;
+}
+/* .merchantMar .carousel {
+  z-index: -1;
+  height: 100vh;
+} */
+.carousel img {
+  max-height: 95vh;
+  object-fit: cover;
+}
+.merchantMar .carousel-inner {
+  height: 100vh;
+  width: 100%;
+}
+.merchantMar .carousel-indicators li {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.carousel .control-dots .dot {
+  width: 12px !important;
+  height: 12px !important;
+  border: 2px solid #3636ba !important;
+  opacity: 1 !important;
+  background: #3636ba !important;
+}
+.carousel .control-dots .dot.selected,
+.carousel .control-dots .dot:hover {
+  background: #ff4900 !important;
+}
+.carousel .control-dots .dot:focus {
+  outline: 0;
+}
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  color: #fff;
+  transform: translate(-10%, -55%);
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+.carousel-caption h4 {
+  color: #4a4a4a;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+.carousel-caption p {
+  color: #4a4a4a;
+  font-weight: 300;
+  font-size: 20px;
+  line-height:1.5;
+  text-transform: capitalize;
+  padding: 25px 0;
+}
+.carousel-caption button {
+  border-radius: 6px;
+  background: #fff;
+  color: #0082c7;
+  border: 0;
+  font-size: 14px;
+  padding: 8px 20px;
+  line-height: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.topbottom {
+  padding-top: 60px;
+  padding-bottom: 90px;
+}
+.topbottom h3 {
+  font-size: 30px;
+  font-weight: 600;
+  padding: 0 0 55px 0;
+  line-height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #4a4a4a;
+}
+.safarimg img {
+  width: 90px;
+  /* height: 60px; */
+}
+.safarimg {
+  width: 130px;
+  height: 130px;
+  background: #fff;
+  border-radius: 50%;
+  line-height: 130px;
+  margin: auto;
+  box-shadow: 0px 0px 10px #ccc;
+  margin-bottom: 1rem;
+}
+.Safar h4 {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 25px 0 0 0;
+  line-height: 25px;
+  opacity: 0.7;
+}
+.Safar p {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 7px 0 0 0;
+  line-height: 20px;
+  color: #4a4a4a;
+  letter-spacing: 0px;
+}
+.Safar button {
+  background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  border: 0;
+  text-align: center;
+  padding: 10px;
+  text-transform: capitalize;
+  height: 30px;
+  line-height: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+.topbotto {
+  padding-top: 60px;
+  padding-bottom: 90px;
+  background: #008ed2;
+}
+.topbotto h3 {
+  font-size: 30px;
+  font-weight: 600;
+  padding: 0 0 40px 0;
+  line-height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+.Safarnew {
+  text-align: center;
+  background: #70c1e6;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+.Safarnew h3 {
+  font-size: 25px;
+  font-weight: 600;
+  padding: 35px 0;
+  line-height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+.foot {
+  background: #ededed;
+}
+.foot footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 15px;
+  color: #fff;
+  width: 100%;
+}
+.foot footer .inpay h4 {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #003280;
+  margin-bottom: 10px;
+}
+.foot footer .inpay span {
+  font-size: 11px;
+  color: #4a4a4a;
+  margin-right: 5px;
+}
+.foot footer .inpay a {
+  color: #0082c7 !important;
+  font-size: 11px;
+  text-decoration: underline !important;
+  margin: 0;
+  padding: 0;
+}
+.foot .foryou ul li:nth-child(1),
+.foot .foryou ul li:nth-child(2) {
+  margin-right: 40px;
+}
+.foot .foryou ul {
+  display: flex;
+}
+.foot .foryou ul li p {
+  display: block;
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 25px;
+  cursor: pointer;
+}
+.foot .foryou ul li p:hover {
+  color: #008ed2;
+}
+.foot .signbtn ul {
+  display: flex;
+}
+.foot .signbtn ul li {
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  background: #ededed;
+  border: 1px solid #ff4800;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ff4800;
+}
+
+.foot .signbtn ul li a {
+color:#ff4900;
+text-decoration: none;
+}
+
+.foot .signbtn ul li:hover,
+.foot .signbtn ul li:focus {
+  background: #fff;
+  color: #ededed;
+}
+.foot .signbtn ul li:last-child {
+  margin: 0;
+}
+/* Contact */
+.marketingContact header,
+.marketingApi header,
+.apibg header,
+.marketingSignHome header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* background-image: linear-gradient(to right, #009bdd 0%, #003280 100%); */
+  background:#fff;
+  padding: 15px;
+  color: #fff;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  position: unset;
+}
+.marketingContact .topbottom,
+.marketingApi .topbottom,
+.marketingSignHome .topbottom {
+  padding: 40px 0 50px 0;
+  /* min-height:30rem; */
+}
+.marketingContact .topbottom h3,
+.marketingApi .topbottom h3 {
+  font-size: 22px;
+  font-weight: 500;
+  padding: 0 0 10px 0;
+  line-height: 35px;
+  text-align: left;
+  text-transform: capitalize;
+  color: #4a4a4a;
+}
+.marketingContact .card {
+  width: 100%;
+  flex-direction: row;
+  border: 0;
+}
+.marketingContact .card-a {
+  width: 70%;
+  background: #fff;
+  border-top: 1px solid #ededed;
+  border-left: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding: 20px 25px;
+}
+.marketingContact .card-b {
+  width: 30%;
+  background: #3636ba;
+  border-top: 1px solid #3636ba;
+  border-right: 1px solid #3636ba;
+  border-bottom: 1px solid #3636ba;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 45px 25px;
+}
+.marketingContact .card-a label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a4a4a;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  text-transform: capitalize;
+}
+.marketingContact .card-a input {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 45px;
+  font-weight: 400;
+  /* margin-bottom: 20px; */
+  color: #47525e;
+}
+.marketingContact .card-a input:focus {
+  outline: 0;
+}
+.marketingContact .card-a textarea {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 80px;
+  font-weight: 400;
+  /* margin-bottom: 20px; */
+  color: #47525e;
+}
+.marketingContact .card-a textarea:focus {
+  outline: 0;
+}
+.marketingContact .card-a button {
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background:#3636ba;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+  border-radius: 6px;
+  text-align: center;
+  margin: 0;
+  padding: 10px 35px;
+  text-transform: capitalize;
+  line-height: 20px;
+  cursor: pointer;
+}
+.marketingContact .card-b ul li {
+  margin-bottom: 30px;
+}
+.marketingContact .card-b label {
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  display: flex;
+}
+.marketingContact .card-b label i {
+  font-size: 18px;
+  margin-right: 15px;
+}
+.apitab .ant-tabs-nav {
+  margin: 0;
+}
+.apitab .ant-tabs-top > .ant-tabs-nav::before,
+.apitab .ant-tabs-top > div > .ant-tabs-nav::before,
+.apitab .ant-tabs-bottom > .ant-tabs-nav::before,
+.apitab .ant-tabs-bottom > div > .ant-tabs-nav::before {
+  border: 0;
+}
+.apitab .ant-tabs-tab-btn {
+  background: #f4f6fd;
+  color: #4a4a4a;
+  font-size: 16px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.apitab .ant-tabs-tab {
+  margin: 0;
+  padding: 0;
+}
+.apitab .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #fff;
+  background: #009bdd;
+  font-size: 16px;
+  padding: 10px 15px;
+}
+.apitab .ant-tabs-ink-bar {
+  background: transparent;
+}
+.apitab .ant-tabs-content-holder {
+  border: 1px solid #ededed;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 30px 50px;
+}
+.apitab .ant-tabs-content-holder p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #4a4a4a;
+  letter-spacing: px;
+  line-height: 20px;
+}
+.apitab .ant-tabs-content-holder ul {
+  margin-top: 25px;
+  list-style: disc;
+  font-size: 20px;
+}
+.apitab .ant-tabs-content-holder ul li {
+  margin-bottom: 15px;
+}
+.marketingSignHome .mainCard {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.marketingSignHome .mainCard .card {
+  width: 300px;
+  text-align: center;
+  background-image: linear-gradient(0deg, #009bdd 0%, #003280 100%);
+  margin: 0 20px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 10px;
+}
+.marketingSignHome .mainCard .card h4 {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 15px 0 15px 0;
+  line-height: 35px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+}
+.marketingSignHome .mainCard .card p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: px;
+  line-height: 20px;
+}
+.marketingSignHome .mainCard .card .signup button {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  padding: 10px 15px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 20px;
+  margin-bottom: 25px;
+}
+.marketingSignHome .mainCard .card .signup1 button {
+  background: #fff;
+  border: 1px solid #fff;
+  color: #003280;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  padding: 10px 15px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 20px;
+  margin-bottom: 25px;
+}
+.marketingSignHome .mainCard .card .Circleimg {
+  background: #fff;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  border-radius: 50%;
+  margin: -40px auto 0;
+  border: 1px solid #003280;
+}
+.marketingSignHome .mainCard .card .imgbusiness {
+  background: #fff;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  border-radius: 50%;
+  margin: -40px auto 0;
+  border: 1px solid #003280;
+}
+.marketingSignHome .mainCard .card .Circleimg img {
+  width: 40px;
+  height: 50px;
+}
+.marketingSignHome .mainCard .card .imgbusiness img{
+  width: 50px;
+  height: 50px;
+}
+.marketingSignHome .mainCard .card .Video img {
+  width: 170px;
+  height: 100px;
+  border-radius: 1px;
+}
+.marketingSignHome .mainCard .card .Video {
+  margin: 20px 0px 40px 0;
+}
+.already {
+  font-size: 14px;
+  color: #000;
+  font-weight: 500;
+  margin: 30px 0 0 0;
+}
+.already a {
+  color: #003280;
+  cursor: pointer;
+  padding-left: 3px;
+  text-decoration: underline;
+}
+.signup .margin {
+  margin-bottom: 0;
+}
+.signup .Verify {
+  font-size: 14px;
+  color: #003280;
+  font-weight: 500;
+  text-align: right;
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding-top: 5px;
+  text-decoration: underline;
+}
+
+/* Merchant Dashboard */
+/* .Merchantdashboard .image,
+.Userdashboard .image {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 80px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+.Merchantdashboard .card,
+.Userdashboard .card {
+  border: 0;
+  border-radius: 10px;
+  padding: 20px;
+  display: inline-block;
+ 
+  width: 100%;
+  margin-bottom: 10px;
+}
+.Merchantdashboard .text,
+.Userdashboard .text {
+  padding: 0 0 0 15px;
+  width: calc(100% - 80px);
+  margin: 0;
+  float: right;
+}
+.Merchantdashboard .text label,
+.Userdashboard .text label {
+  display: block;
+}
+.Merchantdashboard .text label:nth-child(1),
+.Userdashboard .text label:nth-child(1) {
+  color: #009bdd;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 45px;
+  text-align: left;
+}
+.Merchantdashboard .text label:nth-child(2),
+.Userdashboard .text label:nth-child(2) {
+  color: #47525e;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: left;
+  font-weight: 500;
+} */
+.merrefunfpopover .subsc label:first-child {
+  /* width: 70px; */
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4f4f4f;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+.merrefunfpopover .subsc label:last-child {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4f4f4f;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+.userDashpopover .subsc label:first-child {
+  width: 110px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4f4f4f;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+.userDashpopover .subsc label:last-child {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4f4f4f;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+/* Merchant Subscription Start Kalpesh */
+.merSubsc .card {
+  border: 1px solid #ededed;
+  border-radius: 20px;
+  text-align: center;
+  padding: 15px 20px;
+}
+.merPlanPayment .cardp {
+  border: 1px solid #ededed !important;
+  border-radius: 20px !important;
+  text-align: center !important;
+  padding: 15px 20px !important;
+}
+.merPlanPayment .card {
+  border: 1px solid #ededed;
+  border-radius: 20px;
+  padding: 30px 40px 45px 40px;
+}
+.merSubsc .card h3,
+.merPlanPayment .card h3 {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: block;
+  line-height: 20px;
+  padding: 10px 0 10px 0;
+  min-height: 70px;
+  color: #3636ba;
+}
+.merSubsc .card h3 span,
+.merPlanPayment .card h3 span {
+  display: block;
+  font-size: 12px;
+}
+.merSubsc .card p,
+.merPlanPayment .card p {
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  display: block;
+  line-height: 18px;
+  margin-bottom: 26px;
+}
+.merSubsc .card h4,
+.merPlanPayment .card h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4a4a4a;
+  display: block;
+  line-height: 25px;
+  padding: 10px 0 15px 0;
+}
+.merSubsc .card .start,
+.merPlanPayment .card .start {
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background:#3636ba;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  border: 0;
+  text-align: center;
+  margin: auto;
+  padding: 8px 25px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  cursor: pointer;
+  line-height: 18px;
+}
+.merSubsc .cardtext,
+.merPlanPayment .cardtext {
+  margin: 25px 0 10px 0;
+}
+.merSubsc .cardtext img,
+.merPlanPayment .cardtext img {
+  width: 17px;
+  height: 17px;
+  margin-right: 10px;
+}
+.merSubsc .cardtext label,
+.merPlanPayment .cardtext label {
+  font-size: 11px;
+  font-weight: 400;
+  color: #000;
+  display: flex;
+  line-height: 25px;
+  justify-content: center;
+  align-items: center;
+}
+.merSubsc .card select,
+.merPlanPayment .card select {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 50px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #47525e;
+  background: #fff url("./../Images/dropdownBlue.png") no-repeat right 15px
+    center;
+  appearance: none;
+  line-height: 20px;
+  background-size: 12px 12px;
+  margin: 10px 0 30px 0;
+}
+.merSubsc .card select:focus,
+.merPlanPayment .card select:focus {
+  outline: 0;
+}
+.merSubsc .card.active {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.merSubsc .card.active .start {
+  background-image: linear-gradient(0deg, #00cb18 0%, #00a213 100%);
+}
+.merPlanPayment .planinput label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25px;
+  opacity: 0.8;
+  text-align: left;
+  padding-left: 10px;
+}
+.merPlanPayment .planinput input {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 45px;
+  font-weight: 400;
+  margin: 0;
+  color: #47525e;
+}
+.merPlanPayment .paybtn {
+  margin: 20px 0 0 0;
+}
+.merPlanPayment .paybtn h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4a4a4a;
+  text-transform: uppercase;
+  display: block;
+  line-height: 20px;
+  padding: 22px 0;
+  min-height: 0;
+}
+.merPlanPayment .paybtn .start {
+  background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  border: 0;
+  text-align: center;
+  margin: auto;
+  padding: 8px 25px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  cursor: pointer;
+  line-height: 18px;
+}
+.cardp .month {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  height: 50px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #4a4a4a;
+  line-height: 30px;
+  background-size: 12px 12px;
+  margin: 10px 0 30px 0;
+}
+#PlanPaymentModal p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px 0;
+  line-height: 20px;
+}
+#dashmodaluser p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 0;
+  line-height: 20px;
+}
+.userpaymenttable .radio-item {
+  display: inline-block;
+  position: relative;
+  padding: 0 6px;
+  margin: 0;
+}
+.userpaymenttable .radio-item input[type="radio"] {
+  display: none;
+}
+.userpaymenttable .radio-item label {
+  cursor: pointer;
+}
+.userpaymenttable .radio-item label:before {
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 11px;
+  border: 2px solid #3636ba;
+  background-color: transparent;
+}
+.userpaymenttable .radio-item input[type="radio"]:checked + label:after {
+  border-radius: 11px;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  content: " ";
+  display: block;
+  background: #3636ba;
+}
+.adcontent {
+  width: auto !important;
+}
+/* Admin Contant Management Page Css*/
+.contanentmanagement {
+  background: #fff;
+  padding: 30px 35px;
+  margin-top: 10px;
+}
+.contanentmanagement .Usermana {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 0 0 20px 0;
+  color: #009bdd;
+  text-transform: capitalize;
+  /* / display: inline; / */
+}
+.contanentmanagement .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  background-color: #009bdd;
+  color: rgb(255 255 255 / 85%);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding-left: 16px;
+}
+.contanentmanagement .ant-collapse > .ant-collapse-item {
+  margin-bottom: 35px;
+}
+.contanentmanagement .ant-collapse {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+}
+.contanentmanagement .ant-collapse-content > .ant-collapse-content-box {
+  border: 1px solid #e6e6e6;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+.contanentmanagement .fsizectmm {
+  font-size: 18px;
+}
+.contanentmanagement .dflex {
+  display: flex;
+  margin-bottom: 10px;
+}
+.contanentmanagement .tarea {
+  width: 90%;
+  margin-left: 10px;
+}
+.contanentmanagement .editimg {
+  width: 20px;
+  height: 20px;
+  margin-top: 13px;
+}
+.contanentmanagement .editimgsize {
+  width: 20px;
+  height: 20px;
+  margin-left: 30px;
+}
+.contanentmanagement .deleteimgsize {
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+}
+.contanentmanagement .dhide {
+  visibility: hidden;
+}
+.contanentmanagement .que,
+.contanentmanagement .ans {
+  margin-left: 15px;
+  font-size: 18px;
+  font-weight: 500px;
+  margin-right: 15px;
+  padding-top: 8px;
+  width: 10px;
+}
+.contanentmanagement .nosize {
+  font-size: 16px;
+  font-weight: 400;
+  color: blue;
+  width: 10px;
+  padding-top: 10px;
+}
+.ant-collapse-content-box {
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+.contanentmanagement
+  .ant-collapse
+  > .ant-collapse-item
+  > .ant-collapse-header
+  .ant-collapse-arrow {
+  display: none;
+}
+.contanentmanagement .updnimg {
+  float: right;
+  height: 20px;
+  width: 20px;
+}
+.contanentmanagement .iconsizectmm {
+  width: 20px;
+  height: 20px;
+}
+/* End Admin Contant Management Page Css*/
+.icon-eye-slash {
+  color: gray;
+  font-size: 19px;
+}
+.adcontent {
+  width: auto !important;
+}
+.sidebarresp .menubtn {
+  display: none;
+}
+.sidebarresp {
+  display: none;
+}
+.filt {
+  display: none;
+}
+.footerlink li:hover a {
+  color: white;
+}
+.select-country{
+  width: 364px;
+}
+.anticon {
+  vertical-align: text-top;
+}
+.react-tel-input .country-list {
+  width: 418px !important; 
+  text-align: left !important;
+}
+.ifram{
+  height: 40vh;
+  margin-top: 20px;
+}
+
+.react-tel-input .form-control{
+  width: 100% !important;
+}
+.visaind{
+  width: 30px;
+ margin-right: 8px;
+}
+.ant-table-column-sorters{
+  padding: 0px;
+}
+
+.ant-table-column-sorter {
+color:#fff;
+}
+.ant-table-thead th.ant-table-column-has-sorters:hover {
+  /* background: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background: #ff4800;
+}
+/* #addinstantuserModal, */
+/* #meradduserModal,  */
+.pincontactno input{
+  padding-left: 50px !important;
+}
+/* .pincontactus input {
+  padding-left: 50px !important;
+} */
+.oneclkcard .card{
+  width: 32%;
+  margin: auto;
+}
+.oneclkcard{
+  background: transparent !important;
+}
+.oneclkcard h3{
+  text-align: center !important;
+}
+.onclkbgblue{
+  background-image: linear-gradient(to right, #009bdd 0%, #003280 100%);
+}
+.splitpaycard .card{
+  width: 28%;
+  margin: auto;
+}
+.splitpaycard{
+  background: transparent !important;
+}
+.splitpaycard h3{
+  text-align: center !important;
+}
+.splitpaybgblue{
+  background-image: linear-gradient(to right, #009bdd 0%, #003280 100%);
+}
+.Usermana img{
+  cursor: pointer;
+}
+.mersubcard .card{
+  width: 28%;
+  margin: auto;
+}
+.planpaymcard .card{
+  width: 60%;
+  margin: auto;
+}
+.cardmersub .card{
+  width: 28%;
+  margin: auto;
+}
+.cardplanpaym .card{
+  width: 60%;
+  margin: auto;
+}
+.offbag{
+  width: 60px;
+}
+.shoes{
+  width: 106px;
+  height: 60px;
+}
+.payselt{
+  width: 30%;
+}
+.checkout{
+  background-color: #fff !important;
+  margin: 10px 0px 0 0;
+  padding: 10px 10px 10px 10px;
+}
+.contentcard{
+  background-color: rgb(255, 255, 255);
+  padding: 10px 0 0 0;
+  height: 15vh;
+  overflow: auto;
+  /* border: 1px solid lightgray; */
+  /* border-style: ridge; */
+  /* border-style: outset; */
+  border-style: inset;
+  box-shadow: 1.338px 1.486px 5px rgba(136, 135, 135, 0.1);
+  
+}
+.contentcard::-webkit-scrollbar {
+    width: 0px;
+}
+.ftsize13{
+  font-size: 13px;
+}
+.txt-cookie-token{
+  width: 89%;
+  height: 118px;
+}
+.FormGroup {
+  margin: 0 15px 20px;
+  padding: 0;
+  border-style: none;
+  background-color: #7795f8;
+  will-change: opacity, transform;
+  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 #829fff;
+  border-radius: 4px;
+}
+
+.FormRow {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 15px;
+  border-top: 1px solid #819efc;
+}
+
+.StripeElement--webkit-autofill {
+  background: transparent !important;
+}
+
+.StripeElement {
+  width: 100%;
+  /* padding: 11px 15px 11px 0; */
+}
+
+.add-btn{
+  margin-right: 30px !important;
+}
+.inpuu{
+  border-radius: 5px;
+    border: 1px solid #ededed;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    height: 40px;
+    font-weight: 400;
+    /* margin-bottom: 20px; */
+    color: #47525e;
+}
+.inpayfmcard .card{
+  width: 40%;
+  margin: auto;
+}
+.wdtextarea{
+  width: 100%;
+}
+/* ::-webkit-scrollbar {
+  width: 10px;
+} */
+.iplogo{
+  height: 60px;
+}
+.inpayfmfooter{
+  height: 60px;
+  background-color: #009bdd;
+}
+.textcenter{
+  text-align: center;
+  font-size: 13px;
+  color: #aaaaaa;
+}
+.lockpng{
+  vertical-align: text-bottom;
+  width: 17px;
+}
+.highhtt{
+  height: 70vh;
+}
+.mbtom10{
+  margin-bottom: 15px;
+}
+.mtop10{
+  margin-top: 10px;
+}
+.fsize14{
+  font-size: 14px;
+}
+/* inpayform css */
+.textcenter{
+  text-align: center;
+  font-size: 13px;
+  color: #aaaaaa;
+}
+.lockpng{
+  vertical-align: text-bottom;
+  width: 17px;
+}
+.mbtom10{
+  margin-bottom: 15px;
+}
+.mtop10{
+  margin-top: 10px;
+}
+.fsize14{
+  font-size: 14px;
+}
+.intpayformheader{
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #fefefe;
+  font-weight: 700;
+  flex: 0 0 264px;
+  height: 100%;
+  background-color: #009bdd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* onepayform */
+.onepayform table th{
+  background-image: linear-gradient( 
+0deg
+ , #003280 0%, #009bdd 100%);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17px;
+    padding: 15px 15px;
+    text-align: center;
+}
+
+.onepayform table td{
+  font-size: 13px;
+    font-weight: 500;
+    color: #4f4f4f;
+    line-height: 20px;
+    text-transform: capitalize;
+    opacity: 0.8;
+    text-align: center;
+    padding: 15px;
+    background: #fafafa;
+    border-bottom: 1px solid #f0f0f0;
+}
+.onepayform table thead tr th:first-child {
+  border-top-left-radius: 10px;
+}
+.onepayform table thead tr th:last-child {
+  border-top-right-radius: 10px;
+}
+.onepayform{
+  width: 50%;
+    margin: 0 auto;
+}
+.onepayform table{
+  width: 100%;
+}
+.radiooo{
+  margin: 0 10px;
+}
+.radiooo label {
+  padding-left: 5px;
+}
+.fromonepay{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.onepayheader{
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #fefefe;
+  font-weight: 700;
+  flex: 0 0 264px;
+  height: 100%;
+  background-color: #009bdd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ftdiv footer,
+.ftdiv footer{
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(to right, #009bdd 0%, #003280 100%);
+    padding: 15px;
+    color: #fff;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    position: unset;
+    height: 55px;
+}
+
+.onepaydiv,
+.inpaydiv{
+  height: 100vh;
+  overflow: auto;
+   
+}
+.onepayform .pay{
+  background-image: linear-gradient( 
+    0deg
+     , #003280 0%, #009bdd 100%);
+        color: #fff;
+        padding: 10px 40px 10px 40px;
+        border-radius: 6px;
+        font-size: 15px;
+        line-height: 20px;
+        text-transform: capitalize;
+        cursor: pointer;
+        margin-top: 20px;
+}
+/* loader css */
+.loader {
+  border: 13px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.lodivone{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+.loderdiv{
+  width: 100px;
+  margin: auto;
+}
+.oopasity{
+  opacity: 0.6;
+}
+.merchtstppopup .btn{
+  background-image: linear-gradient(
+    0deg
+    , #003280 0%, #009bdd 100%);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: capitalize;
+        cursor: pointer;
+        border: 0;
+        width: 100px;
+        height: 40px;
+        margin: 15px 0 0 0;
+}
+.merchtstppopup {
+  text-align: center;
+}
+.tabmerchant table{
+  display: table !important;
+}
+/* .merusermana table, */
+.mermanatable table{
+    width: 100%;
+    /* display: block; */
+    overflow-x: auto;
+}
+.mermanatable .ant-table-thead > tr > th:nth-child(8){
+  width: 155px !important;
+}
+/* .sizeee .ant-table-column-sorters{
+  width: 125px;
+} */
+.mermanatable .ant-table-tbody>tr>td,
+.mermanatable .ant-table-thead>tr>th,
+.mermanatable .ant-table tfoot>tr>td,
+.mermanatable .ant-table tfoot>tr>th{
+    overflow-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.react-tel-input .form-control{
+  padding-left: 48px !important;
+}
+.deleteicon {
+  display: inline;
+  margin-left: 20px;
+}
+.textleft{
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+}
+.deleteiconsz{
+  width: 18px;
+}
+/* .apibg{
+    background: url(/static/media/sign-in-bg.a60e2a98.jpg) no-repeat center center;
+    min-height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+} */
+.mbtm15px{
+  margin-bottom: 15px !important;
+}
+.bdrbottm{
+  border-bottom: 2px solid;
+  margin-bottom: 20px;
+}
+.cdrtab{
+  width: 95%;
+    margin: auto;
+}
+
+/* rahul css */
+
+.main__content {
+  position: relative;
+  min-height: 100vh;
+}
+
+.main__content #root {
+padding-bottom:8rem;
+}
+
+.foot {
+  background: #ededed;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+header .logo__img {
+margin-bottom:0.5rem;
+}
+
+header .inpay a p.tagline {
+font-size: 12px;
+color: #4a4a4a;
+text-align: left;
+font-weight:bold;
+}
+
+.carousel .carousel-caption .slider__icon {
+width:90px;
+margin-bottom:1rem;
+height: auto;
+}
+
+.partner__section {
+/* padding-top:4rem; */
+padding-bottom:4rem;
+}
+
+.partner__section h3 {
+font-size: 30px;
+font-weight: 600;
+padding: 0 0 40px 0;
+line-height: 40px;
+text-align: center;
+text-transform: uppercase;
+color: #4a4a4a;
+}
+
+.partner__section .partner__block {
+margin-bottom:2rem;
+border-radius: 10px;
+overflow:hidden;
+}
+
+.partner__section .partner__block .overlay__img {
+position: relative;
+}
+
+.partner__section .partner__block .partner__logo {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+margin: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.partner__section .partner__block .partner__logo img {
+width:160px;
+}
+
+.back__btn {
+width: 95%;
+margin: auto;
+}
+
+.resbtncss .butn {
+margin-right:10px;
+}
+
+.cdrtab .right__content * {
+margin-bottom:1rem;
+}
+
+.cdrtab .right__content ul {
+  list-style: disc;
+  padding-left: 2rem;
+}
+
+.cdrtab .right__content h4 {
+  font-size: 1.3rem;
+  margin-top:1.5rem;
+  margin-bottom:1.5rem;
+  color:#005ca6;
+}
+
+.cdrtab .right__content table thead {
+  background-color: #fafafa;
+}
+
+.cdrtab .right__content table p {
+margin-bottom:0;
+}
+
+.cdrtab .right__content .table-hover tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.deletepopover {
+width: 230px;
+}
+
+.ant-table-cell .approve button {
+/* background-image: linear-gradient( 
+0deg
+, #003280 0%, #009bdd 100%); */
+background:#3636ba;
+color: #fff;
+padding: 7px 20px;
+border-radius: 6px;
+font-size: 14px;
+line-height: 18px;
+text-transform: capitalize;
+cursor: pointer;
+border: 0;
+}
+
+@media (min-width: 1200px) {
+.apitab__section .container {
+    max-width: 1366px;
+  }
+}
+
+/* .apitab__section .container {
+margin:0;
+} */
+
+.apitab__section {
+padding-bottom:4rem;
+}
+
+.apitab__section .left__menu  {
+  /* background: #f0f0f0; */
+  padding: 0.5rem;
+  padding-right:1rem;
+  border-right:2px solid #ccc;
+  height:100vh;
+}
+
+.apitab__section .left__menu ul {
+border:none;
+}
+
+.apitab__section .left__menu ul li {
+padding:0.5rem;
+}
+
+.apitab__section .left__menu ul li.main__menu {
+margin-bottom: 0.7rem;
+padding-left:1rem;
+}
+
+.apitab__section .left__menu ul li.main__menu a {
+display:flex;
+align-items: center;
+}
+
+.apitab__section .left__menu ul li.main__menu a span {
+  font-weight: 500;
+  color: #003583;
+}
+
+.apitab__section .left__menu ul li.main__menu i {
+  font-size: 0.8rem;
+  color: #009adc;
+  margin: 0 0.5rem;
+}
+
+.apitab__section .left__menu ul li.main__menu.selected {
+  background: #f0f0f0;
+  border-radius: 20px;
+}
+
+.apitab__section .left__menu ul li.main__menu::before {
+  content: " ";
+  width: 3px;
+  height: 20px;
+  background: #013683;
+  border-radius: 3px;
+  position: absolute;
+  left: 10%;
+}
+
+.apitab__section .left__menu ul .sub__menu {
+  padding-left: 3rem;
+  list-style: circle;
+  color: #013683;
+}
+
+.apitab__section .left__menu ul .sub__menu li a {
+color:#013683;
+font-size:0.95rem;
+}
+
+.apitab__section .left__menu ul .sub__menu li a:hover {
+text-decoration:underline;
+}
+
+.apitab__section .left__menu ul .sub__menu li a.active {
+font-weight:500;
+text-decoration:underline;
+}
+
+.apitab__section .right__content * {
+margin-bottom:1rem;
+font-size:0.9rem;
+}
+
+.apitab__section .right__content {
+padding: 0 1rem;
+overflow-y: scroll;
+height: 60rem;
+}
+
+
+.apitab__section .right__content::-webkit-scrollbar-track {
+	background-color: #F5F5F5;
+}
+
+.apitab__section .right__content::-webkit-scrollbar {
+	width: 4px;
+	background-color: #F5F5F5;
+}
+
+.apitab__section .right__content::-webkit-scrollbar-thumb {
+	background-color: #3636ba;
+}
+
+.apitab__section .right__content h2 {
+  color: #013d89;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.apitab__section .right__content h2::after {
+content: " ";
+width: 3rem;
+height: 4px;
+background: #5ab5f1;
+display: block;
+margin-top: 0.5rem;
+border-radius: 10px;
+}
+
+.apitab__section .right__content h3 {
+  color: #013d89;
+  font-size: 1.3rem;
+  margin-bottom: 1.3rem;
+}
+
+.apitab__section .right__content ul {
+  list-style: disc;
+  padding-left: 3rem;
+}
+
+.apitab__section .right__content .code__card {
+border: 1px solid #ccc;
+padding: 1rem;
+border-radius: 5px;
+background: #f2fbfe;
+margin:2rem auto;
+}
+
+.apitab__section .right__content table td p {
+margin:0;
+}
+
+.apitab__section .right__content table thead {
+  background-color:#f2fbfe;
+}
+
+.apitab__section .right__content table .table__head {
+  background-color:#f2fbfe;
+}
+
+.merchantMar .carousel .slide {
+  background: #ccc;
+  }
+
+
+  .slider__content .carousel-caption {
+  top:60%;
+  }
+
+  .offer__checklist {
+  padding-top:6rem;
+  }
+
+  .offer__checklist .checklist__img {
+    width:55%;
+    margin:auto;
+    }
+
+  .article__section {
+  padding-bottom:2rem;
+  }
+
+  .article__section h3 {
+    font-size: 30px;
+    font-weight: 600;
+    padding: 0 0 55px 0;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #4a4a4a;
+  }
+
+  .article__section .article__block {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .testimonial__section h3 {
+    font-size: 30px;
+    font-weight: 600;
+    padding: 0 0 55px 0;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #4a4a4a;
+  }
+
+  .testimonial__section .slider__section .item {
+    padding:3rem 0;
+    }
+
+  .testimonial__section .slider__section .content__section .user__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 5rem;
+    height: 5rem;
+    margin: auto;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+}
+
+  
+
+  .testimonial__section .slider__section .content__section {
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #ccc;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    position: relative;
+  }
+
+  .testimonial__section .slider__section .content__section .text__block {
+  text-align: center;
+  }
+
+
+  .testimonial__section .slider__section .content__section .text__block i {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  }
+
+  .testimonial__section .slider__section .content__section .text__block h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0;
+    margin-top: 2rem;
+  }
+
+  .testimonial__section .slider__section .content__section .text__block h4 {
+    font-size: 1rem;
+    color:#999;
+  }
+
+.usermanadetailtable .ant-table-tbody > .active-row1 > td,
+.Userdashtable .ant-table-tbody > .active-row1 > td,
+.MerchantrHistorytable .ant-table-tbody > .active-row1 > td,
+.instalmentDetailtable .ant-table-tbody > .active-row1 > td {
+  font-weight: 600;
+}
+.usermanadetailtable .ant-table-tbody > .active-row1 > td .success,
+.Userdashtable .ant-table-tbody > .active-row1 > td .success,
+.MerchantrHistorytable .ant-table-tbody > .active-row1 > td .success,
+.instalmentDetailtable .ant-table-tbody > .active-row1 > td .success {
+  color: #ff4d4f;
+}
+.usermanadetailtable .active-row1,
+.Userdashtable .active-row1,
+.MerchantrHistorytable .active-row1,
+.instalmentDetailtable .active-row1 {
+  background: #bac9d5 !important;
+}
+.overflsc .ant-table-content {
+  overflow: auto;
+}

@@ -1,0 +1,783 @@
+@media screen and (min-width: 1241px) and (max-width: 1440px){
+    .resbtncss .lefbtn{
+        margin-right: 10px;
+        display: inline;
+    }
+    .resbtncss .rgtbtn{
+        display: inline;
+    }
+
+}
+@media screen and (min-width: 992px) and (max-width: 1240px) {
+    .merSubsc .card {
+        padding: 15px 20px;
+    }
+    .merSubsc .cardtext label, 
+    .merPlanPayment .cardtext label {
+        font-size: 12px;
+        display: flex;
+        line-height: 15px;
+        justify-content: center;
+        text-align: left;
+        align-items: end;
+        margin-bottom: 10px;
+    }
+    .header-left a {
+        font-size: 14px;
+        margin: 0 15px;
+    }
+    .mersubcard .card{
+        width: 40%;
+    }
+    .tabmerchant table{
+        display: block !important;
+      }
+      .resbtncss .lefbtn{
+        margin-right: 10px;
+        display: inline;
+    }
+    .resbtncss .rgtbtn{
+        display: inline;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1240px) {
+    .merPlanPayment .col-md-3 {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+    .merPlanPayment .col-md-9 {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+    .mersubcard .card{
+        width: 40%;
+    }
+    .resbtncss .lefbtn{
+        margin-right: 10px;
+        display: inline;
+    }
+    .resbtncss .rgtbtn{
+        display: inline;
+    }
+    .resbtncss .lefbtn{
+        margin-right: 10px;
+        display: inline;
+    }
+    .resbtncss .rgtbtn{
+        display: inline;
+    }
+    
+}
+@media screen and (min-width: 769px) and (max-width: 991px) {
+    .Safar {
+        margin-bottom: 20px;
+    }
+    .foot .foryou ul li:nth-child(1), .foot .foryou ul li:nth-child(2) {
+        margin-right: 15px;
+    }
+    .foot .foryou ul li p {
+        font-size: 12px;
+    }
+    .foot footer .inpay h4 {
+        margin: 0;
+    }
+    .marketingContact .topbottom, 
+    .marketingApi .topbottom, 
+    .marketingSignHome .topbottom {
+        padding: 40px;
+    }
+    .apitab .ant-tabs-content-holder {
+        padding: 0 40px;
+    }
+    .merSubsc .card {
+        margin-bottom: 20px;
+        padding: 15px 20px;
+    }
+    .merPlanPayment .cardtext label {
+        font-size: 12px;
+    }
+    .merSubsc .card p, 
+    .merPlanPayment .card p {
+        font-size: 14px;
+    }
+    .oneclkcard .card{
+        width: 40%;
+    }
+    .splitpaycard .card{
+        width: 40%;
+    }
+    .mersubcard .card{
+        width: 40%;
+    }
+    .resbtncss .lefbtn{
+        margin-right: 10px;
+        display: inline;
+    }
+    .resbtncss .rgtbtn{
+        display: inline;
+    }
+   
+}
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .Safar  {
+        margin-bottom: 20px;
+    }
+    .foot footer {
+        display: block;
+    }
+    .foot .foryou ul {
+        display: flex;
+        justify-content: space-between;
+    } 
+    .foot .foryou,
+    .foot .inpay {
+        margin: 0 0 30px 0;
+    }
+    .foot .foryou ul li:nth-child(1), .foot .foryou ul li:nth-child(2) {
+        margin-right: 20px;
+    }
+    .foot .foryou ul li p {
+        font-size: 13px;
+    }
+    .topbotto,
+    .topbottom {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    } 
+    header .foryou {
+        display: none;
+    }
+    header,
+    .marketingContact header,
+    .marketingApi header,
+    .marketingSignHome header {
+        justify-content: space-between;
+    }
+    .carousel-caption {
+        text-align: center;
+        width: 100%;
+    }
+    .carousel .slide img {
+        height: 100vh;;
+    }
+    .carousel-caption {
+        padding: 20px 10px;
+    }
+    .marketingContact .card {
+        padding: 0 20px;
+        flex-direction: column;
+    }
+    .marketingContact .topbottom h3,
+    .marketingApi .topbottom h3 {
+        padding: 0 0 10px 20px; 
+    }
+    .marketingContact .card-a,
+    .marketingContact .card-b,
+    .merPlanPayment .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .marketingContact .card-a {
+        border-right: 1px solid #EDEDED;
+        border-radius: 30px;
+    }
+    .marketingContact .card-b {
+        border-left: 1px solid #009bdd;
+        border-radius: 30px;
+    }
+    .marketingContact .card-b ul li:last-child {
+        margin-bottom: 0;
+    }
+    .apitab {
+        padding: 0 20px;
+    }
+    .apitab .ant-tabs-content-holder {
+        padding: 0 25px;
+    }
+    .marketingSignHome .mainCard .card {
+        margin: 0 auto;
+        width: 280px;
+    }
+    .ant-table-content {
+        overflow: auto;
+    }
+    .exfilter a:first-child,
+    .exfilter label:first-child {
+        padding: 10px 10px;
+        margin-left: 0;
+        font-size: 12px;
+    }
+    .exfilter label:last-child {
+        padding: 10px 10px;
+        margin-left: 8px;
+        font-size: 12px;
+    }
+    .merSubsc .card {
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    .merSubsc .cardtext label, 
+    .merPlanPayment .cardtext label {
+        line-height: 17px;
+        justify-content: center;
+        align-items: unset;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    .merPlanPayment .card {
+        padding: 30px;
+    }
+    .merPlanPayment .paybtn .start {
+        padding: 8px 20px;
+    }
+    /* Merchantusermanagement Responsive changes by sahaj */
+    .mladdusr {
+        margin-left: 20px;
+    }
+    /* Merchant Profile Page By sahaj */
+    .mainprofile h3 {
+        font-size: 17px;
+    }
+    /* Changes by sahaj */
+    .userpayment .Usermana,
+    .merrole .Usermana,
+    .merusermana .Usermana,
+    .Notification .Usermana,
+    .UserTrans .Usermana,
+    .alerttemplate .Usermana,
+    .merchManagement .Usermana,
+    .userManagement .Usermana,
+    .paymentmana .Usermana,
+    .roles .Usermana,
+    .splitpayment .Usermana,
+    .subscription .Usermana,
+    .merSubsc .Usermana,
+    .MerSaleReport .Usermana,
+    .instantpay .Usermana,
+    .Userdashboard .dash,
+    .dashboard .dash,
+    .Merchantdashboard .dash,
+    .adminsetting .Usermana,
+    .MerTraHistory .Usermana
+    .splitpayment .Usermana,
+    .MerTraHistory .Usermana,
+    .merPlanPayment .Usermana{
+        font-size: 17px;
+        text-align: left;
+    }
+    .userManagement,
+    .merchManagement, 
+    .usermanadetail, 
+    .mermanadetail, 
+    .adminsetting, 
+    .MerTraHistory, 
+    .MerSaleReport, 
+    .merSubsc, 
+    .merPlanPayment, 
+    .UserTrans {
+        padding: 30px 20px;
+        margin-top: 60px;
+    }
+    .merrole .exfilter .csv, 
+    .merusermana .exfilter .csv,
+    .alerttemplate .exfilter .csv,
+    .paymentmana .exfilter .csv,
+    .roles .exfilter .csv,
+    .splitpayment .exfilter .csv{
+        padding: 10px 10px 10px 10px;
+    }
+    .merusermana .exfilter input,
+    .alerttemplate .exfilter input,
+    .roles .exfilter input,
+    .splitpayment .exfilter input,
+    .subscription .exfilter input,
+    .merrole .exfilter input,
+    .instantpay .exfilter input{
+        margin-bottom: 13px;
+    }
+    .splitpayment, 
+    .paymentmana, 
+    .roles, 
+    .instantpay, 
+    .subscription, 
+    .alerttemplate, 
+    .merrole, 
+    .merusermana {
+        padding: 30px 25px;
+        margin-top: 60px;
+    }
+    .splitpayment .exfilter .add,
+    .Notification .add{
+        padding: 10px 10px;
+        margin-left: 14px;
+        font-size: 12px;
+    }
+    #EditUserSplitModal .eduser,
+    #subscriptionmodal .eduser,
+    #addroleModal .eduser,
+    #addinstantuserModal .eduser,
+    #alerttempmodal .eduser,
+    #meradduserModal .eduser,
+    #meraddroleModal .eduser,
+    #addcardModal .eduser,
+    #PlanPaymentModal .eduser {
+        font-size: 17px;
+        text-align: left;
+    }
+    
+    #EditUserSplitModal .closeicon,
+    #subscriptionmodal .closeicon,
+    #addroleModal .closeicon,
+    #addinstantuserModal .closeicon,
+    #alerttempmodal .closeicon,
+    #meradduserModal .closeicon,
+    #addcardModal .closeicon {
+        width: 12px;
+        height: 12px;
+    }
+    .dashboard .dash {
+        font-size: 17px;
+    }
+    .splitpayment .exfilter,
+    .paymentmana .exfilter,
+    .roles .exfilter,
+    .instantpay .exfilter,
+    .subscription .exfilter,
+    .alerttemplate .exfilter,
+    .merrole .exfilter,
+    .merusermana .exfilter,
+    .userManagement .exfilter,
+    .merchManagement .exfilter,
+    .MerTraHistory .exfilter,
+    .MerSaleReport .exfilter,
+    .UserTrans .exfilter,
+    .instalmentDetail .exfilter {
+        float: none;
+        margin: 15px 0 20px 0;
+    }
+    /* Css Mobile Toggle Sahaj */
+    .header-left{
+        display: none;
+    }
+    .header-right,
+    .header-logo {
+        display: none;
+    }
+    .sidebarresp{
+        display: block;
+    }
+    .sidebarresp .menubtn{
+        width: 20px;
+        margin-right: 20px;
+        display: block;
+    }
+    .respbarli{
+        padding: 15px 10px;
+        padding-left: 24px;
+        font-size: 14px;
+        font-weight: 500;
+        border-bottom: 1px solid #EDEDED;
+    }
+    .respnavb img,
+    .logouticon {
+        width: 15px;
+        height: 15px;
+    }
+    .ant-drawer-body {
+        padding: 0px;
+        position: relative;
+    }
+    .repnoticount{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ff7240;
+        font-size: 10px;
+        color: #ffffff;
+        font-weight: 700;
+        text-align: center;
+        position: absolute;
+        bottom: 8px;
+        left: 9px;
+        line-height: 22px;
+    }
+    .ant-drawer-header{
+        font-size: 26px;
+        letter-spacing: 1px;
+        color: #fefefe;
+        font-weight: 700;
+        /* background-color: #009bdd; */
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+    .ant-drawer-title{
+        font-size: 20px;
+        color: #fefefe;
+        font-weight: 700;
+        text-align: center;
+    }
+    .sidebarresp {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 20px;
+        box-shadow: 1.338px 1.486px 5px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        background: #fff;
+    }
+    .header {
+        display: unset;
+        
+    }
+    .header-icons {
+        margin-right: 15px;
+    }
+    .notification-count {
+        bottom: 50%;
+    }
+    .profilerep {
+        width: 25px !important;
+    }
+    .respnavb li:hover {
+        color: #fff;
+        background-color: #3636ba;
+    }
+    .respnavb li:hover a span {
+        color: #ffffff;
+    }
+    .sidbarspan {
+        color: #4a4a4a;
+    }
+    .logoutbg {
+        color: #fff !important;
+        background-color: #3636ba;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    .logoutbg .sidbarspan {
+        color: #fff;
+        font-size: 14px;
+    }
+    .mainprofile {
+        margin-top: 17%;
+    }
+    .Merchantdashboard {
+        margin: 60px 0 0 0;
+    }
+    .dashboard,
+    .Merchantdashboard,
+    .Notification,
+    .Userdashboard,
+    .userpayment {
+        margin-top: 60px;
+    }
+    .filt {
+        position: fixed;
+        bottom: 14px;
+        right: 15px;
+        border-radius: 50% !important;
+        display: block;
+        background: #3636ba;
+        /* background: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        z-index: 1;
+    }
+    .filt img {
+        width: 15px !important;
+        height: 15px !important;
+        line-height: 15px !important;
+        margin: 0 !important;
+    }
+    .filte {
+        display: none;
+    }
+        /* Expand Table CSS By Kalpesh */
+    .expandemail {
+        font-size: 13px;
+        font-weight: 500;
+        color: #4f4f4f;
+        line-height: 20px;
+        text-transform: capitalize;
+        opacity: 0.8;
+    }
+    .expandemailtext {
+        font-size: 14px;
+        font-weight: 500;
+        color: #4f4f4f;
+        line-height: 20px;
+        text-transform: capitalize;
+        opacity: 1;
+    }
+    .mobilevi {
+        display: unset;
+    }
+    .drarfilter .back {
+        background-color: rgb(245, 248, 249);
+        border-radius: 5px;
+        padding: 25px 0 20px 0;
+    }
+    .drarfilter .back input {
+        border-radius: 5px;
+        border: 1px solid #ededed;
+        padding: 10px;
+        width: 100%;
+        font-size: 14px;
+        height: 45px;
+        font-weight: 400;
+        margin-bottom: 15px;
+        color: #47525e;
+    }
+    .drarfilter .back .calendar {
+        border-radius: 5px;
+        border: 1px solid #ededed;
+        padding: 10px;
+        width: 100%;
+        font-size: 14px;
+        height: 45px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        color: #47525e;
+        background: #fff url("./../Images/calendar.png") no-repeat right 15px center;
+        line-height: 14px;
+        background-size: 15px 15px;
+    }
+    .drarfilter .back select {
+        border-radius: 5px;
+        border: 1px solid #ededed;
+        padding: 10px;
+        width: 100%;
+        font-size: 14px;
+        height: 45px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        color: #47525e;
+        background: #fff url("./../Images/dropdown.png") no-repeat right 15px center;
+        appearance: none;
+        line-height: 20px;
+        background-size: 12px 12px;
+    }
+    .drarfilter .back select:focus {
+        outline: 0;
+    }
+    .drarfilter .back .search {
+        text-align: center;
+    }
+    .drarfilter .back .search button {
+        background: #3636ba;
+        color: #fff;
+        padding: 10px 25px;
+        border-radius: 6px;
+        margin-left: 10px;
+        font-size: 15px;
+        line-height: 20px;
+        text-transform: capitalize;
+        cursor: pointer;
+        border: 0;
+        margin: 20px 0 0 0;
+        /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+    }
+    .drarfilter .calendar input {
+        margin: 0;
+        border: 0;
+    }
+    .drarfilter .calendar .ant-picker-suffix {
+        display: none;
+    }
+       /* Filter CSS By Kalpesh */
+    .expandemail {
+        font-size: 13px;
+        font-weight: 500;
+        color: #4f4f4f;
+        line-height: 20px;
+        text-transform: capitalize;
+        opacity: 0.8;
+    }
+    .expandemailtext {
+        font-size: 14px;
+        font-weight: 500;
+        color: #4f4f4f;
+        line-height: 20px;
+        text-transform: capitalize;
+        opacity: 1;
+    }
+    .mobilevi {
+        display: flex;
+    }
+    .mob-none {
+        display: none;
+    }
+    .expandown,
+    .expandown1 {
+        width: 25px;
+        height: 25px;
+        background: #3636ba;
+        /* background: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+        border-radius: 50%;
+        line-height: 25px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .expandown img {
+        width: 13px;
+        height: 13px;
+        text-align: center;
+        transform: rotate(0deg);
+    }
+    .expandown1 img {
+        width: 13px;
+        height: 13px;
+        text-align: center;
+        transform: rotate(180deg);
+    }
+    .f2 .ant-drawer-content-wrapper {
+        height: 400px !important;
+    }
+    .newcountry .react-tel-input .country-list {
+        left: 10px;
+    }
+    .usermanadetail .Usermana,
+    .mermanadetail .Usermana{
+        font-size: 17px;
+    }
+    .usermanadetail .Usermana img,
+    .mermanadetail .Usermana img{
+        width: 20px;
+    }
+    .oneclkcard .card{
+        width: 45%;
+    }
+    .splitpaycard .card{
+        width: 45%;
+    }
+    .mersubcard .card{
+        width: 45%;
+    }
+    
+    .instantpaytable table,
+    .roletable table,
+    .merusermana table,
+    .mermanatable table{
+        display: table;
+    }
+    .resbtncss .lefbtn{
+        margin-right: 10px;
+        display: inline;
+    }
+    .resbtncss .rgtbtn{
+        display: inline;
+    }
+    .onepay__logo,
+    .instant__logo {
+        display: none;
+    }
+    .ant-drawer-header .onepay__logo,
+    .ant-drawer-header .instant__logo {
+        display: block;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .mainCard {
+        display: block !important;
+    }
+    .marketingSignHome .mainCard .card:last-child {
+        margin: 60px auto 0;
+    }
+    .sign-in-card {
+        width: 100%;
+        padding: 40px 30px;
+    }
+    .logo-text {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .sign-in {
+        font-size: 20px;
+    }
+    /* Merchant Profile Page By sahaj */
+    .save button {
+        display: block;
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+    .save {
+        display: unset;
+    }
+    .save p {
+        text-align: center;
+        width: 100%;
+        display: block; 
+    }
+    .profile .profileimg {
+        width: 125px;
+        height: 125px;
+    }
+    .oneclkcard .card{
+        width: 80%;
+    }
+    .splitpaycard .card{
+        width: 80%;
+    }
+    .mersubcard .card{
+        width: 80%;
+    }
+    .resbtncss .lefbtn{
+        margin-right: 10px;
+        display: inline;
+    }
+    .resbtncss .rgtbtn{
+        display: inline;
+    }
+
+
+}
+@media screen and (min-width: 320px) and (max-width: 400px) {
+    header .inpay a h4 {
+        font-size: 19px;
+    }
+    header .signbtn .sigin,
+    header .signbtn .sigup {
+        font-size: 12px;
+        margin: 0 0 0 10px;
+        padding: 5px 10px;
+    }
+    #alerttempmodal .emailcheck .em {
+        margin-right: 25px;
+    }
+    .userManagement .usmanatable .uidresp{
+        width: 95px;
+    }
+    .merchManagement .mermanatable .uidadmmresp{
+        width: 95px;
+    }
+    #addroleModal{
+        width: 100%;
+    }
+    .oneclkcard .card{
+        width: 100%;
+      }
+    .splitpaycard .card{
+        width: 100%;
+      }
+      .mersubcard .card{
+          width: 100%;
+      }
+      #alerttempmodal label{
+          font-size: 11px;
+      }
+      .resbtncss .lefbtn{
+        margin-right: 0px;
+        display: inline;
+    }
+    .resbtncss .rgtbtn{
+        display: inline;
+    }
+
+} 
