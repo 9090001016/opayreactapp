@@ -14,7 +14,7 @@ class splitpay extends Component {
                 <div className="container topbottom">
                     <div className="merSubsc splitpaycard">
                         <div className="card">
-                            <h3>Split Payment</h3>
+                            <h3>One Pay</h3>
                             <p>It is a long established fact that a reader will be distracted by the readable content.</p>
                             {/* <h4>AUS 149 / Month</h4> */}
                             <div className="contentcard">

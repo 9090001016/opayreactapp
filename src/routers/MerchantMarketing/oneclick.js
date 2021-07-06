@@ -13,7 +13,7 @@ class oneclick extends Component {
             <div className="container topbottom">
                 <div className="merSubsc oneclkcard">
                     <div className="card">
-                        <h3>One Click</h3>
+                        <h3>Instant Pay</h3>
                         <p>It is a long established fact that a reader will be distracted by the readable content.</p>
                         {/* <h4>AUS 99 / Month</h4> */}
                         <div className="contentcard">

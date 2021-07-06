@@ -3,6 +3,7 @@ let config = {
   // apiUrl: "https://k2api.dcdev.brainvire.net/api/",
   // apiUrl: "https://instant-dev-webapi.azurewebsites.net/api/",
   apiUrl: "https://onepay-dev-webapi.azurewebsites.net/api/",
+  //apiUrl: "https://api.onepay.ai/api/",
 
   instantApiUrl: "https://instant-dev-mrchntwebapi.azurewebsites.net/api/",
   onePayApiUrl: "https://onepay-dev-mrchntwebapi.azurewebsites.net/api/",

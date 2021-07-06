@@ -260,8 +260,9 @@ class splitHeader extends Component {
                 <div className="foryou">
                     <ul>
                         <li>
-                            <Link to="/">
+                            <Link to="/customer">
                                 <a>For You</a>
+                                
                             </Link>
                         </li>
                         <li>
@@ -270,7 +271,7 @@ class splitHeader extends Component {
                                 (<Link onClick={this.handleMerchantStripPopOpen.bind(this)}>
                                     <a>For Your Business</a>
                                 </Link>) : ( */}
-                                    <Link to="/onePayforbusiness">
+                                    <Link to="/merchant">
                                     <a>For Business</a>
                                 </Link>
                                 {/* )

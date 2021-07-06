@@ -186,7 +186,7 @@ class splitTransactionHistory extends Component {
             : parseInt(this.state.transactionAmountTo),
         EmailId: this.state.emailId,
         ContactNumber: this.state.contactNo,
-        SortColumn: sorter !== undefined ? (sorter.field !== undefined ? sorter.field : "createdDate") : "createdDate",
+        //SortColumn: sorter !== undefined ? (sorter.field !== undefined ? sorter.field : "createdDate") : "createdDate",
         SortBy: sorter !== undefined ? (sorter.order !== undefined ? (sorter.order == "ascend" ? "asc" : "desc") : "desc") : "desc",
         Page: "1",
         Size: (this.state.pagination.total).toString()
