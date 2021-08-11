@@ -468,7 +468,7 @@ class paymentManagement extends Component {
         render: (row, item) => {
           return (
             <div>
-              <label>{"$"}{item.transactionAmount}</label>
+              <label>{"$"}{item.transactionAmount} </label>
               {/* <label>{"$"}{item.transactionAmount}</label> */}
             </div>
           )

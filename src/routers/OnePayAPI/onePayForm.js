@@ -257,7 +257,7 @@ class onePayForm extends Component {
                     <div className="loderdiv">
                         <div class="loader"></div>
                     </div>
-                    <label className="mt-1">Processing Payment<br/>Dont Refresh or Click Back</label>
+                    <label className="mt-1">Processing Payment <br/>Dont Refresh or Click Back</label>
                 </div>) : null}
             <div className="marketingApi">
                 <header>
