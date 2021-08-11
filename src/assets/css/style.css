@@ -4587,3 +4587,14 @@ a.btn-theme.active {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
+.amtcss{
+  display: inline-block;
+}
+.totalamt{
+  justify-content: right;
+    float: right;
+    display: inline-block;
+    margin-right: 45px;
+    font-size: 15px;
+    font-weight: 700;
+}
