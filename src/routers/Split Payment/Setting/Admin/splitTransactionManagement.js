@@ -478,6 +478,21 @@ class paymentManagement extends Component {
         sortDirections: ['ascend', 'descend', 'ascend']
       },
       {
+        title: "Transaction Date",
+        dataIndex: "transactionActuaDate",
+        key: "transactionActuaDate",
+        className: "mob-none",
+        render: (row, item) => {
+          return (
+            <div>
+              <label>{moment(item.transactionActuaDate).format("DD-MM-YYYY hh:mm")}</label>
+            </div>
+          );
+        },
+        sorter: true,
+        sortDirections: ['ascend', 'descend', 'ascend']
+      },
+      {
         title: "User",
         dataIndex: "userName",
         key: "userName",

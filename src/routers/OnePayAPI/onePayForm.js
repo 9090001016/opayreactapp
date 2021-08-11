@@ -4,6 +4,7 @@ import Cookies from "universal-cookie";
 import lock from "./../../assets/Images/lock.png";
 import axios from "axios";
 import config from "../../helpers/config";
+import { Link } from "react-router-dom";
 
 const cookies = new Cookies();
 class onePayForm extends Component {
@@ -21,7 +22,8 @@ class onePayForm extends Component {
             loanPeriod: "",
             installmentDetails: [],
             loading: false,
-            duration: ""
+            duration: "",
+            totalAmount: 0,
         };
     }
 
@@ -158,6 +160,7 @@ class onePayForm extends Component {
         var self = this;
         var url = window.location.href;
         var amount = this.handleGetParameterByName('amt', url);
+        this.setState({totalAmount: amount})
         // var orderId = this.handleGetParameterByName('orderId',url);
         // var appKey = this.handleGetParameterByName('appKey', url);
         axios({
@@ -178,12 +181,11 @@ class onePayForm extends Component {
             var message = res.data.message
             if (message == "Success") {
                 self.setState({ // message: "Your payment has done successfully with transaction id : " + data.balanceTransactionId
-                    installmentDetails: data
+                    installmentDetails: data,
+                    totalAmount: amount,
                 })
             } else {
-                self.setState({
-                    message: data
-                })
+                self.setState({message: "Unable to process your payment.", loading: false})
             }
             console.log(res);
         }).catch((data) => {
@@ -342,6 +344,15 @@ class onePayForm extends Component {
                                             </tbody>
                                         ))
                                     } </table>
+                                     <div>
+                                                <h4 className="amtcss">Total</h4>
+                                                <label class="totalamt">
+                                                    {
+                                                    this.state.totalAmount
+                                                }</label>
+                                            </div>
+                                            <Link to="onepatForm">
+                                            <button className="pay mb-3" >Pay</button></Link>
                                     <button className="pay mb-3" onClick={
                                         this.handleSaveInstallmentDetails.bind(this)
                                     }>Pay</button>
