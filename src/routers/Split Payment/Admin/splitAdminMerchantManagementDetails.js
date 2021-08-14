@@ -120,7 +120,7 @@ class splitAdminMerchantManagementDetails extends Component {
         key: "merchantTransactionDate",
         render: (row, item) => {
           return (
-            moment(item.merchantTransactionDate).format('DD-MM-YYYY')
+            moment(item.merchantTransactionDate).format('DD-MM-YYYY hh:mm')
           );
         },
         sorter: (a, b) => new Date(a.merchantTransactionDate) - new Date(b.merchantTransactionDate),

@@ -156,7 +156,7 @@ class splitAdminUserManagementDetails extends Component {
         key: "userTransactionDate",
         render: (row, item) => {
           return (
-              <label>{item.userTransactionDate !== '-' ? !item.isRefundSuccess ? moment(item.userTransactionDate).format('DD-MM-YYYY') : "-" : item.userTransactionDate}</label>
+              <label>{item.userTransactionDate !== '-' ? !item.isRefundSuccess ? moment(item.userTransactionDate).format('DD-MM-YYYY hh:mm') : "-" : item.userTransactionDate}</label>
             );
         },
         sorter: (a, b) => new Date(a.userTransactionDate !== '-' ? a.userTransactionDate : null) - new Date(b.userTransactionDate !== '-' ? b.userTransactionDate : null),
