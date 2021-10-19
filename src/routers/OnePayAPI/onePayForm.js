@@ -229,13 +229,13 @@ class onePayForm extends Component {
                     loading: false
                     // installmentDetails: data
                 })
-                window.open('https://google.com/trans=1234344?message=success', '_blank');
+                window.open(`${'https://www.instant1.co/?amt='}${parseFloat(amount)}&order=${orderId}&appkey=${appKey}`, '_blank');
             } else {
                 self.setState({
                     message: "Unable to process your payment.",
                     loading: false
                 })
-                window.open('https://google.com/trans=1234344?message=failed', '_blank');
+                window.open(`${'https://www.instant1.co/?amt='}${parseFloat(amount)}&order=${orderId}&appkey=${appKey}`, '_blank');
             }
             console.log(res);
         }).catch((data) => {
