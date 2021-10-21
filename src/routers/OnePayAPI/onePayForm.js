@@ -154,7 +154,7 @@ class onePayForm extends Component {
                 self.setState({
                     message: data
                 })
-                window.location.href(`${'https://opayweb.brainvire.net/instantPayForm?amt='}${parseFloat(amount)}&order=${orderId}&appkey=${appKey}`, '_blank');
+                window.location.href(`${'https://opayweb.brainvire.net/instantPayForm?amt='}${parseFloat(amount)}&order=${orderId}&appkey=${appKey}&redirect_url=${redirect_url}`, '_blank');
             }
             console.log(res);
         }).catch((data) => {
