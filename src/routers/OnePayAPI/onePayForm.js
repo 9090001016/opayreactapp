@@ -24,7 +24,7 @@ class onePayForm extends Component {
             loading: false,
             duration: "",
             totalAmount: 0,
-            redirect_url: "",
+            
         };
     }
 
