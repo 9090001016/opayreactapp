@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>OnePay</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="main__content">
+      <div id="root"></div>
+    </div>
+  </body>
+  <script>
+    $( document ).ready(function() {
+        $('.apitab__section .left__menu ul li a').click(function(){
+          $('.apitab__section .left__menu ul li a').removeClass('active');
+        });
+
+        $('.apitab__section .left__menu ul .main__menu').click(function(){
+          $(this).addClass('selected');
+          $(this).siblings().removeClass('selected');
+        });
+
+        $('.apitab__section .left__menu .main__menu + .collapse__menu').click(function(){
+          $(this).next().siblings('.main__menu').addClass('selected');
+          $(this).prev().siblings('.main__menu').removeClass('selected');
+        });
+    });
+  </script>
+  </html>
