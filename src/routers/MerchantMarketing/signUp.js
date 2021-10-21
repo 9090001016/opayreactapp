@@ -369,10 +369,10 @@ class signUp extends Component {
             errors["addressLine1"] = "Please enter address line-1.";
         }
 
-        if (!this.state.addressLine2.trim()) {
-            formIsValid = false;
-            errors["addressLine2"] = "Please enter address line-2.";
-        }
+        // if (!this.state.addressLine2.trim()) {
+        //     formIsValid = false;
+        //     errors["addressLine2"] = "Please enter address line-2.";
+        // }
 
         if (!this.state.postcode.trim()) {
             formIsValid = false;

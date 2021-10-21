@@ -656,6 +656,7 @@ class splitPaymentManagement extends Component {
                 >
                   <option value="W">Week</option>
                   <option value="M">Month</option>
+                  <option value="D">Days</option>
                   {/* <option value="Y">Year</option> */}
                 </select>
                 {this.state.paymentInterval.length === 0 &&
@@ -758,6 +759,7 @@ class splitPaymentManagement extends Component {
                 >
                   <option value="W">Week</option>
                   <option value="M">Month</option>
+                  <option value="D">Days</option>
                   {/* <option value="Y">Year</option> */}
                 </select>
                 {this.state.paymentInterval.length === 0 &&

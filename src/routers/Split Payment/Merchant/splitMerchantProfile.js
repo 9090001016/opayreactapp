@@ -9,18 +9,32 @@ import config from "./../../../helpers/config";
 import { NotificationManager } from "react-notifications";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
+import countryList from 'react-select-country-list'
+
 
 class splitMerchantProfile extends Component {
   constructor(props) {
     super(props);
+    this.options = countryList().getData()
 
     this.state = {
       userName: "",
       userMobileNo: "",
       userEmail: "",
+      country:"",
+      address1 : "",
+      address2 :"",
+      suburb:"",
+      state :"",
+      postCode:"",
       userPic: "",
       newUserPic: "",
       loading: false,
+      options: this.options,
+      value: {
+        value: "AU",
+        label: "Australia"
+    },
     };
     this.handleUserInfo = this.handleUserInfo.bind(this);
     this.handleUpdateUserInfo = this.handleUpdateUserInfo.bind(this);
@@ -37,6 +51,15 @@ class splitMerchantProfile extends Component {
       var self = this;
       var json = {
         firstName: this.state.userName,
+        mobileNo : this.state.userMobileNo,
+        emailId : this.state.userEmail,
+        pincode : this.state.postCode,
+        address1 : this.state.address1,
+        address2 : this.state.address2,
+        state : this.state.state,
+        suburb : this.state.suburb,
+        country : this.state.country,
+        profilePicture : this.state.userPic
       };
       const formData = new FormData();
 
@@ -93,7 +116,6 @@ class splitMerchantProfile extends Component {
       headers: merchantAuthHeader(),
     })
       .then(function (res) {
-        
         let msg = res.data.message;
         let data = res.data.responseData[0];
         if (msg === "Success") {
@@ -101,7 +123,13 @@ class splitMerchantProfile extends Component {
             userName: data.firstName,
             userMobileNo: data.mobileNo,
             userEmail: data.emailId,
+            country : data.country,
             userPic: data.profilePicture,
+            postCode : data.pincode,
+            address1 : data.address1,
+            address2 : data.address2,
+            state : data.state,
+            suburb : data.suburb
           });
         }
       })
@@ -176,7 +204,7 @@ class splitMerchantProfile extends Component {
                         placeholder="Mobile Number"
                         name="userMobileNo"
                         value={this.state.userMobileNo}
-                        disabled
+                      
                         onChange={this.handleInputOnchange}
                       />
                     </div>
@@ -189,13 +217,99 @@ class splitMerchantProfile extends Component {
                         placeholder="Email ID"
                         name="userEmail"
                         value={this.state.userEmail}
-                        disabled
+                        
+                        onChange={this.handleInputOnchange}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="row m-0">
+                    <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                      <label>Country</label>
+                      <select name="country" value={this.state.country} onChange={this.handleInputOnchange}> 
+                        {this.state.options.map((option , index) =>{
+                          return <option key={index}  value={option.value} >{option.label}</option>
+                        })}
+                      </select>
+                    </div>
+                  </div>
+                  <div className="row m-0">
+                    <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                      <label>Address 1</label>
+                      <input
+                        type="text"
+                        placeholder="Address 1"
+                        name="address1"
+                        value={this.state.address1}
                         onChange={this.handleInputOnchange}
                       />
                     </div>
                   </div>
                   <div className="row m-0">
                     <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                      <label>Address 2</label>
+                      <input
+                        type="text"
+                        placeholder="Address 2"
+                        name="address2"
+                        value={this.state.address2}
+                        onChange={this.handleInputOnchange}
+                      />
+                    </div>
+                  </div>
+                  <div className="row m-0">
+                    <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                      <label>Suburb</label>
+                      <input
+                        type="text"
+                        placeholder="Suburb"
+                        name="Suburb"
+                        value={this.state.suburb}
+                        onChange={this.handleInputOnchange}
+                      />
+                    </div>
+                  </div>
+                  <div className="row m-0">
+                    <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                    <label>State</label>
+
+                    {this.state.value.value === "AU" ? (
+                                    <select
+                                        name="state"
+                                        value={this.state.state}
+                                        onChange={this.handleOnChange}
+                                    >
+                                        <option value={0}>Select State</option>
+                                        <option value={'NSW'}>NSW</option>
+                                        <option value={'ACT'}>ACT</option>
+                                        <option value={'VIC'}>VIC</option>
+                                        <option value={'SA'}>SA</option>
+                                        <option value={'NT'}>NT</option>
+                                        <option value={'TAS'}>TAS</option>
+                                        <option value={'QLD'}>QLD</option>
+                                        <option value={'WA'}>WA</option>
+                                    </select>) : (<input type="text" placeholder="State *"
+                                        name="state"
+                                        value={this.state.state}
+                                        onChange={this.handleOnChange.bind(this)}
+                                    />)}
+                    </div>
+                  </div>
+                  <div className="row m-0">
+                    <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                      <label>PostCode</label>
+                      <input
+                        type="text"
+                        placeholder="PostCode"
+                        name="postCode"
+                        value={this.state.postCode}
+                        onChange={this.handleInputOnchange}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="row m-0">
+                    <diSv className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
                       <div className="save">
                         <button
                           type="button"
@@ -210,7 +324,7 @@ class splitMerchantProfile extends Component {
                               size="sm"
                               spin
                             />
-                          )}{" "}
+                          )}
                           Save
                         </button>
                         <Link
@@ -222,7 +336,7 @@ class splitMerchantProfile extends Component {
                           <p>Change Password</p>
                         </Link>
                       </div>
-                    </div>
+                    </diSv>
                   </div>
                 </div>
               </div>

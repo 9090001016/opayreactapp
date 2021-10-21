@@ -24,6 +24,7 @@ class onePayForm extends Component {
             loading: false,
             duration: "",
             totalAmount: 0,
+            redirect_url: "",
         };
     }
 
@@ -42,6 +43,8 @@ class onePayForm extends Component {
             this.handleMerchantValidator(_token);
         }
     }
+
+
 
     handleGetParameterByName(name, url) {
         name = name.replace(/[\[\]]/g, '\\$&');
@@ -122,8 +125,10 @@ class onePayForm extends Component {
         var self = this;
         var url = window.location.href;
         var amount = this.handleGetParameterByName('amt', url);
-        // var orderId = this.handleGetParameterByName('orderId',url);
-        // var appKey = this.handleGetParameterByName('appKey', url);
+        this.setState({totalAmount: amount})
+        var orderId = this.handleGetParameterByName('orderId',url);
+        var appKey = this.handleGetParameterByName('appKey', url);
+        var redirect_url = this.handleGetParameterByName('redirect_url', url);
         axios({
             method: "post",
             url: config.onePayApiUrl + "OnePay/getloanduration",
@@ -144,10 +149,12 @@ class onePayForm extends Component {
                     durationData: data,
                     loading: false
                 })
+                window.location.href(`${'https://opayweb.brainvire.net/instantPayForm?amt='}${parseFloat(amount)}&order=${orderId}&appkey=${appKey}&redirect_url=${redirect_url}`, '_blank');
             } else {
                 self.setState({
                     message: data
                 })
+                window.location.href(`${'https://opayweb.brainvire.net/instantPayForm?amt='}${parseFloat(amount)}&order=${orderId}&appkey=${appKey}`, '_blank');
             }
             console.log(res);
         }).catch((data) => {
@@ -160,9 +167,9 @@ class onePayForm extends Component {
         var self = this;
         var url = window.location.href;
         var amount = this.handleGetParameterByName('amt', url);
-        this.setState({totalAmount: amount})
-        // var orderId = this.handleGetParameterByName('orderId',url);
-        // var appKey = this.handleGetParameterByName('appKey', url);
+        var orderId = this.handleGetParameterByName('orderId',url);
+        var appKey = this.handleGetParameterByName('appKey', url);
+        var redirect_url = this.handleGetParameterByName('redirect_url', url);
         axios({
             method: "post",
             url: config.onePayApiUrl + "OnePay/getinstallmentdetail",
@@ -178,14 +185,14 @@ class onePayForm extends Component {
         }).then(function (res) {
             
             var data = res.data.responseData;
-            var message = res.data.message
-            if (message == "Success") {
-                self.setState({ // message: "Your payment has done successfully with transaction id : " + data.balanceTransactionId
-                    installmentDetails: data,
+            var res_message = res.data.message
+            if (res_message == "Success") {
+                self.setState({ // res_message: "Your payment has done successfully with transaction id : " + data.balanceTransactionId
                     totalAmount: amount,
+                    installmentDetails: data
                 })
             } else {
-                self.setState({message: "Unable to process your payment.", loading: false})
+                self.setState({message: res_message, loading: false})
             }
             console.log(res);
         }).catch((data) => {
@@ -229,13 +236,11 @@ class onePayForm extends Component {
                     loading: false
                     // installmentDetails: data
                 })
-                window.open(`${'https://www.instant1.co/?amt='}${parseFloat(amount)}&order=${orderId}&appkey=${appKey}`, '_blank');
             } else {
                 self.setState({
                     message: "Unable to process your payment.",
                     loading: false
                 })
-                window.open(`${'https://www.instant1.co/?amt='}${parseFloat(amount)}&order=${orderId}&appkey=${appKey}`, '_blank');
             }
             console.log(res);
         }).catch((data) => {
@@ -259,7 +264,7 @@ class onePayForm extends Component {
                     <div className="loderdiv">
                         <div class="loader"></div>
                     </div>
-                    <label className="mt-1">Processing Payment <br/>Dont Refresh or Click Back</label>
+                    <label className="mt-1">Processing Payment<br/>Dont Refresh or Click Back</label>
                 </div>) : null}
             <div className="marketingApi">
                 <header>
@@ -327,7 +332,7 @@ class onePayForm extends Component {
                                         </thead>
                                         {
                                         this.state.installmentDetails.map((item) => (
-                                            <tbody >
+                                            <tbody>
                                             <tr>
 
                                                 <td> {
@@ -346,18 +351,34 @@ class onePayForm extends Component {
                                             </tbody>
                                         ))
                                     } </table>
-                                     <div>
-                                                <h4 className="amtcss">Total</h4>
-                                                <label class="totalamt">
+                                      <div className="amt">
+                                          <table>
+                                          <tfoot>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td className="totalfntsize">Total</td>
+                                                    <td className="totalfntsize">{
+                                                    this.state.totalAmount
+                                                }</td>
+                                                </tr>
+                                            </tfoot>
+                                          </table>
+                                                {/* <h4 className="dinb totalamt">Total</h4>
+                                                <h4 class="dinb totalamt mright">
                                                     {
                                                     this.state.totalAmount
-                                                }</label>
+                                                }</h4> */}
                                             </div>
-                                            <Link to="onepatForm">
-                                            <button className="pay mb-3" >Pay</button></Link>
-                                    <button className="pay mb-3" onClick={
+                                            <div className="row">
+                                            
+                                            <button className="pay mb-3 mright" onClick={()=>window.location.reload()}>Back</button>
+                                            <button className="pay mb-3" onClick={
                                         this.handleSaveInstallmentDetails.bind(this)
                                     }>Pay</button>
+                                  
+                                            </div>
+                                    
                                 </>
                                 </div>
                             )

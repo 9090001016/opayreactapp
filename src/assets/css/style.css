@@ -4587,7 +4587,7 @@ a.btn-theme.active {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
-.amtcss{
+/* .amtcss{
   display: inline-block;
 }
 .totalamt{
@@ -4597,4 +4597,23 @@ a.btn-theme.active {
     margin-right: 45px;
     font-size: 15px;
     font-weight: 700;
+}
+ */
+.totalamt{
+  float: right;
+    margin-top: 20px;
+}
+.dinb{
+  display: inline-block;
+}
+.lftrightt{
+  float: right;
+
+}
+.mright{
+  margin-right: 15px;
+}
+.totalfntsize{
+  font-size: 18px !important;
+    font-weight: 600 !important;
 }
