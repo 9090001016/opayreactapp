@@ -119,7 +119,6 @@ class onePayForm extends Component {
     this.setState({ totalAmount: amount });
     var orderId = this.handleGetParameterByName("orderId", url);
     var appKey = this.handleGetParameterByName("appKey", url);
-    var redirect_url = this.handleGetParameterByName("redirect_url", url);
     axios({
       method: "post",
       url: config.onePayApiUrl + "OnePay/getloanduration",
@@ -135,23 +134,11 @@ class onePayForm extends Component {
         // var message = "Success";
         var message = res.data.message;
         if (message == "Success") {
-          var finalurl = "";
-          var status = data.status;
-          if (redirect_url && amount && orderId && status) {
-            if (redirect_url.includes("?")) {
-              finalurl += redirect_url + "&";
-            } else {
-              finalurl += redirect_url + "?";
-            }
-
-            finalurl += "amount=" + amount;
-            finalurl += "&orderId=" + orderId;
-            finalurl += "&status=" + status;
-
-            setTimeout(() => {
-              window.location.href = finalurl;
-            }, 1000);
-          }
+          self.setState({
+            // message: "Your payment has done successfully with transaction id : " + data.balanceTransactionId
+            durationData: data,
+            loading: false,
+          });
         } else {
           self.setState({
             message: data,
@@ -215,6 +202,7 @@ class onePayForm extends Component {
     var amount = this.handleGetParameterByName("amt", url);
     var orderId = this.handleGetParameterByName("orderId", url);
     var appKey = this.handleGetParameterByName("appKey", url);
+    var redirect_url = this.handleGetParameterByName("redirect_url", url);
     var installmentDetails = [];
     this.state.installmentDetails.map((item) => {
       installmentDetails.push({
@@ -242,7 +230,24 @@ class onePayForm extends Component {
       .then(function (res) {
         var data = res.data.responseData;
         var message = res.data.message;
+        var finalurl = "";
         if (message == "Success") {
+          var status = res.data.status;
+          if (redirect_url && amount && orderId) {
+            if (redirect_url.includes("?")) {
+              finalurl = redirect_url + "&";
+            } else {
+              finalurl = redirect_url + "?";
+            }
+
+            finalurl += "amount=" + amount;
+            finalurl += "&orderId=" + orderId;
+            finalurl += "&status=" + status;
+
+            setTimeout(() => {
+              window.location.href = finalurl;
+            }, 1000);
+          }
           self.setState({
             message: "Your payment has done successfully.",
             loading: false,
@@ -253,6 +258,21 @@ class onePayForm extends Component {
             message: "Unable to process your payment.",
             loading: false,
           });
+          if (redirect_url && amount && orderId) {
+            if (redirect_url.includes("?")) {
+              finalurl += redirect_url + "&";
+            } else {
+              finalurl += redirect_url + "?";
+            }
+
+            finalurl += "amount=" + amount;
+            finalurl += "&orderId=" + orderId;
+            finalurl += "&status=" + "failed";
+
+            setTimeout(() => {
+              window.location.href = finalurl;
+            }, 1000);
+          }
         }
         console.log(res);
       })
@@ -288,7 +308,7 @@ class onePayForm extends Component {
             <h3>ONE PAY</h3>
           </header>
           <div className="onepaydiv">
-            {this.state.message == false ? (
+            {!this.state.message ? (
               <>
                 <div className="fromonepay">
                   {this.state.durationData.map((item, i) => (
