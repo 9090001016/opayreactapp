@@ -231,18 +231,18 @@ class onePayForm extends Component {
         var data = res.data.responseData;
         var message = res.data.message;
         var finalurl = "";
+        var result=data.result
         if (message == "Success") {
           var status = res.data.status;
-          if (redirect_url && amount && orderId) {
+          if (redirect_url && result) {
             if (redirect_url.includes("?")) {
               finalurl = redirect_url + "&";
             } else {
               finalurl = redirect_url + "?";
             }
 
-            finalurl += "amount=" + amount;
-            finalurl += "&orderId=" + orderId;
-            finalurl += "&status=" + status;
+            finalurl += "&TransactionID=" + result;
+            
 
             setTimeout(() => {
               window.location.href = finalurl;
@@ -258,16 +258,14 @@ class onePayForm extends Component {
             message: "Unable to process your payment.",
             loading: false,
           });
-          if (redirect_url && amount && orderId) {
+          if (redirect_url) {
             if (redirect_url.includes("?")) {
               finalurl += redirect_url + "&";
             } else {
               finalurl += redirect_url + "?";
             }
 
-            finalurl += "amount=" + amount;
-            finalurl += "&orderId=" + orderId;
-            finalurl += "&status=" + "failed";
+            finalurl += "&TransactionID=" +"";
 
             setTimeout(() => {
               window.location.href = finalurl;
