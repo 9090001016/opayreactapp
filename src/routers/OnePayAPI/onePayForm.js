@@ -216,7 +216,7 @@ class onePayForm extends Component {
     });
     axios({
       method: "post",
-      url: config.onePayApiUrl + "OnePay/saveinstallmentdetails",
+      url: config.apiUrl + "OnePay/saveinstallmentdetails",
       headers: {
         "X-Authorized-Token": this.state.cookie.token,
         "X-Authorized-appkey": appKey,
@@ -241,7 +241,7 @@ class onePayForm extends Component {
               finalurl = redirect_url + "?";
             }
 
-            finalurl += "&TransactionID=" + result;
+            finalurl += "Payment=OnePay&TransactionID=" + result;
             
 
             setTimeout(() => {
@@ -265,7 +265,7 @@ class onePayForm extends Component {
               finalurl += redirect_url + "?";
             }
 
-            finalurl += "&TransactionID=" +"";
+            finalurl += "Payment=OnePay&TransactionID=" +"";
 
             setTimeout(() => {
               window.location.href = finalurl;
