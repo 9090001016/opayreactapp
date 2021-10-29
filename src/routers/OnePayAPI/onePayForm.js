@@ -216,7 +216,7 @@ class onePayForm extends Component {
     });
     axios({
       method: "post",
-      url: config.apiUrl + "OnePay/saveinstallmentdetails",
+      url: config.onePayApiUrl + "OnePay/saveinstallmentdetails",
       headers: {
         "X-Authorized-Token": this.state.cookie.token,
         "X-Authorized-appkey": appKey,
