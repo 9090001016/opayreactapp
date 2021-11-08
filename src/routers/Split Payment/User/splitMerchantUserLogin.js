@@ -183,7 +183,7 @@ class splitMerchantUserLogin extends Component {
                 )}
                 Sign In
               </button>
-              <Link to="instantPayUserSignUp" target = "_blank">
+              <Link to="onePayUserSignUp" target = "_blank">
               <p className="mtop10 fsize14">Sign Up</p>
               </Link>
             </form>

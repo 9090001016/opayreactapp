@@ -885,7 +885,8 @@ class splitSignUp extends Component {
                                 )}Sign Up</button>
                             <button className="butn rgtbtn" onClick={this.handleMerchantBack}>Back</button>
                         </div>
-                        <p className="already"><Link to="/merchant">Login</Link></p>
+                        {/* <p className="already"><Link to="/merchant">Login</Link></p> */}
+                        <p className="already"><Link to="/onePayLogin">Login</Link></p>
                     </div>
                 </div>
             </div>
