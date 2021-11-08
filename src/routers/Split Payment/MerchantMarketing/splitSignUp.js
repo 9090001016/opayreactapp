@@ -511,7 +511,7 @@ class splitSignUp extends Component {
     }
 
     handleMerchantBack = () => {
-        this.props.history.push("instantPaySignUpHome");
+        this.props.history.push("onePaySignUpHome");
     }
 
     render() {
