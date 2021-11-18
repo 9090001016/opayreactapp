@@ -5,6 +5,8 @@ import lock from "./../../assets/Images/lock.png";
 import axios from "axios";
 import config from "../../helpers/config";
 import { Link } from "react-router-dom";
+import { notification } from "antd";
+import { NotificationManager } from "react-notifications";
 
 const cookies = new Cookies();
 class onePayForm extends Component {
@@ -231,7 +233,7 @@ class onePayForm extends Component {
         var data = res.data.responseData;
         var message = res.data.message;
         var finalurl = "";
-        var result=data.result
+        var result = data.result;
         if (message == "Success") {
           var status = res.data.status;
           if (redirect_url && result) {
@@ -242,7 +244,6 @@ class onePayForm extends Component {
             }
 
             finalurl += "Payment=OnePay&TransactionID=" + result;
-            
 
             setTimeout(() => {
               window.location.href = finalurl;
@@ -252,6 +253,11 @@ class onePayForm extends Component {
             message: "Your payment has done successfully.",
             loading: false,
             // installmentDetails: data
+          });
+        } else if (message == "Invalid") {
+          self.setState({
+            message: data,
+            loading: false,
           });
         } else {
           self.setState({
@@ -265,11 +271,11 @@ class onePayForm extends Component {
               finalurl += redirect_url + "?";
             }
 
-            finalurl += "Payment=OnePay&TransactionID=" +"";
+            finalurl += "Payment=OnePay&TransactionID=" + "";
 
-            setTimeout(() => {
-              window.location.href = finalurl;
-            }, 1000);
+            // setTimeout(() => {
+            //   window.location.href = finalurl;
+            // }, 1000);
           }
         }
         console.log(res);
