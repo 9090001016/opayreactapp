@@ -255,6 +255,19 @@ class onePayForm extends Component {
             // installmentDetails: data
           });
         } else if (message == "Invalid") {
+          if (redirect_url) {
+            if (redirect_url.includes("?")) {
+              finalurl = redirect_url + "&";
+            } else {
+              finalurl = redirect_url + "?";
+            }
+
+            finalurl += "Payment=OnePay&TransactionID=";
+
+            setTimeout(() => {
+              window.location.href = finalurl;
+            }, 1000);
+          }
           self.setState({
             message: data,
             loading: false,
@@ -273,9 +286,9 @@ class onePayForm extends Component {
 
             finalurl += "Payment=OnePay&TransactionID=" + "";
 
-            // setTimeout(() => {
-            //   window.location.href = finalurl;
-            // }, 1000);
+            setTimeout(() => {
+              window.location.href = finalurl;
+            }, 1000);
           }
         }
         console.log(res);
