@@ -243,7 +243,8 @@ class onePayForm extends Component {
               finalurl = redirect_url + "?";
             }
 
-            finalurl += "Payment=OnePay&TransactionID=" + result;
+            finalurl +=
+              "Payment=OnePay&OrderId=" + orderId + "&TransactionID=" + result;
 
             setTimeout(() => {
               window.location.href = finalurl;
@@ -262,7 +263,7 @@ class onePayForm extends Component {
               finalurl = redirect_url + "?";
             }
 
-            finalurl += "Payment=OnePay&TransactionID=";
+            finalurl += "Payment=OnePay&OrderId=" + orderId + "&TransactionID=";
 
             setTimeout(() => {
               window.location.href = finalurl;
@@ -284,7 +285,8 @@ class onePayForm extends Component {
               finalurl += redirect_url + "?";
             }
 
-            finalurl += "Payment=OnePay&TransactionID=" + "";
+            finalurl +=
+              "Payment=OnePay&OrderId=" + orderId + "&TransactionID=" + "";
 
             setTimeout(() => {
               window.location.href = finalurl;
