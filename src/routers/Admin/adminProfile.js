@@ -71,6 +71,8 @@ class adminProfile extends Component {
       var self = this;
       var json = {
         firstName: this.state.userName,
+        MobileNo:this.state.userMobileNo,
+        EmailId:this.state.userEmail
       };
       const formData = new FormData();
 
