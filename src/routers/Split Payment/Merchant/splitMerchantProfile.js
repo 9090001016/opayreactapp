@@ -201,7 +201,7 @@ class splitMerchantProfile extends Component {
                       <label>Mobile No.</label>
                       <input
                         type="text"
-                        placeholder="Mobile Number"
+                        placeholder="Mobile No."
                         name="userMobileNo"
                         value={this.state.userMobileNo}
                       
@@ -211,7 +211,7 @@ class splitMerchantProfile extends Component {
                   </div>
                   <div className="row m-0">
                     <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
-                      <label>Email Id</label>
+                      <label>Email ID</label>
                       <input
                         type="text"
                         placeholder="Email ID"
@@ -226,7 +226,8 @@ class splitMerchantProfile extends Component {
                   <div className="row m-0">
                     <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
                       <label>Country</label>
-                      <select name="country" value={this.state.country} onChange={this.handleInputOnchange}> 
+                      <select name="country" value={this.state.country} onChange={this.handleInputOnchange}>
+                      <option>Select Country</option>
                         {this.state.options.map((option , index) =>{
                           return <option key={index}  value={option.value} >{option.label}</option>
                         })}

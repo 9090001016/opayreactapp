@@ -173,7 +173,7 @@ class userProfile extends Component {
                       <label>Mobile No.</label>
                       <input
                         type="text"
-                        placeholder="Mobile Number"
+                        placeholder="Mobile No."
                         name="userMobileNo"
                         value={this.state.userMobileNo}
                         disabled
@@ -183,7 +183,7 @@ class userProfile extends Component {
                   </div>
                   <div className="row m-0">
                     <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
-                      <label>Email Id</label>
+                      <label>Email ID</label>
                       <input
                         type="text"
                         placeholder="Email ID"

@@ -186,7 +186,7 @@ class adminProfile extends Component {
                       <label>Mobile No.</label>
                       <input
                         type="text"
-                        placeholder="Mobile Number"
+                        placeholder="Mobile No."
                         name="userMobileNo"
                         value={this.state.userMobileNo}
                         disabled
@@ -199,7 +199,7 @@ class adminProfile extends Component {
                       <label>Email Id</label>
                       <input
                         type="text"
-                        placeholder="Email ID"
+                        placeholder="Email Id"
                         name="userEmail"
                         value={this.state.userEmail}
                         disabled
