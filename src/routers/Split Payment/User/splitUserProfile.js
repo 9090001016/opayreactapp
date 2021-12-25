@@ -93,9 +93,9 @@ class splitUserProfile extends Component {
           let userPic = res.data.responseData.profilePath;
           if (msg === "Success") {
             NotificationManager.success("Profile updated successfully.");
-            // self.setState({
-            //   loading: false,
-            // });
+            self.setState({
+              loading: false,
+            });
             // if (userPic) {
             //   self.setState({
             //     userPic,
