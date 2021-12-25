@@ -92,14 +92,15 @@ class splitMerchantProfile extends Component {
           let userPic = res.data.responseData.profilePath;
           if (msg === "Success") {
             NotificationManager.success("Profile updated successfully.");
-            self.setState({
-              loading: false,
-            });
-            if (userPic) {
-              self.setState({
-                userPic,
-              });
-            }
+            // self.setState({
+            //   loading: false,
+            // });
+            // if (userPic) {
+            //   self.setState({
+            //     userPic,
+            //   });
+            // }
+            self.handleUserInfo();
           }
         })
         .catch((data) => {

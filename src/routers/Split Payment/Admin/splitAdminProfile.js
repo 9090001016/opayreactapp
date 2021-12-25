@@ -113,15 +113,16 @@ class SplitAdminProfile extends Component {
             self.setState({
               loading: false,
             });
-            if (userPic) {
-              self.setState({
-                userPic,
-              });
-            } else {
-              self.setState({
-                userPic: "",
-              });
-            }
+            self.handleUserInfo();
+            // if (userPic) {
+            //   self.setState({
+            //     userPic,
+            //   });
+            // } else {
+            //   self.setState({
+            //     userPic: "",
+            //   });
+            // }
           }
         })
         .catch((data) => {
