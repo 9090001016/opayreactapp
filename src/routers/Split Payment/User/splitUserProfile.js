@@ -33,7 +33,7 @@ class splitUserProfile extends Component {
       loading: false,
       options: this.options,
       value: {
-        value: "AU",
+        value: "Australia",
         label: "Australia"
     },
     };
@@ -50,6 +50,17 @@ class splitUserProfile extends Component {
     
     if (this.state.userName) {
       var self = this;
+      var tempprofilePicture=""
+      if(this.state.userPic)
+      {
+        var s=this.state.userPic.split("/");
+        if(s.length>0)
+        {
+          tempprofilePicture=s[s.length-1]
+        }else{
+          tempprofilePicture = s[s.length-1];
+        }
+      }
       var json = {
         firstName: this.state.userName,
         mobileNo : this.state.userMobileNo,
@@ -60,7 +71,7 @@ class splitUserProfile extends Component {
         state : this.state.state,
         suburb : this.state.suburb,
         country : this.state.country,
-        profilePicture : this.state.userPic
+        profilePicture : tempprofilePicture
       };
       const formData = new FormData();
 
@@ -141,7 +152,6 @@ class splitUserProfile extends Component {
   };
 
   handleInputOnchange = (e) => {
-    
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -206,7 +216,6 @@ class splitUserProfile extends Component {
                         placeholder="Mobile No."
                         name="userMobileNo"
                         value={this.state.userMobileNo}
-                      
                         onChange={this.handleInputOnchange}
                       />
                     </div>
@@ -219,7 +228,6 @@ class splitUserProfile extends Component {
                         placeholder="Email ID"
                         name="userEmail"
                         value={this.state.userEmail}
-                        
                         onChange={this.handleInputOnchange}
                       />
                     </div>
@@ -228,10 +236,18 @@ class splitUserProfile extends Component {
                   <div className="row m-0">
                     <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
                       <label>Country</label>
-                      <select name="country" value={this.state.country} onChange={this.handleInputOnchange}> 
-                      <option>Select Country</option>
-                        {this.state.options.map((option , index) =>{
-                          return <option key={index}  value={option.label} >{option.label}</option>
+                      <select
+                        name="country"
+                        value={this.state.country}
+                        onChange={this.handleInputOnchange}
+                      >
+                        <option>Select Country</option>
+                        {this.state.options.map((option, index) => {
+                          return (
+                            <option key={index} value={option.label}>
+                              {option.label}
+                            </option>
+                          );
                         })}
                       </select>
                     </div>
@@ -266,7 +282,7 @@ class splitUserProfile extends Component {
                       <input
                         type="text"
                         placeholder="Suburb"
-                        name="Suburb"
+                        name="suburb"
                         value={this.state.suburb}
                         onChange={this.handleInputOnchange}
                       />
@@ -274,28 +290,33 @@ class splitUserProfile extends Component {
                   </div>
                   <div className="row m-0">
                     <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
-                    <label>State</label>
+                      <label>State</label>
 
-                    {this.state.value.value === "AU" ? (
-                                    <select
-                                        name="state"
-                                        value={this.state.state}
-                                        onChange={this.handleOnChange}
-                                    >
-                                        <option value={0}>Select State</option>
-                                        <option value={'NSW'}>NSW</option>
-                                        <option value={'ACT'}>ACT</option>
-                                        <option value={'VIC'}>VIC</option>
-                                        <option value={'SA'}>SA</option>
-                                        <option value={'NT'}>NT</option>
-                                        <option value={'TAS'}>TAS</option>
-                                        <option value={'QLD'}>QLD</option>
-                                        <option value={'WA'}>WA</option>
-                                    </select>) : (<input type="text" placeholder="State *"
-                                        name="state"
-                                        value={this.state.state}
-                                        onChange={this.handleOnChange.bind(this)}
-                                    />)}
+                      {this.state.country == "Australia" ? (
+                        <select
+                          name="state"
+                          value={this.state.state}
+                          onChange={this.handleInputOnchange}
+                        >
+                          <option value={0}>Select State</option>
+                          <option value={"NSW"}>NSW</option>
+                          <option value={"ACT"}>ACT</option>
+                          <option value={"VIC"}>VIC</option>
+                          <option value={"SA"}>SA</option>
+                          <option value={"NT"}>NT</option>
+                          <option value={"TAS"}>TAS</option>
+                          <option value={"QLD"}>QLD</option>
+                          <option value={"WA"}>WA</option>
+                        </select>
+                      ) : (
+                        <input
+                          type="text"
+                          placeholder="State *"
+                          name="state"
+                          value={this.state.state}
+                          onChange={this.handleInputOnchange.bind(this)}
+                        />
+                      )}
                     </div>
                   </div>
                   <div className="row m-0">

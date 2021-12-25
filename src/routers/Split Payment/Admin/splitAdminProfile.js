@@ -68,10 +68,22 @@ class SplitAdminProfile extends Component {
     
     if (this.state.userName) {
       var self = this;
+      var tempprofilePicture="";
+      if(this.state.userPic)
+      {
+        var s=this.state.userPic.split("/");
+        if(s.length>0)
+        {
+          tempprofilePicture=s[s.length-1]
+        }else{
+          tempprofilePicture = s[s.length-1];
+        }
+      }
       var json = {
         firstName: this.state.userName,
         MobileNo:this.state.userMobileNo,
-        EmailId:this.state.userEmail        
+        EmailId:this.state.userEmail ,
+        profilePicture : tempprofilePicture       
       };
       const formData = new FormData();
 
