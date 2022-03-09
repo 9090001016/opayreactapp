@@ -11,7 +11,11 @@ import {
 import Modal from "react-responsive-modal";
 import CloseIcon from "../../../assets/Images/CloseWhBold.png";
 import email from "../../../assets/Images/emailBl.png";
-import OnePayLogo from "./../../../assets/Images/OnePay-logo.png";
+// import OnePayLogo from "./../../../assets/Images/OnePay-logo.png";
+import OnePayLogo from "./../../../assets/Images/onepaylogowhite.png";
+
+import userWhiteIcon from "./../../../assets/Images/user-icon.png"
+
 class splitHeader extends Component {
     constructor(props) {
         super(props);
@@ -34,7 +38,7 @@ class splitHeader extends Component {
     }
 
     handleGetDefaultPaymentGateway() {
-        
+
         let self = this;
         axios({
             method: "get",
@@ -45,7 +49,7 @@ class splitHeader extends Component {
                 let status = res.data.message;
                 let data = res.data.responseData;
                 if (status === "Success") {
-                    
+
                     self.setState({
                         paymentGatewayType: data
                     })
@@ -73,7 +77,7 @@ class splitHeader extends Component {
                 }
             })
             .catch(function (res) {
-                
+
                 // self.setState({
                 //     loading: false,
                 // });
@@ -82,7 +86,7 @@ class splitHeader extends Component {
     }
 
     handleGetStripeUrlDetails() {
-        
+
         if (this.handleValidation()) {
             axios({
                 method: "post",
@@ -93,7 +97,7 @@ class splitHeader extends Component {
                 }
             })
                 .then(function (res) {
-                    
+
                     let status = res.data.message;
                     let data = res.data.responseData;
                     if (status === "success") {
@@ -106,7 +110,7 @@ class splitHeader extends Component {
                     }
                 })
                 .catch(function (res) {
-                    
+
                     // console.log(data);
                 });
         }
@@ -252,122 +256,165 @@ class splitHeader extends Component {
     render() {
         return (
             <header>
-                <div className="inpay">
-                    <Link to="/">
-                        <img src={OnePayLogo} width="150px" className="logo__img" />
-                    </Link>
-                </div>
-                <div className="foryou">
-                    <ul>
-                        <li>
-                            <Link to="/customer">
-                                <a>For You</a>
-                                
-                            </Link>
-                        </li>
-                        <li>
-                            {/* {this.state.paymentGatewayType.length > 0 &&
-                                this.state.paymentGatewayType[0].paymentGatewayName.toLowerCase() == "stripe" ?
-                                (<Link onClick={this.handleMerchantStripPopOpen.bind(this)}>
-                                    <a>For Your Business</a>
-                                </Link>) : ( */}
-                                    <Link to="/merchant">
-                                    <a>For Business</a>
+                <div className="header__block">
+                    <div className="main__menu">
+                        <nav className="navbar navbar-expand-lg navbar-light bg-transparent p-0">
+                            <div className="inpay">
+                                <Link to="/">
+                                    <img src={OnePayLogo} width="150px" className="logo__img m-0" />
                                 </Link>
-                                {/* )
-                            } */}
-                        </li>
-                        <li>
-                            <Link to="/onePaySetUp">
-                                <a>Set - Up</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/onePayHelp">
-                                <a>Help</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/onePay">
-                                <a>Pricing</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/splitAPIDoc">
-                                <a>API Docs</a>
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-                <div className="signbtn">
-                    <Link to="/onePaySignInHome">
-                        <button type="button" className="btn sigin">
-                            Sign In
-                                </button>
-                    </Link>
-                    <Link to="/onePaySignUpHome">
-                        <button type="button" className="btn sigup">
-                            Sign Up
-                                </button>
-                    </Link>
-                </div>
-                <Modal
-                    open={this.state.merchantstrippop}
-                    onClose={this.handleMerchantStripPopClose.bind(this)}
-                    modalId="PlanPaymentModal"
-                    overlayId="overlay"
-                >
-                    <div className="backtext">
-                        <h3 className="eduser">Merchant Registration</h3>
-                        <img src={CloseIcon} alt="CloseIcon" className="closeicon" onClick={this.handleMerchantStripPopClose.bind(this)} />
-                    </div>
-                    <div className="edituser signup">
-                        <div className="mersign">
-                            <div className="input-cntr margin">
-                                <div className="input-icons">
-                                    <img src={email} alt="icon missing" />
-                                </div>
-                                <input type="text" placeholder="Email Id *"
-                                    name="emailId"
-                                    value={this.state.emailId}
-                                    onChange={this.handleOnChange.bind(this)}
-                                    disabled={!this.state.isEmailOtpVerified ? ((this.state.emailMinute > 0 || this.state.emailSecond > 0) ? true : false) : true}
-                                />
                             </div>
-                        </div>
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon"></span>
+                            </button>
 
-                        {this.state.isEmailOtpVerified ?
-                            (<p className="Verify">Verified</p>) :
-                            (this.state.isEmailOTPVerifySend ? ((this.state.emailMinute > 0 || this.state.emailSecond > 0) ? (<p className="Verify">OTP Sent</p>) : (<p className="Verify"></p>)) :
-                                (<p className="Verify" onClick={this.handleVerifyEmailFieldClick}>Verify OTP</p>))}
-                        {this.state.isVerifyEmail ?
-                            (<><div className="mersign">
-                                <div>
-                                    <div className="input-cntr margin">
-                                        <div className="input-icons">
-                                            <img src={email} alt="icon missing" />
-                                        </div>
-                                        <input type="text" placeholder="Enter Email OTP"
-                                            name="emailOTP"
-                                            value={this.state.emailOTP}
-                                            onChange={this.handleOnChange.bind(this)}
-                                            disabled={!this.state.isEmailOtpVerified ? false : true}
-                                        />
-                                    </div>
+                            <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                                <div className="foryou">
+                                    <ul className="menu__links">
+                                        <li>
+                                            <Link to="/customer">
+                                                <a>For You</a>
+                                            </Link>
+                                        </li>
 
-                                    {this.state.isEmailOtpVerified ?
-                                        (<p className="Verify"></p>) :
-                                        ((this.state.emailMinute == 0 && this.state.emailSecond == 0) ? (<p className="Verify" onClick={this.handleVerifyEmailFieldClick}>Resend OTP</p>) :
-                                            (<p className="Verify" onClick={this.handleConfirmEmailOTP}>Confirm <label style={{ paddingLeft: "12px" }}>{this.state.emailMinute}{" : "}{this.state.emailSecond}</label></p>))}
+                                        <li>
+
+                                            <Link to="/merchant">
+                                                <a>For Business</a>
+                                            </Link>
+
+
+                                        </li>
+                                        <li>
+                                            <Link to="#">
+                                                <a>Shop</a>
+                                            </Link>
+                                        </li>
+                                        <li className="user__icon">
+                                            <Link to="#">
+                                                <a><img src={userWhiteIcon} /></a>
+                                            </Link>
+                                        </li>
+
+                                    </ul>
                                 </div>
-                            </div></>)
-                            : null}
-                        <div className="merchtstppopup">
-                            <button className="btn" onClick={this.handleGetStripeUrlDetails.bind(this)}>Submit</button>
-                        </div>
+                            </div>
+                        </nav>
                     </div>
-                </Modal>
+                </div>
             </header>
+            // <header>
+            //     <div className="inpay">
+            //         <Link to="/">
+            //             <img src={OnePayLogo} width="150px" className="logo__img" />
+            //         </Link>
+            //     </div>
+            //     <div className="foryou">
+            //         <ul>
+            //             <li>
+            //                 <Link to="/customer">
+            //                     <a>For You</a>
+
+            //                 </Link>
+            //             </li>
+            //             <li>
+
+            //                         <Link to="/merchant">
+            //                         <a>For Business</a>
+            //                     </Link>
+
+            //             </li>
+            //             <li>
+            //                 <Link to="/onePaySetUp">
+            //                     <a>Set - Up</a>
+            //                 </Link>
+            //             </li>
+            //             <li>
+            //                 <Link to="/onePayHelp">
+            //                     <a>Help</a>
+            //                 </Link>
+            //             </li>
+            //             <li>
+            //                 <Link to="/onePay">
+            //                     <a>Pricing</a>
+            //                 </Link>
+            //             </li>
+            //             <li>
+            //                 <Link to="/splitAPIDoc">
+            //                     <a>API Docs</a>
+            //                 </Link>
+            //             </li>
+            //         </ul>
+            //     </div>
+            //     <div className="signbtn">
+            //         <Link to="/onePaySignInHome">
+            //             <button type="button" className="btn sigin">
+            //                 Sign In
+            //                     </button>
+            //         </Link>
+            //         <Link to="/onePaySignUpHome">
+            //             <button type="button" className="btn sigup">
+            //                 Sign Up
+            //                     </button>
+            //         </Link>
+            //     </div>
+            //     <Modal
+            //         open={this.state.merchantstrippop}
+            //         onClose={this.handleMerchantStripPopClose.bind(this)}
+            //         modalId="PlanPaymentModal"
+            //         overlayId="overlay"
+            //     >
+            //         <div className="backtext">
+            //             <h3 className="eduser">Merchant Registration</h3>
+            //             <img src={CloseIcon} alt="CloseIcon" className="closeicon" onClick={this.handleMerchantStripPopClose.bind(this)} />
+            //         </div>
+            //         <div className="edituser signup">
+            //             <div className="mersign">
+            //                 <div className="input-cntr margin">
+            //                     <div className="input-icons">
+            //                         <img src={email} alt="icon missing" />
+            //                     </div>
+            //                     <input type="text" placeholder="Email Id *"
+            //                         name="emailId"
+            //                         value={this.state.emailId}
+            //                         onChange={this.handleOnChange.bind(this)}
+            //                         disabled={!this.state.isEmailOtpVerified ? ((this.state.emailMinute > 0 || this.state.emailSecond > 0) ? true : false) : true}
+            //                     />
+            //                 </div>
+            //             </div>
+
+            //             {this.state.isEmailOtpVerified ?
+            //                 (<p className="Verify">Verified</p>) :
+            //                 (this.state.isEmailOTPVerifySend ? ((this.state.emailMinute > 0 || this.state.emailSecond > 0) ? (<p className="Verify">OTP Sent</p>) : (<p className="Verify"></p>)) :
+            //                     (<p className="Verify" onClick={this.handleVerifyEmailFieldClick}>Verify OTP</p>))}
+            //             {this.state.isVerifyEmail ?
+            //                 (<><div className="mersign">
+            //                     <div>
+            //                         <div className="input-cntr margin">
+            //                             <div className="input-icons">
+            //                                 <img src={email} alt="icon missing" />
+            //                             </div>
+            //                             <input type="text" placeholder="Enter Email OTP"
+            //                                 name="emailOTP"
+            //                                 value={this.state.emailOTP}
+            //                                 onChange={this.handleOnChange.bind(this)}
+            //                                 disabled={!this.state.isEmailOtpVerified ? false : true}
+            //                             />
+            //                         </div>
+
+            //                         {this.state.isEmailOtpVerified ?
+            //                             (<p className="Verify"></p>) :
+            //                             ((this.state.emailMinute == 0 && this.state.emailSecond == 0) ? (<p className="Verify" onClick={this.handleVerifyEmailFieldClick}>Resend OTP</p>) :
+            //                                 (<p className="Verify" onClick={this.handleConfirmEmailOTP}>Confirm <label style={{ paddingLeft: "12px" }}>{this.state.emailMinute}{" : "}{this.state.emailSecond}</label></p>))}
+            //                     </div>
+            //                 </div></>)
+            //                 : null}
+            //             <div className="merchtstppopup">
+            //                 <button className="btn" onClick={this.handleGetStripeUrlDetails.bind(this)}>Submit</button>
+            //             </div>
+            //         </div>
+            //     </Modal>
+            // </header>
 
         );
     }

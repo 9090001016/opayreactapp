@@ -2756,15 +2756,14 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 15px;
+  padding: 0 15px;
   color: #fff;
   position: absolute;
   top: 0;
   width: 100%;
   border-bottom: 1px solid #ccc;
   z-index: 1;
-  background: #fff;
-  box-shadow: 2px 2px 2px #ccc;
+  background: #4075ff;
 }
 header .inpay a h4 {
   text-transform: uppercase;
@@ -3042,7 +3041,7 @@ header .signbtn .sigup {
   justify-content: space-around;
   align-items: center;
   /* background-image: linear-gradient(to right, #009bdd 0%, #003280 100%); */
-  background: #fff;
+  background:#4075ff;
   padding: 15px;
   color: #fff;
   width: 100%;
@@ -4600,3 +4599,437 @@ margin:0;
 .overflsc .ant-table-content {
   overflow: auto;
 }
+
+
+/* rahul new theme yellow and blue css */
+
+.header__block {
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  width: 100%;
+  }
+  
+  .header__block nav .menu__links {
+  display: flex;
+  }
+  
+  .header__block ul li a {
+  color:#fff !important;
+  }
+  
+  .header__block .navbar-toggler {
+  color:#fff;
+  border-color:#fff;
+  }
+  
+  .navbar-light .navbar-toggler-icon {
+  filter:invert(100%) sepia(100%) saturate(0%) hue-rotate(20deg) brightness(150%) contrast(150%);
+  }
+  
+  .header__block .user__icon img {
+  width: 30px;
+  }
+
+.banner__section {
+  background: url(../Images/instant-banner.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding:4rem;
+  height: 40rem;
+  }
+  
+  .banner__section.forbusiness__bg {
+  background: url(../Images/instant-forbusiness-banner.png); 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  
+  .banner__section .banner__btn {
+  position: absolute;
+  bottom: 120px;
+  }
+  
+  .banner__section .banner__btn h3 {
+  color:#fff;
+  margin-bottom: 5rem;
+  text-shadow: 1px 1px #000;
+  }
+  
+  .yellow__btn {
+  background: #FFBD2B;
+  border: none;
+  padding: 10px 30px;
+  font-weight: 500;
+  border-radius: 5px;
+  }
+  
+  .works__section {
+  padding: 4rem 4rem;
+  border-bottom: 1px solid #ccc;
+  }
+  
+  .works__section .top__head {
+  margin:2rem 0;
+  }
+  
+  .works__section .top__head .sub__text {
+  color: #4075FF;
+  font-size: 16px;
+  }
+  
+  .works__section .top__head .heading__text {
+  text-align: left;
+  margin-top: 10px;
+  color: #4075ff;
+  font-weight: bold;
+  }
+  
+  .works__section .works__block .img__block {
+  text-align: center;
+  }
+  
+  .works__section .works__block .img__block img {
+  width: 130px;
+  margin-bottom: 1rem;
+  }
+  
+  .works__section .works__block h4 {
+  font-weight: bold;
+  color: #4075ff;
+  text-align: center;
+  margin-bottom: 1rem;
+  }
+  
+  .works__section .works__block p {
+  text-align: center;
+  color: #4075ff;
+  }
+  
+  
+  .instant__section {
+  padding: 4rem 4rem;
+  border-bottom: 1px solid #ccc;
+  }
+  
+  .instant__section .top__head {
+  margin:2rem 0;
+  }
+  
+  .instant__section .top__head .sub__text {
+  color: #4075FF;
+  font-size: 16px;
+  }
+  
+  .instant__section .top__head .heading__text {
+  text-align: left;
+  margin-top: 10px;
+  color: #4075ff;
+  font-weight: bold;
+  }
+  
+  .instant__section  .img__block {
+  text-align: center;
+  }
+  
+  .instant__section  .img__block img {
+  width: 80%;
+  margin: auto;
+  }
+  
+  .instant__section .text__block {
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  }
+  
+  .instant__section .text__block h3 {
+  text-align: left;
+  margin-bottom: 1rem;
+  color: #4075ff;
+  font-weight: bold;
+  font-size: 32px;
+  }
+  
+  .instant__section .text__block h4 {
+  text-align: left;
+  margin-bottom: 1rem;
+  color: #4075ff;
+  font-weight: bold;
+  font-size: 22px;
+  }
+  
+  .instant__section .text__block p {
+  color: #4075ff;
+  }
+  
+  
+  .signup__section {
+    padding: 4rem 4rem;
+    /* border-bottom: 1px solid #ccc; */
+    }
+    
+    .signup__section .top__head {
+    margin:2rem 0;
+    }
+    
+    .signup__section .top__head .sub__text {
+    color: #4075FF;
+    font-size: 16px;
+    }
+    
+    .signup__section .top__head .heading__text {
+    text-align: left;
+    margin-top: 10px;
+    color: #4075ff;
+    font-weight: bold;
+    }
+  
+  .signup__section  .img__block {
+  text-align: center;
+  }
+  
+  .signup__section  .img__block img {
+  width: 100%;
+  /* margin: auto; */
+  }
+  
+  .signup__section .text__block {
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  }
+  
+  .signup__section .text__block h3 {
+  text-align: left;
+  margin-bottom: 1rem;
+  color: #4075ff;
+  font-weight: bold;
+  font-size: 32px;
+  }
+  
+  .signup__section .text__block h4 {
+  text-align: left;
+  margin-bottom: 1rem;
+  color: #4075ff;
+  font-weight: bold;
+  font-size: 22px;
+  }
+  
+  .signup__section .text__block p {
+  color: #4075ff;
+  }
+  
+  .signup__section .text__block .yellow__btn {
+  width: 10rem;
+  padding: 5px;
+  margin: 2rem 0;
+  font-size: 25px;
+  font-weight: bold;
+  }
+  
+  .signup__section .text__block img {
+    width: 100px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  
+  .join__section {
+  padding: 6rem 4rem;
+  background: #F5F5F5;
+  margin-top:4rem;
+  }
+  
+  .join__section h4 {
+  text-align: center;
+  padding: 0 5rem;
+  line-height: 1.5;
+  }
+  
+  .join__section .right {
+  text-align: center;
+  }
+  
+  .join__section .right .yellow__btn img {
+  width: 25px;
+  margin-right: 10px;
+  }
+  
+  .footer__block {
+  position: absolute;
+  bottom: 0;
+  background: #fff;
+  }
+  
+  .footer__secton {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  }
+
+  .footer__secton .footer__logo img {
+  width: 35px;
+  }
+  
+  .footer__secton .footer__Links ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  }
+  
+  .footer__secton .footer__Links ul li a {
+  color: #101D40 !important;
+  font-weight: bold;
+  margin-right: 15px;
+  }
+  
+  .footer__secton .footer__socail {
+  display: flex;
+  }
+  
+  .footer__secton .footer__socail label {
+  margin-right: 10px;
+  font-weight: 500;
+  }
+  
+  .footer__secton .footer__socail ul {
+  display: flex;
+  }
+  
+  .footer__secton .footer__socail ul a {
+  font-size: 26px;
+  margin-left: 15px;
+  }
+  
+  .copyright__text {
+  margin-bottom: 1rem;
+  }
+  
+  @media (max-width : 991px) {
+    .header__block nav .menu__links {
+    display: block;
+    }
+  
+    .header__block nav  .foryou ul li {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    .instant__section .text__block {
+      padding: 0;
+    }
+  
+    .join__section h4 {
+      padding: 0;
+    }
+  }
+  
+  @media (max-width : 767px) {
+    .banner__section {
+      padding: 2rem;
+    }
+  
+    .instant__section .text__block {
+      margin-bottom: 1rem;
+    }
+  
+    .instant__section .instant__img {
+      order:1;
+    }
+  
+    .instant__section .instant__text {
+      order:2;
+    }
+  
+    .instant__section .nopassword__text {
+      order:4;
+    }
+  
+    .instant__section .nopassword__img {
+      order:3;
+    }
+  
+    .instant__section .safe__text {
+      order:6;
+    }
+  
+    .instant__section .safe__img {
+      order:5;
+    }
+  
+    .instant__section .easy__text {
+      order:8;
+    }
+  
+    .instant__section .easy__img {
+      order:7;
+    }
+  
+    .footer__block {
+    position: relative;
+    }
+  
+    .footer__secton {
+      display: block;
+    }
+  
+    .footer__secton .footer__logo {
+      margin: 10px auto;
+      text-align: center;
+    }
+  
+    .footer__secton .footer__Links ul {
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  
+    .footer__secton .footer__socail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .footer__secton .footer__socail ul a {
+      font-size: 18px;
+      margin-left:10px;
+    }
+  
+    .join__section, .instant__section, .works__section {
+    padding: 2rem;
+    }
+  
+    .join__section h4 {
+    padding: 0rem;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    }
+  
+    .copyright__text p {
+    font-size: 12px;
+    text-align: center;
+    }
+  
+    .main__content #root {
+    padding-bottom: 0rem !important;
+    }
+  
+    .signup__section .text__block {
+    margin-bottom: 4rem;
+    }
+  
+    .signup__section .text__block {
+      padding: 2rem;
+    }
+  
+  
+  }
