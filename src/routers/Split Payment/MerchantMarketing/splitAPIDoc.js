@@ -1355,64 +1355,66 @@ Response Failure`}
                 </section>
 
                 <div className="container-fluid footer__block">
-                    <div className="row">
-                        <div className="container">
+          <div className="row">
+            <div className="container">
 
-                            <footer className="footer__secton">
-                                <div className="inpay footer__logo">
-                                    <img src={onepayFooterLogo} width="50px" className="logo__img" />
-                                </div>
-                                <div className="footer__Links">
-                                    <ul>
-                                        <li>
-                                            <Link to="/customer">
-                                                <a>For You</a>
-                                            </Link>
-                                        </li>
+            <footer className="footer__secton">
+              <div className="inpay footer__logo">
+                <img src={onepayFooterLogo} width="50px" className="logo__img" />
+              </div>
+              <div className="footer__Links">
+                <ul>
+                  <li>
+                      <Link to="/customer">
+                          <a>For You</a>
+                      </Link>
+                  </li>
 
-                                        <li>
+                  <li>
 
-                                            <Link to="/merchant">
-                                                <a>For Business</a>
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/splitAPIDoc">
-                                                <a>API Information</a>
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="#">
-                                                <a>Shop</a>
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </div>
+                      <Link to="/merchant">
+                          <a>For Business</a>
+                      </Link>
+                  </li>
+                  
+                  <li>
+                      <Link to="#">
+                          <a>Shop</a>
+                      </Link>
+                  </li>
 
-                                <div className="footer__socail">
-                                    <label>Follow Us :</label>
-                                    <ul>
-                                        <li>
-                                            <a className="fa fa-facebook" href="https://www.facebook.com/" target="_blank"></a>
-                                        </li>
-                                        <li>
-                                            <a className="fa fa-instagram" href="https://www.instagram.com/" target="_blank"></a>
-                                        </li>
-                                        <li>
-                                            <a className="fa fa-linkedin" href="https://in.linkedin.com/" target="_blank"></a>
-                                        </li>
-                                        <li>
-                                            <a className="fa fa-twitter" href="https://twitter.com/" target="_blank"></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </footer>
-                            <div className="copyright__text">
-                                <p>© Text, Inc. 2019. We love our users!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  <li>
+                      <Link to="/splitAPIDoc">
+                          <a>API Information</a>
+                      </Link>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="footer__socail">
+                  <label>Follow Us :</label>
+                  <ul>
+                    <li>
+                      <a className="fa fa-facebook" href="https://www.facebook.com/" target="_blank"></a>
+                    </li>
+                    <li>
+                      <a className="fa fa-instagram" href="https://www.instagram.com/" target="_blank"></a>
+                    </li>
+                    <li>
+                      <a className="fa fa-linkedin" href="https://in.linkedin.com/" target="_blank"></a>
+                    </li>
+                    <li>
+                      <a className="fa fa-twitter" href="https://twitter.com/" target="_blank"></a>
+                    </li>
+                  </ul>
+              </div>
+            </footer>
+            <div className="copyright__text">
+                <p>© Text, Inc. 2019. We love our users!</p>
+            </div>
+            </div>
+          </div>
+        </div>
 
                 {/* <div className="foot">
                     <footer className="container">

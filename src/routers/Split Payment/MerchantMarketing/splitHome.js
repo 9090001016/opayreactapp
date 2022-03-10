@@ -429,9 +429,16 @@ class splitHome extends Component {
                           <a>For Business</a>
                       </Link>
                   </li>
+                  
                   <li>
                       <Link to="#">
                           <a>Shop</a>
+                      </Link>
+                  </li>
+
+                  <li>
+                      <Link to="/splitAPIDoc">
+                          <a>API Information</a>
                       </Link>
                   </li>
                 </ul>
