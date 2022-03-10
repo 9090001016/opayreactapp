@@ -4738,6 +4738,11 @@ margin:0;
   width: 80%;
   margin: auto;
   }
+
+  .instant__section  .img__block .imagespace {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  }
   
   .instant__section .text__block {
   padding: 0 3rem;

@@ -47,6 +47,10 @@ import onepayLogoIcon from "../../../assets/Images/blue-logo.png";
 import onepayFooterLogo from "../../../assets/Images/onepay-footer-logo.png";
 
 
+import increaseAov from "../../../assets/Images/increase-aov.png";
+import increaseRevenue from "../../../assets/Images/increase-revenue.png";
+import lessDoubt from "../../../assets/Images/less-doubt.png";
+import cartReduction from "../../../assets/Images/cart-reduction.png";
 
 
 class splitforbusiness extends Component {
@@ -191,7 +195,7 @@ class splitforbusiness extends Component {
 
                 <div className="col-12 col-sm-6 col-md-6 col-lg-6 instant__img">
                     <div className="img__block">
-                      <img src={onpeyicon4} alt="Sign Up" />
+                      <img src={increaseAov} alt="Sign Up" />
                     </div>
                 </div>
 
@@ -213,13 +217,13 @@ class splitforbusiness extends Component {
 
                 <div className="col-12 col-sm-6 col-md-6 col-lg-6 nopassword__img">
                     <div className="img__block">
-                      <img src={onpeyicon5} alt="Sign Up" />
+                      <img src={increaseRevenue} className="imagespace" alt="Sign Up" />
                     </div>
                 </div>
 
                 <div className="col-12 col-sm-6 col-md-6 col-lg-6 safe__img">
                     <div className="img__block">
-                      <img src={onpeyicon6} alt="Sign Up" />
+                      <img src={lessDoubt} className="imagespace w-50" alt="Sign Up" />
                     </div>
                 </div>
 
@@ -241,7 +245,7 @@ class splitforbusiness extends Component {
 
                 <div className="col-12 col-sm-6 col-md-6 col-lg-6 easy__img">
                     <div className="img__block">
-                      <img src={onpeyicon7} alt="Sign Up" />
+                      <img src={cartReduction} alt="Sign Up" />
                     </div>
                 </div>
 
