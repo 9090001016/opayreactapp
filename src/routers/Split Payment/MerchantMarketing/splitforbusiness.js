@@ -104,7 +104,10 @@ class splitforbusiness extends Component {
           <div className="banner__section forbusiness__bg">
             <div className="banner__btn">
               <h3>Grow your online <br/> business </h3>
-              <button className="yellow__btn"> <img src={onepayLogoIcon} className="mr-2" /> Sign Up</button>
+              {/* <button className="yellow__btn"> <img src={onepayLogoIcon} className="mr-2" /> Sign Up</button> */}
+              <Link to="/merchant" className="yellow__btn">
+                  <img src={onepayLogoIcon} className="mr-2" /> Sign Up
+              </Link>
             </div>
           </div>
           <Header />
@@ -277,7 +280,10 @@ class splitforbusiness extends Component {
                     <h4>Just create your account</h4>
                     <p>If your website is built in WOOCOMMERCE just search and install the Plug In. We are working on all the APIs for the most popular website hosting services in the market. </p>
                     <p className="mt-2">Meanwhile, you can install instant by checking the instructions by clicking the API menu at the bottom of the page.</p>
-                    <button class="yellow__btn"><img src={onpeyLogoButton} /></button>
+                    {/* <button class="yellow__btn"><img src={onpeyLogoButton} /></button> */}
+                    <Link to="/merchant" className="yellow__btn text-center">
+                      <img src={onpeyLogoButton} />
+                   </Link>
                   </div>
                 </div>
             </div>
@@ -293,7 +299,10 @@ class splitforbusiness extends Component {
 
                 <div className="col-md-6">
                     <div className="right">
-                      <button class="yellow__btn"><img src={onepayLogoIcon} />Join Today</button>
+                      {/* <button class="yellow__btn"><img src={onepayLogoIcon} />Join Today</button> */}
+                      <Link to="/merchant" className="yellow__btn text-center">
+                        <img src={onepayLogoIcon} />Join Today
+                       </Link>
                     </div>
                 </div>
             </div>
@@ -478,23 +487,23 @@ class splitforbusiness extends Component {
               <div className="footer__Links">
                 <ul>
                   <li>
-                      <Link to="/customer">
+                      <Link to="/">
                           <a>For You</a>
                       </Link>
                   </li>
 
                   <li>
 
-                      <Link to="/merchant">
+                      <Link to="/onePayforbusiness">
                           <a>For Business</a>
                       </Link>
                   </li>
                   
-                  <li>
+                  {/* <li>
                       <Link to="#">
                           <a>Shop</a>
                       </Link>
-                  </li>
+                  </li> */}
 
                   <li>
                       <Link to="/splitAPIDoc">

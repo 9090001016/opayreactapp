@@ -85,7 +85,10 @@ class splitHome extends Component {
         <div className="banner__section">
             <div className="banner__btn">
               <h3>Shop in Installments <br/> with OnePay</h3>
-              <button className="yellow__btn"> <img src={onepayLogoIcon} className="mr-2" /> Sign Up</button>
+              {/* <button className="yellow__btn"> <img src={onepayLogoIcon} className="mr-2" /> Sign Up</button> */}
+              <Link to="/customer" className="yellow__btn">
+                  <img src={onepayLogoIcon} className="mr-2" /> Sign Up
+              </Link>
             </div>
           </div>
           <Header />
@@ -342,7 +345,10 @@ class splitHome extends Component {
                   <div className="text__block">
                     <h4>Browse and buy from your favourite online stores</h4>
                     <p>Start shopping on our powerful eCommerce platform and explore limitless products from your favourite brands.</p>
-                    <button class="yellow__btn"><img src={onpeyLogoButton} /></button>
+                    {/* <button class="yellow__btn"><img src={onpeyLogoButton} /></button> */}
+                    <Link to="/merchant" className="yellow__btn text-center">
+                       <img src={onpeyLogoButton} />
+                    </Link>
                   </div>
                 </div>
             </div>
@@ -358,7 +364,10 @@ class splitHome extends Component {
 
                 <div className="col-md-6">
                     <div className="right">
-                      <button class="yellow__btn"><img src={onepayLogoIcon} />Join Today</button>
+                      {/* <button class="yellow__btn"><img src={onepayLogoIcon} />Join Today</button> */}
+                      <Link to="/customer" className="yellow__btn">
+                          <img src={onepayLogoIcon} className="mr-2" /> Join Today
+                      </Link>
                     </div>
                 </div>
             </div>
@@ -418,23 +427,23 @@ class splitHome extends Component {
               <div className="footer__Links">
                 <ul>
                   <li>
-                      <Link to="/customer">
+                      <Link to="/">
                           <a>For You</a>
                       </Link>
                   </li>
 
                   <li>
 
-                      <Link to="/merchant">
+                      <Link to="/onePayforbusiness">
                           <a>For Business</a>
                       </Link>
                   </li>
                   
-                  <li>
+                  {/* <li>
                       <Link to="#">
                           <a>Shop</a>
                       </Link>
-                  </li>
+                  </li> */}
 
                   <li>
                       <Link to="/splitAPIDoc">

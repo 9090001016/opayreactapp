@@ -1365,23 +1365,23 @@ Response Failure`}
               <div className="footer__Links">
                 <ul>
                   <li>
-                      <Link to="/customer">
+                      <Link to="/">
                           <a>For You</a>
                       </Link>
                   </li>
 
                   <li>
 
-                      <Link to="/merchant">
+                      <Link to="/onePayforbusiness">
                           <a>For Business</a>
                       </Link>
                   </li>
                   
-                  <li>
+                  {/* <li>
                       <Link to="#">
                           <a>Shop</a>
                       </Link>
-                  </li>
+                  </li> */}
 
                   <li>
                       <Link to="/splitAPIDoc">
