@@ -86,7 +86,7 @@ class splitHome extends Component {
             <div className="banner__btn">
               <h3>Shop in Installments <br/> with OnePay</h3>
               {/* <button className="yellow__btn"> <img src={onepayLogoIcon} className="mr-2" /> Sign Up</button> */}
-              <Link to="/customer" className="yellow__btn">
+              <Link to="/onePayUserSignUp" className="yellow__btn">
                   <img src={onepayLogoIcon} className="mr-2" /> Sign Up
               </Link>
             </div>
@@ -346,7 +346,7 @@ class splitHome extends Component {
                     <h4>Browse and buy from your favourite online stores</h4>
                     <p>Start shopping on our powerful eCommerce platform and explore limitless products from your favourite brands.</p>
                     {/* <button class="yellow__btn"><img src={onpeyLogoButton} /></button> */}
-                    <Link to="/merchant" className="yellow__btn text-center">
+                    <Link to="/onePaySignUp" className="yellow__btn text-center">
                        <img src={onpeyLogoButton} />
                     </Link>
                   </div>
@@ -365,7 +365,7 @@ class splitHome extends Component {
                 <div className="col-md-6">
                     <div className="right">
                       {/* <button class="yellow__btn"><img src={onepayLogoIcon} />Join Today</button> */}
-                      <Link to="/customer" className="yellow__btn">
+                      <Link to="/onePayUserSignUp" className="yellow__btn">
                           <img src={onepayLogoIcon} className="mr-2" /> Join Today
                       </Link>
                     </div>
