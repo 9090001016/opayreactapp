@@ -14,7 +14,7 @@ import email from "../../../assets/Images/emailBl.png";
 // import OnePayLogo from "./../../../assets/Images/OnePay-logo.png";
 import OnePayLogo from "./../../../assets/Images/onepaylogowhite.png";
 
-import userWhiteIcon from "./../../../assets/Images/user-icon.png"
+import userWhiteIcon from "./../../../assets/Images/user-icon.png";
 
 class splitHeader extends Component {
     constructor(props) {
