@@ -346,7 +346,7 @@ class splitHome extends Component {
                     <h4>Browse and buy from your favourite online stores</h4>
                     <p>Start shopping on our powerful eCommerce platform and explore limitless products from your favourite brands.</p>
                     {/* <button class="yellow__btn"><img src={onpeyLogoButton} /></button> */}
-                    <Link to="/onePaySignUp" className="yellow__btn text-center">
+                    <Link to="/onePaySignUp" className="yellow__btn text-center d-block">
                        <img src={onpeyLogoButton} />
                     </Link>
                   </div>

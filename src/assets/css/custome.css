@@ -4719,6 +4719,10 @@ margin:0;
   padding: 4rem 4rem;
   border-bottom: 1px solid #ccc;
   }
+
+  .instant__section .col-lg-6 {
+  margin-bottom: 4rem;
+  }
   
   .instant__section .top__head {
   margin:2rem 0;
@@ -4741,7 +4745,7 @@ margin:0;
   }
   
   .instant__section  .img__block img {
-  width: 80%;
+  width: 60%;
   margin: auto;
   }
 
@@ -4840,7 +4844,7 @@ margin:0;
   .signup__section .text__block .yellow__btn {
   width: 10rem;
   padding: 5px;
-  margin: 2rem 0;
+  margin: 2rem auto;
   font-size: 25px;
   font-weight: bold;
   }
@@ -4926,6 +4930,11 @@ margin:0;
   }
   
   @media (max-width : 991px) {
+
+    .instant__section  .img__block img {
+    width: 80%;
+    }
+
     .header__block nav .menu__links {
     display: block;
     }
