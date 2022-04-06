@@ -272,6 +272,16 @@ class splitHeader extends Component {
                                 <div className="foryou">
                                     <ul className="menu__links">
                                         <li>
+                                            <Link to="/customer">
+                                                <a>Sign In For You</a>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/merchant">
+                                                <a>Sign In For Business</a>
+                                            </Link>
+                                        </li>
+                                        <li>
                                             <Link to="/">
                                                 <a>For You</a>
                                             </Link>
