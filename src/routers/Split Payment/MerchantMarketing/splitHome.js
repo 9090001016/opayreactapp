@@ -457,16 +457,16 @@ class splitHome extends Component {
                   <label>Follow Us :</label>
                   <ul>
                     <li>
-                      <a className="fa fa-facebook" href="https://www.facebook.com/" target="_blank"></a>
+                      <a className="fa fa-facebook" href="https://www.facebook.com/Onepay-103675854977782" target="_blank"></a>
                     </li>
                     <li>
-                      <a className="fa fa-instagram" href="https://www.instagram.com/" target="_blank"></a>
+                      <a className="fa fa-instagram" href="https://www.instagram.com/onepay_officials/" target="_blank"></a>
                     </li>
                     <li>
-                      <a className="fa fa-linkedin" href="https://in.linkedin.com/" target="_blank"></a>
+                      <a className="fa fa-linkedin" href="https://www.linkedin.com/company/one-pay/about/?viewAsMember=true" target="_blank"></a>
                     </li>
                     <li>
-                      <a className="fa fa-twitter" href="https://twitter.com/" target="_blank"></a>
+                      <a className="fa fa-twitter" href="https://twitter.com/OnePay9" target="_blank"></a>
                     </li>
                   </ul>
               </div>
