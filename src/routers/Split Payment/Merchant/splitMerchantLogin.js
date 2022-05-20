@@ -31,6 +31,12 @@ class splitMerchantLogin extends Component {
     this.handleFinaleSubmit = this.handleFinaleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    document.getElementsByTagName("meta")[3].content =
+      "Connect your customers with OnePay | For Merchants";
+    document.getElementsByTagName("meta")[4].content =
+      "Say goodbye to cart abandonment by giving your customers a reliable Buy Now Pay Later option from OnePay. Thinking about becoming one of our partners? Sign up now. ";
+  }
   ///finale submit
   handleFinaleSubmit(e) {
     e.preventDefault();
@@ -57,19 +63,23 @@ class splitMerchantLogin extends Component {
         },
       })
         .then(function (res) {
-          
           let resValid = res.data.message;
           if (resValid === "Valid Login") {
-            
             let decryptedToken = encryption(res.data.responseData.token, "dec");
-            window.localStorage.setItem("onepaymerchanttoken", res.data.responseData.token);
+            window.localStorage.setItem(
+              "onepaymerchanttoken",
+              res.data.responseData.token
+            );
             // setTimeout(function () {
             //   self.props.history.push("/instantPayMerchant/dashboard");
             // }, 100);
             self.setState({
               loading: false,
             });
-            cookies.set("onepaymerchanttoken", res.data.responseData.token, { path: "/", maxAge: 86400 });
+            cookies.set("onepaymerchanttoken", res.data.responseData.token, {
+              path: "/",
+              maxAge: 86400,
+            });
             self.handleGetRolesPermissionsList();
           } else {
             NotificationManager.error(res.data.responseData.message, "", 1500);
@@ -95,7 +105,6 @@ class splitMerchantLogin extends Component {
 
   /// handle input onchange
   handleInputOnchange = (e) => {
-    
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -109,7 +118,7 @@ class splitMerchantLogin extends Component {
     let self = this;
     var rolesPermissionsData = [];
     self.setState({
-      loading: true
+      loading: true,
     });
     axios({
       method: "get",
@@ -120,56 +129,76 @@ class splitMerchantLogin extends Component {
       // },
     })
       .then(function (res) {
-        
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
           // data.map((item) => {
-            // if (item.roleName == "Admin") {
-              window.localStorage.setItem("OnePayMerchantModule", data.mappedModuleName);
-              window.localStorage.setItem("OnePayMerchanSubModule", data.mappedSubModuleName);
-            // } else if (item.roleName == "User") {
-            //   window.localStorage.setItem("Module", item.mappedModuleName);
-            //   window.localStorage.setItem("SubModule", item.mappedSubModuleName);
-            //   // self.setState({
-            //   //   rolesPermissionsData: [],
-            //   //   loading: false
-            //   // });
-            // }
+          // if (item.roleName == "Admin") {
+          window.localStorage.setItem(
+            "OnePayMerchantModule",
+            data.mappedModuleName
+          );
+          window.localStorage.setItem(
+            "OnePayMerchanSubModule",
+            data.mappedSubModuleName
+          );
+          // } else if (item.roleName == "User") {
+          //   window.localStorage.setItem("Module", item.mappedModuleName);
+          //   window.localStorage.setItem("SubModule", item.mappedSubModuleName);
+          //   // self.setState({
+          //   //   rolesPermissionsData: [],
+          //   //   loading: false
+          //   // });
+          // }
           // })
 
           // if (search = "Admin") {
-            if(window.localStorage.getItem("OnePayMerchantModule").includes('Dashboard'))
-            {
-              setTimeout(function () {
-                self.props.history.push("/onePayMerchant/dashboard");
-              }, 100);  
-            } else if(window.localStorage.getItem("OnePayMerchantModule").includes('Transaction History')){
-              setTimeout(function () {
-                self.props.history.push("/onePayMerchant/transaction-history");
-              }, 100); 
-            } else if(window.localStorage.getItem("OnePayMerchantModule").includes('Subscription')){
-              setTimeout(function () {
-                self.props.history.push("/onePayMerchant/merchantSubscription");
-              }, 100); 
-            } else if(window.localStorage.getItem("OnePayMerchantModule").includes('Settings')){
-              setTimeout(function () {
-                self.props.history.push("/onePayMerchant/merchantSetting");
-              }, 100); 
-            }
-                  
+          if (
+            window.localStorage
+              .getItem("OnePayMerchantModule")
+              .includes("Dashboard")
+          ) {
+            setTimeout(function () {
+              self.props.history.push("/onePayMerchant/dashboard");
+            }, 100);
+          } else if (
+            window.localStorage
+              .getItem("OnePayMerchantModule")
+              .includes("Transaction History")
+          ) {
+            setTimeout(function () {
+              self.props.history.push("/onePayMerchant/transaction-history");
+            }, 100);
+          } else if (
+            window.localStorage
+              .getItem("OnePayMerchantModule")
+              .includes("Subscription")
+          ) {
+            setTimeout(function () {
+              self.props.history.push("/onePayMerchant/merchantSubscription");
+            }, 100);
+          } else if (
+            window.localStorage
+              .getItem("OnePayMerchantModule")
+              .includes("Settings")
+          ) {
+            setTimeout(function () {
+              self.props.history.push("/onePayMerchant/merchantSetting");
+            }, 100);
+          }
+
           // } else if (search = "User") {
           //   setTimeout(function () {
           //     self.props.history.push("/user/dashboard");
-          //   }, 100);          
+          //   }, 100);
           // } else if (search = "Merchant") {
           //   setTimeout(function () {
           //     self.props.history.push("/merchant/dashboard");
-          //   }, 100);           
+          //   }, 100);
           // } else if (search = "Customer") {
           //   setTimeout(function () {
           //     self.props.history.push("/user/userdashboard");
-          //   }, 100);       
+          //   }, 100);
           // }
         }
       })
@@ -183,9 +212,9 @@ class splitMerchantLogin extends Component {
       <div className="outer-sign-in">
         <NotificationContainer />
         <div className="text-center w-100">
-        <Link to="/">
+          <Link to="/">
             <img src={OnePayLogo} width="150px" className="onepay__logo" />
-        </Link>
+          </Link>
           <div className="sign-in-card">
             <label className="sign-in">Sign In</label>
             <form name="sign-in-form" onSubmit={this.handleFinaleSubmit}>
@@ -216,18 +245,19 @@ class splitMerchantLogin extends Component {
                   autoComplete="off"
                   onChange={this.handleInputOnchange}
                 />
-                <div className="input-icons cursor-pointer m-0 ml-2"
-                onClick={this.togglePassword}
+                <div
+                  className="input-icons cursor-pointer m-0 ml-2"
+                  onClick={this.togglePassword}
                 >
                   {this.state.isRevealPassword ? (
                     <img src={eye} alt="icon missing" />
                   ) : (
-                      // <i
-                      //   class="fa fa-eye-slash icon-eye-slash"
-                      //   aria-hidden="true"
-                      // ></i>
-                      <img src={hidepassword} alt="icon missing" />
-                    )}
+                    // <i
+                    //   class="fa fa-eye-slash icon-eye-slash"
+                    //   aria-hidden="true"
+                    // ></i>
+                    <img src={hidepassword} alt="icon missing" />
+                  )}
                 </div>
               </div>
               <div className="flex-parted">
@@ -254,8 +284,8 @@ class splitMerchantLogin extends Component {
                 )}
                 Sign In
               </button>
-              <Link  to="onePaySignUp">
-              <p className="mtop10 fsize14">Sign Up</p>
+              <Link to="onePaySignUp">
+                <p className="mtop10 fsize14">Sign Up</p>
               </Link>
             </form>
           </div>

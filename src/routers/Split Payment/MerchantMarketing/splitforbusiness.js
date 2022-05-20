@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
-
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 
 import Back from "../../../assets/Images/sign-in-bg.jpg";
 import offerChecklist from "../../../assets/Images/offer__checklist.png";
@@ -46,12 +45,10 @@ import onpeyLogoButton from "../../../assets/Images/onepay-btn-logo.png";
 import onepayLogoIcon from "../../../assets/Images/blue-logo.png";
 import onepayFooterLogo from "../../../assets/Images/onepay-footer-logo.png";
 
-
 import increaseAov from "../../../assets/Images/increase-aov.png";
 import increaseRevenue from "../../../assets/Images/increase-revenue.png";
 import lessDoubt from "../../../assets/Images/less-doubt.png";
 import cartReduction from "../../../assets/Images/cart-reduction.png";
-
 
 class splitforbusiness extends Component {
   constructor(props) {
@@ -63,6 +60,10 @@ class splitforbusiness extends Component {
   }
 
   componentDidMount() {
+    document.getElementsByTagName("meta")[3].content =
+      "OnePay for Business – Lower Cart Abandonment, Higher Order Values";
+    document.getElementsByTagName("meta")[4].content =
+      "Integrate BNPL service to your business seamlessly. With OnePay, you can sell more and drive faster growth without hassle. Sign up in minutes.";
     this.handleGetStaticContent();
   }
 
@@ -74,7 +75,6 @@ class splitforbusiness extends Component {
       url: config.apiUrl + "OnePayMerchantMarketing/MerchantHomePageStaticData",
     })
       .then(function (res) {
-        
         let data = res.data.responseData;
         self.setState({
           staticContent: data,
@@ -91,7 +91,7 @@ class splitforbusiness extends Component {
       self.props.history.push({
         pathname: "onePayWhyInstant",
         type: type,
-        text: text
+        text: text,
       });
     }, 1000);
   }
@@ -103,10 +103,12 @@ class splitforbusiness extends Component {
         <div className="merchantMar">
           <div className="banner__section forbusiness__bg">
             <div className="banner__btn">
-              <h3>Grow your online <br/> business </h3>
+              <h3>
+                Grow your online <br /> business{" "}
+              </h3>
               {/* <button className="yellow__btn"> <img src={onepayLogoIcon} className="mr-2" /> Sign Up</button> */}
               <Link to="/onePaySignUp" className="yellow__btn">
-                  <img src={onepayLogoIcon} className="mr-2" /> Sign Up
+                <img src={onepayLogoIcon} className="mr-2" /> Sign Up
               </Link>
             </div>
           </div>
@@ -147,165 +149,203 @@ class splitforbusiness extends Component {
 
         <div className="container-fluid">
           <div className="row works__section">
-              <div className="col-md-12 col-12">
-                  <div className="top__head">
-                    <h4 className="sub__text">For Business </h4>
-                    <h3 className="heading__text">How it works</h3>
-                  </div>
-                </div>
+            <div className="col-md-12 col-12">
+              <div className="top__head">
+                <h4 className="sub__text">For Business </h4>
+                <h3 className="heading__text">How it works</h3>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-4">
-                  <div className="works__block">
-                    <div className="img__block">
-                      <img src={onpeyicon1} alt="Sign Up" />
-                    </div>
-                    <h4>Sign Up</h4>
-                    <p>Create your account, connect it to your bank account and start receiving your payments.</p>
-                  </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-4">
+              <div className="works__block">
+                <div className="img__block">
+                  <img src={onpeyicon1} alt="Sign Up" />
                 </div>
+                <h4>Sign Up</h4>
+                <p>
+                  Create your account, connect it to your bank account and start
+                  receiving your payments.
+                </p>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-4">
-                  <div className="works__block">
-                    <div className="img__block">
-                      <img src={onpeyicon2} alt="Sign Up" />
-                    </div>
-                    <h4>Install</h4>
-                    <p>Put the Instant button on your online store. </p>
-                  </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-4">
+              <div className="works__block">
+                <div className="img__block">
+                  <img src={onpeyicon2} alt="Sign Up" />
                 </div>
+                <h4>Install</h4>
+                <p>Put the Instant button on your online store. </p>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-4">
-                  <div className="works__block">
-                    <div className="img__block">
-                      <img src={onpeyicon3} alt="Sign Up" />
-                    </div>
-                    <h4>Grow</h4>
-                    <p>Get ready to see your conversion rates going places they had never been before.</p>
-                  </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-4">
+              <div className="works__block">
+                <div className="img__block">
+                  <img src={onpeyicon3} alt="Sign Up" />
                 </div>
-
+                <h4>Grow</h4>
+                <p>
+                  Get ready to see your conversion rates going places they had
+                  never been before.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="container-fluid">
           <div className="row instant__section">
-              <div className="col-md-12 col-12">
-                  <div className="top__head">
-                    <h4 className="sub__text">For Business</h4>
-                    <h3 className="heading__text">Multiply your sales</h3>
-                  </div>
-                </div>
+            <div className="col-md-12 col-12">
+              <div className="top__head">
+                <h4 className="sub__text">For Business</h4>
+                <h3 className="heading__text">Multiply your sales</h3>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 instant__img">
-                    <div className="img__block">
-                      <img src={increaseAov} alt="Sign Up" />
-                    </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 instant__img">
+              <div className="img__block">
+                <img src={increaseAov} alt="Sign Up" />
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 instant__text">
-                  <div className="text__block">
-                    <h3>130%</h3>
-                    <h4>Increase AOV</h4>
-                    <p>Using OnePay, see your average order value increase to heights you never exoerienced before.</p>
-                  </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 instant__text">
+              <div className="text__block">
+                <h3>130%</h3>
+                <h4>Increase AOV</h4>
+                <p>
+                  Using OnePay, see your average order value increase to heights
+                  you never exoerienced before.
+                </p>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 nopassword__text">
-                  <div className="text__block">
-                    <h3>155%</h3>
-                    <h4>Increase in revenue</h4>
-                    <p>Experience up to 155% incrrease in revenue by allowing your customers to finance their purchase with Onepay.</p>
-                  </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 nopassword__text">
+              <div className="text__block">
+                <h3>155%</h3>
+                <h4>Increase in revenue</h4>
+                <p>
+                  Experience up to 155% incrrease in revenue by allowing your
+                  customers to finance their purchase with Onepay.
+                </p>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 nopassword__img">
-                    <div className="img__block">
-                      <img src={increaseRevenue} className="imagespace" alt="Sign Up" />
-                    </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 nopassword__img">
+              <div className="img__block">
+                <img
+                  src={increaseRevenue}
+                  className="imagespace"
+                  alt="Sign Up"
+                />
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 safe__img">
-                    <div className="img__block">
-                      <img src={lessDoubt} className="imagespace w-50" alt="Sign Up" />
-                    </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 safe__img">
+              <div className="img__block">
+                <img
+                  src={lessDoubt}
+                  className="imagespace w-50"
+                  alt="Sign Up"
+                />
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 safe__text">
-                  <div className="text__block">
-                    <h3>Less Friction</h3>
-                    <h4>Less doubt</h4>
-                    <p>By giving your customers a financing option like Onepay they’ll feel vetter about their decission and are more inclined to check-out their cart.</p>
-                  </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 safe__text">
+              <div className="text__block">
+                <h3>Less Friction</h3>
+                <h4>Less doubt</h4>
+                <p>
+                  By giving your customers a financing option like Onepay
+                  they’ll feel vetter about their decission and are more
+                  inclined to check-out their cart.
+                </p>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 easy__text">
-                  <div className="text__block">
-                    <h3>37%</h3>
-                    <h4>Reduction In Cart Abandonment</h4>
-                    <p>Experience up to a 37% reduction incart abandonment when combining OnePay with Instant.</p>
-                  </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 easy__text">
+              <div className="text__block">
+                <h3>37%</h3>
+                <h4>Reduction In Cart Abandonment</h4>
+                <p>
+                  Experience up to a 37% reduction incart abandonment when
+                  combining OnePay with Instant.
+                </p>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 easy__img">
-                    <div className="img__block">
-                      <img src={cartReduction} alt="Sign Up" />
-                    </div>
-                </div>
-
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 easy__img">
+              <div className="img__block">
+                <img src={cartReduction} alt="Sign Up" />
+              </div>
+            </div>
           </div>
         </div>
-        
 
         <div className="contianer-fluid signup__section">
-            <div className="row">
-              <div className="col-md-12 col-12">
-                    <div className="top__head">
-                      <h4 className="sub__text">Sell</h4>
-                      <h3 className="heading__text">Grow your business with instant</h3>
-                    </div>
-                </div>
+          <div className="row">
+            <div className="col-md-12 col-12">
+              <div className="top__head">
+                <h4 className="sub__text">Sell</h4>
+                <h3 className="heading__text">
+                  Grow your business with instant
+                </h3>
+              </div>
             </div>
+          </div>
         </div>
 
         <div className="contianer-fluid signup__section p-0">
-            <div className="row m-0">
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 p-0">
-                    <div className="img__block">
-                      <img src={onpeyicon8} alt="Sign Up" />
-                    </div>
-                </div>
-
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6">
-                  <div className="text__block">
-                    <h4>Just create your account</h4>
-                    <p>If your website is built in WOOCOMMERCE just search and install the Plug In. We are working on all the APIs for the most popular website hosting services in the market. </p>
-                    <p className="mt-2">Meanwhile, you can install instant by checking the instructions by clicking the API menu at the bottom of the page.</p>
-                    {/* <button class="yellow__btn"><img src={onpeyLogoButton} /></button> */}
-                    <Link to="/onePaySignUp" className="yellow__btn text-center">
-                      <img src={onpeyLogoButton} />
-                   </Link>
-                  </div>
-                </div>
+          <div className="row m-0">
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 p-0">
+              <div className="img__block">
+                <img src={onpeyicon8} alt="Sign Up" />
+              </div>
             </div>
+
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6">
+              <div className="text__block">
+                <h4>Just create your account</h4>
+                <p>
+                  If your website is built in WOOCOMMERCE just search and
+                  install the Plug In. We are working on all the APIs for the
+                  most popular website hosting services in the market.{" "}
+                </p>
+                <p className="mt-2">
+                  Meanwhile, you can install instant by checking the
+                  instructions by clicking the API menu at the bottom of the
+                  page.
+                </p>
+                {/* <button class="yellow__btn"><img src={onpeyLogoButton} /></button> */}
+                <Link to="/onePaySignUp" className="yellow__btn text-center">
+                  <img src={onpeyLogoButton} />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-       
-        <div className="contianer-fluid join__section">
-            <div className="row">
-              <div className="col-md-6">
-                    <div className="left__block">
-                      <h4 className="sub__text">Give your business a better chance. Join Instant and unleash the power of the best checkout in the market.</h4>
-                    </div>
-                </div>
 
-                <div className="col-md-6">
-                    <div className="right">
-                      {/* <button class="yellow__btn"><img src={onepayLogoIcon} />Join Today</button> */}
-                      <Link to="/onePaySignUp" className="yellow__btn text-center">
-                        <img src={onepayLogoIcon} />Join Today
-                       </Link>
-                    </div>
-                </div>
+        <div className="contianer-fluid join__section">
+          <div className="row">
+            <div className="col-md-6">
+              <div className="left__block">
+                <h4 className="sub__text">
+                  Give your business a better chance. Join Instant and unleash
+                  the power of the best checkout in the market.
+                </h4>
+              </div>
             </div>
+
+            <div className="col-md-6">
+              <div className="right">
+                {/* <button class="yellow__btn"><img src={onepayLogoIcon} />Join Today</button> */}
+                <Link to="/onePaySignUp" className="yellow__btn text-center">
+                  <img src={onepayLogoIcon} />
+                  Join Today
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* <div className="container offer__checklist">
@@ -358,7 +398,7 @@ class splitforbusiness extends Component {
             </div>
           </div>
         </div> */}
-        
+
         {/* <div className="container article__section">
             <div className="row">
               <div className="col-md-12">
@@ -450,7 +490,7 @@ class splitforbusiness extends Component {
               </div>
             </div>
         </div> */}
-        
+
         {/* <div className="container testimonial__section">
             <div className="col-md-12">
               <h3>Testimonails</h3>
@@ -479,61 +519,79 @@ class splitforbusiness extends Component {
         <div className="container-fluid footer__block">
           <div className="row">
             <div className="container">
-
-            <footer className="footer__secton">
-              <div className="inpay footer__logo">
-                <img src={onepayFooterLogo} width="50px" className="logo__img" />
-              </div>
-              <div className="footer__Links">
-                <ul>
-                  <li>
+              <footer className="footer__secton">
+                <div className="inpay footer__logo">
+                  <img
+                    src={onepayFooterLogo}
+                    width="50px"
+                    className="logo__img"
+                  />
+                </div>
+                <div className="footer__Links">
+                  <ul>
+                    <li>
                       <Link to="/">
-                          <a>For You</a>
+                        <a>For You</a>
                       </Link>
-                  </li>
+                    </li>
 
-                  <li>
-
+                    <li>
                       <Link to="/onePayforbusiness">
-                          <a>For Business</a>
+                        <a>For Business</a>
                       </Link>
-                  </li>
-                  
-                  {/* <li>
+                    </li>
+
+                    {/* <li>
                       <Link to="#">
                           <a>Shop</a>
                       </Link>
                   </li> */}
 
-                  <li>
+                    <li>
                       <Link to="/splitAPIDoc">
-                          <a>API Information</a>
+                        <a>API Information</a>
                       </Link>
-                  </li>
-                </ul>
-              </div>
+                    </li>
+                  </ul>
+                </div>
 
-              <div className="footer__socail">
+                <div className="footer__socail">
                   <label>Follow Us :</label>
                   <ul>
                     <li>
-                      <a className="fa fa-facebook" href="https://www.facebook.com/Onepay-103675854977782" target="_blank"></a>
+                      <a
+                        className="fa fa-facebook"
+                        href="https://www.facebook.com/Onepay-103675854977782"
+                        target="_blank"
+                      ></a>
                     </li>
                     <li>
-                      <a className="fa fa-instagram" href="https://www.instagram.com/onepay_officials/" target="_blank"></a>
+                      <a
+                        className="fa fa-instagram"
+                        href="https://www.instagram.com/onepay_officials/"
+                        target="_blank"
+                      ></a>
                     </li>
                     <li>
-                      <a className="fa fa-linkedin" href="https://www.linkedin.com/company/one-pay/about/?viewAsMember=true" target="_blank"></a>
+                      <a
+                        className="fa fa-linkedin"
+                        href="https://www.linkedin.com/company/one-pay/about/?viewAsMember=true"
+                        target="_blank"
+                      ></a>
                     </li>
                     <li>
-                      <a className="fa fa-twitter" href="https://twitter.com/OnePay9" target="_blank"></a>
+                      <a
+                        className="fa fa-twitter"
+                        href="https://twitter.com/OnePay9"
+                        target="_blank"
+                      ></a>
                     </li>
                   </ul>
-              </div>
-            </footer>
-            <div className="copyright__text">
+                </div>
+              </footer>
+              <div className="copyright__text">
                 <p>© Text, Inc. 2019. We love our users!</p>
-            </div>
+              </div>
             </div>
           </div>
         </div>

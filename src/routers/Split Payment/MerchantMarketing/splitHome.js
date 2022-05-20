@@ -18,7 +18,6 @@ import worksicons4 from "./../../../assets/Images/worksicons_04.png";
 import partner__img1 from "../../../assets/Images/partner__img1.png";
 import partner__logo1 from "../../../assets/Images/partner__logo1.png";
 
-
 import onpeyicon1 from "../../../assets/Images/sign-up-icon.png";
 import onpeyicon2 from "../../../assets/Images/shop-cart-icon.png";
 import onpeyicon3 from "../../../assets/Images/pay-icon.png";
@@ -33,7 +32,6 @@ import onpeyLogoButton from "../../../assets/Images/onepay-btn-logo.png";
 import onepayLogoIcon from "../../../assets/Images/blue-logo.png";
 import onepayFooterLogo from "../../../assets/Images/onepay-footer-logo.png";
 
-
 class splitHome extends Component {
   constructor(props) {
     super(props);
@@ -44,6 +42,11 @@ class splitHome extends Component {
   }
 
   componentDidMount() {
+    document.getElementsByTagName("meta")[3].content =
+      "Buy Now Pay Later | Flexible Payment Model Worth Checking Out";
+    document.getElementsByTagName("meta")[4].content =
+      "Boost business sales by letting your customers fulfill needs immediately and the freedom to split their purchases with OnePay. Zero interest, instant approval.";
+
     this.handleGetStaticContent();
   }
 
@@ -55,7 +58,6 @@ class splitHome extends Component {
       url: config.apiUrl + "OnePayMerchantMarketing/MerchantHomePageStaticData",
     })
       .then(function (res) {
-        
         let data = res.data.responseData;
         self.setState({
           staticContent: data,
@@ -72,7 +74,7 @@ class splitHome extends Component {
       self.props.history.push({
         pathname: "onePayWhyInstant",
         type: type,
-        text: text
+        text: text,
       });
     }, 1000);
   }
@@ -82,12 +84,14 @@ class splitHome extends Component {
     return (
       <div className="marketingHome">
         <div className="merchantMar">
-        <div className="banner__section">
+          <div className="banner__section">
             <div className="banner__btn">
-              <h3>Shop in Installments <br/> with OnePay</h3>
+              <h3>
+                Shop in Installments <br /> with OnePay
+              </h3>
               {/* <button className="yellow__btn"> <img src={onepayLogoIcon} className="mr-2" /> Sign Up</button> */}
               <Link to="/onePayUserSignUp" className="yellow__btn">
-                  <img src={onepayLogoIcon} className="mr-2" /> Sign Up
+                <img src={onepayLogoIcon} className="mr-2" /> Sign Up
               </Link>
             </div>
           </div>
@@ -213,164 +217,187 @@ class splitHome extends Component {
               </div>
             </div> */}
 
-              <div className="col-md-12 col-12">
-                  <div className="top__head">
-                    <h4 className="sub__text">For You</h4>
-                    <h3 className="heading__text">How it works</h3>
-                  </div>
-                </div>
+            <div className="col-md-12 col-12">
+              <div className="top__head">
+                <h4 className="sub__text">For You</h4>
+                <h3 className="heading__text">How it works</h3>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-4">
-                  <div className="works__block">
-                    <div className="img__block">
-                      <img src={onpeyicon1} alt="Sign Up" />
-                    </div>
-                    <h4>Sign Up</h4>
-                    <p>Create your account using your credit card and get approved instantly.</p>
-                  </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-4">
+              <div className="works__block">
+                <div className="img__block">
+                  <img src={onpeyicon1} alt="Sign Up" />
                 </div>
+                <h4>Sign Up</h4>
+                <p>
+                  Create your account using your credit card and get approved
+                  instantly.
+                </p>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-4">
-                  <div className="works__block">
-                    <div className="img__block">
-                      <img src={onpeyicon2} alt="Sign Up" />
-                    </div>
-                    <h4>Shop</h4>
-                    <p>Choose what you want and get it right now. </p>
-                  </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-4">
+              <div className="works__block">
+                <div className="img__block">
+                  <img src={onpeyicon2} alt="Sign Up" />
                 </div>
+                <h4>Shop</h4>
+                <p>Choose what you want and get it right now. </p>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-4">
-                  <div className="works__block">
-                    <div className="img__block">
-                      <img src={onpeyicon3} alt="Sign Up" />
-                    </div>
-                    <h4>Pay in 4 Installments</h4>
-                    <p>Program your 4 installments repayments and relax.</p>
-                  </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-4">
+              <div className="works__block">
+                <div className="img__block">
+                  <img src={onpeyicon3} alt="Sign Up" />
                 </div>
-
+                <h4>Pay in 4 Installments</h4>
+                <p>Program your 4 installments repayments and relax.</p>
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="container-fluid">
           <div className="row instant__section">
-              <div className="col-md-12 col-12">
-                  <div className="top__head">
-                    <h4 className="sub__text">For You</h4>
-                    <h3 className="heading__text">Pay in 4 Installments</h3>
-                  </div>
-                </div>
+            <div className="col-md-12 col-12">
+              <div className="top__head">
+                <h4 className="sub__text">For You</h4>
+                <h3 className="heading__text">Pay in 4 Installments</h3>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 instant__img">
-                    <div className="img__block">
-                      <img src={onpeyicon4} alt="Sign Up" />
-                    </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 instant__img">
+              <div className="img__block">
+                <img src={onpeyicon4} alt="Sign Up" />
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 instant__text">
-                  <div className="text__block">
-                    <h3>Zero Interest</h3>
-                    <h4>Transparent fees</h4>
-                    <p>There’s no interest on your purchase, you only pay a $6 flat fee a month only when you are using it.</p>
-                  </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 instant__text">
+              <div className="text__block">
+                <h3>Zero Interest</h3>
+                <h4>Transparent fees</h4>
+                <p>
+                  There’s no interest on your purchase, you only pay a $6 flat
+                  fee a month only when you are using it.
+                </p>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 nopassword__text">
-                  <div className="text__block">
-                    <h3>Easy Sign-up</h3>
-                    <h4>Only One Step</h4>
-                    <p>Create your account and start buying from our partner websites instantly.</p>
-                  </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 nopassword__text">
+              <div className="text__block">
+                <h3>Easy Sign-up</h3>
+                <h4>Only One Step</h4>
+                <p>
+                  Create your account and start buying from our partner websites
+                  instantly.
+                </p>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 nopassword__img">
-                    <div className="img__block">
-                      <img src={onpeyicon5} alt="Sign Up" />
-                    </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 nopassword__img">
+              <div className="img__block">
+                <img src={onpeyicon5} alt="Sign Up" />
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 safe__img">
-                    <div className="img__block">
-                      <img src={onpeyicon6} alt="Sign Up" />
-                    </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 safe__img">
+              <div className="img__block">
+                <img src={onpeyicon6} alt="Sign Up" />
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 safe__text">
-                  <div className="text__block">
-                    <h3>Repayemnts</h3>
-                    <h4>Schedule your installments</h4>
-                    <p>Program your automatic debit in 2 week intervals and forget about it.</p>
-                  </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 safe__text">
+              <div className="text__block">
+                <h3>Repayemnts</h3>
+                <h4>Schedule your installments</h4>
+                <p>
+                  Program your automatic debit in 2 week intervals and forget
+                  about it.
+                </p>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 easy__text">
-                  <div className="text__block">
-                    <h3>Sustainable</h3>
-                    <h4>Use existing credit</h4>
-                    <p>We use your existing credit to help you keep your finances healthy and sustainable.</p>
-                  </div>
-                </div>
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 easy__text">
+              <div className="text__block">
+                <h3>Sustainable</h3>
+                <h4>Use existing credit</h4>
+                <p>
+                  We use your existing credit to help you keep your finances
+                  healthy and sustainable.
+                </p>
+              </div>
+            </div>
 
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 easy__img">
-                    <div className="img__block">
-                      <img src={onpeyicon7} alt="Sign Up" />
-                    </div>
-                </div>
-
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 easy__img">
+              <div className="img__block">
+                <img src={onpeyicon7} alt="Sign Up" />
+              </div>
+            </div>
           </div>
         </div>
-        
 
         <div className="contianer-fluid signup__section">
-            <div className="row">
-              <div className="col-md-12 col-12">
-                    <div className="top__head">
-                      <h4 className="sub__text">Shop</h4>
-                      <h3 className="heading__text">Sign-up and Check-out in an instant</h3>
-                    </div>
-                </div>
+          <div className="row">
+            <div className="col-md-12 col-12">
+              <div className="top__head">
+                <h4 className="sub__text">Shop</h4>
+                <h3 className="heading__text">
+                  Sign-up and Check-out in an instant
+                </h3>
+              </div>
             </div>
+          </div>
         </div>
 
         <div className="contianer-fluid signup__section p-0">
-            <div className="row m-0">
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6 p-0">
-                    <div className="img__block">
-                      <img src={onpeyicon8} alt="Sign Up" />
-                    </div>
-                </div>
-
-                <div className="col-12 col-sm-6 col-md-6 col-lg-6">
-                  <div className="text__block">
-                    <h4>Browse and buy from your favourite online stores</h4>
-                    <p>Start shopping on our powerful eCommerce platform and explore limitless products from your favourite brands.</p>
-                    {/* <button class="yellow__btn"><img src={onpeyLogoButton} /></button> */}
-                    <Link to="/onePaySignUp" className="yellow__btn text-center d-block">
-                       <img src={onpeyLogoButton} />
-                    </Link>
-                  </div>
-                </div>
+          <div className="row m-0">
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 p-0">
+              <div className="img__block">
+                <img src={onpeyicon8} alt="Sign Up" />
+              </div>
             </div>
+
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6">
+              <div className="text__block">
+                <h4>Browse and buy from your favourite online stores</h4>
+                <p>
+                  Start shopping on our powerful eCommerce platform and explore
+                  limitless products from your favourite brands.
+                </p>
+                {/* <button class="yellow__btn"><img src={onpeyLogoButton} /></button> */}
+                <Link
+                  to="/onePaySignUp"
+                  className="yellow__btn text-center d-block"
+                >
+                  <img src={onpeyLogoButton} />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-       
-        <div className="contianer-fluid join__section">
-            <div className="row">
-              <div className="col-md-6">
-                    <div className="left__block">
-                      <h4 className="sub__text">Join Instant and unleash the power of the best checkout in the market.</h4>
-                    </div>
-                </div>
 
-                <div className="col-md-6">
-                    <div className="right">
-                      {/* <button class="yellow__btn"><img src={onepayLogoIcon} />Join Today</button> */}
-                      <Link to="/onePayUserSignUp" className="yellow__btn">
-                          <img src={onepayLogoIcon} className="mr-2" /> Join Today
-                      </Link>
-                    </div>
-                </div>
+        <div className="contianer-fluid join__section">
+          <div className="row">
+            <div className="col-md-6">
+              <div className="left__block">
+                <h4 className="sub__text">
+                  Join Instant and unleash the power of the best checkout in the
+                  market.
+                </h4>
+              </div>
             </div>
+
+            <div className="col-md-6">
+              <div className="right">
+                {/* <button class="yellow__btn"><img src={onepayLogoIcon} />Join Today</button> */}
+                <Link to="/onePayUserSignUp" className="yellow__btn">
+                  <img src={onepayLogoIcon} className="mr-2" /> Join Today
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* <div className="container-fluid partner__section">
@@ -419,65 +446,83 @@ class splitHome extends Component {
         <div className="container-fluid footer__block">
           <div className="row">
             <div className="container">
-
-            <footer className="footer__secton">
-              <div className="inpay footer__logo">
-                <img src={onepayFooterLogo} width="50px" className="logo__img" />
-              </div>
-              <div className="footer__Links">
-                <ul>
-                  <li>
+              <footer className="footer__secton">
+                <div className="inpay footer__logo">
+                  <img
+                    src={onepayFooterLogo}
+                    width="50px"
+                    className="logo__img"
+                  />
+                </div>
+                <div className="footer__Links">
+                  <ul>
+                    <li>
                       <Link to="/">
-                          <a>For You</a>
+                        <a>For You</a>
                       </Link>
-                  </li>
+                    </li>
 
-                  <li>
-
+                    <li>
                       <Link to="/onePayforbusiness">
-                          <a>For Business</a>
+                        <a>For Business</a>
                       </Link>
-                  </li>
-                  
-                  {/* <li>
+                    </li>
+
+                    {/* <li>
                       <Link to="#">
                           <a>Shop</a>
                       </Link>
                   </li> */}
 
-                  <li>
+                    <li>
                       <Link to="/splitAPIDoc">
-                          <a>API Information</a>
+                        <a>API Information</a>
                       </Link>
-                  </li>
-                </ul>
-              </div>
+                    </li>
+                  </ul>
+                </div>
 
-              <div className="footer__socail">
+                <div className="footer__socail">
                   <label>Follow Us :</label>
                   <ul>
                     <li>
-                      <a className="fa fa-facebook" href="https://www.facebook.com/Onepay-103675854977782" target="_blank"></a>
+                      <a
+                        className="fa fa-facebook"
+                        href="https://www.facebook.com/Onepay-103675854977782"
+                        target="_blank"
+                      ></a>
                     </li>
                     <li>
-                      <a className="fa fa-instagram" href="https://www.instagram.com/onepay_officials/" target="_blank"></a>
+                      <a
+                        className="fa fa-instagram"
+                        href="https://www.instagram.com/onepay_officials/"
+                        target="_blank"
+                      ></a>
                     </li>
                     <li>
-                      <a className="fa fa-linkedin" href="https://www.linkedin.com/company/one-pay/about/?viewAsMember=true" target="_blank"></a>
+                      <a
+                        className="fa fa-linkedin"
+                        href="https://www.linkedin.com/company/one-pay/about/?viewAsMember=true"
+                        target="_blank"
+                      ></a>
                     </li>
                     <li>
-                      <a className="fa fa-twitter" href="https://twitter.com/OnePay9" target="_blank"></a>
+                      <a
+                        className="fa fa-twitter"
+                        href="https://twitter.com/OnePay9"
+                        target="_blank"
+                      ></a>
                     </li>
                   </ul>
-              </div>
-            </footer>
-            <div className="copyright__text">
+                </div>
+              </footer>
+              <div className="copyright__text">
                 <p>© Text, Inc. 2019. We love our users!</p>
-            </div>
+              </div>
             </div>
           </div>
         </div>
-       
+
         {/* <div className="foot">
           <footer className="container">
             <div className="inpay">

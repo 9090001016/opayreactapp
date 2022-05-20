@@ -29,7 +29,12 @@ class splitUserLogin extends Component {
     };
     this.handleFinaleSubmit = this.handleFinaleSubmit.bind(this);
   }
-
+  componentDidMount() {
+    document.getElementsByTagName("meta")[3].content =
+      "OnePay for Customers – No hurry, No worry Shopping Experience";
+    document.getElementsByTagName("meta")[4].content =
+      "Shop now from favorite brands and pay for your purchases over time. No time-consuming approval process, no interest fee. Sign up now for Buy Now Pay Later option.";
+  }
   ///finale submit
   handleFinaleSubmit(e) {
     e.preventDefault();
@@ -56,19 +61,23 @@ class splitUserLogin extends Component {
         },
       })
         .then(function (res) {
-          
           let resValid = res.data.message;
           if (resValid === "Valid Login") {
-            
             let decryptedToken = encryption(res.data.responseData.token, "dec");
-            window.localStorage.setItem("onepayusertoken", res.data.responseData.token);
+            window.localStorage.setItem(
+              "onepayusertoken",
+              res.data.responseData.token
+            );
             setTimeout(function () {
               self.props.history.push("/onePayUser/userDashboard");
             }, 100);
             self.setState({
               loading: false,
             });
-            cookies.set("onepayusertoken", res.data.responseData.token, { path: "/", maxAge: 86400 });
+            cookies.set("onepayusertoken", res.data.responseData.token, {
+              path: "/",
+              maxAge: 86400,
+            });
           } else {
             NotificationManager.error(res.data.responseData.message, "", 1500);
             self.setState({
@@ -93,7 +102,6 @@ class splitUserLogin extends Component {
 
   /// handle input onchange
   handleInputOnchange = (e) => {
-    
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -108,9 +116,9 @@ class splitUserLogin extends Component {
       <div className="outer-sign-in">
         <NotificationContainer />
         <div className="text-center w-100">
-        <Link to="/">
+          <Link to="/">
             <img src={OnePayLogo} width="150px" className="onepay__logo" />
-        </Link>
+          </Link>
           <div className="sign-in-card">
             <label className="sign-in">Sign In</label>
             <form name="sign-in-form" onSubmit={this.handleFinaleSubmit}>
@@ -141,18 +149,19 @@ class splitUserLogin extends Component {
                   autoComplete="off"
                   onChange={this.handleInputOnchange}
                 />
-                <div className="input-icons cursor-pointer m-0 ml-2"
-                onClick={this.togglePassword}
+                <div
+                  className="input-icons cursor-pointer m-0 ml-2"
+                  onClick={this.togglePassword}
                 >
                   {this.state.isRevealPassword ? (
                     <img src={eye} alt="icon missing" />
                   ) : (
-                      // <i
-                      //   class="fa fa-eye-slash icon-eye-slash"
-                      //   aria-hidden="true"
-                      // ></i>
-                      <img src={hidepassword} alt="icon missing" />
-                    )}
+                    // <i
+                    //   class="fa fa-eye-slash icon-eye-slash"
+                    //   aria-hidden="true"
+                    // ></i>
+                    <img src={hidepassword} alt="icon missing" />
+                  )}
                 </div>
               </div>
               <div className="flex-parted">
@@ -180,9 +189,8 @@ class splitUserLogin extends Component {
                 Sign In
               </button>
               <Link to="onePayUserSignUp">
-              <p className="mtop10 fsize14">Sign Up</p>
+                <p className="mtop10 fsize14">Sign Up</p>
               </Link>
-              
             </form>
           </div>
         </div>
