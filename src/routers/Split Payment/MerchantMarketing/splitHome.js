@@ -446,6 +446,7 @@ class splitHome extends Component {
         <div className="container-fluid footer__block">
           <div className="row">
             <div className="container">
+
               <footer className="footer__secton">
                 <div className="inpay footer__logo">
                   <img
@@ -516,6 +517,7 @@ class splitHome extends Component {
                   </ul>
                 </div>
               </footer>
+              
               <div className="copyright__text">
                 <p>© Text, Inc. 2019. We love our users!</p>
               </div>
