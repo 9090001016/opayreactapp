@@ -234,6 +234,7 @@ class splitUserSignUp extends Component {
             let data = res.data.responseData;
             if (status === "Success") {
                 self.setState({ isEmailOtpVerified: true });
+                NotificationManager.success(status);
             } else {
                 errors["emailOTP"] = "Invalid Email OTP."
                 self.setState({ isEmailOtpVerified: false });

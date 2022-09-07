@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Cookies from "universal-cookie";
+// import Cookies from "universal-cookie";
 import axios from "axios";
 import config from "./../../../helpers/config";
 import { authHeader } from "./../../Split Payment/helpers/splitAuthHeader";
@@ -261,7 +261,7 @@ class splitHeader extends Component {
                         <nav className="navbar navbar-expand-lg navbar-light bg-transparent p-0">
                             <div className="inpay">
                                 <Link to="/">
-                                    <img src={OnePayLogo} width="150px" className="logo__img m-0" />
+                                    <img src={OnePayLogo} width="150px" className="logo__img m-0" alt=""/>
                                 </Link>
                             </div>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
