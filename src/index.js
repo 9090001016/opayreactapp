@@ -14,6 +14,7 @@ import "./assets/css/style.css";
 import "./assets/css/custome.css";
 import "./assets/css/responsive.css";
 import "./assets/css/newDesign.css";
+import './assets/css/newResponsive.css'
 
 ///--------------------js---------------------------------
 import "./../node_modules/bootstrap/dist/js/bootstrap.js";
@@ -53,7 +54,7 @@ import help from "./routers/MerchantMarketing/help";
 import whyInstant from "./routers/MerchantMarketing/whyInstant";
 import SplitSignIn from "./routers/Split Payment/Admin/SignIn";
 import SplitHome from "./routers/Split Payment/MerchantMarketing/SplitHomes"
-import splitforbusiness from "./routers/Split Payment/MerchantMarketing/splitforbusiness"
+import splitforbusiness from "./routers/Split Payment/MerchantMarketing/SplitBusinesses"
 import SplitSignUp from "./routers/Split Payment/MerchantMarketing/splitSignUp"
 import SplitUserSignUp from "./routers/Split Payment/MerchantMarketing/splitUserSignUp"
 import SplitAboutUs from "./routers/Split Payment/MerchantMarketing/splitAboutUs"

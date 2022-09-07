@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import mainLogo from "../../../assets/Images/allicons/Image20220809123815.png"
 import payment_icon from '../../../assets/Images/allicons/payment_icon.png';
@@ -18,10 +18,21 @@ import OnePayLogo from "../../../assets/Images/allicons/main-logo 1.png";
 import { useEffect } from 'react';
 
 const SplitHomes = () => {
+    let isDesktop = true;
+    const [footerSize, setFooterSize] = useState(window.innerWidth);
+
+    const setFooter = () => {
+        setFooterSize(window.innerWidth);
+        isDesktop = window.innerWidth > 912 ? true : false;
+    }
     useEffect(() => {
-    console.log(window.innerWidth)
-    }, [])
-    
+        window.addEventListener('resize', setFooter);
+        return () => {
+            window.removeEventListener('resize', setFooter);
+        };
+    }, []);
+
+
     return (
         <div className='whole_page'>
             <section className='landing_section'>
@@ -72,20 +83,32 @@ const SplitHomes = () => {
                         <p>for you</p>
                         <h2>How it works</h2>
                     </div>
-                    <div className='how_it_works_rightside'>
-                        <div className='inner_box'>
-                            <img src={signup_icon} alt="signupIcon" />
-                            <p>sign up</p>
+                    <div className='right_side'>
+                        <div className='gray_box'>
+                            <p><img src={signup_icon} alt='' />
+                                <h5>Sign Up</h5>
+                            </p>
+                            <h6>
+                                Create your account, connect it to your bank account and start receiving your payments.
+                            </h6>
                         </div>
-                        <div className='inner_box'>
-                            <img src={shop_icon} alt="shopIcon" />
-                            <p>shop</p>
+                        <div className='gray_box'>
+                            <p className='shopping'><img src={shop_icon} alt='' className='shop_pic' />
+                                <h5>Shop </h5>
+                            </p>
+                            <h6>
+                                Set up OnePay on your online store.
+                            </h6>
                         </div>
-                        <div className='inner_box'>
-                            <img src={payment_icon} alt="payImg" />
-                            <p>Pay</p>
+                        <div className='gray_box'>
+                            <p><img src={payment_icon} alt='' />
+                                <h5>Grow</h5>
+                            </p>
+                            <h6>Get ready to see your conversion rates going places they had never been before.</h6>
                         </div>
                     </div>
+                    <br></br>
+                    <br></br>
                     <div className='horizental_line'>
                         <hr />
                     </div>
@@ -172,9 +195,11 @@ const SplitHomes = () => {
                         <p>Start shopping on our powerful eCommerce platform and explore limitless products
                             from your favourite brands.
                         </p>
-                        <button>
-                            <img src={darkblue} alt="darkbluelogo" />
-                        </button>
+                        <NavLink to="/onePayforbusiness">
+                            <button>
+                                <img src={darkblue} alt="darkbluelogo" />
+                            </button>
+                        </NavLink>
                     </div>
                 </div>
                 <div className='horizental_line3'>
@@ -187,22 +212,24 @@ const SplitHomes = () => {
                     Join OnePay and unleash the full potential
                     of what you can do.
                 </h4>
-                <button>
-                    <img src={JoinTodayLogo} alt="" />
-                    <p>Join Today</p>
-                </button>
+                <NavLink to="/onePayUserSignUp">
+                    <button className='Join_today'>
+                        <img src={JoinTodayLogo} alt="" />
+                        <p>Join Today</p>
+                    </button>
+                </NavLink>
             </section>
-            {window.innerWidth > 630 ?
+            {footerSize > 912 ?
                 <>
                     <Footer />
                     <div className='support'>© Text, Inc. 2019. We love our users!</div>
                 </>
-                : 
-                <FooterMobile />
-                
+                :
+                <>
+                    <FooterMobile />
+                    <div className='support'>© Text, Inc. 2019. We love our users!</div>
+                </>
             }
-
-
         </div>
     )
 }

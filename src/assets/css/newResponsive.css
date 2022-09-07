@@ -1,0 +1,872 @@
+@media (max-width:1280px){
+    .gray_box .shopping {
+        margin-top: 3vh;
+    }
+    .gray_box p {
+        margin-top: 10vh;
+    }
+    
+    .side_by_side .side_image div p{
+        font-size: 16px;
+    }
+    .how_it_works_business .left_side h4 {
+        font-size: 30px;
+    }
+
+    .how_it_works_business .left_side h3 {
+        font-size: 47px;
+    }
+    .business_logo{
+        margin-top: -3rem;
+    }
+    .main_heading_logo {
+        margin-left: 3rem;
+        width: 50%;
+        height: 50%;
+    }
+    .left_side h1 {
+        font-family: "Montserrat";
+        font-weight: 800;
+        font-size: 87px;
+        color: #101D40;
+        font-style: normal;
+    }
+    .left_side p {
+        font-weight: 500;
+        font-family: "Monteserrat";
+        font-size: 27px;
+        color: #101D40;
+    }
+    .main_section {
+        display: flex;
+        width: 90vw;
+        height: 80vh;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .how_it_works {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -1rem;
+    }
+    .header_main {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 47px;
+        text-transform: capitalize;
+        color: #101D40;
+    }
+    .inner_box img{
+        width: 50%;
+        height: 50%;
+    }
+    .zero_interest_img{
+    width: 50%;
+    }
+    .zero_interest_img1{
+        width: 40%;
+        }
+    .odd_paragraph{
+        width: 50%;
+    }
+    .odd_paragraph1{
+        width: 60%;
+    }
+    .even_paragraph{
+        width: 50%;
+    }
+    .even_paragraph1{
+        width: 60%;
+    }
+    .header_para {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 34px;
+        color: #101D40;
+    }
+    .small_para {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        text-transform: capitalize;
+        letter-spacing: 0.05em;
+        color: #101D40;
+    }
+    .break_payment_rightside p {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        letter-spacing: 0.05em;
+        text-transform: capitalize;
+        color: #101D40;
+    }
+    .break_payment_rightside h3 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        color: #101D40;
+    }
+    .join_section {
+        /* height: 50vh; */
+        width: 100vw;
+        /* background: #f5f5f5; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    .join_section h4 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        text-align: center;
+        color: #101D40;
+        width: 60vw;
+    }
+    .join_section button {
+        width: 16vw;
+        height: 8vh;
+        background-color: #FFBD2B;
+        border: none;
+        margin-top: 2rem;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .arrow_img {
+        margin-top: -2rem;
+    }
+    .own_link .nav-item{
+        padding: 2rem;
+        margin-top: -0.8rem;
+    }
+}
+@media (max-width:1024px){
+    .side_by_side .side_image div h5 {
+        font-size: 30px;
+    }
+
+    .grow_business h1 {
+        font-size: 58px;
+    }
+    .grow_business p {
+        font-size: 20px;
+    }
+    .small_para{
+        font-size: 13px;
+    }
+
+    .main_heading_logo {
+        margin-left: 3rem;
+        width: 7rem;
+        height: 6rem;
+    }
+    .left_side h1 {
+        font-family: "Montserrat";
+        font-weight: 800;
+        font-size: 74px;
+        color: #101D40;
+        font-style: normal;
+    }
+    .right_side {
+        width: 100%;
+        height: 100%;
+    }
+    .left_side {
+        width: 100%;
+    }
+    .left_side p {
+        font-weight: 500;
+        font-family: "Monteserrat";
+        font-size: 22px;
+        color: #101D40;
+    }
+    .how_it_works {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -10rem;
+    }
+    .inner_box img{
+        width: 50%;
+        height: 50%;
+    }
+    .inner_box p {
+        font-size: 24px;
+    }
+    .how_it_works_leftside p{
+        font-size: 40px;
+    }
+    .how_it_works_leftside h2 {
+        font-size: 55px;
+    }
+    .zero_interest {
+        display: flex;
+        gap: 1rem;
+    }
+    .header_main{
+        font-size: 42px;
+    }
+    .header_para {
+        font-size: 30px;
+    }
+    .break_payment .how_it_works_leftside h2 {
+        text-align: center;
+
+    }
+    .break_payment_rightside h3{
+        font-size:32px;
+    }
+    .break_payment_rightside p{
+        font-size: 16px;
+    }
+    .join_section{
+        margin-top: 0rem;
+    }
+    .break_payment_rightside button {
+        width: 14vw;
+        height: 10vh;
+    }
+    .join_section button{
+        width: 21vw;
+        height: 10vh;
+    }
+}
+@media(max-width: 912px){
+    .pink_box p {
+        margin-top: 0vh;
+    }
+    .gray_box:hover{
+        height: 35vh;
+    }
+    .side_by_side .side_image{
+        flex-direction: column;
+    }
+    .side_by_side .side_image img {
+        width: 100%;
+    }
+    .side_by_side .side_image div {
+        width: 100%;
+        
+    }
+    .grow_business h1 {
+        font-size: 50px;
+    }
+    .how_it_works_business .right_side{
+        display: flex;
+        flex-direction: column;
+    }
+    .how_it_works .right_side{
+        display: flex;
+        flex-direction: column;
+    }
+    .gray_box{
+        width: 75vw;
+        height: 35vh;
+    }
+    .pink_box{
+        width: 75vw;
+        height: 35vh;
+    }
+    .pink_box p img {
+        width: 80%;
+        height: 80%;
+    }
+    .gray_box p img {
+        width: 80%;
+        height: 80%;
+    }
+    .gray_box .shopping img {
+        width: 80%;
+        height: 80%;
+    }
+    .pink_box p{
+        margin-top: 0vh;
+    }
+    .gray_box p{
+        margin-top: 0vh;
+    }
+    .pink_box .install_pic{
+        margin-top: 0vh;
+    }
+    .gray_box .shopping{
+        margin-top: 0vh;
+    }
+    .pink_box p h5 {
+        font-size: 40px;
+    }
+    .pink_box h6 {
+        font-size: 30px;
+        opacity: 1;
+    }
+    .pink_box:hover {
+        height: 35vh;
+    }
+    .gray_box p h5 {
+        font-size: 40px;
+    }
+    .gray_box h6 {
+        font-size: 30px;
+        opacity: 1;
+    }
+
+    .white_bg{
+        margin-top: 0rem;
+        height: 8vh;
+    }
+    .left_side .signup_btn{
+        width: 20vw;
+    }
+    .landing_section{
+        background-size: cover;
+    }
+    
+    .main_section {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 85vh;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .left_side {
+        width: 80%;
+        height: 50%;
+        margin-top: 22rem;
+    }
+    .right_side {
+        width: 100%;
+        height: 50%;
+    }
+    .left_side h1 {
+        font-size: 120px;
+    }
+    .left_side p {
+        font-size: 32px;
+    }
+    .inner_box img{
+        width: 40%;
+        height: 50%;
+    }
+    .inner_box p {
+        font-size: 30px;
+    }
+    .how_it_works {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 3rem;
+        margin-top: 0rem;
+    }
+    .how_it_works_leftside{
+        height: 15vh;
+    }
+    .how_it_works_rightside{
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    .how_it_works .horizental_line{
+        height: 2vh;
+    }
+    .inner_box {
+        width: 45vw;
+        height: 23vh;
+        background-color: #f5f5f5;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 8px 8px 20px 2px rgb(0 0 0 / 20%);
+    }
+    .how_it_works_leftside h2{
+        text-align: center;
+    }
+    .break_payment_mainDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 90vw;
+        height: 80vh;
+        margin: 4rem auto;
+        grid-gap: 3rem;
+        gap: 3rem;
+    }
+    .break_payment_leftside {
+        width: 80%;
+        height: 50%;
+    }
+    .break_payment_rightside {
+        width: 80%;
+        height: 50%;
+    }
+    .break_payment_mainDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 90vw;
+        height: 80vh;
+        margin: 4rem auto;
+        
+    }
+    .break_payment_rightside button{
+        height: 6vh;
+        width: 20vw;
+    }
+    .break_payment_leftside img{
+        height: 80%;
+    }
+    .break_payment_rightside h3 {
+        font-size: 50px;
+    }
+    .break_payment_rightside p {
+        font-size: 30px;
+    }
+    
+    
+    .join_section{
+        margin-top: 0rem;
+    }
+    .break_payment .horizental_line{
+        height: 5vh;
+    }
+    .join_section button {
+        width: 24vw;
+        height: 6vh;
+        background-color: #FFBD2B;
+        border: none;
+        margin-top: 2rem;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .grid_five_columns{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem;
+        place-items: center;
+        margin: 0 auto;
+    }
+    .footer2{
+        height: 45vh;
+        margin-top: 5rem;
+    }
+}
+@media (max-width:820px){
+    .pink_box p {
+        margin-top: 0vh;
+    }
+    .gray_box p {
+        margin-top: 0vh;
+    }
+    .join_section button{
+        width: 25vw;
+    }
+}
+@media(max-width:768px){
+    .white_bg {
+        margin-top: 0rem;
+        height: 10vh;
+    }
+    .footer2{
+        width: 100vw;
+        height: 50vh;
+        background: #101D40;
+        color: #fff;
+        font-size: 0.7rem;
+    }
+    .footer2 div{
+        margin: 1rem auto;
+    }
+    .join_section {
+        margin-top: 3rem;
+    }
+    .join_section button{
+        width: 26vw;
+    }
+}
+@media (max-width:630px){
+    .inner_box{
+        width:80vw;
+        height: 25vh;
+    }
+    .left_side h1 {
+        font-size: 62px;
+    }
+    .left_side p {
+        font-size: 22px;
+    }
+    .left_side {
+        width: 80%;
+        height: 50%;
+        margin-top: 15rem;
+    }
+    .main_heading_logo {
+        margin-left: 3rem;
+        width: 7rem;
+        height: 6rem;
+        margin-top: -1.2rem;
+    }
+    .right_side {
+        width: 100%;
+        height: 50%;
+        margin-top: 1rem;
+    }
+    .left_side .signup_btn{
+        height: 5vh;
+        font-size: 15px;
+    }
+    .how_it_works_leftside p {
+        font-size: 30px;
+    }
+    .how_it_works_leftside h2 {
+        font-size: 45px;
+    }
+    .inner_box img {
+        width: 35%;
+        height: 50%;
+    }
+    .inner_box p {
+        font-size: 25px;
+    }
+    .zero_interest{
+        flex-direction: column;
+    }
+    .zero_interest_img {
+        width: 100%;
+    }
+    .zero_interest_img1 {
+        width: 100%;
+    }
+    .odd_paragraph {
+        width: 100%;
+    }
+    .odd_paragraph1 {
+        width: 100%;
+    }
+    .even_paragraph {
+        width: 100%;
+    }
+    .even_paragraph1 {
+        width: 100%;
+    }
+    .break_payment_rightside h3 {
+        font-size: 35px;
+    }
+    .break_payment_rightside p {
+        font-size: 20px;
+    }
+    .break_payment_rightside button {
+        height: 9vh;
+        width: 27vw;
+    }
+    .join_section h4{
+        font-size: 25px;
+    }
+    .join_section button {
+        width: 37vw;
+        height: 9vh;
+    }
+    .footer1 {
+        height: 100vh;
+    }
+    .footer1 .wave_img {
+        width: 100vw;
+        height: 100vh;
+    }
+    .grid_five_columns{
+        grid-template-columns: repeat(2,1fr);
+        gap: 0rem;
+    }
+    .footer_part {
+        width: 90vw;
+        height: 70vh;
+        margin: -75vh auto 0;
+    }
+}
+@media(max-width:575px){
+    .white_bg {
+        margin-top: 0rem;
+        height: 22vh;
+    }
+    .own_link .nav-item {
+        padding: 1rem;
+        margin-top: -0.8rem;
+    }
+    .own_link{
+        background-color: #fff;
+    }
+}
+@media (max-width:540px){
+    .pink_box p {
+        margin-top: 0vh;
+    }
+    .pink_box p img {
+        width: 70%;
+        height: 70%;
+    }
+    .for_business_how_it_works {
+        width: 100vw;
+        margin-top: -50vh;
+    }
+    .grow_business h1 {
+        font-size: 30px;
+    }
+    .pink_box p h5 {
+        font-size: 25px;
+        font-weight: 400;
+    }
+    .gray_box p h5 {
+        font-size: 25px;
+        font-weight: 400;
+    }
+    .pink_box h6 {
+        font-size: 15px;
+        opacity: 1;
+    }
+    .gray_box h6 {
+        font-size: 15px;
+        opacity: 1;
+    }
+    .pink_box:hover{
+        display: none;
+    }
+    .gray_box:hover{
+        display: none;
+    }
+    .gray_box p {
+        margin-top: 0vh;
+    }
+    .business_landing_part img{
+        width: 100%;
+        height: 65%;
+    }
+    .how_it_works .horizental_line {
+        margin-top: 3rem;
+    }
+    .installment_section{
+        margin-top: 4rem;
+    }
+    .left_side h1 {
+        font-size: 62px;
+    }
+    .left_side p {
+        font-size: 22px;
+    }
+    .left_side {
+        width: 80%;
+        height: 50%;
+        margin-top: 15rem;
+    }
+    .main_heading_logo {
+        margin-left: 3rem;
+        width: 7rem;
+        height: 6rem;
+        margin-top: -1.2rem;
+    }
+    .right_side {
+        width: 100%;
+        height: 50%;
+        margin-top: 1rem;
+    }
+    .left_side .signup_btn{
+        height: 5vh;
+        font-size: 15px;
+    }
+    .how_it_works_leftside p {
+        font-size: 30px;
+    }
+    .how_it_works_leftside h2 {
+        font-size: 45px;
+    }
+    .inner_box img {
+        width: 20%;
+        height: 50%;
+    }
+    .inner_box p {
+        font-size: 25px;
+    }
+    .zero_interest{
+        flex-direction: column;
+    }
+    .zero_interest_img {
+        width: 100%;
+    }
+    .zero_interest_img1 {
+        width: 100%;
+    }
+    .odd_paragraph {
+        width: 100%;
+    }
+    .odd_paragraph1 {
+        width: 100%;
+    }
+    .even_paragraph {
+        width: 100%;
+    }
+    .even_paragraph1 {
+        width: 100%;
+    }
+    .break_payment_rightside h3 {
+        font-size: 35px;
+    }
+    .break_payment_rightside p {
+        font-size: 20px;
+    }
+    .break_payment_rightside button {
+        height: 9vh;
+        width: 27vw;
+    }
+    .join_section h4{
+        font-size: 25px;
+    }
+    .join_section button {
+        width: 37vw;
+        height: 9vh;
+    }
+    .footer1 {
+        height: 100vh;
+    }
+    .footer1 .wave_img {
+        width: 100vw;
+        height: 100vh;
+    }
+    .grid_five_columns{
+        grid-template-columns: repeat(2,1fr);
+        gap: 0rem;
+    }
+    .footer_part {
+        width: 90vw;
+        height: 70vh;
+        margin: -75vh auto 0;
+    }
+    .footer2{
+        height: 65vh;
+    }
+    .grow_business p {
+        font-size: 15px;
+    }
+    .how_it_works_business .left_side h3 {
+        font-size: 40px;
+    }
+    .how_it_works_business .left_side h4 {
+        font-size: 25px;
+    }
+}
+@media (max-width:414px){
+    .join_section button {
+        width: 49vw;
+        height: 9vh;
+    }
+    .break_payment_rightside button {
+        height: 6vh;
+        width: 31vw;
+    }
+}
+@media (max-width:394px){
+    .join_section button {
+        width: 51vw;
+        height: 9vh;
+    }
+    .break_payment_rightside button {
+        height: 7vh;
+        width: 33vw;
+    }
+}
+@media (max-width:391px){
+    .grow_business h1 {
+        font-size: 21px;
+    }
+    .grow_business p {
+        font-size: 12px;
+    }
+    .how_it_works_business .left_side h3 {
+        font-size: 34px;
+    }
+    .footer2 {
+        height: 85vh;
+    }
+    .join_section button p {
+        font-size: 23px;
+    }
+    .installment_section {
+        margin-top: 0rem;
+    }
+    .footer_part p{
+        font-size: 0.8rem;
+    }
+    .main_heading_logo {
+        margin-left: 0rem;
+    }
+    .left_side h1 {
+        font-size: 45px;
+    }
+    .left_side .signup_btn {
+        height: 5vh;
+        font-size: 13px;
+    }
+    .how_it_works_leftside p {
+        font-size: 20px;
+    }
+    .how_it_works_leftside h2 {
+        font-size: 30px;
+    }
+    .header_main {
+        font-size: 33px;
+    }
+    .header_para {
+        font-size: 25px;
+    }
+    .small_para{
+        font-size: 15px;
+    }
+    .break_payment_mainDiv{
+        gap: 1rem;
+    }
+    .break_payment_rightside h3 {
+        font-size: 30px;
+    }
+    .break_payment_rightside p {
+        font-size: 15px;
+    }
+    .break_payment_rightside button {
+        height: 8vh;
+        width: 40vw;
+    }
+    .join_section {
+        margin-top: 7rem;
+    }
+    .join_section button {
+        width: 52vw;
+        height: 10vh;
+    }
+}
+@media (max-width:360px){
+    .join_section button {
+        width: 54vw;
+        height: 9vh;
+    }
+}

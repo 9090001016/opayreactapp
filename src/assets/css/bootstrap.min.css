@@ -4178,6 +4178,15 @@ color: #101D40;
 .navbar-light .navbar-nav .show > .nav-link {
   color: rgba(0, 0, 0, 0.9);
 }
+.whole_business_page .navbarSSS nav .container-fluid #collapsibleNavId .own_link .nav-item .nav-link{
+color: #fff;
+margin-top: -1rem;
+}
+.whole_business_page .navbarS nav .container-fluid #collapsibleNavId .own_link .nav-item .nav-link{
+  color: #101D40;
+  margin-top: -1rem;
+  }
+ 
 .navbar-light .navbar-toggler {
   color: rgba(0, 0, 0, 0.5);
   border-color: rgba(0, 0, 0, 0.5);
