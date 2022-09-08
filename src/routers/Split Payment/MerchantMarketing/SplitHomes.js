@@ -54,7 +54,6 @@ const SplitHomes = () => {
                                     <li className="nav-item">
                                         <NavLink className="nav-link foryou" to="/onePayforbusiness">For Business</NavLink>
                                     </li>
-
                                 </ul>
                             </div>
                         </div>
