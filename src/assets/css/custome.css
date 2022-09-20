@@ -57,8 +57,8 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px white inset !important;
-  box-shadow: 0 0 0 30px white inset !important;
+  -webkit-box-shadow: 0 0 0 30px #f0f0f0 inset !important;
+  box-shadow: 0 0 0 30px #f0f0f0 inset !important;
 }
 input:-webkit-autofill::first-line {
   font-family: "Montserrat", sans-serif;
@@ -117,10 +117,10 @@ input:-webkit-autofill::first-line {
   background: #fff;
   min-height: 100vh;
   background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: center; */
+  padding: 40px 0px;
 }
 .logo-text {
   font-size: 48px;
@@ -137,7 +137,7 @@ input:-webkit-autofill::first-line {
   padding: 50px 70px;
   width: 550px;
   border-radius: 10px;
-  margin: auto;
+  margin: 15px auto;
 }
 .sign-in {
   font-size: 24px;
@@ -168,6 +168,7 @@ input:-webkit-autofill::first-line {
 }
 .contry .select-country {
   width: 100%;
+  margin-top: -10px;
 }
 .contry .css-yk16xz-control {
   height: 51px;
@@ -203,15 +204,11 @@ input:-webkit-autofill::first-line {
   padding: 0;
   border: 0;
 }
-.phonepincode .react-tel-input .form-control {
-  height: 51px;
-  width: 100%;
-  border: 1px solid #7a7a7a;
-}
+
 .phonepincode .react-tel-input .flag-dropdown {
-  background-color: #ffffff;
-  border: 1px solid #7a7a7a;
-  border-right: none;
+  /* background-color: #ffffff; */
+  /* border: 1px solid #7a7a7a; */
+  /* border-right: none; */
   border-radius: 5px;
 }
 .phonepincode .react-tel-input .selected-flag {
@@ -3301,16 +3298,17 @@ header .signbtn .sigup {
   margin: 20px 0px 40px 0;
 }
 .already {
-  font-size: 14px;
-  color: #000;
-  font-weight: 500;
-  margin: 30px 0 0 0;
+  font-size: 18px;
+  margin-top: 30px;
 }
 .already a {
-  color: #003280;
+  color: #101D40;
   cursor: pointer;
   padding-left: 3px;
-  text-decoration: underline;
+  text-decoration: none;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
 }
 .signup .margin {
   margin-bottom: 0;
@@ -4200,9 +4198,9 @@ header .signbtn .sigup {
   min-height: 100vh;
 }
 
-.main__content #root {
+/* .main__content #root {
   padding-bottom: 8rem;
-}
+} */
 
 .foot {
   background: #ededed;

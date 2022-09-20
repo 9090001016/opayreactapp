@@ -77,6 +77,7 @@ import SplitAdminForgotPassword from "./routers/Split Payment/Admin/ForgotPasswo
 import SplitResetPassword from "./routers/Split Payment/Admin/ResetPassword";
 import SplitChangePassword from "./routers/Split Payment/Admin/changePassword";
 import SplitMerchantSignIn from "./routers/Split Payment/Merchant/splitMerchantLogin";
+import SplitMerchantLogins from './routers/Split Payment/Merchant/SplitMerchantLogins'
 import SplitMerchantForgotPassword from "./routers/Split Payment/Merchant/splitForgotPassword";
 import SplitMerchantResetPassword from "./routers/Split Payment/Merchant/splitResetPassword";
 import SplitMerchantChangePassword from "./routers/Split Payment/Merchant/splitChangePassword";
@@ -163,6 +164,7 @@ ReactDOM.render(
     {/* Split Merchant Pages */}
     <Route path="/onePayMerchant" component={SplitMerchant} />
     <Route exact path="/merchant" component={SplitMerchantSignIn} />
+    <Route exact path="/merchants" component={SplitMerchantLogins} />
     <Route exact path="/onePayMerchantForgotPassword" component={SplitMerchantForgotPassword} />
     <Route exact path="/onePayMerchantResetPassword" component={SplitMerchantResetPassword} />
     <Route exact path="/onePayMerchantChangePassword" component={SplitMerchantChangePassword} />
