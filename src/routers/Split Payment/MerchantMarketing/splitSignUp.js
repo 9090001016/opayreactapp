@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import email from "./../../../assets/Images/emailBl.png";
-import avatar from "./../../../assets/Images/avatar.png";
-import lock from "./../../../assets/Images/lock.png";
+import { Link, NavLink } from "react-router-dom";
+import email from "./../../../assets/Images/smallicons/mail.png";
+import avatar from "./../../../assets/Images/smallicons/person_filled.png";
+import lock from "./../../../assets/Images/smallicons/lock.png";
 import eye from "./../../../assets/Images/eye.png";
 import Phone from "./../../../assets/Images/smartphone.png";
 import config from "../../../helpers/config"
@@ -18,12 +18,14 @@ import countryList from 'react-select-country-list'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import url from "./../../../assets/Images/url.png";
-import address from "./../../../assets/Images/address.png";
-import post from "./../../../assets/Images/post.png";
-import country from "./../../../assets/Images/country.png";
+import address from "./../../../assets/Images/smallicons/Vector.png";
+import post from "./../../../assets/Images/smallicons/package.png";
+import country from "./../../../assets/Images/smallicons/public.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import OnePayLogo from "./../../../assets/Images/OnePay-logo.png";
+import merchant_bg from './../../../assets/Images/sign-UP-BG-image/merchant_page.jpg'
+import rightsmalllogo from './../../../assets/Images/sign-UP-BG-image/main-logo 3.png'
 class splitSignUp extends Component {
     constructor(props) {
         super(props)
@@ -74,7 +76,7 @@ class splitSignUp extends Component {
     }
 
     handleVerifyMobileFieldClick = () => {
-        
+
         let self = this;
         let errors = this.state.errors;
 
@@ -277,7 +279,7 @@ class splitSignUp extends Component {
     }
 
     handleOnChange(e) {
-        
+
         if (e.target.name === "mobileNo") {
             if (!isNaN(e.target.value)) {
                 this.setState({
@@ -414,7 +416,7 @@ class splitSignUp extends Component {
     }
 
     handleMerchantSignUP() {
-        
+
         let self = this;
 
         if (this.handleValidation()) {
@@ -467,7 +469,7 @@ class splitSignUp extends Component {
                     }
                 })
                 .catch(function (res) {
-                    
+
                     self.setState({
                         loading: false,
                     });
@@ -511,118 +513,139 @@ class splitSignUp extends Component {
     }
 
     handleMerchantBack = () => {
-        this.props.history.push("onePaySignUpHome");
+        this.props.history.goBack();
     }
 
     render() {
         return (
             <div className="outer-sign-in signup">
                 <NotificationContainer />
-                <div className="text-center w-100">
-                <Link to="/">
-                    <img src={OnePayLogo} width="150px" className="onepay__logo" />
-                </Link>
-                    <div className="sign-in-card">
-                        <label className="sign-in">Sign Up</label>
+                <NavLink to="/" className='small_logo'>
+                    <img src={rightsmalllogo} alt="signup_logo" className='sml_logo' />
+                </NavLink>
+                <p className='create_acct'>Create Your Account</p>
 
-                        <div className="mersign">
-                            <div className="input-cntr">
-                                <div className="input-icons">
-                                    <img src={avatar} alt="icon missing" />
+                <div className="sign-in-card">
+                    <div className="signup_credential_part new_signup">
+
+                        {/* <label className="sign-in">Sign Up</label> */}
+
+                        <div className='common_input'>
+                            <div className="mersign">
+                                <div className="input-cntr">
+                                    <div className="input-icons">
+                                        <img src={avatar} alt="icon missing" />
+                                    </div>
+                                    <input type="text" placeholder="Merchant First Name *"
+                                        name="firstName"
+                                        value={this.state.firstName}
+                                        onChange={this.handleOnChange.bind(this)}
+                                    />
                                 </div>
-                                <input type="text" placeholder="Merchant First Name *"
-                                    name="firstName"
-                                    value={this.state.firstName}
-                                    onChange={this.handleOnChange.bind(this)}
-                                />
-
+                                <span className="Error">{this.state.errors["firstName"]}</span>
                             </div>
-                            <span className="Error">{this.state.errors["firstName"]}</span>
+
+                            <div className="mersign">
+                                <div className="input-cntr">
+                                    <div className="input-icons">
+                                        <img src={avatar} alt="icon missing" />
+                                    </div>
+                                    <input type="text" placeholder="Merchant Last Name *"
+                                        name="lastName"
+                                        value={this.state.lastName}
+                                        onChange={this.handleOnChange.bind(this)}
+                                    />
+                                </div>
+                                <span className="Error">{this.state.errors["lastName"]}</span>
+                            </div>
                         </div>
 
-                        <div className="mersign">
-                            <div className="input-cntr">
-                                <div className="input-icons">
-                                    <img src={avatar} alt="icon missing" />
+                        <div className='common_input'>
+                            <div className="mersign countrtselect">
+                                <div className="input-cntr">
+                                    <div className="input-icons">
+                                        <img src={country} alt="icon missing" />
+                                    </div>
+                                    <Select
+                                        options={this.state.options}
+                                        value={this.state.value}
+                                        onChange={this.changeHandler}
+                                        className="select-country"
+                                    />
                                 </div>
-                                <input type="text" placeholder="Merchant Last Name *"
-                                    name="lastName"
-                                    value={this.state.lastName}
-                                    onChange={this.handleOnChange.bind(this)}
-                                />
+                                <span className="Error">{this.state.errors["country"]}</span>
                             </div>
-                            <span className="Error">{this.state.errors["lastName"]}</span>
-                        </div>
-
-                        <div className="mersign countrtselect">
-                            <div className="input-cntr">
-                                <div className="input-icons">
-                                    <img src={country} alt="icon missing" />
+                            <div className="mersign stateSelect">
+                                <div className="input-cntr">
+                                    <div className="input-icons">
+                                        <img src={address} alt="icon missing" />
+                                    </div>
+                                    {this.state.value.value === "AU" ? (
+                                        <select
+                                            name="state"
+                                            value={this.state.state}
+                                            onChange={this.handleOnChange.bind(this)}
+                                            className="select_state"
+                                        >
+                                            <option value={0}>Select State</option>
+                                            <option value={'NSW'}>NSW</option>
+                                            <option value={'ACT'}>ACT</option>
+                                            <option value={'VIC'}>VIC</option>
+                                            <option value={'SA'}>SA</option>
+                                            <option value={'NT'}>NT</option>
+                                            <option value={'TAS'}>TAS</option>
+                                            <option value={'QLD'}>QLD</option>
+                                            <option value={'WA'}>WA</option>
+                                        </select>) : (<input type="text" placeholder="State *"
+                                            name="state"
+                                            value={this.state.state}
+                                            onChange={this.handleOnChange.bind(this)}
+                                        />)}
                                 </div>
-                                {/* <input type="text" placeholder="Country *"
-                                    name="country"
-                                    value={this.state.country}
-                                    onChange={this.handleOnChange.bind(this)}
-                                /> */}
-                                <Select
-                                    options={this.state.options}
-                                    value={this.state.value}
-                                    onChange={this.changeHandler}
-                                    className="select-country"
-                                // style={{ width: "364px" }}
-                                />
+                                <span className="Error">{this.state.errors["state"]}</span>
                             </div>
-                            <span className="Error">{this.state.errors["country"]}</span>
-                        </div>
-
-                        <div className="mersign">
-                            <div className="input-cntr">
-                                <div className="input-icons">
-                                    <img src={url} alt="icon missing" />
-                                </div>
-                                <input type="text" placeholder="Merchant Url *"
-                                    name="merchantUrl"
-                                    value={this.state.merchantUrl}
-                                    onChange={this.handleOnChange.bind(this)}
-                                />
-                            </div>
-                            <span className="Error">{this.state.errors["merchantUrl"]}</span>
                         </div>
 
                         {this.state.isVerifyMob ?
-                            (<><div>
-                                <div className="input-cntr margin">
-                                    <div className="input-icons">
-                                        <img src={Phone} alt="icon missing" />
+                            (
+                                <>
+                                    <div>
+                                        <div className="input-cntr mobile_input margin">
+                                            <div className="input-icons">
+                                                <img src={Phone} alt="icon missing" />
+                                            </div>
+                                            <input type="text" placeholder="Enter Mobile OTP"
+                                                name="mobileOTP"
+                                                value={this.state.mobileOTP}
+                                                onChange={this.handleOnChange.bind(this)}
+                                                disabled={!this.state.isMobileOtpVerified ? false : true}
+                                            />
+                                        </div>
+
+                                        {this.state.isMobileOtpVerified
+                                            ? (<p className="Verify"></p>)
+                                            : ((this.state.minute == 0 && this.state.second == 0)
+                                                ? (<p className="Verify" onClick={this.handleVerifyMobileFieldClick}>
+                                                    Resend OTP
+                                                </p>)
+                                                :
+
+                                                (<p className="Verify" onClick={this.handleConfirmMobileOTP}>
+                                                    Confirm
+                                                    <label style={{ paddingLeft: "12px" }}>
+                                                        {this.state.minute}{" : "}{this.state.second}
+                                                    </label>
+                                                </p>
+                                                ))}
                                     </div>
-                                    <input type="text" placeholder="Enter Mobile OTP"
-                                        name="mobileOTP"
-                                        value={this.state.mobileOTP}
-                                        onChange={this.handleOnChange.bind(this)}
-                                        disabled={!this.state.isMobileOtpVerified ? false : true}
-                                    />
-                                </div>
-
-                                {this.state.isMobileOtpVerified ?
-                                    (<p className="Verify"></p>) :
-                                    ((this.state.minute == 0 && this.state.second == 0) ? (<p className="Verify" onClick={this.handleVerifyMobileFieldClick}>Resend OTP</p>) :
-                                        (<p className="Verify" onClick={this.handleConfirmMobileOTP}>Confirm <label style={{ paddingLeft: "12px" }}>{this.state.minute}{" : "}{this.state.second}</label></p>))}
-                            </div>
-                                <span className="Error">{this.state.errors["mobileOTP"]}</span></>)
-                            : null}
+                                    <span className="Error">
+                                        {this.state.errors["mobileOTP"]}
+                                    </span>
+                                </>
+                            )
+                            : null
+                        }
                         <div className="mersign phonepincode">
-                            {/* <div className="input-cntr margin"> */}
-                            {/* <div className="input-icons">
-                                    <img src={Phone} alt="icon missing" />
-
-                                </div> */}
-                            {/* <input type="text" placeholder="Mobile No. *"
-                                    name="mobileNo"
-                                    value={this.state.mobileNo}
-                                    onChange={this.handleOnChange.bind(this)}
-                                    disabled={!this.state.isMobileOtpVerified ? (this.state.time > 0 ? true : false) : true}
-                                    maxLength="10"
-                                /> */}
                             <PhoneInput
                                 country={this.state.value.value.toLowerCase()}
                                 value={this.state.mobileNo}
@@ -630,15 +653,28 @@ class splitSignUp extends Component {
                                 disabled={!this.state.isMobileOtpVerified ? ((this.state.minute > 0 || this.state.second > 0) ? true : false) : true}
                                 maxLength="10"
                             />
-                            {/* </div> */}
                             <span className="Error">{this.state.errors["mobileNo"]}</span>
                         </div>
 
                         {this.state.isMobileOtpVerified ?
-                            (<p className="Verify">Verified</p>) :
-                            (this.state.isOTPVerifySend ? ((this.state.minute > 0 || this.state.second > 0) ? (<p className="Verify">OTP Sent</p>) : (<p className="Verify"></p>)) :
-                                (<p className="Verify" onClick={this.handleVerifyMobileFieldClick}>Verify OTP</p>))}
-
+                            (
+                                <p className="Verify">
+                                    Verified
+                                </p>
+                            )
+                            :
+                            (
+                                this.state.isOTPVerifySend ?
+                                    ((this.state.minute > 0 || this.state.second > 0)
+                                        ? (<p className="Verify">OTP Sent</p>)
+                                        : (<p className="Verify"></p>))
+                                    :
+                                    (
+                                        <p className="Verify" onClick={this.handleVerifyMobileFieldClick}>
+                                            Verify OTP
+                                        </p>)
+                            )
+                        }
 
                         <div className="mersign">
                             <div className="input-cntr margin">
@@ -684,55 +720,69 @@ class splitSignUp extends Component {
                                 <span className="Error">{this.state.errors["emailOTP"]}</span>
                             </div></>)
                             : null}
+                        <div className='common_input'>
+                            <div className="mersign">
+                                <div className="input-cntr">
+                                    <div className="input-icons">
+                                        <img src={lock} alt="icon missing" />
+                                    </div>
+                                    <input type={this.state.isRevealPassword ? "text" : "password"}
+                                        placeholder="Password *"
+                                        name="password"
+                                        value={this.state.password}
+                                        onChange={this.handleOnChange.bind(this)}
+                                        maxLength="20"
+                                        autoComplete="new-password"
+                                    />
+                                    <div className="input-icons cursor-pointer m-0 ml-2" onClick={this.togglePassword}>
+                                        {this.state.isRevealPassword ?
+                                            <img src={eye} alt="icon missing" /> :
+                                            <img src={hidepassword} alt="icon missing" />
+                                        }
 
-                        <div className="mersign">
-                            <div className="input-cntr">
-                                <div className="input-icons">
-                                    <img src={lock} alt="icon missing" />
+                                    </div>
+
                                 </div>
-                                <input type={this.state.isRevealPassword ? "text" : "password"}
-                                    placeholder="Password *"
-                                    name="password"
-                                    value={this.state.password}
-                                    onChange={this.handleOnChange.bind(this)}
-                                    maxLength="20"
-                                    autoComplete="new-password"
-                                />
-                                <div className="input-icons cursor-pointer m-0 ml-2" onClick={this.togglePassword}>
-                                    {this.state.isRevealPassword ?
-                                        <img src={eye} alt="icon missing" /> :
-                                        <img src={hidepassword} alt="icon missing" />
-                                        // <i class="fa fa-eye-slash icon-eye-slash" aria-hidden="true"></i>
-                                    }
-
-                                </div>
-
+                                <span className="Error">{this.state.errors["password"]}</span>
                             </div>
-                            <span className="Error">{this.state.errors["password"]}</span>
+
+                            <div className="mersign">
+                                <div className="input-cntr">
+                                    <div className="input-icons">
+                                        <img src={lock} alt="icon missing" />
+                                    </div>
+                                    <input type={this.state.isRevealConfirmPassword ? "text" : "password"}
+                                        placeholder="Confirm Password *"
+                                        name="confirmPassword"
+                                        value={this.state.confirmPassword}
+                                        onChange={this.handleOnChange.bind(this)}
+
+                                    />
+                                    <div className="input-icons cursor-pointer m-0 ml-2" onClick={this.toggleConfirmPassword}>
+                                        {this.state.isRevealConfirmPassword ?
+                                            <img src={eye} alt="icon missing" /> :
+                                            <img src={hidepassword} alt="icon missing" />
+                                        }
+                                    </div>
+                                </div>
+                                <span className="Error">{this.state.errors["confirmPassword"]}</span>
+                            </div>
                         </div>
 
                         <div className="mersign">
                             <div className="input-cntr">
                                 <div className="input-icons">
-                                    <img src={lock} alt="icon missing" />
+                                    <img src={url} alt="icon missing" />
                                 </div>
-                                <input type={this.state.isRevealConfirmPassword ? "text" : "password"}
-                                    placeholder="Confirm Password *"
-                                    name="confirmPassword"
-                                    value={this.state.confirmPassword}
+                                <input type="text" placeholder="Merchant Url *"
+                                    name="merchantUrl"
+                                    value={this.state.merchantUrl}
                                     onChange={this.handleOnChange.bind(this)}
-
                                 />
-                                <div className="input-icons cursor-pointer m-0 ml-2" onClick={this.toggleConfirmPassword}>
-                                    {this.state.isRevealConfirmPassword ?
-                                        <img src={eye} alt="icon missing" /> :
-                                        <img src={hidepassword} alt="icon missing" />
-                                        // <i class="fa fa-eye-slash icon-eye-slash" aria-hidden="true"></i>
-                                    }
-                                </div>
                             </div>
-                            <span className="Error">{this.state.errors["confirmPassword"]}</span>
+                            <span className="Error">{this.state.errors["merchantUrl"]}</span>
                         </div>
+
 
                         <div className="mersign">
                             <div className="input-cntr">
@@ -776,40 +826,6 @@ class splitSignUp extends Component {
                             <span className="Error">{this.state.errors["suburb"]}</span>
                         </div>
 
-                        <div className="mersign">
-                            <div className="input-cntr">
-                                <div className="input-icons">
-                                    <img src={address} alt="icon missing" />
-                                </div>
-                                {/* <input type="text" placeholder="State *"
-                                    name="state"
-                                    value={this.state.state}
-                                    onChange={this.handleOnChange.bind(this)}
-                                /> */}
-                                {this.state.value.value === "AU" ? (
-                                    <select
-                                        name="state"
-                                        value={this.state.state}
-                                        onChange={this.handleOnChange.bind(this)}
-                                    >
-                                        <option value={0}>Select State</option>
-                                        <option value={'NSW'}>NSW</option>
-                                        <option value={'ACT'}>ACT</option>
-                                        <option value={'VIC'}>VIC</option>
-                                        <option value={'SA'}>SA</option>
-                                        <option value={'NT'}>NT</option>
-                                        <option value={'TAS'}>TAS</option>
-                                        <option value={'QLD'}>QLD</option>
-                                        <option value={'WA'}>WA</option>
-                                    </select>) : (<input type="text" placeholder="State *"
-                                        name="state"
-                                        value={this.state.state}
-                                        onChange={this.handleOnChange.bind(this)}
-                                    />)}
-                            </div>
-                            <span className="Error">{this.state.errors["state"]}</span>
-                        </div>
-
                         <div className="mersign ">
                             <div className="input-cntr">
                                 <div className="input-icons">
@@ -824,12 +840,9 @@ class splitSignUp extends Component {
                             <span className="Error">{this.state.errors["postcode"]}</span>
                         </div>
 
-                        
-
                         <div className="mersign">
                             <div className="input-cntr">
                                 <div className="input-icons">
-                                    {/* <img src={avatar} alt="icon missing" /> */}
                                 </div>
                                 <input type="text" placeholder="ABN Number *"
                                     name="abnNumber"
@@ -843,18 +856,13 @@ class splitSignUp extends Component {
                         <div className="mersign bustype">
                             <div className="input-cntr">
                                 <div className="input-icons">
-                                    {/* <img src={avatar} alt="icon missing" /> */}
                                 </div>
-                                {/* <input type="text" placeholder="Business Type"
-                                    name="businessType"
-                                    value={this.state.businessType}
-                                    onChange={this.handleOnChange.bind(this)}
-                                /> */}
                                 <select
                                     id="businessType"
                                     name="businessType"
                                     value={this.state.businessType}
                                     onChange={this.handleOnChange.bind(this)}
+                                    className="business_type"
                                 >
                                     <option value={0}>Select Business Type</option>
                                     {this.state.businessTypeData !== null &&
@@ -871,7 +879,10 @@ class splitSignUp extends Component {
                             </div>
                             <span className="Error">{this.state.errors["businessType"]}</span>
                         </div>
-                        <div className="resbtncss">
+
+
+                        <div className="resbtncss flrx_btn_part">
+                            <p onClick={this.handleMerchantBack} className="goback">Go Back</p>
                             <button className="butn lefbtn" onClick={this.handleMerchantSignUP.bind(this)}
                                 disabled={this.state.loading}
                             >
@@ -883,9 +894,13 @@ class splitSignUp extends Component {
                                         spin
                                     />
                                 )}Sign Up</button>
-                            <button className="butn rgtbtn" onClick={this.handleMerchantBack}>Back</button>
+                            <p className="already">
+                                <Link to="/merchant">Login</Link>
+                            </p>
+
                         </div>
-                        <p className="already"><Link to="/merchant">Login</Link></p>                        
+
+
                     </div>
                 </div>
             </div>

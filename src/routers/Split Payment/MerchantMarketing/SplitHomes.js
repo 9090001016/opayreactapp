@@ -16,6 +16,7 @@ import Footer from './Footer';
 import FooterMobile from './FooterMobile'
 import OnePayLogo from "../../../assets/Images/allicons/main-logo 1.png";
 import { useEffect } from 'react';
+import { Link } from 'react-scroll'
 
 const SplitHomes = () => {
     let isDesktop = true;
@@ -27,6 +28,7 @@ const SplitHomes = () => {
     }
     useEffect(() => {
         window.addEventListener('resize', setFooter);
+
         return () => {
             window.removeEventListener('resize', setFooter);
         };
@@ -75,9 +77,9 @@ const SplitHomes = () => {
                     </div>
                 </div>
                 <div className='how_it_works'>
-                    <div>
+                    <Link to="joinToday" spy={true} smooth={true}>
                         <img src={arrow_mark} alt="arrow_img" className='arrow_img' />
-                    </div>
+                    </Link>
                     <div className='how_it_works_leftside'>
                         <p>for you</p>
                         <h2>How it works</h2>
@@ -206,7 +208,7 @@ const SplitHomes = () => {
                 </div>
             </section>
 
-            <section className='join_section'>
+            <section className='join_section' id="joinToday">
                 <h4>
                     Join OnePay and unleash the full potential
                     of what you can do.

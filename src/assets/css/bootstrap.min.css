@@ -232,9 +232,10 @@ button,
 input {
   overflow: visible;
 }
-button,
-select {
+button, select {
   text-transform: none;
+  background: #f0f0f0;
+  border: none;
 }
 [type="button"],
 [type="reset"],
@@ -4182,6 +4183,7 @@ color: #101D40;
 color: #fff;
 margin-top: -1rem;
 }
+
 .whole_business_page .navbarS nav .container-fluid #collapsibleNavId .own_link .nav-item .nav-link{
   color: #101D40;
   margin-top: -1rem;

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
-import avatar from "./../../../assets/Images/avatar.png";
-import lock from "./../../../assets/Images/lock.png";
+import avatar from "./../../../assets/Images/smallicons/person_filled.png";
+import lock from "./../../../assets/Images/smallicons/lock.png";
 import eye from "./../../../assets/Images/eye.png";
+import { Checkbox } from "antd";
 import {
   NotificationContainer,
   NotificationManager,
@@ -16,19 +18,27 @@ import { encryption } from "../../../helpers/Encryption";
 import hidepassword from "./../../../assets/Images/hidepassword.png";
 import { merchantAuthHeader } from "../../Split Payment/Merchant/splitMerchantAuthHeader";
 import OnePayLogo from "./../../../assets/Images/OnePay-logo.png";
+import MerchantLogins from '../MerchantMarketing/MerchantLogins';
+import signinImg from '../../../assets/Images/sign-UP-BG-image/signin_img.png'
+import signinImg2 from '../../../assets/Images/sign-UP-BG-image/mobile_new.jpg'
 
 const cookies = new Cookies();
 class splitMerchantLogin extends Component {
   constructor(props) {
     super(props);
 
+
     this.state = {
       userName: "",
       password: "",
       loading: false,
       isRevealPassword: false,
+      isMobile : true,
+      initialWidth:window.innerWidth
+
     };
     this.handleFinaleSubmit = this.handleFinaleSubmit.bind(this);
+    this.handlewidth = this.handlewidth.bind(this);
   }
 
   componentDidMount() {
@@ -36,8 +46,22 @@ class splitMerchantLogin extends Component {
       "Connect your customers with OnePay | For Merchants";
     document.getElementsByTagName("meta")[4].content =
       "Say goodbye to cart abandonment by giving your customers a reliable Buy Now Pay Later option from OnePay. Thinking about becoming one of our partners? Sign up now. ";
+      this.handlewidth();
+      window.addEventListener('resize',this.handlewidth);
+  }
+  componentWillUnmount(){
+    window.removeEventListener('resize', this.handlewidth);
   }
   ///finale submit
+
+  handlewidth(){
+    this.setState({
+      initialWidth : window.innerWidth
+    })
+      this.setState({
+      isMobile : this.state.initialWidth > 912 ?true: false
+      })
+  }
   handleFinaleSubmit(e) {
     e.preventDefault();
     var self = this;
@@ -209,9 +233,10 @@ class splitMerchantLogin extends Component {
 
   render() {
     return (
-      <div className="outer-sign-in">
-        <NotificationContainer />
-        <div className="text-center w-100">
+      <div className="business_signin_page">
+        <MerchantLogins />
+        <NotificationContainer/>
+        {/* <div className="text-center w-100">
           <Link to="/">
             <img src={OnePayLogo} width="150px" className="onepay__logo" />
           </Link>
@@ -289,7 +314,95 @@ class splitMerchantLogin extends Component {
               </Link>
             </form>
           </div>
+        </div> */}
+        <div className='sign_in_page'>
+          { this.state.isMobile ?
+           <div className='sign_in_image_part'>
+            <img src={signinImg} alt="signin_img" className='image_only' />
+          </div>
+          :
+          <div className='sign_in_image_part'>
+            <img src={signinImg2} alt="signin_img" className='image_only' />
+          </div>
+          }
+          
+          <div className="credential_part">
+            <label className="sign-in">Sign in</label>
+            <form name="sign-in-form" onSubmit={this.handleFinaleSubmit} className="signin_form">
+              <div className="input-cntr new_input_box">
+                <div className="input-icons small_icons">
+                  <img src={avatar} alt="icon missing" />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Enter user name"
+                  name="userName"
+                  value={this.state.userName}
+                  maxLength={100}
+                  autoComplete="off"
+                  onChange={this.handleInputOnchange}
+                />
+              </div>
+              <div className="input-cntr new_input_box">
+                <div className="input-icons small_icons">
+                  <img src={lock} alt="icon missing" />
+                </div>
+                <input
+                  type={this.state.isRevealPassword ? "text" : "password"}
+                  placeholder="Enter Password"
+                  name="password"
+                  value={this.state.password}
+                  maxLength={25}
+                  autoComplete="off"
+                  onChange={this.handleInputOnchange}
+                />
+                <div
+                  className="input-icons cursor-pointer m-0 ml-2"
+                  onClick={this.togglePassword}
+                >
+                  {this.state.isRevealPassword ? (
+                    <img src={eye} alt="icon missing" />
+                  ) : (
+                    // <i
+                    //   class="fa fa-eye-slash icon-eye-slash"
+                    //   aria-hidden="true"
+                    // ></i>
+                    <img src={hidepassword} alt="icon missing" />
+                  )}
+                </div>
+              </div>
+              <div className="flex-parted">
+                <p className="check_box"><Checkbox />&nbsp;&nbsp;Remember Me</p>
+                <Link
+                  to="onePayMerchantForgotPassword"
+                  className="font-14-500 color-dark-blue forgot_pwd"
+                >
+                  Forgot Password ?
+                </Link>
+              </div>
+              <button
+                type="submit"
+                className="butn mx-auto"
+                disabled={this.state.loading}
+              >
+                {this.state.loading && (
+                  <FontAwesomeIcon
+                    className="mr-2"
+                    icon={faCircleNotch}
+                    size="sm"
+                    spin
+                  />
+                )}
+                Sign in
+              </button><br></br>
+              <p className="switchto">Don’t have an account?&nbsp;&nbsp;<NavLink to="/onePaySignUp" className="merchantPush">Sign up</NavLink></p>
+              <NavLink to="/onePaySignUp">
+                <p className="mtop10 fsize14">Sign Up</p>
+              </NavLink>
+            </form>
+          </div>
         </div>
+
       </div>
     );
   }

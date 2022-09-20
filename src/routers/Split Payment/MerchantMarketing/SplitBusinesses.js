@@ -16,6 +16,7 @@ import sideImage from '../../../assets/Images/allicons/sideImage.png';
 import JoinTodayLogo from '../../../assets/Images/allicons/logo only 1.png';
 import Footer from './Footer';
 import FooterMobile from './FooterMobile'
+import { Link } from 'react-scroll'
 
 
 const SplitBusinesses = () => {
@@ -127,7 +128,9 @@ const SplitBusinesses = () => {
           <p>one-click checkout is the technique of allowing customers to make
             purchases with the payment and shipping
           </p><br /><br />
-          <img src={arrow_mark} alt="arrow_img" className='dancing_arrow'/>
+          <Link to="joinToday" spy={true} smooth={true}>
+            <img src={arrow_mark} alt="arrow_img" className='dancing_arrow' />
+          </Link>
         </div>
         <div className='how_it_works_business'>
           <div className='left_side'>
@@ -264,16 +267,16 @@ const SplitBusinesses = () => {
         </div>
       </section>
 
-      <section className='join_section'>
+      <section className='join_section' id='joinToday'>
         <h4>
           Join OnePay and unleash the full potential
           of what you can do.
         </h4>
         <NavLink to="/onePaySignUp">
-        <button className='Join_today'>
-          <img src={JoinTodayLogo} alt="" />
-          <p>Join Today</p>
-        </button>
+          <button className='Join_today'>
+            <img src={JoinTodayLogo} alt="" />
+            <p>Join Today</p>
+          </button>
         </NavLink>
       </section>
 
