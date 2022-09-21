@@ -82,7 +82,8 @@ input:-webkit-autofill::first-line {
   font-weight: 500;
   text-align: center;
   margin-top: 30px;
-  background: #3636ba;
+  background: #4075FF;
+   border-radius: 33px;
 }
 .flex-parted {
   display: flex;
@@ -3314,8 +3315,8 @@ header .signbtn .sigup {
   margin-bottom: 0;
 }
 .signup .Verify {
-  font-size: 14px;
-  color: #003280;
+  font-size: 18px;
+  color: #4075FF;
   font-weight: 500;
   text-align: right;
   margin-bottom: 20px;
