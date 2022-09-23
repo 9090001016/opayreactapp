@@ -131,6 +131,9 @@ const SplitBusinesses = () => {
           <Link to="joinToday" spy={true} smooth={true}>
             <img src={arrow_mark} alt="arrow_img" className='dancing_arrow' />
           </Link>
+            <NavLink className='purple_button' to='/onePaySignUp'>
+              <p className='purple_signup'>Sign Up</p>
+            </NavLink>
         </div>
         <div className='how_it_works_business'>
           <div className='left_side'>

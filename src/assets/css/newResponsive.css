@@ -1,12 +1,11 @@
 @media (max-width:1500px){
     .sign-in-card {
         padding: 45px 40px;
-        width: 600px;
+        width: 700px;
     }
     .join_section button{
         width: 15vw;
     }
-    
 }
 
 @media (max-width:1280px){
@@ -182,7 +181,7 @@
         margin-top: 7vh;
     }
 }
-@media (max-width:1024px){t
+@media (max-width:1024px){
     .signin_link .nav-item{
         padding: 2rem;
         margin-top: -1.5rem;
@@ -691,12 +690,34 @@
     }
 }
 @media (max-width:600px){
+    /* .mySize{
+        margin-top: -5rem;
+    }
+    .goback{
+        margin-top: 5rem;
+    }
+    .already {
+        margin-top: 2rem;
+    } */
+    .flrx_btn_part{
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+      }
+    .purple_button {
+        width: 25vw;
+        height: 6vh;
+    }
     .sign-in-card {
         padding: 45px 40px;
         width: 450px;
     }
 }
 @media (max-width:540px){
+    .login_logo{
+        margin-top: 1rem;
+    }
     .goback {
             font-size: 14px;
     }

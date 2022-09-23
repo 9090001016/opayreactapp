@@ -523,6 +523,29 @@ width: 60%;
     background-image: url('../../assets/Images/allicons/banner.png');
     background-size: cover;
 }
+.purple_button{
+    width: 11vw;
+    height: 8vh;
+    margin-top: 2rem;
+    background-color: #B94368;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.purple_button .purple_signup{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    color: #000;
+    text-transform: capitalize;
+    font-size: 22px;
+    cursor: pointer;
+}
+.purple_button:hover .purple_signup{
+color: #fff;
+cursor: pointer;
+}
 .business_landing_part nav{
     height: 10vh;
 }
@@ -872,8 +895,12 @@ font-size: 16px;
     font-style: normal;
     font-weight: 800;
     font-size: 32px;
-    margin-top: -1%;
+    margin-top: -2%;
 }
+.new_signup{
+    margin-top: 2rem;
+}
+
 .common_input{
     display: flex;
     gap: 1rem;
@@ -889,6 +916,8 @@ font-size: 16px;
     padding: 10px;
     display: flex;
     margin-bottom: 25px;
+    /* justify-content: center; */
+    align-items: center;
 }
 .new_signup .input-cntr input {
     width: 100%;
@@ -923,6 +952,24 @@ font-size: 16px;
    cursor: pointer;
    font-size: 18px;
    margin-top: 30px;
+  }
+  .goback:hover{
+    font-weight: 600;
+  }
+  .lefbtn:hover{
+    font-weight: 600;
+  }
+  
+   .bg_signup{
+    background: url(./../Images/sign-UP-BG-image/sign-up-BG.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .select-country{
+    background: #f0f0f0;
+  }
+  .signup .Verify:hover{
+    font-weight: 600;
   }
 
 

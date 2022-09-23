@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
-import email from "./../../../assets/Images/emailBl.png";
-import avatar from "./../../../assets/Images/avatar.png";
-import lock from "./../../../assets/Images/lock.png";
-import eye from "./../../../assets/Images/eye.png";
-import Phone from "./../../../assets/Images/smartphone.png";
+import email from "./../../../assets/Images/smallicons/email.png";
+import avatar from "./../../../assets/Images/smallicons/user.png";
+import lock from "./../../../assets/Images/smallicons/password.png";
+import eye from "./../../../assets/Images/smallicons/password-eye-2.png";
+import hidepassword from "./../../../assets/Images/smallicons/eye_hidden.png";
+import Phone from "./../../../assets/Images/smallicons/phone.png"
 import config from "../../../helpers/config"
 import axios from "axios"
 import { authHeader } from "../helpers/splitAuthHeader"
-import hidepassword from "./../../../assets/Images/hidepassword.png";
 import { NotificationContainer, NotificationManager } from "react-notifications";
 import Select from 'react-select'
 import countryList from 'react-select-country-list'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
-import address from "./../../../assets/Images/address.png";
-import post from "./../../../assets/Images/post.png";
-import country from "./../../../assets/Images/country.png";
+import address from "./../../../assets/Images/smallicons/location.png";
+import post from "./../../../assets/Images/smallicons/postcode.png";
+import country from "./../../../assets/Images/smallicons/map.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import OnePayLogo from "./../../../assets/Images/OnePay-logo.png";
