@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from "react-router-dom";
-import email from "./../../../assets/Images/smallicons/mail.png";
-import avatar from "./../../../assets/Images/smallicons/person_filled.png";
-import lock from "./../../../assets/Images/smallicons/lock.png";
-import eye from "./../../../assets/Images/eye.png";
-import Phone from "./../../../assets/Images/smartphone.png";
+import email from "./../../../assets/Images/smallicons/email.png";
+import avatar from "./../../../assets/Images/smallicons/user.png";
+import lock from "./../../../assets/Images/smallicons/password.png";
+import eye from "./../../../assets/Images/smallicons/password-eye-2.png";
+import hidepassword from "./../../../assets/Images/smallicons/eye_hidden.png";
+import Phone from "./../../../assets/Images/smallicons/phone.png"
+import businessType from "./../../../assets/Images/smallicons/business-type.png"
+import abnNum from "./../../../assets/Images/smallicons/ABN-number.png"
+
 import config from "../../../helpers/config"
 import axios from "axios"
 import { authHeader } from "../helpers/splitAuthHeader"
-import hidepassword from "./../../../assets/Images/hidepassword.png";
 import {
     NotificationContainer,
     NotificationManager,
@@ -18,20 +21,16 @@ import countryList from 'react-select-country-list'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import url from "./../../../assets/Images/url.png";
-import address from "./../../../assets/Images/smallicons/Vector.png";
-import post from "./../../../assets/Images/smallicons/package.png";
-import country from "./../../../assets/Images/smallicons/public.png";
+import address from "./../../../assets/Images/smallicons/location.png";
+import post from "./../../../assets/Images/smallicons/postcode.png";
+import country from "./../../../assets/Images/smallicons/map.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
-import OnePayLogo from "./../../../assets/Images/OnePay-logo.png";
-import merchant_bg from './../../../assets/Images/sign-UP-BG-image/merchant_page.jpg'
 import rightsmalllogo from './../../../assets/Images/sign-UP-BG-image/main-logo 3.png'
 class splitSignUp extends Component {
     constructor(props) {
         super(props)
-
-        this.options = countryList().getData()
-
+        this.options = countryList().getData();
         this.state = {
             isVerifyMob: false,
             isVerifyEmail: false,
@@ -58,7 +57,7 @@ class splitSignUp extends Component {
             isRevealPassword: false,
             isRevealConfirmPassword: false,
             options: this.options,
-            value: { value: "AU", label: "Australia" },
+            value: { value: "AU", label: "Country" },
             minute: 0,
             second: 0,
             emailMinute: 0,
@@ -72,6 +71,7 @@ class splitSignUp extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         this.handleBusinessTypeList();
     }
 
@@ -108,6 +108,7 @@ class splitSignUp extends Component {
                         // }
                     } else {
                         NotificationManager.error(data);
+                        console.log(data);
                         self.setState({
                             mobileOTP: "",
                             isVerifyMob: false,
@@ -146,8 +147,6 @@ class splitSignUp extends Component {
                 this.setState({ complete: true });
             }
         }
-
-
     };
 
     handleConfirmMobileOTP = () => {
@@ -518,25 +517,24 @@ class splitSignUp extends Component {
 
     render() {
         return (
-            <div className="outer-sign-in signup">
+            <div className="outer-sign-in signup bg_signup" >
                 <NotificationContainer />
                 <NavLink to="/" className='small_logo'>
                     <img src={rightsmalllogo} alt="signup_logo" className='sml_logo' />
                 </NavLink>
-                <p className='create_acct'>Create Your Account</p>
+
 
                 <div className="sign-in-card">
+                    <p className='create_acct'>Create Your Business Account</p>
                     <div className="signup_credential_part new_signup">
-
                         {/* <label className="sign-in">Sign Up</label> */}
-
                         <div className='common_input'>
                             <div className="mersign">
                                 <div className="input-cntr">
                                     <div className="input-icons">
                                         <img src={avatar} alt="icon missing" />
                                     </div>
-                                    <input type="text" placeholder="Merchant First Name *"
+                                    <input type="text" placeholder="First Name *"
                                         name="firstName"
                                         value={this.state.firstName}
                                         onChange={this.handleOnChange.bind(this)}
@@ -550,7 +548,7 @@ class splitSignUp extends Component {
                                     <div className="input-icons">
                                         <img src={avatar} alt="icon missing" />
                                     </div>
-                                    <input type="text" placeholder="Merchant Last Name *"
+                                    <input type="text" placeholder="Last Name *"
                                         name="lastName"
                                         value={this.state.lastName}
                                         onChange={this.handleOnChange.bind(this)}
@@ -559,7 +557,6 @@ class splitSignUp extends Component {
                                 <span className="Error">{this.state.errors["lastName"]}</span>
                             </div>
                         </div>
-
                         <div className='common_input'>
                             <div className="mersign countrtselect">
                                 <div className="input-cntr">
@@ -843,6 +840,7 @@ class splitSignUp extends Component {
                         <div className="mersign">
                             <div className="input-cntr">
                                 <div className="input-icons">
+                                <img src={businessType} alt="icon missing" />
                                 </div>
                                 <input type="text" placeholder="ABN Number *"
                                     name="abnNumber"
@@ -855,7 +853,8 @@ class splitSignUp extends Component {
 
                         <div className="mersign bustype">
                             <div className="input-cntr">
-                                <div className="input-icons">
+                            <div className="input-icons">
+                                <img src={abnNum} alt="icon missing" />
                                 </div>
                                 <select
                                     id="businessType"
@@ -883,7 +882,7 @@ class splitSignUp extends Component {
 
                         <div className="resbtncss flrx_btn_part">
                             <p onClick={this.handleMerchantBack} className="goback">Go Back</p>
-                            <button className="butn lefbtn" onClick={this.handleMerchantSignUP.bind(this)}
+                            <button className="butn lefbtn mySize" onClick={this.handleMerchantSignUP.bind(this)}
                                 disabled={this.state.loading}
                             >
                                 {this.state.loading && (

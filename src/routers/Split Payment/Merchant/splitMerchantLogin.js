@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
-import avatar from "./../../../assets/Images/smallicons/person_filled.png";
-import lock from "./../../../assets/Images/smallicons/lock.png";
-import eye from "./../../../assets/Images/eye.png";
+import avatar from "./../../../assets/Images/smallicons/user.png";
+import lock from "./../../../assets/Images/smallicons/password.png";
+import eye from "./../../../assets/Images/smallicons/password-eye-2.png";
+import hidepassword from "./../../../assets/Images/smallicons/eye_hidden.png";
 import { Checkbox } from "antd";
 import {
   NotificationContainer,
@@ -15,7 +16,6 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import { encryption } from "../../../helpers/Encryption";
-import hidepassword from "./../../../assets/Images/hidepassword.png";
 import { merchantAuthHeader } from "../../Split Payment/Merchant/splitMerchantAuthHeader";
 import OnePayLogo from "./../../../assets/Images/OnePay-logo.png";
 import MerchantLogins from '../MerchantMarketing/MerchantLogins';
