@@ -702,7 +702,6 @@
     .flrx_btn_part{
         display: flex;
         /* flex-direction: column; */
-        justify-content: center;
         align-items: center;
       }
     .purple_button {
