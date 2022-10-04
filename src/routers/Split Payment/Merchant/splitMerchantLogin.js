@@ -21,6 +21,7 @@ import OnePayLogo from "./../../../assets/Images/OnePay-logo.png";
 import MerchantLogins from '../MerchantMarketing/MerchantLogins';
 import signinImg from '../../../assets/Images/sign-UP-BG-image/signin_img.png'
 import signinImg2 from '../../../assets/Images/sign-UP-BG-image/mobile_new.jpg'
+import rightsmalllogo from './../../../assets/Images/sign-UP-BG-image/main-logo 3.png'
 
 const cookies = new Cookies();
 class splitMerchantLogin extends Component {
@@ -33,8 +34,8 @@ class splitMerchantLogin extends Component {
       password: "",
       loading: false,
       isRevealPassword: false,
-      isMobile : true,
-      initialWidth:window.innerWidth
+      isMobile: true,
+      initialWidth: window.innerWidth
 
     };
     this.handleFinaleSubmit = this.handleFinaleSubmit.bind(this);
@@ -46,21 +47,21 @@ class splitMerchantLogin extends Component {
       "Connect your customers with OnePay | For Merchants";
     document.getElementsByTagName("meta")[4].content =
       "Say goodbye to cart abandonment by giving your customers a reliable Buy Now Pay Later option from OnePay. Thinking about becoming one of our partners? Sign up now. ";
-      this.handlewidth();
-      window.addEventListener('resize',this.handlewidth);
+    this.handlewidth();
+    window.addEventListener('resize', this.handlewidth);
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     window.removeEventListener('resize', this.handlewidth);
   }
   ///finale submit
 
-  handlewidth(){
+  handlewidth() {
     this.setState({
-      initialWidth : window.innerWidth
+      initialWidth: window.innerWidth
     })
-      this.setState({
-      isMobile : this.state.initialWidth > 912 ?true: false
-      })
+    this.setState({
+      isMobile: this.state.initialWidth > 912 ? true : false
+    })
   }
   handleFinaleSubmit(e) {
     e.preventDefault();
@@ -234,8 +235,8 @@ class splitMerchantLogin extends Component {
   render() {
     return (
       <div className="business_signin_page">
-        <MerchantLogins />
-        <NotificationContainer/>
+        {/* <MerchantLogins /> */}
+        <NotificationContainer />
         {/* <div className="text-center w-100">
           <Link to="/">
             <img src={OnePayLogo} width="150px" className="onepay__logo" />
@@ -316,17 +317,9 @@ class splitMerchantLogin extends Component {
           </div>
         </div> */}
         <div className='sign_in_page'>
-          { this.state.isMobile ?
-           <div className='sign_in_image_part'>
-            <img src={signinImg} alt="signin_img" className='image_only' />
-          </div>
-          :
-          <div className='sign_in_image_part'>
-            <img src={signinImg2} alt="signin_img" className='image_only' />
-          </div>
-          }
-          
           <div className="credential_part">
+            <img src={rightsmalllogo} alt="logo" />
+
             <label className="sign-in">Sign in</label>
             <form name="sign-in-form" onSubmit={this.handleFinaleSubmit} className="signin_form">
               <div className="input-cntr new_input_box">
@@ -396,9 +389,9 @@ class splitMerchantLogin extends Component {
                 Sign in
               </button><br></br>
               <p className="switchto">Don’t have an account?&nbsp;&nbsp;<NavLink to="/onePaySignUp" className="merchantPush">Sign up</NavLink></p>
-              <NavLink to="/onePaySignUp">
+              {/* <NavLink to="/onePaySignUp">
                 <p className="mtop10 fsize14">Sign Up</p>
-              </NavLink>
+              </NavLink> */}
             </form>
           </div>
         </div>
