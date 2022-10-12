@@ -550,6 +550,14 @@
     }
 }
 @media(max-width:768px){
+    .dash_link .header-left {
+        width: 90vw;
+        height: 6vh;
+    }
+    .dash_link .header-left a {
+        width: 30vw;
+        height: 6vh;
+    }
     .white_bg {
         margin-top: 0rem;
         height: 10vh;
@@ -938,6 +946,14 @@
     }
 }
 @media (max-width:414px){
+    .dash_link .header-left {
+        width: 100vw;
+        height: 6vh;
+    }
+    .dash_link .header-left a {
+        width: 33vw;
+        height: 6vh;
+    }
     .sign-in-card {
         padding: 45px 40px;
         width: 380px;

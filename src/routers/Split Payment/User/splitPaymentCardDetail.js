@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom';
 import { Table, Popover } from "antd";
-import RedDelete from "./../../../assets/Images/delete.png";
+import RedDelete from "./../../../assets/Images/smallicons/redDelete.png";
 import BlueEdit from "./../../../assets/Images/editt.png";
 import Modal from "react-responsive-modal";
 import CloseIcon from "./../../../assets/Images/CloseWhBold.png";
@@ -84,7 +85,7 @@ class SplitPaymentCardDetail extends Component {
   }
 
   handleGetCardDetails() {
-    
+
     let self = this;
     axios({
       method: "get",
@@ -95,8 +96,6 @@ class SplitPaymentCardDetail extends Component {
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
-          
-
           self.setState({
             paymentDetails: data
           })
@@ -107,7 +106,7 @@ class SplitPaymentCardDetail extends Component {
         }
       })
       .catch(function (res) {
-        
+
         // self.setState({
         //     loading: false,
         // });
@@ -116,7 +115,7 @@ class SplitPaymentCardDetail extends Component {
   }
 
   handleAddCardDetails() {
-    
+
     let self = this;
     axios({
       method: "get",
@@ -127,7 +126,7 @@ class SplitPaymentCardDetail extends Component {
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
-          
+
 
           self.setState({
             paymentDetails: data
@@ -139,7 +138,7 @@ class SplitPaymentCardDetail extends Component {
         }
       })
       .catch(function (res) {
-        
+
         // self.setState({
         //     loading: false,
         // });
@@ -148,7 +147,7 @@ class SplitPaymentCardDetail extends Component {
   }
 
   handleGetDefaultPaymentGateway() {
-    
+
     let self = this;
     axios({
       method: "get",
@@ -159,7 +158,7 @@ class SplitPaymentCardDetail extends Component {
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
-          
+
           self.setState({
             paymentGatewayType: data
           })
@@ -181,7 +180,7 @@ class SplitPaymentCardDetail extends Component {
         }
       })
       .catch(function (res) {
-        
+
         // self.setState({
         //     loading: false,
         // });
@@ -190,7 +189,7 @@ class SplitPaymentCardDetail extends Component {
   }
 
   handleSubmit = async event => {
-    
+
     event.preventDefault();
 
     if (this.state.paymentGatewayType.length > 0) {
@@ -240,7 +239,7 @@ class SplitPaymentCardDetail extends Component {
   };
 
   handleSaveCardDetails(cardDetails) {
-    
+
     let self = this;
     if (this.state.cardHolderName[0] !== "") {
       axios({
@@ -272,7 +271,7 @@ class SplitPaymentCardDetail extends Component {
           let status = res.data.message;
           let data = res.data.responseData;
           if (status === "Success") {
-            
+
             NotificationManager.success("Record Saved Successfully");
             self.setState({
               addCard: false
@@ -297,7 +296,7 @@ class SplitPaymentCardDetail extends Component {
           }
         })
         .catch(function (res) {
-          
+
           // self.setState({
           //     loading: false,
           // });
@@ -374,14 +373,14 @@ class SplitPaymentCardDetail extends Component {
   // }
 
   handleOnChange(e) {
-    
+
     this.setState({
       [e.target.name]: [e.target.value]
     })
   }
 
   handleDefaultCardConfirm(customerCardId) {
-    
+
     var paymentDetails = this.state.paymentDetails;
     for (var i = 0; i < paymentDetails.length; i++) {
       if (paymentDetails[i].customerCardId == customerCardId) {
@@ -420,7 +419,7 @@ class SplitPaymentCardDetail extends Component {
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
-          
+
           NotificationManager.success("Record Updated Successfully");
           self.setState({
             cardConf: false
@@ -449,7 +448,7 @@ class SplitPaymentCardDetail extends Component {
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
-          
+
           NotificationManager.success("Record Deleted Successfully");
           self.hide(
             this,
@@ -491,7 +490,7 @@ class SplitPaymentCardDetail extends Component {
   }
 
   handleOnChangeExpiryMonth(e) {
-    
+
     var month = e.target.value;
     if (parseInt(month) > 12) {
       month = this.state.expiryMonth;
@@ -502,7 +501,7 @@ class SplitPaymentCardDetail extends Component {
   }
 
   handleOnChangeExpiryYear(e) {
-    
+
     var value = e.target.value;
     this.setState({
       [e.target.name]: value
@@ -510,7 +509,7 @@ class SplitPaymentCardDetail extends Component {
   }
 
   handleSaveCACardDetails(cardDetails) {
-    
+
     let self = this;
     if (this.state.cACardHolderName[0] !== "" && this.state.cACardNumber[0] !== "") {
       axios({
@@ -547,7 +546,7 @@ class SplitPaymentCardDetail extends Component {
           let status = res.data.message;
           let data = res.data.responseData;
           if (status === "Success") {
-            
+
             NotificationManager.success("Record Saved Successfully");
             self.setState({
               newAddCard: false
@@ -572,7 +571,7 @@ class SplitPaymentCardDetail extends Component {
           }
         })
         .catch(function (res) {
-          
+
           // self.setState({
           //     loading: false,
           // });
@@ -617,8 +616,8 @@ class SplitPaymentCardDetail extends Component {
                 ) : record.cardType.toLowerCase().trim() === "diner club" ? (
                   <img className="visaind" src={DinerClub} alt="visa" />
                 ) : (
-                          record.cardType
-                        )
+                  record.cardType
+                )
               )
             }
           })()
@@ -639,9 +638,9 @@ class SplitPaymentCardDetail extends Component {
         key: "cardexpiry",
         className: "mob-none",
         render: (text, record, index) => (
-          record.cardExpiryMonth > 9?
-          (record.cardExpiryMonth + "-" + record.cardExpiryYear):
-          ("0"+record.cardExpiryMonth + "-" + record.cardExpiryYear)
+          record.cardExpiryMonth > 9 ?
+            (record.cardExpiryMonth + "-" + record.cardExpiryYear) :
+            ("0" + record.cardExpiryMonth + "-" + record.cardExpiryYear)
         ),
         // sorter: (a, b) => {
         //   return a.cardExpiryYear.localeCompare(b.cardExpiryYear)
@@ -745,12 +744,47 @@ class SplitPaymentCardDetail extends Component {
 
     return (
       <div>
+        <div className="blue_line">
+        </div>
         <div className="userpayment">
-          <h3 className="Usermana">Add Card Details</h3>
-          {this.state.paymentGatewayType.length > 0 &&
-            (this.state.paymentGatewayType[0].paymentGatewayName).toLowerCase() == "stripe" ?
-            (<label className="add" onClick={this.handleaddCardOpen.bind(this)}>Add New</label>) :
-            (<label className="add" onClick={this.handlenewAddCardOpen.bind(this)}>Add</label>)}
+          <div className="dash_link">
+            <ul className="header-left">
+              <NavLink to="/onePayUser/userDashboard">
+                <li>
+
+                  {/* <div className="header-icons">
+                    <img src={dashboard} alt="icon missing" />
+                  </div> */}
+                  <span className="ml-2">Dashboard</span>
+
+                </li>
+              </NavLink>
+              <NavLink to="/onePayUser/userTransaction">
+                <li>
+
+                  {/* <div className="header-icons">
+                    <img src={user} alt="icon missing" />
+                  </div> */}
+                  <span className="ml-2">Transactions</span>
+                </li>
+              </NavLink>
+              <NavLink to="/onePayUser/paymentDetail">
+                <li>
+
+                  {/* <div className="header-icons">
+                    <img src={merchant} alt="icon missing" />
+                  </div> */}
+                  <span className="ml-2">Payment Details</span>
+
+                </li>
+              </NavLink>
+            </ul>
+          </div>
+
+          <div className='card_para'>
+            <p className="Usermana">Add Card Details</p>
+          </div>
+
           <div className="userpaymenttable">
             <Table
               columns={columns}
@@ -802,19 +836,29 @@ class SplitPaymentCardDetail extends Component {
                     <img src={Down} onClick={e => onExpand(record, e)} />
                   </div>
                 ) : (
-                    <div className="expandown">
-                      <img src={Down} onClick={e => onExpand(record, e)} />
-                    </div>
-                  )}
+                  <div className="expandown">
+                    <img src={Down} onClick={e => onExpand(record, e)} />
+                  </div>
+                )}
               expandIconColumnIndex={this.state.mobileView ? 6 : -1}
               expandIconAsCell={false}
               dataSource={this.state.paymentDetails}
               pagination={{
-                position: ["bottomCenter"],
+                position: ["bottomRight"],
                 showSizeChanger: true
+                
               }}
             />
+            <div className='card_btn'>
+          {
+              this.state.paymentGatewayType.length > 0 &&
+                (this.state.paymentGatewayType[0].paymentGatewayName).toLowerCase() == "stripe" ?
+                (<label className="add" onClick={this.handleaddCardOpen.bind(this)}>+ Add New Card</label>) :
+                (<label className="add" onClick={this.handlenewAddCardOpen.bind(this)}>+ Add Card</label>)
+            }
+            </div>
           </div>
+          
           {/* Add Role */}
           <Modal
             open={this.state.addCard}
@@ -989,10 +1033,10 @@ class SplitPaymentCardDetail extends Component {
                 {/* <button className="btn">Add</button> */}
                 <button className="btn add-btn" onClick={this.handlUpdateDefaultCard.bind(this)}>
                   Save
-                  </button>
+                </button>
                 <button className="btn" onClick={this.handlDefaultCardConfirmClose.bind(this)}>
                   Cancel
-                  </button>
+                </button>
               </div>
             </div>
           </Modal>

@@ -16,6 +16,10 @@ import AmericanExpress from "./../../../assets/Images/american-express.png";
 import DinerClub from "./../../../assets/Images/diners-club.png";
 import moment from 'moment';
 import { NotificationManager } from "react-notifications";
+import dashboard from "./../../../assets/Images/dashboard.png";
+import merchant from "./../../../assets/Images/merchant.png";
+import user from "./../../../assets/Images/user.png";
+import { NavLink } from "react-router-dom";
 
 const { RangePicker } = DatePicker;
 
@@ -26,6 +30,7 @@ class splitTransactionHistory extends Component {
     super(props);
 
     this.state = {
+      module: "",
       isFilter: false,
       transactionHistoryData: [],
       orderId: "",
@@ -66,10 +71,12 @@ class splitTransactionHistory extends Component {
   };
 
   componentDidMount() {
+    var module = window.localStorage.getItem("OnePayMerchantModule");
     this.handleGetTransactionHistoryList();
     if (window.screen.width > 768) {
       this.setState({
         mobileView: false,
+        module
       });
     } else {
       this.setState({
@@ -100,7 +107,7 @@ class splitTransactionHistory extends Component {
   }
 
   handleGetTransactionHistoryList(pagination, sorter) {
-    
+
     let self = this;
     var paging = pagination !== undefined ? pagination : this.state.pagination;
     var startDate = this.state.startDate !== null ? moment(this.state.startDate).format('YYYY-MM-DD') : this.state.startDate;
@@ -136,7 +143,7 @@ class splitTransactionHistory extends Component {
         },
       })
         .then(function (res) {
-          
+
           let status = res.data.message;
           let data = res.data.responseData;
           if (status === "Success") {
@@ -193,7 +200,7 @@ class splitTransactionHistory extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -212,7 +219,7 @@ class splitTransactionHistory extends Component {
   }
 
   handleRowClickPage(transactionID, orderID, userID) {
-    
+
     let self = this;
 
     setTimeout(function () {
@@ -280,7 +287,7 @@ class splitTransactionHistory extends Component {
   }
 
   handleMerchantRefund(orderId, merchantOrderId) {
-    
+
     let self = this;
     axios({
       method: "post",
@@ -292,7 +299,7 @@ class splitTransactionHistory extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let responseData = res.data.responseData;
         if (status === "Success") {
@@ -380,19 +387,19 @@ class splitTransactionHistory extends Component {
           item.installment === "-" ? (
             item.installment
           ) : (
-              <span
-                className="custom-link"
-                onClick={() =>
-                  this.handleRowClickPage(
-                    item.transactionID,
-                    item.orderId,
-                    item.userID
-                  )
-                }
-              >
-                {item.installment}
-              </span>
-            ),
+            <span
+              className="custom-link"
+              onClick={() =>
+                this.handleRowClickPage(
+                  item.transactionID,
+                  item.orderId,
+                  item.userID
+                )
+              }
+            >
+              {item.installment}
+            </span>
+          ),
         sorter: true,
         sortDirections: ['ascend', 'descend', 'ascend']
       },
@@ -489,60 +496,118 @@ class splitTransactionHistory extends Component {
     ];
 
     return (
-      <div className="MerTraHistory">
-        <h3 className="Usermana">Transaction History</h3>
-        <div className="exfilter">
-          <CSVLink
-            data={this.state.transactionCSVData}
-            headers={headers}
-            filename={"Transaction History.csv"}
-            className="csv"
-          >
-            <img src={CSV} alt="Export" />
-            Export to CSV
-          </CSVLink>
-          <label
-            className="filte"
-            onClick={this.handleFilterbuttonClick.bind(this)}
-          >
-            <img src={Filter} alt="Export" />
-            Filter
-            <img src={WhiteDropdown} alt="Dropdown" className="WhDrop" />
-          </label>
+      <div>
+        <div className="blue_line">
         </div>
-        <label className="filt" onClick={this.showDrawerFilter.bind(this)}>
-          <img src={Filter} alt="Export" />
-        </label>
-        {this.state.isFilter ? (
-          <div className="row m-0 w-100 back">
-            <div className="col-12 col-md-3">
-              <input
-                type="text"
-                placeholder="Enter Order Id"
-                name="orderId"
-                value={this.state.orderId}
-                onChange={this.handleOnChange.bind(this)}
-              />
+        <div className="MerTraHistory">
+          <div className="dash_link">
+            <ul className="header-left">
+              {(() => {
+                if (this.state.module.includes('Dashboard')) {
+                  return (
+                    <li>
+                      <NavLink to="/onePayMerchant/dashboard">
+                        <div className="header-icons">
+                          <img src={dashboard} alt="icon missing" />
+                        </div>
+                        <span className="ml-2">Dashboard</span>
+                      </NavLink>
+                    </li>
+                  )
+                }
+              })()}
+              {(() => {
+                if (this.state.module.includes('Transaction History')) {
+                  return (
+                    <li>
+                      <NavLink to="/onePayMerchant/transaction-history">
+                        <div className="header-icons">
+                          <img src={user} alt="icon missing" />
+                        </div>
+                        <span className="ml-2">Transaction History</span>
+                      </NavLink>
+                    </li>
+                  )
+                }
+              })()}
+              {/* <li>
+          <Link to="/merchant/salesReport">
+            <div className="header-icons">
+              <img src={merchant} alt="icon missing" />
             </div>
-            <div className="col-12 col-md-3">
-              <input
-                type="text"
-                placeholder="Enter Merchant Order Id"
-                name="merchantorderId"
-                value={this.state.merchantorderId}
-                onChange={this.handleOnChange.bind(this)}
-              />
-            </div>
-            <div className="col-12 col-md-3">
-              <input
-                type="text"
-                placeholder="Enter customer Name"
-                name="customerName"
-                value={this.state.customerName}
-                onChange={this.handleOnChange.bind(this)}
-              />
-            </div>
-            {/* <div className="col-12 col-md-3">
+            <span className="ml-2">Sales Report</span>
+          </Link>
+        </li> */}
+              {(() => {
+                if (this.state.module.includes('Subscription')) {
+                  return (
+                    <li>
+                      <NavLink to="/onePayMerchant/merchantSubscription">
+                        <div className="header-icons">
+                          <img src={merchant} alt="icon missing" />
+                        </div>
+                        <span className="ml-2">Subscription</span>
+                      </NavLink>
+                    </li>
+                  )
+                }
+              })()}
+            </ul>
+          </div>
+
+          <h3 className="Usermana">Transaction History</h3>
+          <div className="exfilter">
+            <CSVLink
+              data={this.state.transactionCSVData}
+              headers={headers}
+              filename={"Transaction History.csv"}
+              className="csv"
+            >
+              <img src={CSV} alt="Export" />
+              Export to CSV
+            </CSVLink>
+            <label
+              className="filte"
+              onClick={this.handleFilterbuttonClick.bind(this)}
+            >
+              <img src={Filter} alt="Export" />
+              Filter
+              <img src={WhiteDropdown} alt="Dropdown" className="WhDrop" />
+            </label>
+          </div>
+          <label className="filt" onClick={this.showDrawerFilter.bind(this)}>
+            <img src={Filter} alt="Export" />
+          </label>
+          {this.state.isFilter ? (
+            <div className="row m-0 w-100 back">
+              <div className="col-12 col-md-3">
+                <input
+                  type="text"
+                  placeholder="Enter Order Id"
+                  name="orderId"
+                  value={this.state.orderId}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              <div className="col-12 col-md-3">
+                <input
+                  type="text"
+                  placeholder="Enter Merchant Order Id"
+                  name="merchantorderId"
+                  value={this.state.merchantorderId}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              <div className="col-12 col-md-3">
+                <input
+                  type="text"
+                  placeholder="Enter customer Name"
+                  name="customerName"
+                  value={this.state.customerName}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              {/* <div className="col-12 col-md-3">
               <input
                 type="text"
                 placeholder="Enter Email"
@@ -568,7 +633,7 @@ class splitTransactionHistory extends Component {
                 disabledDate={disabledDate}
               ></RangePicker>
             </div> */}
-            {/* <div className="col-12 col-md-3">
+              {/* <div className="col-12 col-md-3">
               <input
                 type="text"
                 placeholder="Enter Total Amount Txn From"
@@ -589,238 +654,239 @@ class splitTransactionHistory extends Component {
                 onChange={this.handleOnChange.bind(this)}
               />
             </div> */}
-            <div className="col-12 col-md-3">
-              <div className="search text-left">
-                <button className="m-0"
-                  onClick={this.handleSearch.bind(this)}
-                >
-                  Search
-                </button>
+              <div className="col-12 col-md-3">
+                <div className="search text-left">
+                  <button className="m-0"
+                    onClick={this.handleSearch.bind(this)}
+                  >
+                    Search
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ) : null}
-        <div className="MerchantrHistorytable">
-          <Spin spinning={this.state.loading}>
-            <Table
-              columns={columns}
-              // rowClassName={(record) => record.isRefundSuccess ? 'ant-table-row active-row1' : 'ant-table-row' }
-              expandedRowRender={(row) => {
-                return (
-                  <React.Fragment>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Date:</label>
-                          <label className="expandemailtext">{row.transactionDate}</label>
+          ) : null}
+          <div className="MerchantrHistorytable">
+            <Spin spinning={this.state.loading}>
+              <Table
+                columns={columns}
+                // rowClassName={(record) => record.isRefundSuccess ? 'ant-table-row active-row1' : 'ant-table-row' }
+                expandedRowRender={(row) => {
+                  return (
+                    <React.Fragment>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Date:</label>
+                            <label className="expandemailtext">{row.transactionDate}</label>
+                          </div>
                         </div>
-                      </div>
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Order Id:</label>
-                          <label className="expandemailtext">{row.orderId}</label>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Transaction Id:</label>
-                          <label className="expandemailtext">{row.transactionID}</label>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Transaction Value (AU$):</label>
-                          <label className="expandemailtext">{row.amount}</label>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Email:</label>
-                          <label className="expandemailtext">{row.emailId}</label>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Contact Number:</label>
-                          <label className="expandemailtext">{row.contactNumber}</label>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Payment Details:</label>
-                          <label className="expandemailtext">{row.customerCard}</label>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Created By:</label>
-                          <div className="amazontext">
-                            <label className="expandemailtext">
-                              {row.createBy}
-                            </label>
-                            <Popover
-                              content={
-                                <div className="userpopover">
-                                  <div className="subsc">
-                                    <label>Created By</label>
-                                    <label>{row.createBy}</label>
-                                  </div>
-                                  <div className="subsc">
-                                    <label>Created On</label>
-                                    <label>{row.createDate}</label>
-                                  </div>
-                                  <div className="subsc">
-                                    <label>Modified By</label>
-                                    <label>{row.updateBy}</label>
-                                  </div>
-                                  <div className="subsc">
-                                    <label>Modified On</label>
-                                    <label>{row.updateDate}</label>
-                                  </div>
-                                </div>
-                              }
-                              placement="bottom"
-                              trigger="click"
-                            >
-                              <img src={InfoIcon} alt="InfoIcon" />
-                            </Popover>
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Order Id:</label>
+                            <label className="expandemailtext">{row.orderId}</label>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Status:</label>
-                          <label className="expandemailtext">
-                            {row.isActive ? "Active" : "Inactive"}
-                          </label>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Transaction Id:</label>
+                            <label className="expandemailtext">{row.transactionID}</label>
+                          </div>
+                        </div>
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Transaction Value (AU$):</label>
+                            <label className="expandemailtext">{row.amount}</label>
+                          </div>
                         </div>
                       </div>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Email:</label>
+                            <label className="expandemailtext">{row.emailId}</label>
+                          </div>
+                        </div>
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Contact Number:</label>
+                            <label className="expandemailtext">{row.contactNumber}</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Payment Details:</label>
+                            <label className="expandemailtext">{row.customerCard}</label>
+                          </div>
+                        </div>
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Created By:</label>
+                            <div className="amazontext">
+                              <label className="expandemailtext">
+                                {row.createBy}
+                              </label>
+                              <Popover
+                                content={
+                                  <div className="userpopover">
+                                    <div className="subsc">
+                                      <label>Created By</label>
+                                      <label>{row.createBy}</label>
+                                    </div>
+                                    <div className="subsc">
+                                      <label>Created On</label>
+                                      <label>{row.createDate}</label>
+                                    </div>
+                                    <div className="subsc">
+                                      <label>Modified By</label>
+                                      <label>{row.updateBy}</label>
+                                    </div>
+                                    <div className="subsc">
+                                      <label>Modified On</label>
+                                      <label>{row.updateDate}</label>
+                                    </div>
+                                  </div>
+                                }
+                                placement="bottom"
+                                trigger="click"
+                              >
+                                <img src={InfoIcon} alt="InfoIcon" />
+                              </Popover>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Status:</label>
+                            <label className="expandemailtext">
+                              {row.isActive ? "Active" : "Inactive"}
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </React.Fragment>
+                  );
+                }}
+                expandIcon={({ expanded, onExpand, record }) =>
+                  expanded ? (
+                    <div className="expandown1">
+                      <img src={Down} onClick={e => onExpand(record, e)} />
                     </div>
-                  </React.Fragment>
-                );
-              }}
-              expandIcon={({ expanded, onExpand, record }) =>
-                expanded ? (
-                  <div className="expandown1">
-                    <img src={Down} onClick={e => onExpand(record, e)} />
-                  </div>
-                ) : (
+                  ) : (
                     <div className="expandown">
                       <img src={Down} onClick={e => onExpand(record, e)} />
                     </div>
                   )}
-              expandIconColumnIndex={this.state.mobileView ? 8 : -1}
-              expandIconAsCell={false}
-              dataSource={this.state.transactionHistoryData}
-              pagination={{
-                current: this.state.pagination.current,
-                pageSize: this.state.pagination.pageSize,
-                total: this.state.pagination.total,
-                position: ["bottomCenter"],
-                showSizeChanger: true
-              }}
-              onRow={(row, item) => ({
-                onClick: () =>
-                  this.handleRowClickPage(
-                    row.transactionID,
-                    row.orderId,
-                    row.userID
-                  ),
-              })}
-              onChange={this.onShowSizeChange}
-            />
-          </Spin>
-        </div>
-        <div className="fl">
-          <Drawer
-            placement={placement}
-            closable={false}
-            onClose={this.onCloseFilter}
-            visible={visibleFilter}
-            key={placement}
-            className="f2"
-          >
-            <div className="drarfilter">
-              <div className="row m-0 w-100 back">
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Enter Order Id"
-                    name="orderId"
-                    value={this.state.orderId}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Enter Email"
-                    name="emailId"
-                    value={this.state.emailId}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Enter Contact No."
-                    name="contactNo"
-                    value={this.state.contactNo}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <RangePicker
-                    className="calendar"
-                    format={dateFormat}
-                    onChange={this.handleDateOnChange}
-                    disabledDate={disabledDate}
-                  ></RangePicker>
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Total Amount Transacted From"
-                    name="transactionAmountFrom"
-                    value={this.state.transactionAmountFrom}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Total Amount Transacted To"
-                    name="transactionAmountTo"
-                    value={this.state.transactionAmountTo}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-12">
-                  <div className="search">
-                    <button
-                      onClick={this.onCloseFilter.bind(this)}
-                      className="mr-1"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      onClick={this.handleGetTransactionHistoryList.bind(this)}
-                    >
-                      Search
-                    </button>
+                expandIconColumnIndex={this.state.mobileView ? 8 : -1}
+                expandIconAsCell={false}
+                dataSource={this.state.transactionHistoryData}
+                pagination={{
+                  current: this.state.pagination.current,
+                  pageSize: this.state.pagination.pageSize,
+                  total: this.state.pagination.total,
+                  position: ["bottomCenter"],
+                  showSizeChanger: true
+                }}
+                onRow={(row, item) => ({
+                  onClick: () =>
+                    this.handleRowClickPage(
+                      row.transactionID,
+                      row.orderId,
+                      row.userID
+                    ),
+                })}
+                onChange={this.onShowSizeChange}
+              />
+            </Spin>
+          </div>
+          <div className="fl">
+            <Drawer
+              placement={placement}
+              closable={false}
+              onClose={this.onCloseFilter}
+              visible={visibleFilter}
+              key={placement}
+              className="f2"
+            >
+              <div className="drarfilter">
+                <div className="row m-0 w-100 back">
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Enter Order Id"
+                      name="orderId"
+                      value={this.state.orderId}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Enter Email"
+                      name="emailId"
+                      value={this.state.emailId}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Enter Contact No."
+                      name="contactNo"
+                      value={this.state.contactNo}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <RangePicker
+                      className="calendar"
+                      format={dateFormat}
+                      onChange={this.handleDateOnChange}
+                      disabledDate={disabledDate}
+                    ></RangePicker>
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Total Amount Transacted From"
+                      name="transactionAmountFrom"
+                      value={this.state.transactionAmountFrom}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Total Amount Transacted To"
+                      name="transactionAmountTo"
+                      value={this.state.transactionAmountTo}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-12">
+                    <div className="search">
+                      <button
+                        onClick={this.onCloseFilter.bind(this)}
+                        className="mr-1"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        onClick={this.handleGetTransactionHistoryList.bind(this)}
+                      >
+                        Search
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </Drawer>
+            </Drawer>
+          </div>
         </div>
       </div>
     );

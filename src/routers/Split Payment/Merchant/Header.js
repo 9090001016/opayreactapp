@@ -57,7 +57,7 @@ class Header extends Component {
       headers: merchantAuthHeader(),
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let notificationCount = res.data.responseData;
         if (status === "Success") {
@@ -96,7 +96,7 @@ class Header extends Component {
       headers: merchantAuthHeader(),
     })
       .then(function (res) {
-        
+
         if (res.status) {
           cookies.remove("onepaymerchanttoken");
           window.localStorage.removeItem('onepaymerchanttoken');
@@ -118,7 +118,7 @@ class Header extends Component {
       headers: merchantAuthHeader(),
     })
       .then(function (res) {
-        
+
         let msg = res.data.message;
         let data = res.data.responseData[0];
         if (msg === "Success") {
@@ -138,61 +138,9 @@ class Header extends Component {
     const { placement, visible } = this.state;
     return (
       <div className="header">
-        <img src={OnePayLogo} className="onepay__logo"/>
+        <img src={OnePayLogo} className="onepay__logo" />
         {/* <h1 className="header-logo">ONE PAY</h1> */}
         <div className="header-nav">
-          <ul className="header-left">
-            {(() => {
-              if (this.state.module.includes('Dashboard')) {
-                return (
-                  <li>
-                    <NavLink to="/onePayMerchant/dashboard">
-                      <div className="header-icons">
-                        <img src={dashboard} alt="icon missing" />
-                      </div>
-                      <span className="ml-2">Dashboard</span>
-                    </NavLink>
-                  </li>
-                )
-              }
-            })()}
-            {(() => {
-              if (this.state.module.includes('Transaction History')) {
-                return (
-                  <li>
-                    <NavLink to="/onePayMerchant/transaction-history">
-                      <div className="header-icons">
-                        <img src={user} alt="icon missing" />
-                      </div>
-                      <span className="ml-2">Transaction History</span>
-                    </NavLink>
-                  </li>
-                )
-              }
-            })()}
-            {/* <li>
-              <Link to="/merchant/salesReport">
-                <div className="header-icons">
-                  <img src={merchant} alt="icon missing" />
-                </div>
-                <span className="ml-2">Sales Report</span>
-              </Link>
-            </li> */}
-            {(() => {
-              if (this.state.module.includes('Subscription')) {
-                return (
-                  <li>
-                    <NavLink to="/onePayMerchant/merchantSubscription">
-                      <div className="header-icons">
-                        <img src={merchant} alt="icon missing" />
-                      </div>
-                      <span className="ml-2">Subscription</span>
-                    </NavLink>
-                  </li>
-                )
-              }
-            })()}
-          </ul>
           <div className="header-right">
             <ul className="d-flex">
               {(() => {
@@ -237,6 +185,7 @@ class Header extends Component {
             </div>
           </div>
         </div>
+        
         {/* Mobile View Headerr */}
         <div className="sidebarresp">
           <img
@@ -364,6 +313,7 @@ class Header extends Component {
           </div>
         </Modal>
       </div>
+      
     );
   }
 }

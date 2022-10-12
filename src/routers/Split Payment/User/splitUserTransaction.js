@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Filter from "./../../../assets/Images/filter.png";
-import CSV from "./../../../assets/Images/csv.png";
+import Filter from "./../../../assets/Images/smallicons/Filteralt.png";
+import CSV from "./../../../assets/Images/smallicons/Exportcsv.png";
 import WhiteDropdown from "./../../../assets/Images/WhiteDropdown.png";
 import InfoIcon from "./../../../assets/Images/Infoblue.png";
 import { Table, Popover, DatePicker } from "antd";
@@ -17,6 +17,7 @@ import { parseDate } from "tough-cookie";
 import { Drawer } from "antd";
 import Down from "./../../../assets/Images/download.png";
 import moment from 'moment';
+import { NavLink } from "react-router-dom";
 
 const { RangePicker } = DatePicker;
 
@@ -75,7 +76,7 @@ class splitUserTransaction extends Component {
     this.setState({ isFilter: !this.state.isFilter });
   };
   handleInstallmentsDetails(installmentsDetails) {
-    
+
 
     // setTimeout(function () {
     this.props.history.push({
@@ -100,7 +101,7 @@ class splitUserTransaction extends Component {
   }
 
   handleGetTransactionsGridData(pagination, sorter) {
-    
+
     let self = this;
     var paging = pagination !== undefined ? pagination : this.state.pagination;
     self.setState({
@@ -135,34 +136,34 @@ class splitUserTransaction extends Component {
         Size: (paging.pageSize).toString()
       },
     }).then(function (res) {
-        
-        let status = res.data.message;
-        let data = res.data.responseData;
-        if (status === "Success") {
-          if (data.length !== 0) {
-            paging.total = parseInt(data[0].totalRowCount);
-            self.setState({
-              transactionsData: data,
-              loading: false,
-              pagination: paging
-            });
-            self.handleGetTransactionsCSV();
-          } else {
-            paging.total = 0
-            self.setState({
-              transactionsData: [],
-              loading: false,
-              pagination: paging
-            });
-          }
+
+      let status = res.data.message;
+      let data = res.data.responseData;
+      if (status === "Success") {
+        if (data.length !== 0) {
+          paging.total = parseInt(data[0].totalRowCount);
+          self.setState({
+            transactionsData: data,
+            loading: false,
+            pagination: paging
+          });
+          self.handleGetTransactionsCSV();
         } else {
+          paging.total = 0
           self.setState({
             transactionsData: [],
             loading: false,
             pagination: paging
           });
         }
-      })
+      } else {
+        self.setState({
+          transactionsData: [],
+          loading: false,
+          pagination: paging
+        });
+      }
+    })
       .catch((data) => {
         console.log(data);
       });
@@ -193,7 +194,7 @@ class splitUserTransaction extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -272,22 +273,6 @@ class splitUserTransaction extends Component {
         sorter: true,
         sortDirections: ['ascend', 'descend', 'ascend']
       },
-      // {
-      //   title: "Transaction ID",
-      //   dataIndex: "transactionID",
-      //   key: "transactionID",
-      //   className: "mob-none",
-      //   sorter: true,
-      //   sortDirections: ['ascend', 'descend', 'ascend']
-      // },
-      // {
-      //   title: "Transaction Date",
-      //   dataIndex: "transactionDate",
-      //   key: "transactionDate",
-      //   className: "mob-none",
-      //   sorter: true,
-      //   sortDirections: ['ascend', 'descend', 'ascend']
-      // },
       {
         title: "Installments",
         dataIndex: "installment",
@@ -297,18 +282,18 @@ class splitUserTransaction extends Component {
           item.installment === "-" ? (
             item.installment
           ) : (
-              <span
-                className="custom-link"
-                onClick={() =>
-                  this.handleInstallmentsDetails({
-                    orderId: item.orderId,
-                    merchantId: item.merchantId,
-                  })
-                }
-              >
-                {item.installment}
-              </span>
-            ),
+            <span
+              className="custom-link"
+              onClick={() =>
+                this.handleInstallmentsDetails({
+                  orderId: item.orderId,
+                  merchantId: item.merchantId,
+                })
+              }
+            >
+              {item.installment}
+            </span>
+          ),
         sorter: true,
         sortDirections: ['ascend', 'descend', 'ascend']
       },
@@ -430,60 +415,96 @@ class splitUserTransaction extends Component {
     ];
 
     return (
-      <div className="UserTrans">
-        <h3 className="Usermana">Transactions</h3>
-        <div className="exfilter">
-          <CSVLink
-            data={this.state.transactionCSVData}
-            headers={headers}
-            filename={"user-trasactions.csv"}
-            className="csv"
-          >
-            <img src={CSV} alt="Export" />
-            Export to CSV
-          </CSVLink>
-          <label
-            className="filte"
-            onClick={this.handleFilterbuttonClick.bind(this)}
-          >
-            <img src={Filter} alt="Export" />
-            Filter
-            <img src={WhiteDropdown} alt="Dropdown" className="WhDrop" />
-          </label>
+      <div>
+        <div className="blue_line">
         </div>
-        <label className="filt" onClick={this.showDrawerFilter.bind(this)}>
-          <img src={Filter} alt="Export" />
-        </label>
-        {this.state.isFilter ? (
-          <div className="row m-0 w-100 back">
-            <div className="col-12 col-md-3">
-              <input
-                type="text"
-                placeholder="Enter Order Id"
-                name="orderID"
-                value={this.state.orderID}
-                onChange={this.handleOnChange.bind(this)}
-              />
+        <div className="UserTrans">
+
+          <div className="dash_link">
+            <ul className="header-left">
+              <NavLink to="/onePayUser/userDashboard">
+                <li>
+                  {/* <div className="header-icons">
+                    <img src={dashboard} alt="icon missing" />
+                  </div> */}
+                  <span className="ml-2">Dashboard</span>
+                </li>
+              </NavLink>
+              <NavLink to="/onePayUser/userTransaction">
+                <li>
+                  {/* <div className="header-icons">
+                    <img src={user} alt="icon missing" />
+                  </div> */}
+                  <span className="ml-2">Transactions</span>
+                </li>
+              </NavLink>
+              <NavLink to="/onePayUser/paymentDetail">
+                <li>
+                  {/* <div className="header-icons">
+                    <img src={merchant} alt="icon missing" />
+                  </div> */}
+                  <span className="ml-2">Payment Details</span>
+                </li>
+              </NavLink>
+            </ul>
+          </div>
+
+          <div className="transaction_details">
+            <h3 className="Usermana">Transactions</h3>
+            <div className="exfilter">
+              <CSVLink
+                data={this.state.transactionCSVData}
+                headers={headers}
+                filename={"user-trasactions.csv"}
+                className="csv"
+              >
+                <img src={CSV} alt="Export" />
+                Export to CSV
+              </CSVLink>
+              <label
+                className="filte"
+                onClick={this.handleFilterbuttonClick.bind(this)}
+              >
+                <img src={Filter} alt="Export" />
+                Filter
+                <img src={WhiteDropdown} alt="Dropdown" className="WhDrop" />
+              </label>
             </div>
-            <div className="col-12 col-md-3">
-              <input
-                type="text"
-                placeholder="Enter Merchant Order Id"
-                name="merchantorderId"
-                value={this.state.merchantorderId}
-                onChange={this.handleOnChange.bind(this)}
-              />
-            </div>
-            <div className="col-12 col-md-3">
-              <input
-                type="text"
-                placeholder="Enter Merchant Name"
-                name="merchantName"
-                value={this.state.merchantName}
-                onChange={this.handleOnChange.bind(this)}
-              />
-            </div>
-            {/* <div className="col-12 col-md-3">
+          </div>
+          
+          <label className="filt" onClick={this.showDrawerFilter.bind(this)}>
+            <img src={Filter} alt="Export" />
+          </label>
+          {this.state.isFilter ? (
+            <div className="row m-0 w-100 back">
+              <div className="col-12 col-md-3">
+                <input
+                  type="text"
+                  placeholder="Enter Order Id"
+                  name="orderID"
+                  value={this.state.orderID}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              <div className="col-12 col-md-3">
+                <input
+                  type="text"
+                  placeholder="Enter Merchant Order Id"
+                  name="merchantorderId"
+                  value={this.state.merchantorderId}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              <div className="col-12 col-md-3">
+                <input
+                  type="text"
+                  placeholder="Enter Merchant Name"
+                  name="merchantName"
+                  value={this.state.merchantName}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              {/* <div className="col-12 col-md-3">
               <input
                 type="text"
                 placeholder="Enter Txn Id"
@@ -509,10 +530,10 @@ class splitUserTransaction extends Component {
                 disabledDate={disabledDate}
               ></RangePicker>
             </div> */}
-            {/* <div className="col-12 col-md-3">
+              {/* <div className="col-12 col-md-3">
               <input type="text" placeholder="Enter Total No. of Txn upto" />
             </div> */}
-            {/* <div className="col-12 col-md-3">
+              {/* <div className="col-12 col-md-3">
               <label className="Totalamount">
                 Total No. of Transaction upto
               </label>
@@ -520,7 +541,7 @@ class splitUserTransaction extends Component {
                 <input type="range" min="1" max="100" value="50" />
               </div>
             </div> */}
-            {/* <div className="col-12 col-md-3">
+              {/* <div className="col-12 col-md-3">
               <label className="Totalamount">
                 Total Amount Transacted upto
               </label>
@@ -528,7 +549,7 @@ class splitUserTransaction extends Component {
                 <input type="range" min="1" max="100" value="50" />
               </div>
             </div> */}
-            {/* <div className="col-12 col-md-3">
+              {/* <div className="col-12 col-md-3">
               <input
                 type="text"
                 placeholder="Enter Amount"
@@ -537,7 +558,7 @@ class splitUserTransaction extends Component {
                 onChange={this.handleOnChange.bind(this)}
               />
             </div> */}
-            {/* <div className="col-12 col-md-3">
+              {/* <div className="col-12 col-md-3">
               <input
                 type="text"
                 placeholder="Enter Payment method"
@@ -546,90 +567,92 @@ class splitUserTransaction extends Component {
                 onChange={this.handleOnChange.bind(this)}
               />
             </div> */}
-            <div className="col-12 col-md-3">
-              <div className="search text-left">
-                <button className="m-0" onClick={this.handleSearch.bind(this)}>
-                  Search
-                </button>
+              <div className="col-12 col-md-3">
+                <div className="search text-left">
+                  <button className="m-0" onClick={this.handleSearch.bind(this)}>
+                    Search
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ) : null}
-        <div className="Userdashtable">
-          <Table
-            columns={columns}
-            expandedRowRender={(row) => {
-              return (
-                <React.Fragment>
-                  <div className="row">
-                    <div className="col-12 col-sm-6 mb-3">
-                      <div className="mobilevi">
-                        <label className="expandemail">Order ID:</label>
-                        <label className="expandemailtext">{row.orderId}</label>
+          ) :
+            null
+          }
+          <div className="Userdashtable">
+            <Table
+              columns={columns}
+              expandedRowRender={(row) => {
+                return (
+                  <React.Fragment>
+                    <div className="row">
+                      <div className="col-12 col-sm-6 mb-3">
+                        <div className="mobilevi">
+                          <label className="expandemail">Order ID:</label>
+                          <label className="expandemailtext">{row.orderId}</label>
+                        </div>
+                      </div>
+                      <div className="col-12 col-sm-6 mb-3">
+                        <div className="mobilevi">
+                          <label className="expandemail">Transaction ID:</label>
+                          <label className="expandemailtext">{row.transactionID}</label>
+                        </div>
                       </div>
                     </div>
-                    <div className="col-12 col-sm-6 mb-3">
-                      <div className="mobilevi">
-                        <label className="expandemail">Transaction ID:</label>
-                        <label className="expandemailtext">{row.transactionID}</label>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div className="row">
-                    <div className="col-12 col-sm-6 mb-3">
-                      <div className="mobilevi">
-                        <label className="expandemail">Transaction Date:</label>
-                        <label className="expandemailtext">{row.transactionDate}</label>
+                    <div className="row">
+                      <div className="col-12 col-sm-6 mb-3">
+                        <div className="mobilevi">
+                          <label className="expandemail">Transaction Date:</label>
+                          <label className="expandemailtext">{row.transactionDate}</label>
+                        </div>
+                      </div>
+                      <div className="col-12 col-sm-6 mb-3">
+                        <div className="mobilevi">
+                          <label className="expandemail">Installments:</label>
+                          <label className="expandemailtext">{row.installment}</label>
+                        </div>
                       </div>
                     </div>
-                    <div className="col-12 col-sm-6 mb-3">
-                      <div className="mobilevi">
-                        <label className="expandemail">Installments:</label>
-                        <label className="expandemailtext">{row.installment}</label>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div className="row">
-                    <div className="col-12 col-sm-6 mb-3">
-                      <div className="mobilevi">
-                        <label className="expandemail">Amount Transacted (AU$):</label>
-                        <label className="expandemailtext">{row.transactionAmount}</label>
+                    <div className="row">
+                      <div className="col-12 col-sm-6 mb-3">
+                        <div className="mobilevi">
+                          <label className="expandemail">Amount Transacted (AU$):</label>
+                          <label className="expandemailtext">{row.transactionAmount}</label>
+                        </div>
+                      </div>
+                      <div className="col-12 col-sm-6 mb-3">
+                        <div className="mobilevi">
+                          <label className="expandemail">Merchant:</label>
+                          <label className="expandemailtext">{row.merchantName}</label>
+                        </div>
                       </div>
                     </div>
-                    <div className="col-12 col-sm-6 mb-3">
-                      <div className="mobilevi">
-                        <label className="expandemail">Merchant:</label>
-                        <label className="expandemailtext">{row.merchantName}</label>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div className="row">
-                    <div className="col-12 col-sm-6 mb-3">
-                      <div className="mobilevi">
-                        <label className="expandemail">Payment Processor:</label>
-                        <label className="expandemailtext">{row.paymentProcessor}</label>
+                    <div className="row">
+                      <div className="col-12 col-sm-6 mb-3">
+                        <div className="mobilevi">
+                          <label className="expandemail">Payment Processor:</label>
+                          <label className="expandemailtext">{row.paymentProcessor}</label>
+                        </div>
+                      </div>
+                      <div className="col-12 col-sm-6 mb-3">
+                        <div className="mobilevi">
+                          <label className="expandemail">Payment Method:</label>
+                          <label className="expandemailtext">{row.customerCard}</label>
+                        </div>
                       </div>
                     </div>
-                    <div className="col-12 col-sm-6 mb-3">
-                      <div className="mobilevi">
-                        <label className="expandemail">Payment Method:</label>
-                        <label className="expandemailtext">{row.customerCard}</label>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div className="row">
-                    <div className="col-12 col-sm-6 mb-3">
-                      <div className="mobilevi">
-                        <label className="expandemail">Status:</label>
-                        <label className="expandemailtext">{row.paymentStatus}</label>
+                    <div className="row">
+                      <div className="col-12 col-sm-6 mb-3">
+                        <div className="mobilevi">
+                          <label className="expandemail">Status:</label>
+                          <label className="expandemailtext">{row.paymentStatus}</label>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  {/* <div className="row">
+                    {/* <div className="row">
                     <div className="col-12 col-sm-6 mb-3">
                       <div className="mobilevi">
                         <label className="expandemail">Status:</label>
@@ -639,33 +662,33 @@ class splitUserTransaction extends Component {
                       </div>
                     </div>
                   </div> */}
-                </React.Fragment>
-              );
-            }}
-            expandIcon={({ expanded, onExpand, record }) =>
-              expanded ? (
-                <div className="expandown1">
-                  <img src={Down} onClick={e => onExpand(record, e)} />
-                </div>
-              ) : (
+                  </React.Fragment>
+                );
+              }}
+              expandIcon={({ expanded, onExpand, record }) =>
+                expanded ? (
+                  <div className="expandown1">
+                    <img src={Down} onClick={e => onExpand(record, e)} />
+                  </div>
+                ) : (
                   <div className="expandown">
                     <img src={Down} onClick={e => onExpand(record, e)} />
                   </div>
                 )}
-            expandIconColumnIndex={this.state.mobileView ? 10 : -1}
-            expandIconAsCell={false}
-            dataSource={this.state.transactionsData}
-            pagination={{
-              current: this.state.pagination.current,
-              pageSize: this.state.pagination.pageSize,
-              total: this.state.pagination.total,
-              position: ["bottomCenter"],
-              showSizeChanger: true
-            }}
-            onChange={this.onShowSizeChange}
-          />
-        </div>
-        {/* <div className="pagination">
+              expandIconColumnIndex={this.state.mobileView ? 10 : -1}
+              expandIconAsCell={false}
+              dataSource={this.state.transactionsData}
+              pagination={{
+                current: this.state.pagination.current,
+                pageSize: this.state.pagination.pageSize,
+                total: this.state.pagination.total,
+                position: ["bottomCenter"],
+                showSizeChanger: true
+              }}
+              onChange={this.onShowSizeChange}
+            />
+          </div>
+          {/* <div className="pagination">
           <ul>
             <li>
               <a hrf="">&lt;</a>
@@ -697,66 +720,66 @@ class splitUserTransaction extends Component {
             </select>
           </div>
         </div> */}
-        <div className="fl">
-          <Drawer
-            placement={placement}
-            closable={false}
-            onClose={this.onCloseFilter}
-            visible={visibleFilter}
-            key={placement}
-            className="f2"
-          >
-            <div className="drarfilter">
-              <div className="row m-0 w-100 back">
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Enter Order Id"
-                    name="orderID"
-                    value={this.state.orderID}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Enter Trasaction Id"
-                    name="transactionID"
-                    value={this.state.transactionID}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Enter Payment Processor"
-                    name="paymentProcessor"
-                    value={this.state.paymentProcessor}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  {/* <input type="text" className="calendar"placeholder="Start Date - End Date"/> */}
-                  <RangePicker
-                    className="calendar"
-                    format={dateFormat}
-                    onChange={this.handleDateOnChange}
-                    disabledDate={disabledDate}
-                  ></RangePicker>
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Total No. of Transaction upto"
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Total Amount Transacted upto"
-                  />
-                </div>
-                {/* <div className="col-12 col-md-3">
+          <div className="fl">
+            <Drawer
+              placement={placement}
+              closable={false}
+              onClose={this.onCloseFilter}
+              visible={visibleFilter}
+              key={placement}
+              className="f2"
+            >
+              <div className="drarfilter">
+                <div className="row m-0 w-100 back">
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Enter Order Id"
+                      name="orderID"
+                      value={this.state.orderID}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Enter Trasaction Id"
+                      name="transactionID"
+                      value={this.state.transactionID}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Enter Payment Processor"
+                      name="paymentProcessor"
+                      value={this.state.paymentProcessor}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    {/* <input type="text" className="calendar"placeholder="Start Date - End Date"/> */}
+                    <RangePicker
+                      className="calendar"
+                      format={dateFormat}
+                      onChange={this.handleDateOnChange}
+                      disabledDate={disabledDate}
+                    ></RangePicker>
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Total No. of Transaction upto"
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Total Amount Transacted upto"
+                    />
+                  </div>
+                  {/* <div className="col-12 col-md-3">
                   <label className="Totalamount">
                     Total No. of Transaction upto
                   </label>
@@ -764,7 +787,7 @@ class splitUserTransaction extends Component {
                     <input type="range" min="1" max="100" value="50" />
                   </div>
                 </div> */}
-                {/* <div className="col-12 col-md-3">
+                  {/* <div className="col-12 col-md-3">
                   <label className="Totalamount">
                     Total Amount Transacted upto
                   </label>
@@ -772,44 +795,46 @@ class splitUserTransaction extends Component {
                     <input type="range" min="1" max="100" value="50" />
                   </div>
                 </div> */}
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Enter Amount"
-                    name="transactionAmount"
-                    value={this.state.transactionAmount}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Enter Payment method"
-                    name="paymentMethod"
-                    value={this.state.paymentMethod}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-12">
-                  <div className="search">
-                    <button
-                      onClick={this.onCloseFilter.bind(this)}
-                      className="mr-1"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      onClick={this.handleGetTransactionsGridData.bind(this)}
-                    >
-                      Search
-                    </button>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Enter Amount"
+                      name="transactionAmount"
+                      value={this.state.transactionAmount}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Enter Payment method"
+                      name="paymentMethod"
+                      value={this.state.paymentMethod}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-12">
+                    <div className="search">
+                      <button
+                        onClick={this.onCloseFilter.bind(this)}
+                        className="mr-1"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        onClick={this.handleGetTransactionsGridData.bind(this)}
+                      >
+                        Search
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </Drawer>
+            </Drawer>
+          </div>
         </div>
       </div>
+
     );
   }
 }
