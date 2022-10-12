@@ -104,7 +104,7 @@ input:-webkit-autofill::first-line {
   margin-top: 45px;
 }
 .custom-link {
-  color: #009bdd;
+  color: #101D40;
   cursor: pointer;
 }
 
@@ -318,25 +318,41 @@ input:-webkit-autofill::first-line {
 }
 /* .header-left li { */
 .header-left a {
-  font-size: 18px;
-  color: #7a7a7a;
+  font-size: 20px;
+  color: #101D40;
   display: flex;
   align-items: center;
-  margin: 0 22px;
+  margin: 0 0px;
   height: 60px;
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
 }
-.header-left a:hover,
+/* .header-left a:hover,
 .header-left a.active {
-  color: #ff4800;
+  background-color: #FFBD2B;
+  font-weight: 700;
+  font-size: 25px;
+} */
+
+.header-left a.active {
+  background-color: #FFBD2B;
+  font-weight: 600;
+  font-size: 16px;
+}
+.header-left a:hover{
+  color: #101D40;
+  font-weight: 600;
+  font-size: 16px;
 }
 .header-left {
   display: flex;
-  margin-left: 55px;
+  /* margin-left: 55px; */
 }
 .header-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
 }
 .header-right {
@@ -462,11 +478,11 @@ input:-webkit-autofill::first-line {
   }
   .header-left a {
     font-size: 16px;
-    margin: 0 15px;
+    /* margin: 0 15px; */
   }
-  .header-left {
+  /* .header-left {
     margin-left: 20px;
-  }
+  } */
   .header-right li {
     margin: 0 10px;
   }
@@ -558,26 +574,27 @@ input:-webkit-autofill::first-line {
 .Merchantdashboard .card,
 .Userdashboard .card {
   border: 0;
-  border-radius: 10px;
+  box-shadow: 7px 11px 10px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 100px 0px 0px 0px;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
   height: 250px;
   margin-bottom: 10px;
 }
 .back1 {
-  background: #3636ba;
+  background: #003280;
 }
 .back2 {
-  background: #3636ba;
+  background: #003280;
 }
 .back3 {
-  background: #3636ba;
+  background: #003280;
 }
 .back4 {
-  background: #3636ba;
+  background: #003280;
 }
 .image {
   width: 90px;
@@ -600,8 +617,8 @@ input:-webkit-autofill::first-line {
   display: block;
 }
 .text label:nth-child(1) {
-  color: #fff;
-  font-size: 16px;
+  color: #101D40;
+  font-size: 20px;
   line-height: 20px;
   text-align: center;
   font-weight: 500;
@@ -871,9 +888,12 @@ input:-webkit-autofill::first-line {
   font-size: 24px;
   font-weight: 500;
   padding: 0 0 20px 0;
-  color: #4f4f4f;
+  color: #101D40;
   text-transform: capitalize;
   display: inline;
+  font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
 }
 .userManagement .exfilter,
 .merchManagement .exfilter,
@@ -928,10 +948,10 @@ input:-webkit-autofill::first-line {
 }
 
 .exfilter a:first-child {
-  background: #3636ba;
-  color: #fff;
+  /* background: #3636ba; */
+  color: #101D40;
   /* border-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
-  border: 1px solid;
+  /* border: 1px solid; */
   padding: 10px 15px 10px 15px;
   border-radius: 6px;
   margin-left: 10px;
@@ -939,12 +959,15 @@ input:-webkit-autofill::first-line {
   line-height: 20px;
   text-transform: capitalize;
   cursor: pointer;
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
 }
 
 .exfilter label:last-child {
   /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
-  background: #3636ba;
-  color: #fff;
+  /* background: #3636ba; */
+  color: #101D40;
   padding: 10px 15px 10px 15px;
   border-radius: 6px;
   margin-left: 10px;
@@ -952,6 +975,9 @@ input:-webkit-autofill::first-line {
   line-height: 20px;
   text-transform: capitalize;
   cursor: pointer;
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
 }
 .userManagement .back,
 .merchManagement .back,
@@ -959,7 +985,8 @@ input:-webkit-autofill::first-line {
 .MerTraHistory .back,
 .MerSaleReport .back,
 .UserTrans .back {
-  background-color: rgb(245, 248, 249);
+  /* background-color: rgb(245, 248, 249); */
+  background-color: #fff;
   border-radius: 5px;
   padding: 25px 0 20px 0;
 }
@@ -970,14 +997,14 @@ input:-webkit-autofill::first-line {
 .MerSaleReport .back input,
 .UserTrans .back input {
   border-radius: 5px;
-  border: 1px solid #ededed;
+  border: 1px solid #101D40;
   padding: 10px;
   width: 100%;
   font-size: 14px;
   height: 45px;
   font-weight: 400;
   margin-bottom: 15px;
-  color: #47525e;
+  color: #101D40;
 }
 .userManagement .back input::placeholder,
 .merchManagement .back input::placeholder,
@@ -1102,8 +1129,8 @@ input:-webkit-autofill::first-line {
 .MerSaleReport .back .search button,
 .UserTrans .back .search button {
   /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
-  background: #3636ba;
-  color: #fff;
+  background: #FFBD2B;
+  color: #000;
   padding: 10px 25px;
   border-radius: 6px;
   margin-left: 10px;
@@ -1160,7 +1187,7 @@ input:-webkit-autofill::first-line {
 .Userdashtable tr.ant-table-row:nth-child(odd),
 .userpaymenttable tr.ant-table-row:nth-child(odd),
 .instalmentDetailtable tr.ant-table-row:nth-child(odd) {
-  background: #fff;
+  background: #EAEAEA;
   cursor: pointer;
 }
 .usmanatable tr.ant-table-row:nth-child(even),
@@ -1182,7 +1209,7 @@ input:-webkit-autofill::first-line {
 .Userdashtable tr.ant-table-row:nth-child(even),
 .userpaymenttable tr.ant-table-row:nth-child(even),
 .instalmentDetailtable tr.ant-table-row:nth-child(even) {
-  background: #f3fbff;
+  background: #D8D8D8;
   cursor: pointer;
 }
 .instalmentDetailtable tr.ant-table-row.disabled-row {
@@ -1995,13 +2022,14 @@ input:-webkit-autofill::first-line {
 .userpayment .Usermana {
   text-align: center;
   font-size: 24px;
-  font-weight: 500;
   line-height: 35px;
-  /* padding: 0 0 15px 0; */
-  color: #4f4f4f;
+  color: #101D40;
   text-transform: capitalize;
   display: inline;
-  margin: 0;
+  margin-top: 2rem  ;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
 }
 .splitpayment .exfilter,
 .paymentmana .exfilter,
@@ -2071,8 +2099,8 @@ input:-webkit-autofill::first-line {
 .Notification .add,
 .userpayment .add {
   /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
-  background: #3636ba;
-  color: #fff;
+  /* background: #3636ba; */
+  color: #101D40;
   padding: 10px 15px 10px 15px;
   border-radius: 6px;
   margin-left: 10px;
@@ -2080,7 +2108,9 @@ input:-webkit-autofill::first-line {
   line-height: 20px;
   text-transform: capitalize;
   cursor: pointer;
-  float: right;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
 }
 .splitpaymenttable .ant-table-tbody > tr > td,
 .roletable .ant-table-tbody > tr > td,
@@ -2098,11 +2128,13 @@ input:-webkit-autofill::first-line {
 .instalmentDetailtable .ant-table-tbody > tr > td {
   font-size: 13px;
   font-weight: 500;
-  color: #4f4f4f;
+  color: #101D40;
   line-height: 20px;
   /* text-transform: capitalize; */
   opacity: 0.8;
   text-align: center;
+  font-family: 'Montserrat';
+font-style: normal;
 }
 .splitpaymenttable .ant-table-thead > tr > th,
 .roletable .ant-table-thead > tr > th,
@@ -2119,8 +2151,8 @@ input:-webkit-autofill::first-line {
 .userpaymenttable .ant-table-thead > tr > th,
 .instalmentDetailtable .ant-table-thead > tr > th {
   /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
-  background: #ff4800;
-  color: #fff;
+  background: #c4c4c4;
+  color: #101D40;
   font-size: 12px;
   font-weight: 500;
   line-height: 17px;
@@ -2253,7 +2285,7 @@ input:-webkit-autofill::first-line {
 #PlanPaymentModal .backtext,
 #addcardModal .backtext,
 #dashmodaluser .backtext {
-  background: #3636ba;
+  background: #101D40;
   color: #fff;
   padding: 20px;
   border-top-left-radius: 10px;
@@ -2276,6 +2308,7 @@ input:-webkit-autofill::first-line {
   font-weight: 500;
   line-height: 25px;
   opacity: 0.8;
+  color: #101D40;
 }
 #EditUserSplitModal input,
 #addroleModal input,
@@ -2287,14 +2320,14 @@ input:-webkit-autofill::first-line {
 #meradduserModal input,
 #addcardModal input {
   border-radius: 5px;
-  border: 1px solid #ededed;
+  border: 1px solid #000;
   padding: 10px;
   width: 100%;
   font-size: 14px;
   height: 40px;
   font-weight: 400;
   /* margin-bottom: 20px; */
-  color: #47525e;
+  color: #101D40;
 }
 #EditUserSplitModal .split input {
   border-radius: 5px;
@@ -2582,7 +2615,7 @@ input:-webkit-autofill::first-line {
 #addcardModal .Editbtn button,
 #dashmodaluser .Editbtn button {
   /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
-  background: #3636ba;
+  background: #101D40;
   color: #fff;
   padding: 10px 30px;
   border-radius: 6px;
@@ -3625,7 +3658,7 @@ header .signbtn .sigup {
   width: 20px;
   height: 20px;
   border-radius: 11px;
-  border: 2px solid #3636ba;
+  border: 2px solid #28a745;
   background-color: transparent;
 }
 .userpaymenttable .radio-item input[type="radio"]:checked + label:after {
@@ -3637,7 +3670,7 @@ header .signbtn .sigup {
   left: 10px;
   content: " ";
   display: block;
-  background: #3636ba;
+  background: #28a745;
 }
 .adcontent {
   width: auto !important;
@@ -3790,11 +3823,12 @@ header .signbtn .sigup {
 }
 
 .ant-table-column-sorter {
-  color: #fff;
+  color: #101D40;
 }
 .ant-table-thead th.ant-table-column-has-sorters:hover {
   /* background: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
-  background: #ff4800;
+  background: #101D40;
+  color: #fff;
 }
 /* #addinstantuserModal, */
 /* #meradduserModal,  */
@@ -3919,14 +3953,14 @@ header .signbtn .sigup {
 }
 .inpuu {
   border-radius: 5px;
-  border: 1px solid #ededed;
+  border: 1px solid #000;
   padding: 10px;
   width: 100%;
   font-size: 14px;
   height: 40px;
   font-weight: 400;
   /* margin-bottom: 20px; */
-  color: #47525e;
+  color: #101D40;
 }
 .inpayfmcard .card {
   width: 40%;

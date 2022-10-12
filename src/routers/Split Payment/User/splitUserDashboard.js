@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Total from "./../../../assets/Images/total.png";
 import InfoIcon from "./../../../assets/Images/Infoblue.png";
+import dashboard from "./../../../assets/Images/dashboard.png";
+import merchant from "./../../../assets/Images/merchant.png";
+import user from "./../../../assets/Images/user.png";
 import Visa from "./../../../assets/Images/visa.png";
 import MasterCard from "./../../../assets/Images/mastercard.png";
 import AmericanExpress from "./../../../assets/Images/american-express.png";
@@ -11,10 +14,10 @@ import config from "../../../helpers/config";
 import { userAuthHeader } from "../../Split Payment/User/splitUserAuthHeader";
 import axios from "axios";
 import Down from "./../../../assets/Images/download.png";
-import auccessfultransactions from "./../../../assets/Images/auccessfultransactions.png";
-import failedtransactions from "./../../../assets/Images/failedtransactions.png";
-import successrefunds from "./../../../assets/Images/successrefunds.png";
-import moneytransfer from "./../../../assets/Images/moneytransfer.png";
+import auccessfultransactions from "./../../../assets/Images/smallicons/success_img.png";
+import failedtransactions from "./../../../assets/Images/smallicons/failed_img.png";
+import successrefunds from "./../../../assets/Images/smallicons/refund_img.png";
+import moneytransfer from "./../../../assets/Images/smallicons/total_spent_img.png";
 import { NavLink } from "react-router-dom";
 
 class splitUserDashboard extends Component {
@@ -65,7 +68,7 @@ class splitUserDashboard extends Component {
       headers: userAuthHeader(),
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -102,7 +105,7 @@ class splitUserDashboard extends Component {
   // }
 
   handleInstallmentsDetails(installmentsDetails) {
-    
+
 
     // setTimeout(function () {
     this.props.history.push({
@@ -170,7 +173,7 @@ class splitUserDashboard extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -361,58 +364,104 @@ class splitUserDashboard extends Component {
 
     return (
       <div>
+
+        <div className="blue_line">
+        </div>
         <div className="Userdashboard">
-          <h3 className="dash">Dashboard</h3>
-          <div className="row mt-4">
-            <div className="col-12 col-sm-6 col-md-6 col-lg-3">
+          {/* <h3 className="dash">Dashboard</h3> */}
+          <div className="dash_link">
+            <ul className="header-left">
+              <NavLink to="/onePayUser/userDashboard">
+                <li>
+                  {/* <div className="header-icons">
+                    <img src={dashboard} alt="icon missing" />
+                  </div> */}
+                  <span className="ml-2">Dashboard</span>
+                </li>
+              </NavLink>
               <NavLink to="/onePayUser/userTransaction">
-                <div className="card back1">
-                  <div className="image">
+                <li>
+                  {/* <div className="header-icons">
+                    <img src={user} alt="icon missing" />
+                  </div> */}
+                  <span className="ml-2">Transactions</span>
+                </li>
+              </NavLink>
+              <NavLink to="/onePayUser/paymentDetail">
+                <li>
+                  {/* <div className="header-icons">
+                    <img src={merchant} alt="icon missing" />
+                  </div> */}
+                  <span className="ml-2">Payment Details</span>
+                </li>
+              </NavLink>
+            </ul>
+          </div>
+
+          <div className="row card_row">
+            <div className="col-12 col-sm-6 col-md-6 col-lg-3 hover_card">
+              <NavLink to="/onePayUser/userTransaction">
+                <div className="card bac1">
+                  <div>
                     <img src={auccessfultransactions} alt="Card1" />
                   </div>
                   <div className="text">
                     <label>Total Successful Transactions</label>
-                    <label>{this.state.totalSuccessTransaction}</label>
+                    {/* <label>{this.state.totalSuccessTransaction}</label> */}
                   </div>
+                </div>
+                <div className="card_value1">
+                  <label>{this.state.totalSuccessTransaction}</label>
                 </div>
               </NavLink>
             </div>
-            <div className="col-12 col-sm-6 col-md-6 col-lg-3">
+
+            <div className="col-12 col-sm-6 col-md-6 col-lg-3 hover_card">
               <NavLink to="/onePayUser/userTransaction">
-                <div className="card back2">
-                  <div className="image">
+                <div className="card bac2">
+                  <div>
                     <img src={failedtransactions} alt="Card1" />
                   </div>
                   <div className="text">
                     <label>Total Failed Transactions</label>
-                    <label>{this.state.totalFailedTransaction}</label>
                   </div>
+                </div>
+                <div className="card_value2">
+                  <label>{this.state.totalFailedTransaction}</label>
                 </div>
               </NavLink>
             </div>
-            <div className="col-12 col-sm-6 col-md-6 col-lg-3">
+            <div className="col-12 col-sm-6 col-md-6 col-lg-3 hover_card">
               <NavLink to="/onePayUser/userTransaction">
-                <div className="card back3">
-                  <div className="image">
+                <div className="card bac3">
+                  <div>
                     <img src={successrefunds} alt="Card1" />
                   </div>
                   <div className="text">
                     <label>Success Refunds</label>
-                    <label>{this.state.totalPendingRefund}</label>
+
                   </div>
+
+                </div>
+                <div className="card_value3">
+                  <label>{this.state.totalPendingRefund}</label>
+
                 </div>
               </NavLink>
             </div>
-            <div className="col-12 col-sm-6 col-md-6 col-lg-3">
+            <div className="col-12 col-sm-6 col-md-6 col-lg-3 hover_card">
               <NavLink to="/onePayUser/userTransaction">
-                <div className="card back4">
-                  <div className="image">
+                <div className="card bac4">
+                  <div>
                     <img src={moneytransfer} alt="Card1" />
                   </div>
                   <div className="text">
                     <label>Total Amount Spent using One Pay (AU$)</label>
-                    <label>{this.state.totalAmountTransaction}</label>
                   </div>
+                </div>
+                <div className="card_value4">
+                  <label>{this.state.totalAmountTransaction}</label>
+
                 </div>
               </NavLink>
             </div>
@@ -527,6 +576,7 @@ class splitUserDashboard extends Component {
               </div>
             </div>
           </div> */}
+
           <Modal
             open={this.state.dashlog}
             onClose={this.handledashlogmodalClose.bind(this)}

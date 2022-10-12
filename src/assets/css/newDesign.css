@@ -821,6 +821,7 @@ text-align: justify;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -1.5rem;
 }
 .merchantPush{
     color: #4075FF;
@@ -980,7 +981,142 @@ font-size: 16px;
   .signup .Verify:hover{
     font-weight: 600;
   }
-
-
+/* Dashboard section start************************************** */
+.blue_line{
+    height: 8vh;
+    width: 100vw;
+    background-color: #101D40;
+}
+.dash_link{
+    display: flex;
+    justify-content: space-around;
+    /* background-color:  #E5E5E5;; */
+    margin-top: 2rem 0;
+}
+.dash_link .header-left {
+    background-color: #e5e5e5;
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    height: 8vh;
+    
+}
+.dash_link .header-left a{
+    width: 16vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 8vh;
+}
+/* .dash_link .header-left a:nth-child(1){
+    margin-left: -10px;
+}
+.dash_link .header-left a:nth-child(3){
+    margin-left: 10px;
+} */
+.bac2 .text{
+    margin: 0px 0 0 0;
+}
+.card_row{
+    margin-top: 4rem;
+}
+.bac1 {
+    background: #f2f2f2;
+  }
+  .bac2 {
+    background: #f2f2f2;
+  }
+  .bac3 {
+    background: #f2f2f2;
+  }
+  .bac4 {
+    background: #f2f2f2;
+  }
+  .hover_card:hover .card_value1{
+    height: 8vh;
+  }
+  .hover_card:hover .card_value1 label{
+    display: block;
+  }
+  .hover_card:hover .card_value2{
+    height: 8vh;
+  }
+  .hover_card:hover .card_value2 label{
+    display: block;
+  }
+  .hover_card:hover .card_value3{
+    height: 8vh;
+  }
+  .hover_card:hover .card_value3 label{
+    display: block;
+  }
+  .hover_card:hover .card_value4{
+    height: 8vh;
+  }
+  .hover_card:hover .card_value4 label{
+    display: block;
+  }
+  .card_value1{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFBD2B;
+    height: 2vh;
+    margin-top: -10px;
+    margin-left: 10%;
+  }
+  .card_value2{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4075FF;
+    height: 2vh;
+    margin-top: -10px;
+    margin-left: 10%;
+  }
+  .card_value3{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #101D40;
+    height: 2vh;
+    margin-top: -10px;
+    margin-left: 10%;
+  }
+  .card_value4{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #c4c4c4;
+    height: 2vh;
+    margin-top: -10px;
+    margin-left: 10%;
+  }
+  .card_value1 label,.card_value2 label,.card_value3 label,.card_value4 label{
+    display: none;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+  }
+  .card_para{
+    margin-top: 3rem;
+  }
+  .card_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .transaction_details{
+    margin-top: 2rem;
+  }
+  
 
 

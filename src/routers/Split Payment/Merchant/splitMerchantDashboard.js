@@ -11,6 +11,9 @@ import sales from "./../../../assets/Images/sales.png";
 import salesuseonepay from "./../../../assets/Images/salesuseonepay.png";
 import moneytransfer from "./../../../assets/Images/moneytransfer.png";
 import { NavLink } from "react-router-dom";
+import dashboard from "./../../../assets/Images/dashboard.png";
+import merchant from "./../../../assets/Images/merchant.png";
+import user from "./../../../assets/Images/user.png";
 
 class splitMerchantDashboard extends Component {
   constructor(props) {
@@ -24,6 +27,7 @@ class splitMerchantDashboard extends Component {
       transactionHistoryData: [],
       mobileView: false,
       loading: false,
+      module: "",
       pagination: {
         current: 1,
         pageSize: 10,
@@ -33,11 +37,13 @@ class splitMerchantDashboard extends Component {
   }
 
   componentDidMount() {
+    var module = window.localStorage.getItem("OnePayMerchantModule");
     this.handleGetMerchantDashboard();
     this.handleGetTransactionHistoryList();
     if (window.screen.width > 768) {
       this.setState({
         mobileView: false,
+        module
       });
     } else {
       this.setState({
@@ -55,7 +61,7 @@ class splitMerchantDashboard extends Component {
       headers: merchantAuthHeader(),
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -104,7 +110,7 @@ class splitMerchantDashboard extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -283,7 +289,63 @@ class splitMerchantDashboard extends Component {
 
     return (
       <div>
+        <div className="blue_line">
+        </div>
         <div className="Merchantdashboard">
+          <div className="dash_link">
+            <ul className="header-left">
+              {(() => {
+                if (this.state.module.includes('Dashboard')) {
+                  return (
+                    <li>
+                      <NavLink to="/onePayMerchant/dashboard">
+                        <div className="header-icons">
+                          <img src={dashboard} alt="icon missing" />
+                        </div>
+                        <span className="ml-2">Dashboard</span>
+                      </NavLink>
+                    </li>
+                  )
+                }
+              })()}
+              {(() => {
+                if (this.state.module.includes('Transaction History')) {
+                  return (
+                    <li>
+                      <NavLink to="/onePayMerchant/transaction-history">
+                        <div className="header-icons">
+                          <img src={user} alt="icon missing" />
+                        </div>
+                        <span className="ml-2">Transaction History</span>
+                      </NavLink>
+                    </li>
+                  )
+                }
+              })()}
+              {/* <li>
+          <Link to="/merchant/salesReport">
+            <div className="header-icons">
+              <img src={merchant} alt="icon missing" />
+            </div>
+            <span className="ml-2">Sales Report</span>
+          </Link>
+        </li> */}
+              {(() => {
+                if (this.state.module.includes('Subscription')) {
+                  return (
+                    <li>
+                      <NavLink to="/onePayMerchant/merchantSubscription">
+                        <div className="header-icons">
+                          <img src={merchant} alt="icon missing" />
+                        </div>
+                        <span className="ml-2">Subscription</span>
+                      </NavLink>
+                    </li>
+                  )
+                }
+              })()}
+            </ul>
+          </div>
           <h3 className="dash">Dashboard</h3>
           <div className="row mt-4">
             <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">

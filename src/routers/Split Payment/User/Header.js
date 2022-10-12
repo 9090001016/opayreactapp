@@ -17,6 +17,8 @@ import { Drawer, Button, Space } from "antd";
 import menu from "./../../../assets/Images/menu.png";
 import logoutwhite from "./../../../assets/Images/logoutwhite.png";
 import OnePayLogo from "./../../../assets/Images/OnePay-logo.png";
+import mainLogo from './../../../assets/Images/smallicons/main_logo.png'
+import notifyimg from './../../../assets/Images/smallicons/notify.png'
 
 const cookies = new Cookies();
 
@@ -129,10 +131,10 @@ export class Header extends Component {
     const { placement, visible } = this.state;
     return (
       <div className="header">
-        <img src={OnePayLogo} className="onepay__logo"/>
+        <img src={mainLogo} className="onepay__logo"/>
         {/* <h1 className="header-logo">ONE PAY</h1> */}
         <div className="header-nav">
-          <ul className="header-left">
+          {/* <ul className="header-left">
             <li>
               <NavLink to="/onePayUser/userDashboard">
                 <div className="header-icons">
@@ -157,7 +159,7 @@ export class Header extends Component {
                 <span className="ml-2">Payment Details</span>
               </NavLink>
             </li>
-          </ul>
+          </ul> */}
           <div className="header-right">
             <ul className="d-flex">
               <li className="header-icons">
@@ -166,7 +168,7 @@ export class Header extends Component {
                   className="position-relative"
                   onClick={this.handleGetNotificationsCount}
                 >
-                  <img src={notification} alt="icon missing" />
+                  <img src={notifyimg} alt="icon missing" />
                   {this.state.notificationCount !== 0 && (
                     <span className="notification-count">
                       {this.state.notificationCount}
@@ -189,6 +191,7 @@ export class Header extends Component {
             </div>
           </div>
         </div>
+        
         {/* Mobile View Header */}
         <div className="sidebarresp">
           <img
