@@ -75,9 +75,8 @@ class splitUserTransaction extends Component {
   handleFilterbuttonClick = () => {
     this.setState({ isFilter: !this.state.isFilter });
   };
+  
   handleInstallmentsDetails(installmentsDetails) {
-
-
     // setTimeout(function () {
     this.props.history.push({
       pathname: "installmentDetails",
@@ -263,14 +262,18 @@ class splitUserTransaction extends Component {
         title: "Order ID",
         dataIndex: "orderId",
         key: "orderId",
-        sorter: true,
+        sorter: (a,b)=>{
+          return a.orderId.localeCompare(b.orderId)
+        },
         sortDirections: ['ascend', 'descend', 'ascend']
       },
       {
         title: "Merchant Order ID",
         dataIndex: "merchantOrderId",
         key: "merchantOrderId",
-        sorter: true,
+        sorter: (a,b)=>{
+          return a.merchantOrderId.localeCompare(b.merchantOrderId)
+        },
         sortDirections: ['ascend', 'descend', 'ascend']
       },
       {
@@ -294,7 +297,9 @@ class splitUserTransaction extends Component {
               {item.installment}
             </span>
           ),
-        sorter: true,
+        sorter: (a,b)=>{
+          return a.installment.localeCompare(b.installment)
+        },
         sortDirections: ['ascend', 'descend', 'ascend']
       },
       {
@@ -309,7 +314,7 @@ class splitUserTransaction extends Component {
             </div>
           );
         },
-        sorter: true,
+        // sorter: true,
         sortDirections: ['ascend', 'descend', 'ascend']
       },
       {
@@ -317,7 +322,9 @@ class splitUserTransaction extends Component {
         dataIndex: "merchantName",
         key: "merchantName",
         className: "mob-none",
-        sorter: true,
+        sorter: (a,b)=>{
+          return a.merchantName.localeCompare(b.merchantName)
+        },
         sortDirections: ['ascend', 'descend', 'ascend']
       },
       // {
@@ -475,8 +482,10 @@ class splitUserTransaction extends Component {
           <label className="filt" onClick={this.showDrawerFilter.bind(this)}>
             <img src={Filter} alt="Export" />
           </label>
+
           {this.state.isFilter ? (
             <div className="row m-0 w-100 back">
+
               <div className="col-12 col-md-3">
                 <input
                   type="text"
@@ -486,6 +495,7 @@ class splitUserTransaction extends Component {
                   onChange={this.handleOnChange.bind(this)}
                 />
               </div>
+
               <div className="col-12 col-md-3">
                 <input
                   type="text"
@@ -495,6 +505,7 @@ class splitUserTransaction extends Component {
                   onChange={this.handleOnChange.bind(this)}
                 />
               </div>
+
               <div className="col-12 col-md-3">
                 <input
                   type="text"
@@ -578,6 +589,7 @@ class splitUserTransaction extends Component {
           ) :
             null
           }
+
           <div className="Userdashtable">
             <Table
               columns={columns}

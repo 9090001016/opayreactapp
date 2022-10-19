@@ -680,6 +680,7 @@ pre code {
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
   max-width: 100%;
+  padding: 1rem;
 }
 .order-first {
   -ms-flex-order: -1;

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Table, Popover, Spin, DatePicker } from "antd";
-import CSV from "./../../../../assets/Images/csv.png";
+import CSV from "./../../../../assets/Images/smallicons/Exportcsv.png";
+import Filter from "./../../../../assets/Images/smallicons/Filteralt.png";
 import InfoIcon from "./../../../../assets/Images/Infoblue.png";
-import Filter from "./../../../../assets/Images/filter.png";
 import WhiteDropdown from "./../../../../assets/Images/WhiteDropdown.png";
 import config from "./../../../../helpers/config";
 import axios from "axios";
@@ -17,6 +17,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import moment from 'moment';
 import { CSVLink } from "react-csv";
+import BackBtn from "./BackBtn";
 
 const { RangePicker } = DatePicker;
 
@@ -787,6 +788,8 @@ class paymentManagement extends Component {
 
 
     return (
+      <div>
+        <BackBtn />
       <div className="paymentmana">
         <h3 className="Usermana">End Customer Transaction Management</h3>
         <div className="exfilter">
@@ -1180,6 +1183,7 @@ class paymentManagement extends Component {
             </div>
           </Drawer>
         </div>
+      </div>
       </div>
     );
   }

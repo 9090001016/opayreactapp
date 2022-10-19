@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Table, DatePicker, Spin } from "antd";
-import Filter from "./../../../assets/Images/filter.png";
-import CSV from "./../../../assets/Images/csv.png";
+import Filter from "./../../../assets/Images/smallicons/Filteralt.png";
+import CSV from "./../../../assets/Images/smallicons/Exportcsv.png";
 import WhiteDropdown from "./../../../assets/Images/WhiteDropdown.png";
 import config from "./../../../helpers/config";
 import axios from "axios";
@@ -12,6 +12,7 @@ import Down from "./../../../assets/Images/download.png";
 import moment from 'moment';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
 // import Downarrow from "./../../assets/Images/downarrow.png";
 
 const { RangePicker } = DatePicker;
@@ -39,6 +40,7 @@ class splitAdminUserManagement extends Component {
       placement: "bottom",
       mobileView: false,
       loading: false,
+      module: "",
       pagination: {
         current: 1,
         pageSize: 10,
@@ -60,11 +62,17 @@ class splitAdminUserManagement extends Component {
     this.setState({ placement: e.target.value });
   };
   componentDidMount() {
-    if(document.getElementById("splitMerchantMmt")){
-    document.getElementById("splitMerchantMmt").classList.remove("active");
+    var module = window.localStorage.getItem("OnePayAdminModule") == null ? "" :
+      window.localStorage.getItem("OnePayAdminModule");
+    if (document.getElementById("splitMerchantMmt")) {
+      document.getElementById("splitMerchantMmt").classList.remove("active");
+      document.getElementById("splitMerchantSett").classList.remove("active");
     }
     this.handleGetUserManagementList();
     this.handleGetUserManagementCSV();
+    this.setState({
+      module
+    })
     if (window.screen.width > 768) {
       this.setState({
         mobileView: false,
@@ -141,7 +149,7 @@ class splitAdminUserManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -233,13 +241,13 @@ class splitAdminUserManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
           if (data.length !== 0) {
             data.map((item) =>
-            userCSVData.push({
+              userCSVData.push({
                 userId: item.userId,
                 userName: item.userName,
                 userEmailId: item.userEmailId,
@@ -271,7 +279,7 @@ class splitAdminUserManagement extends Component {
   }
 
   handleRowClickPage(userId) {
-    
+
     let self = this;
 
     setTimeout(function () {
@@ -428,70 +436,134 @@ class splitAdminUserManagement extends Component {
     ];
 
     return (
-      <div className="userManagement">
-        <h3 className="Usermana">End Customer Management</h3>
-        <div className="exfilter">
-          <CSVLink data-bs-toggle="tooltip" data-bs-placement="bottom" title="Download CSV"
-            data={this.state.userCSVData}
-            headers={headers}
-            filename={"End Customer Management.csv"}
-            className="csv"
-          >
-            <img src={CSV} alt="Export" />
-            Export to CSV
-          </CSVLink>
-          <label data-bs-toggle="tooltip" data-bs-placement="bottom" title="Custom Filter"
-            className="filte"
-            onClick={this.handleFilterbuttonClick.bind(this)}
-          >
-            <img src={Filter} alt="Export" />
-            Filter
-            <img src={WhiteDropdown} alt="Dropdown" className="WhDrop" />
-            {/* WhDrop1 */}
-          </label>
+      <div>
+        <div className="blue_line">
         </div>
-        <label className="filt" onClick={this.showDrawerFilter.bind(this)}>
-          <img src={Filter} alt="Export" />
-        </label>
-        {this.state.isFilter ? (
-          <div className="row m-0 w-100 back">
-            <div className="col-12 col-md-3">
-              <input
-                type="text"
-                placeholder="Enter User Id"
-                name="userId"
-                value={this.state.userId}
-                onChange={this.handleOnChange.bind(this)}
-              />
-            </div>
-            <div className="col-12 col-md-3">
-              <input
-                type="text"
-                placeholder="Enter Name"
-                name="userName"
-                value={this.state.userName}
-                onChange={this.handleOnChange.bind(this)}
-              />
-            </div>
-            <div className="col-12 col-md-3">
-              <input
-                type="text"
-                placeholder="Enter Email"
-                name="userEmailId"
-                value={this.state.userEmailId}
-                onChange={this.handleOnChange.bind(this)}
-              />
-            </div>
-            <div className="col-12 col-md-3">
-              <input
-                type="text"
-                placeholder="Enter Contact No."
-                name="userContactNo"
-                value={this.state.userContactNo}
-                onChange={this.handleOnChange.bind(this)}
-              />
-            </div>
-            {/* <div className="col-12 col-md-3">
+        <div className="userManagement setting_dashboard">
+          <div className="dash_link">
+            <ul className="header-left">
+              {(() => {
+                if (this.state.module.includes('Dashboard')) {
+                  return (
+                    <li>
+                      <NavLink to="/onePayAdmin/dashboard">
+                        {/* <div className="header-icons">
+                          <img src={dashboardSVG} alt="icon missing" />
+                        </div> */}
+                        <span className="ml-2">Dashboard</span>
+                      </NavLink>
+                    </li>
+                  )
+                }
+              })()}
+              {(() => {
+                if (this.state.module.includes('End Customer Management')) {
+                  return (
+                    <li>
+                      <NavLink to="/onePayAdmin/adminUserManagement" id="splitEndCustomerMmt">
+                        {/* <div className="header-icons">
+                          <img src={user} alt="icon missing" />
+                        </div> */}
+                        <span className="ml-2">End Customer Management</span>
+                      </NavLink>
+                    </li>
+                  )
+                }
+              })()}
+              {(() => {
+                if (this.state.module.includes('Merchants Management')) {
+                  return (
+                    <li>
+                      <NavLink to="/onePayAdmin/adminMerchantManagement" id="splitMerchantMmt">
+                        {/* <div className="header-icons">
+                          <img src={merchant} alt="icon missing" />
+                        </div> */}
+                        <span className="ml-2">Merchant Management</span>
+                      </NavLink>
+                    </li>
+                  )
+                }
+              })()}
+              {(() => {
+                if (this.state.module.includes('Settings')) {
+                  return (
+                    <li>
+                      <NavLink to="/onePayAdmin/adminSetting" id="splitMerchantSett">
+                        {/* <div className="header-icons">
+                          <img src={merchant} alt="icon missing" />
+                        </div> */}
+                        <span className="ml-2">Admin Settings</span>
+                      </NavLink>
+                    </li>
+                  )
+                }
+              })()}
+            </ul>
+          </div>
+          <div className="transaction_details">
+          <h3 className="Usermana">End Customer Management</h3>
+          <div className="exfilter">
+            <CSVLink data-bs-toggle="tooltip" data-bs-placement="bottom" title="Download CSV"
+              data={this.state.userCSVData}
+              headers={headers}
+              filename={"End Customer Management.csv"}
+              className="csv"
+            >
+              <img src={CSV} alt="Export" />
+              Export to CSV
+            </CSVLink>
+            <label data-bs-toggle="tooltip" data-bs-placement="bottom" title="Custom Filter"
+              className="filte"
+              onClick={this.handleFilterbuttonClick.bind(this)}
+            >
+              <img src={Filter} alt="Export" />
+              Filter
+              <img src={WhiteDropdown} alt="Dropdown" className="WhDrop" />
+              {/* WhDrop1 */}
+            </label>
+          </div>
+          <label className="filt" onClick={this.showDrawerFilter.bind(this)}>
+            <img src={Filter} alt="Export" />
+          </label>
+          {this.state.isFilter ? (
+            <div className="row m-0 w-100 back">
+              <div className="col-12 col-md-3">
+                <input
+                  type="text"
+                  placeholder="Enter User Id"
+                  name="userId"
+                  value={this.state.userId}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              <div className="col-12 col-md-3">
+                <input
+                  type="text"
+                  placeholder="Enter Name"
+                  name="userName"
+                  value={this.state.userName}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              <div className="col-12 col-md-3">
+                <input
+                  type="text"
+                  placeholder="Enter Email"
+                  name="userEmailId"
+                  value={this.state.userEmailId}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              <div className="col-12 col-md-3">
+                <input
+                  type="text"
+                  placeholder="Enter Contact No."
+                  name="userContactNo"
+                  value={this.state.userContactNo}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              {/* <div className="col-12 col-md-3">
               <input
                 type="text"
                 placeholder="Enter Total No. of Txn upto"
@@ -500,7 +572,7 @@ class splitAdminUserManagement extends Component {
                 onChange={this.handleOnChange.bind(this)}
               />
             </div> */}
-            {/* <div className="col-12 col-md-3">
+              {/* <div className="col-12 col-md-3">
               <input
                 type="text"
                 placeholder="Enter Total Amount Txn upto"
@@ -509,7 +581,7 @@ class splitAdminUserManagement extends Component {
                 onChange={this.handleOnChange.bind(this)}
               />
             </div> */}
-            {/* <div className="col-12 col-md-3">
+              {/* <div className="col-12 col-md-3">
               <label className="Totalamount">
                 Total No. of Transaction upto
               </label>
@@ -525,144 +597,144 @@ class splitAdminUserManagement extends Component {
                 <input type="range" min="1" max="100" value="50" />
               </div>
             </div> */}
-            <div className="col-12 col-md-3">
-              {/* <input type="text" className="calendar" placeholder="Start Date - End Date"/> */}
-              {/* <RangePicker
+              <div className="col-12 col-md-3">
+                {/* <input type="text" className="calendar" placeholder="Start Date - End Date"/> */}
+                {/* <RangePicker
                 className="calendar"
                 format={dateFormat}
                 onChange={this.handleDateOnChange}
                 disabledDate={disabledDate}
               ></RangePicker> */}
-               <select
-                name="status"
-                value={this.state.status}
-                onChange={this.handleOnChange.bind(this)}
-              >
-                <option value="">Select Status</option>
-                <option value="1">Active</option>
-                <option value="0">Inactive</option>
-              </select>
-            </div>
-            <div className="col-12 col-md-3">
-             
-            </div>
-            <div className="col-12 col-md-12">
-              <div className="search">
-                <button onClick={this.handleSearch.bind(this)}
-                  disabled={this.state.loadingSearch}>
-                  {this.state.loadingSearch && (
-                    <FontAwesomeIcon
-                      className="mr-2"
-                      icon={faCircleNotch}
-                      size="sm"
-                      spin
-                    />
-                  )}
-                  Search
-                </button>
+                <select
+                  name="status"
+                  value={this.state.status}
+                  onChange={this.handleOnChange.bind(this)}
+                >
+                  <option value="">Select Status</option>
+                  <option value="1">Active</option>
+                  <option value="0">Inactive</option>
+                </select>
+              </div>
+              <div className="col-12 col-md-3">
+
+              </div>
+              <div className="col-12 col-md-12">
+                <div className="search">
+                  <button onClick={this.handleSearch.bind(this)}
+                    disabled={this.state.loadingSearch}>
+                    {this.state.loadingSearch && (
+                      <FontAwesomeIcon
+                        className="mr-2"
+                        icon={faCircleNotch}
+                        size="sm"
+                        spin
+                      />
+                    )}
+                    Search
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ) : null}
-        <div className="usmanatable">
-          <Spin spinning={this.state.loading}>
-            <Table
-              columns={columns}
-              expandedRowRender={(row) => {
-                return (
-                  <React.Fragment>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Email:</label>
-                          <label className="expandemailtext">
-                            {row.userEmailId}
-                          </label>
+          ) : null}
+          <div className="usmanatable">
+            <Spin spinning={this.state.loading}>
+              <Table
+                columns={columns}
+                expandedRowRender={(row) => {
+                  return (
+                    <React.Fragment>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Email:</label>
+                            <label className="expandemailtext">
+                              {row.userEmailId}
+                            </label>
+                          </div>
+                        </div>
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Contact Number:</label>
+                            <label className="expandemailtext">
+                              {row.userContactNo}
+                            </label>
+                          </div>
                         </div>
                       </div>
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Contact Number:</label>
-                          <label className="expandemailtext">
-                            {row.userContactNo}
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">
-                            Total No. of Transactions
-                        </label>
-                          <label className="expandemailtext">
-                            {row.userTotalTransactionCount}
-                          </label>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">
-                            Total Amount Transacted
-                        </label>
-                          <div className="amazontext">
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">
+                              Total No. of Transactions
+                            </label>
                             <label className="expandemailtext">
                               {row.userTotalTransactionCount}
                             </label>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Status:</label>
-                          <label className="expandemailtext">
-                            {row.isActive ? "Active" : "Inactive"}
-                          </label>
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">
+                              Total Amount Transacted
+                            </label>
+                            <div className="amazontext">
+                              <label className="expandemailtext">
+                                {row.userTotalTransactionCount}
+                              </label>
+                            </div>
+                          </div>
                         </div>
                       </div>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Status:</label>
+                            <label className="expandemailtext">
+                              {row.isActive ? "Active" : "Inactive"}
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </React.Fragment>
+                  );
+                }}
+                expandIcon={({ expanded, onExpand, record }) =>
+                  expanded ? (
+                    <div className="expandown1">
+                      <img src={Down} onClick={(e) => onExpand(record, e)} />
                     </div>
-                  </React.Fragment>
-                );
-              }}
-              expandIcon={({ expanded, onExpand, record }) =>
-                expanded ? (
-                  <div className="expandown1">
-                    <img src={Down} onClick={(e) => onExpand(record, e)} />
-                  </div>
-                ) : (
+                  ) : (
                     <div className="expandown">
                       <img src={Down} onClick={(e) => onExpand(record, e)} />
                     </div>
                   )
-              }
-              expandIconColumnIndex={this.state.mobileView ? 8 : -1}
-              expandIconAsCell={false}
-              dataSource={this.state.userData}
-              pagination={{
-                current: this.state.pagination.current,
-                pageSize: this.state.pagination.pageSize,
-                total: this.state.pagination.total,
-                position: ["bottomCenter"],
-                showSizeChanger: true
-              }}
-              onRow={(row) => ({
-                onClick: () => this.handleRowClickPage(row.userId),
-              })}
-              onChange={this.onShowSizeChange}
+                }
+                expandIconColumnIndex={this.state.mobileView ? 8 : -1}
+                expandIconAsCell={false}
+                dataSource={this.state.userData}
+                pagination={{
+                  current: this.state.pagination.current,
+                  pageSize: this.state.pagination.pageSize,
+                  total: this.state.pagination.total,
+                  position: ["bottomCenter"],
+                  showSizeChanger: true
+                }}
+                onRow={(row) => ({
+                  onClick: () => this.handleRowClickPage(row.userId),
+                })}
+                onChange={this.onShowSizeChange}
 
-            />
-            {/* <Pagination
+              />
+              {/* <Pagination
               showSizeChanger
               onShowSizeChange={onShowSizeChange}
               defaultCurrent={3}
               total={500}
             /> */}
-          </Spin>
-        </div>
-        {/* Delete Record Modal */}
-        {/* <Modal
+            </Spin>
+          </div>
+          {/* Delete Record Modal */}
+          {/* <Modal
           open={this.state.editUser}
           onClose={this.handleEditUserClose.bind(this)}
           modalId="EditUserModal"
@@ -705,110 +777,110 @@ class splitAdminUserManagement extends Component {
             </div>
           </div>
         </Modal> */}
-        <div className="fl">
-          <Drawer
-            placement={placement}
-            closable={false}
-            onClose={this.onCloseFilter}
-            visible={visibleFilter}
-            key={placement}
-            className="f2"
-          >
-            <div className="drarfilter">
-              <div className="row m-0 w-100 back">
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Enter User Id"
-                    name="userId"
-                    value={this.state.userId}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Enter Name"
-                    name="userName"
-                    value={this.state.userName}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Enter Email"
-                    name="userEmailId"
-                    value={this.state.userEmailId}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Enter Contact No."
-                    name="userContactNo"
-                    value={this.state.userContactNo}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Total No. of Transaction upto"
-                    name="userTotalTransactionCountTo"
-                    value={this.state.userTotalTransactionCountTo}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    placeholder="Total Amount Transacted upto"
-                    name="userTotalTransactionAmountTo"
-                    value={this.state.userTotalTransactionAmountTo}
-                    onChange={this.handleOnChange.bind(this)}
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  {/* <input type="text" className="calendar" placeholder="Start Date - End Date"/> */}
-                  <RangePicker
-                    className="calendar"
-                    format={dateFormat}
-                    onChange={this.handleDateOnChange}
-                    disabledDate={disabledDate}
-                  ></RangePicker>
-                </div>
-                <div className="col-12 col-md-3">
-                  <select
-                    name="status"
-                    value={this.state.status}
-                    onChange={this.handleOnChange.bind(this)}
-                  >
-                    <option value="">Select Status</option>
-                    <option value="1">Active</option>
-                    <option value="0">Inactive</option>
-                  </select>
-                </div>
-                <div className="col-12 col-md-12">
-                  <div className="search">
-                    <button
-                      onClick={this.onCloseFilter.bind(this)}
-                      className="mr-1"
+          <div className="fl">
+            <Drawer
+              placement={placement}
+              closable={false}
+              onClose={this.onCloseFilter}
+              visible={visibleFilter}
+              key={placement}
+              className="f2"
+            >
+              <div className="drarfilter">
+                <div className="row m-0 w-100 back">
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Enter User Id"
+                      name="userId"
+                      value={this.state.userId}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Enter Name"
+                      name="userName"
+                      value={this.state.userName}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Enter Email"
+                      name="userEmailId"
+                      value={this.state.userEmailId}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Enter Contact No."
+                      name="userContactNo"
+                      value={this.state.userContactNo}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Total No. of Transaction upto"
+                      name="userTotalTransactionCountTo"
+                      value={this.state.userTotalTransactionCountTo}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      placeholder="Total Amount Transacted upto"
+                      name="userTotalTransactionAmountTo"
+                      value={this.state.userTotalTransactionAmountTo}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    {/* <input type="text" className="calendar" placeholder="Start Date - End Date"/> */}
+                    <RangePicker
+                      className="calendar"
+                      format={dateFormat}
+                      onChange={this.handleDateOnChange}
+                      disabledDate={disabledDate}
+                    ></RangePicker>
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <select
+                      name="status"
+                      value={this.state.status}
+                      onChange={this.handleOnChange.bind(this)}
                     >
-                      Cancel
-                    </button>
-                    <button
-                      onClick={this.handleGetUserManagementList.bind(this)}
-                    >
-                      Search
-                    </button>
+                      <option value="">Select Status</option>
+                      <option value="1">Active</option>
+                      <option value="0">Inactive</option>
+                    </select>
+                  </div>
+                  <div className="col-12 col-md-12">
+                    <div className="search">
+                      <button
+                        onClick={this.onCloseFilter.bind(this)}
+                        className="mr-1"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        onClick={this.handleGetUserManagementList.bind(this)}
+                      >
+                        Search
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </Drawer>
-          {/* <div className="pagination">
+            </Drawer>
+            {/* <div className="pagination">
             <ul>
               <li><a hrf="">&lt;</a></li>
               <li className="active"><a hrf="">1</a></li>
@@ -826,6 +898,8 @@ class splitAdminUserManagement extends Component {
               </select>
             </div>
           </div> */}
+          </div>
+          </div>
         </div>
       </div>
     );

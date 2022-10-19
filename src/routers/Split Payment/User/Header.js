@@ -7,7 +7,7 @@ import notification from "./../../../assets/Images/notification.png";
 import profile from "./../../../assets/Images/profile.jpg";
 import Edit from "./../../../assets/Images/edit.png";
 import Modal from "react-responsive-modal";
-import Bluser from "./../../../assets/Images/BlUser.png";
+import Bluser from "./../../../assets/Images/Bluser.png";
 import axios from "axios";
 import config from "./../../../helpers/config";
 import { userAuthHeader } from "../../Split Payment/User/splitUserAuthHeader";
@@ -39,6 +39,7 @@ export class Header extends Component {
     this.handleGetNotificationsCount();
     this.handleUserInfo();
   }
+  
 
   handleGetNotificationsCount() {
     let self = this;
@@ -49,7 +50,7 @@ export class Header extends Component {
       headers: userAuthHeader(),
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let notificationCount = res.data.responseData;
         if (status === "Success") {
@@ -90,7 +91,7 @@ export class Header extends Component {
       headers: userAuthHeader(),
     })
       .then(function (res) {
-        
+
         let msg = res.data.message;
         let data = res.data.responseData[0];
         if (msg === "Success") {
@@ -113,11 +114,11 @@ export class Header extends Component {
       headers: userAuthHeader(),
     })
       .then(function (res) {
-        
+
         if (res.status) {
           cookies.remove("onepayusertoken");
           window.localStorage.removeItem('onepayusertoken');
-          window.location.href = "/customer";       
+          window.location.href = "/customer";
         } else {
           NotificationManager.error("Not able to logout.");
         }
@@ -131,7 +132,9 @@ export class Header extends Component {
     const { placement, visible } = this.state;
     return (
       <div className="header">
-        <img src={mainLogo} className="onepay__logo"/>
+        {/* <NavLink to="/"> */}
+        <img src={mainLogo} className="onepay__logo" />
+        {/* </NavLink> */}
         {/* <h1 className="header-logo">ONE PAY</h1> */}
         <div className="header-nav">
           {/* <ul className="header-left">
@@ -184,14 +187,14 @@ export class Header extends Component {
               >
                 <img
                   // src={profile}
-                  src={this.state.userPic ? this.state.userPic : Bluser}
+                  src={this.state.userPic}
                   alt="img missing"
                 />
               </div>
             </div>
           </div>
         </div>
-        
+
         {/* Mobile View Header */}
         <div className="sidebarresp">
           <img
@@ -203,18 +206,22 @@ export class Header extends Component {
           <ul className="d-flex">
             <li className="header-icons">
               <Link to="/onePayUser/userNotification" className="position-relative">
-                <img src={notification} alt="icon missing" />
-                <span className="notification-count">18</span>
+                <img src={notifyimg} alt="icon missing" />
+                {this.state.notificationCount !== 0 && (
+                  <span className="notification-count">
+                    {this.state.notificationCount}
+                  </span>
+                )}
               </Link>
             </li>
             <li className="header-icons">
               <Link to="/onePayUser/userProfile">
-                <img className="profilerep" src={profile} alt="profile" />
+                <img className="profilerep" src={this.state.userPic} alt="profile" />
               </Link>
             </li>
           </ul>
           <Drawer
-            title={<img src={OnePayLogo} className="onepay__logo"/>}
+            title={<img src={OnePayLogo} className="onepay__logo" />}
             placement={placement}
             closable={false}
             onClose={this.onClose}
@@ -237,7 +244,7 @@ export class Header extends Component {
               <li className="respbarli" onClick={this.onClose.bind(this)}>
                 <NavLink to="/onePayUser/paymentDetail">
                   <img src={merchant} alt="icon missing" />
-                  <span className="ml-2 sidbarspan">Payment Detail1</span>
+                  <span className="ml-2 sidbarspan">Payment Details</span>
                 </NavLink>
               </li>
             </ul>
@@ -266,7 +273,7 @@ export class Header extends Component {
           <div className="mainuser">
             <div className="usericon">
               <img
-                src={this.state.userPic ? this.state.userPic : Bluser}
+                src={this.state.userPic}
                 alt="UserIcon"
               />
             </div>

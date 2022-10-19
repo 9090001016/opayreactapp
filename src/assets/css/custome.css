@@ -467,7 +467,7 @@ font-weight: 400;
   .onepay__logo,
   .instant__logo {
     width: 110px;
-    margin: 1rem;
+    margin: 1.5rem;
   }
   .header-logo {
     font-size: 20px;
@@ -558,7 +558,7 @@ font-weight: 400;
 .userpayment,
 .mainprofile {
   padding: 25px 30px;
-  margin: 10px 0 0 0;
+  margin: 25px 0 0 0;
   background: #fff;
 }
 .dash {
@@ -581,7 +581,7 @@ font-weight: 400;
   justify-content: center;
   align-items: center;
   width: 90%;
-  height: 250px;
+  height: 270px;
   margin-bottom: 10px;
 }
 .back1 {
@@ -719,6 +719,8 @@ font-weight: 400;
   border-radius: 5px;
   background-color: rgb(245, 248, 249);
   border-radius: 6px;
+  /* width: 70%;
+  margin: 0 auto; */
 }
 .profile .card {
   height: auto;
@@ -871,7 +873,7 @@ font-weight: 400;
 .instalmentDetail {
   background: #fff;
   padding: 30px 35px;
-  margin-top: 10px;
+  margin-top: 25px;
 }
 .userManagement .Usermana,
 .merchManagement .Usermana,
@@ -1077,14 +1079,14 @@ font-weight: 500;
 .paymentmana .back select,
 .MerTraHistory .back select {
   border-radius: 5px;
-  border: 1px solid #ededed;
+  border: 1px solid #000;
   padding: 10px;
   width: 100%;
   font-size: 14px;
   height: 45px;
   font-weight: 400;
   margin-bottom: 10px;
-  color: #47525e;
+  color: #101D40;
   background: #fff url("./../Images/dropdown.png") no-repeat right 15px center;
   appearance: none;
   line-height: 20px;
@@ -1140,6 +1142,7 @@ font-weight: 500;
   cursor: pointer;
   border: 0;
   margin: 20px 0 0 0;
+  font-weight: 600;
 }
 .usmanatable,
 .mermanatable,
@@ -1161,12 +1164,13 @@ font-weight: 500;
 .merchmanadetailtable .ant-table-thead > tr > th,
 .paymenttable .ant-table-thead > tr > th {
   /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
-  background: #ff4800;
-  color: #fff;
+  background: #C4c4c4;
+  color: #101D40;
   font-size: 12px;
   font-weight: 500;
   line-height: 17px;
   padding: 15px 15px;
+  text-align: center;
 }
 .usmanatable tr.ant-table-row:nth-child(odd),
 .mermanatable tr.ant-table-row:nth-child(odd),
@@ -1189,6 +1193,7 @@ font-weight: 500;
 .instalmentDetailtable tr.ant-table-row:nth-child(odd) {
   background: #EAEAEA;
   cursor: pointer;
+  text-align: center;
 }
 .usmanatable tr.ant-table-row:nth-child(even),
 .mermanatable tr.ant-table-row:nth-child(even),
@@ -1211,6 +1216,7 @@ font-weight: 500;
 .instalmentDetailtable tr.ant-table-row:nth-child(even) {
   background: #D8D8D8;
   cursor: pointer;
+  text-align: center;
 }
 .instalmentDetailtable tr.ant-table-row.disabled-row {
   background: #eee;
@@ -1837,7 +1843,8 @@ font-weight: 500;
   margin-bottom: 10px;
 }
 .deletepopover .delete {
-  background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background: #101D40;
   color: #fff;
   padding: 7px 20px;
   border-radius: 6px;
@@ -1948,24 +1955,25 @@ font-weight: 500;
 /* User Management Detail,Merchant Management Detail Css End Kalpesh */
 /* AdminSettings CSS Start Kalpesh */
 .setting .card {
-  background: #f4f6fd;
+  background: #f2f2f2;
   border: 0;
   /* box-shadow: 0 0 5px #F4F6FD; */
   padding: 20px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   display: block;
   cursor: pointer;
-  color: #4a4a4a;
+  color: #101D40;
   margin-bottom: 25px;
   transition: all 0.3s ease-in-out;
 }
 .setting .card:hover,
 .setting .card:focus {
-  background: #3636ba;
+  background: #101D40;
   color: #fff;
 }
 .setting .card .totalmain {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 .setting .card .total {
@@ -2072,10 +2080,10 @@ font-weight: 500;
 .merusermana .exfilter .csv,
 .instalmentDetail .exfilter .csv {
   background: #fff;
-  color: #3636ba;
+  color: #101D40;
   border-color: #3636ba;
   /* border-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
-  border: 1px solid;
+  /* border: 1px solid; */
   padding: 10px 15px 10px 15px;
   border-radius: 6px;
   margin-left: 10px;
@@ -2084,9 +2092,13 @@ font-weight: 500;
   text-transform: capitalize;
   cursor: pointer;
   display: inline-block;
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
 }
 .splitpayment .exfilter .add {
-  background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%);
+  /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
+  background-color: #101D40;
   color: #fff;
   padding: 10px 15px 10px 15px;
   border-radius: 6px;
@@ -2262,7 +2274,7 @@ font-style: normal;
 #meradduserModal,
 #PlanPaymentModal,
 #addcardModal {
-  margin: 40px auto 0;
+  margin: auto auto ;
   border-radius: 10px;
   width: 550px;
   padding: 0;
@@ -2617,7 +2629,7 @@ font-style: normal;
   /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
   background: #101D40;
   color: #fff;
-  padding: 10px 30px;
+  padding: 10px 0px;
   border-radius: 6px;
   font-size: 16px;
   line-height: 16px;
@@ -2627,6 +2639,7 @@ font-style: normal;
   width: 100px;
   height: 40px;
   margin: 15px 0 0 0;
+  
 }
 #ForgotPasswordOtp .Editbtn button {
   min-width: 100px;

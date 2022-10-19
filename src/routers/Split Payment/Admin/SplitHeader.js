@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import dashboard from "./../../../assets/Images/dashboard.png";
 import merchant from "./../../../assets/Images/merchant.png";
 import user from "./../../../assets/Images/user.png";
-import Bluser from "./../../../assets/Images/BlUser.png";
-import setting from "./../../../assets/Images/setting.png";
-import notification from "./../../../assets/Images/notification.png";
+import Bluser from "./../../../assets/Images/Bluser.png";
+import setting from './../../../assets/Images/smallicons/Settings.png'
+import notification from './../../../assets/Images/smallicons/notify.png'
 import profile from "./../../../assets/Images/profile.jpg";
 import Edit from "./../../../assets/Images/edit.png";
 import Modal from "react-responsive-modal";
@@ -20,7 +20,7 @@ import logoutwhite from "./../../../assets/Images/logoutwhite.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import dashboardSVG from "./../../../assets/Images/dashboard2.svg";
-import OnePayLogo from "./../../../assets/Images/OnePay-logo.png";
+import OnePayLogo from './../../../assets/Images/smallicons/main_logo.png'
 
 const cookies = new Cookies();
 class splitHeader extends Component {
@@ -36,16 +36,17 @@ class splitHeader extends Component {
       userName: "",
       userEmail: "",
       userPic: "",
-      module: ""
+      module: "",
     };
   }
 
   componentDidMount() {
-    
-    var module = window.localStorage.getItem("OnePayAdminModule")==null?"":
-                 window.localStorage.getItem("OnePayAdminModule");
+
+    var module = window.localStorage.getItem("OnePayAdminModule") == null ? "" :
+      window.localStorage.getItem("OnePayAdminModule");
     this.handleGetNotificationsCount();
     this.handleUserInfo();
+    // this.settingClicked();
     this.setState({
       module
     })
@@ -53,6 +54,9 @@ class splitHeader extends Component {
     //   this.handleGetNotificationsCount();
     // }, 5000);
   }
+  // componentDidUpdate(){
+  //   this.settingClicked();
+  // }
 
   handleUserInfo = () => {
     var self = this;
@@ -62,7 +66,7 @@ class splitHeader extends Component {
       headers: authHeader(),
     })
       .then(function (res) {
-        
+
         let msg = res.data.message;
         let data = res.data.responseData[0];
         if (msg === "Success") {
@@ -112,7 +116,7 @@ class splitHeader extends Component {
       headers: authHeader(),
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let notificationCount = res.data.responseData.notificationCount;
         if (status === "Success") {
@@ -158,7 +162,7 @@ class splitHeader extends Component {
       headers: authHeader(),
     })
       .then(function (res) {
-        
+
         if (res.status) {
           cookies.remove("token");
           window.localStorage.removeItem('onepaytoken');
@@ -179,58 +183,17 @@ class splitHeader extends Component {
         });
       });
   }
+  
+  
 
   render() {
     const { placement, visible } = this.state;
     return (
       <div className="header">
-        <img src={OnePayLogo} className="onepay__logo"/>
+        <img src={OnePayLogo} className="onepay__logo" />
         {/* <h1 className="header-logo">ONE PAY</h1> */}
         <div className="header-nav">
-          <ul className="header-left">
-            {(() => {
-              if (this.state.module.includes('Dashboard')) {
-                return (
-                  <li>
-                    <NavLink to="/onePayAdmin/dashboard">
-                      <div className="header-icons">
-                        <img src={dashboardSVG} alt="icon missing" />
-                      </div>
-                      <span className="ml-2">Dashboard</span>
-                    </NavLink>
-                  </li>
-                )
-              }
-            })()}
-            {(() => {
-              if (this.state.module.includes('End Customer Management')) {
-                return (
-                  <li>
-                    <NavLink to="/onePayAdmin/adminUserManagement" id="splitEndCustomerMmt">
-                      <div className="header-icons">
-                        <img src={user} alt="icon missing" />
-                      </div>
-                      <span className="ml-2">End Customer Management</span>
-                    </NavLink>
-                  </li>
-                )
-              }
-            })()}
-            {(() => {
-              if (this.state.module.includes('Merchants Management')) {
-                return (
-                  <li>
-                    <NavLink to="/onePayAdmin/adminMerchantManagement" id="splitMerchantMmt">
-                      <div className="header-icons">
-                        <img src={merchant} alt="icon missing" />
-                      </div>
-                      <span className="ml-2">Merchant Management</span>
-                    </NavLink>
-                  </li>
-                )
-              }
-            })()}
-          </ul>
+
           <div className="header-right">
             <ul className="d-flex">
               {(() => {
@@ -253,17 +216,6 @@ class splitHeader extends Component {
                   )
                 }
               })()}
-              {(() => {
-                if (this.state.module.includes('Settings')) {
-                  return (
-                    <li className="header-icons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Admin Setting">
-                      <Link to="/onePayAdmin/adminSetting">
-                        <img src={setting} alt="icon missing " />
-                      </Link>
-                    </li>
-                  )
-                }
-              })()}
             </ul>
             <div className="user-profile" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout">
               <div className="profile-img">
@@ -276,9 +228,9 @@ class splitHeader extends Component {
               <span className="profile-img-arrow" onClick={this.handleUserOpen.bind(this)}></span>
             </div>
           </div>
-        </div>
+        </div >
         {/* Mobile View Header */}
-        <div className="sidebarresp">
+        < div className="sidebarresp" >
           <img
             className="menubtn"
             src={menu}
@@ -353,9 +305,9 @@ class splitHeader extends Component {
               </Link>
             </div>
           </Drawer>
-        </div>
+        </div >
         {/* Modal User */}
-        <Modal
+        < Modal
           open={this.state.user}
           onClose={this.handleUserClose}
           modalId="HeaderUserModal"
@@ -375,8 +327,9 @@ class splitHeader extends Component {
                   {/* <img src={Edit} alt="Edit" onClick={this.handleUserClose.bind(this)} /> */}
                   <img src={Edit} alt="Edit" />
                 </Link>
+                <label className="text-lowercase">{this.state.userEmail}</label>
               </label>
-              <label className="text-lowercase">{this.state.userEmail}</label>
+              
             </div>
             <div className="Logout">
               <button
@@ -396,8 +349,8 @@ class splitHeader extends Component {
               </button>
             </div>
           </div>
-        </Modal>
-      </div>
+        </Modal >
+      </div >
     );
   }
 }
