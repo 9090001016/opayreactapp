@@ -4617,3 +4617,52 @@ a.btn-theme.active {
   font-size: 18px !important;
     font-weight: 600 !important;
 }
+
+/* rahul */
+
+.form__fields {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  }
+  
+  .cross__red {
+  font-size:2.7rem;
+  color: #f22012;
+  }
+  
+  .contant__modal {
+  max-width: 500px;
+  width: 100%;
+  padding: 0;
+  margin-top: 5rem;
+  }
+  
+  .contact__form {
+  padding: 2rem;
+  text-align: center;
+  }
+  
+  .contact__form .input__block {
+  margin-bottom:1rem;
+  } 
+  
+  .contact__form .input__block input {
+    width: 100%;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f1efef;
+    font-size: 14px;
+  }
+  
+  .contact__form .submit__btn {
+  background: #FFBD2B;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  border-radius: 5px;
+  color: #000;
+  font-size: 14px;
+  margin-top: 12px;
+  cursor: pointer;
+  }
