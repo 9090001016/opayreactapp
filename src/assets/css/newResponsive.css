@@ -6,9 +6,37 @@
     .join_section button{
         width: 15vw;
     }
+    .dashboard .card,
+.Merchantdashboard .card,
+.Userdashboard .card {
+  border: 0;
+  box-shadow: 7px 11px 10px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 100px 0px 0px 0px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 350px;
+  margin-bottom: 10px;
+}
 }
 
 @media (max-width:1280px){
+    .dashboard .card,
+    .Merchantdashboard .card,
+    .Userdashboard .card {
+      border: 0;
+      box-shadow: 7px 11px 10px 1px rgba(0, 0, 0, 0.1);
+      border-radius: 100px 0px 0px 0px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      height: 270px;
+      margin-bottom: 10px;
+    }
      .sign_in_image_part {
         width: 100%;
         height: 70vh;
@@ -278,6 +306,14 @@
     }
 }
 @media(max-width: 912px){
+    .dash_link .header-left {
+        width: 90vw;
+        height: 6vh;
+    }
+    .dash_link .header-left a {
+        width: 30vw;
+        height: 6vh;
+    }
     .sign_in_image_part {
         width: 100%;
         height: 55vh;
@@ -550,14 +586,7 @@
     }
 }
 @media(max-width:768px){
-    .dash_link .header-left {
-        width: 90vw;
-        height: 6vh;
-    }
-    .dash_link .header-left a {
-        width: 30vw;
-        height: 6vh;
-    }
+   
     .white_bg {
         margin-top: 0rem;
         height: 10vh;
@@ -580,6 +609,36 @@
     }
 }
 @media (max-width:630px){
+    .card_para{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    .setting_dashboard .dash_link{
+        display: none;
+    }
+    .dash_link{
+        display: none;
+    }
+    .blue_line{
+        height: 17vh;
+    }
+    .transaction_details1 .Usermana{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .transaction_details .Usermana{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .transaction_details .dash{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .navbarLoginScroll {
         height: 11vh;
     }
@@ -685,6 +744,15 @@
     }
 }
 @media (max-width:600px){
+    .admin_dashboard .dash_link .header-left{
+        width: 100vw;
+    }
+    .admin_dashboard .dash_link .header-left li:nth-child(1) a{
+        width: 30vw;
+    }
+    .admin_dashboard .dash_link .header-left a{
+        width: 40vw;
+    }
     .credential_part{
         height: 75vh;
         width: 90%;
@@ -951,7 +1019,11 @@
         height: 6vh;
     }
     .dash_link .header-left a {
-        width: 33vw;
+        width: 30vw;
+        height: 6vh;
+    }
+    .dash_link .header-left a:nth-child(3) {
+        width: 40vw;
         height: 6vh;
     }
     .sign-in-card {

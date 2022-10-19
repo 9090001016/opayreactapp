@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Table, Popover, Spin } from "antd";
 import Modal from "react-responsive-modal";
-import CSV from "./../../../../assets/Images/csv.png";
+import CSV from "./../../../../assets/Images/smallicons/Exportcsv.png";
 import InfoIcon from "./../../../../assets/Images/Infoblue.png";
-import RedDelete from "./../../../../assets/Images/delete.png";
+import RedDelete from "./../../../../assets/Images/smallicons/redDelete.png";
 import BlueEdit from "./../../../../assets/Images/editt.png";
 import NotifiBl from "./../../../../assets/Images/NotiBl.png";
 import EmailBl from "./../../../../assets/Images/emailBl.png";
@@ -14,6 +14,7 @@ import { authHeader } from "../../helpers/splitAuthHeader";
 import { CSVLink } from "react-csv";
 import Down from "./../../../../assets/Images/download.png";
 import { NotificationManager } from "react-notifications";
+import BackBtn from "./BackBtn";
 
 class splitAlertTemplateManagement extends Component {
   constructor(props) {
@@ -831,6 +832,9 @@ class splitAlertTemplateManagement extends Component {
     ];
 
     return (
+      <div>
+        <BackBtn/>
+      
       <div className="alerttemplate">
         <h3 className="Usermana">Alert Template Management</h3>
         <div className="exfilter">
@@ -848,7 +852,7 @@ class splitAlertTemplateManagement extends Component {
             <img src={CSV} alt="Export" />
             Export to CSV
           </CSVLink>
-          <label className="add" onClick={this.handleAddAlertOpen.bind(this)}>
+          <label className="add add_new_btn" onClick={this.handleAddAlertOpen.bind(this)}>
             Add New
           </label>
         </div>
@@ -1916,6 +1920,7 @@ class splitAlertTemplateManagement extends Component {
             </div>
           </div>
         </Modal>
+      </div>
       </div>
     );
   }

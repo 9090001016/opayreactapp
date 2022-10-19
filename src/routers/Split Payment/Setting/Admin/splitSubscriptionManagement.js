@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Table, Popover, Spin } from "antd";
-import CSV from "./../../../../assets/Images/csv.png";
+import CSV from "./../../../../assets/Images/smallicons/Exportcsv.png";
 import InfoIcon from "./../../../../assets/Images/Infoblue.png";
-import RedDelete from "./../../../../assets/Images/delete.png";
+import RedDelete from "./../../../../assets/Images/smallicons/redDelete.png";
 import BlueEdit from "./../../../../assets/Images/editt.png";
 import CloseIcon from "./../../../../assets/Images/CloseWhBold.png";
 import Modal from "react-responsive-modal";
@@ -12,6 +12,7 @@ import { authHeader } from "../../helpers/splitAuthHeader";
 import { CSVLink } from "react-csv";
 import Down from "./../../../../assets/Images/download.png";
 import { NotificationManager } from "react-notifications";
+import BackBtn from "./BackBtn";
 
 class splitSubscriptionManagement extends Component {
   constructor(props) {
@@ -84,7 +85,7 @@ class splitSubscriptionManagement extends Component {
     this.setState({ addSubscription: false, touched: false });
   }
   handleEditSubscriptionOpen(item) {
-    
+
     this.setState({
       editSubscription: true,
       subscriptionId: item.subscriptionId,
@@ -93,7 +94,7 @@ class splitSubscriptionManagement extends Component {
       editSubscriptionInfo: item.subscriptionInfo,
       editCheckoutOpt: item.checkOutTypeId,
       editDurationAval: item.durationAvailableId,
-      editStatus: item.status == "Active"?true:false,
+      editStatus: item.status == "Active" ? true : false,
       touched: true,
       visible: {}
     });
@@ -103,7 +104,7 @@ class splitSubscriptionManagement extends Component {
   }
 
   handleGetSubscriptionList(search, pagination, sorter) {
-    
+
     let self = this;
     var paging = pagination !== undefined ? pagination : this.state.pagination;
     var subscriptionData = [];
@@ -124,17 +125,17 @@ class splitSubscriptionManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
           paging.total = parseInt(data[0].totalRowCount);
           data.map((item, i) =>
-          subscriptionData.push({
+            subscriptionData.push({
               subscriptionId: item.subscriptionId,
               subscriptionName: item.subscriptionName,
               checkOutType: item.checkOutType,
-              checkOutTypeId: item.checkOutTypeId,  
+              checkOutTypeId: item.checkOutTypeId,
               subscriptionPrice: item.subscriptionPrice,
               durationAvailable: item.durationAvailable,
               durationAvailableId: item.durationAvailableId,
@@ -213,7 +214,7 @@ class splitSubscriptionManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -232,7 +233,7 @@ class splitSubscriptionManagement extends Component {
   }
 
   handleSubscriptionDelete(subscriptionId) {
-    
+
     let self = this;
 
     axios({
@@ -244,18 +245,18 @@ class splitSubscriptionManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         // if (status === "Success") {
         //   NotificationManager.success("Record Deleted Successfully");
-          
+
         // } else {
-          NotificationManager.success(status);
-          self.hide(
-            this,
-            "subscription" + subscriptionId
-          )
-          self.handleGetSubscriptionList("");
+        NotificationManager.success(status);
+        self.hide(
+          this,
+          "subscription" + subscriptionId
+        )
+        self.handleGetSubscriptionList("");
         // }
       })
       .catch((data) => {
@@ -300,7 +301,7 @@ class splitSubscriptionManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -370,7 +371,7 @@ class splitSubscriptionManagement extends Component {
   // }
 
   handleSubscriptionSearch(e) {
-    
+
     // this.setState({
     //   [e.target.name]: e.target.value,
     // });
@@ -384,8 +385,8 @@ class splitSubscriptionManagement extends Component {
   }
 
   onShowSizeChange = (pagination, pagesize, sorter) => {
-     this.setState({visible: {}})
-     this.handleGetSubscriptionList(this.state.searchBy,pagination, sorter)
+    this.setState({ visible: {} })
+    this.handleGetSubscriptionList(this.state.searchBy, pagination, sorter)
   }
 
   hide(e, id) {
@@ -414,7 +415,7 @@ class splitSubscriptionManagement extends Component {
   }
 
   handleGetSubscriptionExportToCSV(search, pagination, sorter) {
-    
+
     let self = this;
     var subscriptionCSVData = [];
     var paging = pagination !== undefined ? pagination : this.state.pagination;
@@ -431,16 +432,16 @@ class splitSubscriptionManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
           data.map((item, i) =>
-          subscriptionCSVData.push({
+            subscriptionCSVData.push({
               subscriptionId: item.subscriptionId,
               subscriptionName: item.subscriptionName,
               checkOutType: item.checkOutType,
-              checkOutTypeId: item.checkOutTypeId,  
+              checkOutTypeId: item.checkOutTypeId,
               subscriptionPrice: item.subscriptionPrice,
               durationAvailable: item.durationAvailable,
               durationAvailableId: item.durationAvailableId,
@@ -613,12 +614,12 @@ class splitSubscriptionManagement extends Component {
                     <div className="deletepopover text-center" id={"subscription" + item.subscriptionId}>
                       <h3>Are you sure to delete ?</h3>
                       <button className="delete"
-                      onClick={() =>
-                        this.hide(
-                          this,
-                          "subscription" + item.subscriptionId
-                        )
-                      }
+                        onClick={() =>
+                          this.hide(
+                            this,
+                            "subscription" + item.subscriptionId
+                          )
+                        }
                       >Cancel</button>
                       <button
                         className="delete"
@@ -633,13 +634,13 @@ class splitSubscriptionManagement extends Component {
                   }
                   placement="bottomRight"
                   trigger="click"
-                  visible={this.state.visible["subscription" + item.subscriptionId] == undefined?false:
-                  this.state.visible["subscription" + item.subscriptionId]}
+                  visible={this.state.visible["subscription" + item.subscriptionId] == undefined ? false :
+                    this.state.visible["subscription" + item.subscriptionId]}
                 >
                   <img src={RedDelete} alt="Delete"
-                  onClick={() =>
-                    this.show(this, "subscription" + item.subscriptionId)
-                  } 
+                    onClick={() =>
+                      this.show(this, "subscription" + item.subscriptionId)
+                    }
                   />
                 </Popover>
               </div>
@@ -658,412 +659,415 @@ class splitSubscriptionManagement extends Component {
       { label: "Status", key: "status" },
     ];
     return (
-      <div className="subscription">
-        <h3 className="Usermana">Subscription Management</h3>
-        <div className="exfilter">
-          <input
-            type="text"
-            placeholder="Search Anything"
-            onChange={this.handleSubscriptionSearch.bind(this)}
-          />
-          <CSVLink
-            data={this.state.subscriptionCSVData}
-            headers={headers}
-            filename={"Subscription Management.csv"}
-            className="csv"
-          >
-            <img src={CSV} alt="Export" />
-            Export to CSV
-          </CSVLink>
-          <label
-            className="add"
-            onClick={this.handleAddSubscriptionOpen.bind(this)}
-          >
-            Add New
-          </label>
-        </div>
-        <div className="subscriptiontable">
-          <Spin spinning={this.state.loading}>
-            <Table
-              columns={columns}
-              expandedRowRender={(row) => {
-                return (
-                  <React.Fragment>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Subs Name:</label>
-                          <label className="expandemailtext">{row.subscriptionName}</label>
+      <div>
+        <BackBtn />
+        <div className="subscription">
+          <h3 className="Usermana">Subscription Management</h3>
+          <div className="exfilter">
+            <input
+              type="text"
+              placeholder="Search Anything"
+              onChange={this.handleSubscriptionSearch.bind(this)}
+            />
+            <CSVLink
+              data={this.state.subscriptionCSVData}
+              headers={headers}
+              filename={"Subscription Management.csv"}
+              className="csv"
+            >
+              <img src={CSV} alt="Export" />
+              Export to CSV
+            </CSVLink>
+            <label
+              className="add add_new_btn"
+              onClick={this.handleAddSubscriptionOpen.bind(this)}
+            >
+              Add New
+            </label>
+          </div>
+          <div className="subscriptiontable">
+            <Spin spinning={this.state.loading}>
+              <Table
+                columns={columns}
+                expandedRowRender={(row) => {
+                  return (
+                    <React.Fragment>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Subs Name:</label>
+                            <label className="expandemailtext">{row.subscriptionName}</label>
+                          </div>
                         </div>
-                      </div>
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Checkout Options:</label>
-                          <label className="expandemailtext">{row.checkOutType}</label>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Subs. Price / Month (AU$):</label>
-                          <label className="expandemailtext">{row.subscriptionPrice}</label>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Duration Available:</label>
-                          <label className="expandemailtext">{row.durationAvailable}</label>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Subs. Info:</label>
-                          <label className="expandemailtext">{row.subscriptionInfo}</label>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Created By:</label>
-                          <div className="amazontext">
-                            <label className="expandemailtext">
-                              {row.createBy}
-                            </label>
-                            <Popover
-                              content={
-                                <div className="userpopover">
-                                  <div className="subsc">
-                                    <label>Created By</label>
-                                    <label>{row.createBy}</label>
-                                  </div>
-                                  <div className="subsc">
-                                    <label>Created On</label>
-                                    <label>{row.createDate}</label>
-                                  </div>
-                                  <div className="subsc">
-                                    <label>Modified By</label>
-                                    <label>{row.updateBy}</label>
-                                  </div>
-                                  <div className="subsc">
-                                    <label>Modified On</label>
-                                    <label>{row.updateDate}</label>
-                                  </div>
-                                </div>
-                              }
-                              placement="bottom"
-                              trigger="click"
-                            >
-                              <img src={InfoIcon} alt="InfoIcon" />
-                            </Popover>
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Checkout Options:</label>
+                            <label className="expandemailtext">{row.checkOutType}</label>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Status:</label>
-                          <label className="expandemailtext">
-                            {row.isActive ? "Active" : "Inactive"}
-                          </label>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Subs. Price / Month (AU$):</label>
+                            <label className="expandemailtext">{row.subscriptionPrice}</label>
+                          </div>
+                        </div>
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Duration Available:</label>
+                            <label className="expandemailtext">{row.durationAvailable}</label>
+                          </div>
                         </div>
                       </div>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Subs. Info:</label>
+                            <label className="expandemailtext">{row.subscriptionInfo}</label>
+                          </div>
+                        </div>
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Created By:</label>
+                            <div className="amazontext">
+                              <label className="expandemailtext">
+                                {row.createBy}
+                              </label>
+                              <Popover
+                                content={
+                                  <div className="userpopover">
+                                    <div className="subsc">
+                                      <label>Created By</label>
+                                      <label>{row.createBy}</label>
+                                    </div>
+                                    <div className="subsc">
+                                      <label>Created On</label>
+                                      <label>{row.createDate}</label>
+                                    </div>
+                                    <div className="subsc">
+                                      <label>Modified By</label>
+                                      <label>{row.updateBy}</label>
+                                    </div>
+                                    <div className="subsc">
+                                      <label>Modified On</label>
+                                      <label>{row.updateDate}</label>
+                                    </div>
+                                  </div>
+                                }
+                                placement="bottom"
+                                trigger="click"
+                              >
+                                <img src={InfoIcon} alt="InfoIcon" />
+                              </Popover>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Status:</label>
+                            <label className="expandemailtext">
+                              {row.isActive ? "Active" : "Inactive"}
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </React.Fragment>
+                  );
+                }}
+                expandIcon={({ expanded, onExpand, record }) =>
+                  expanded ? (
+                    <div className="expandown1">
+                      <img src={Down} onClick={e => onExpand(record, e)} />
                     </div>
-                  </React.Fragment>
-                );
-              }}
-              expandIcon={({ expanded, onExpand, record }) =>
-                expanded ? (
-                  <div className="expandown1">
-                    <img src={Down} onClick={e => onExpand(record, e)} />
-                  </div>
-                ) : (
+                  ) : (
                     <div className="expandown">
                       <img src={Down} onClick={e => onExpand(record, e)} />
                     </div>
                   )}
-              expandIconColumnIndex={this.state.mobileView ? 8 : -1}
-              expandIconAsCell={false}
-              dataSource={this.state.subscriptionData}
-              pagination={{
-                current: this.state.pagination.current,
-                pageSize: this.state.pagination.pageSize,
-                total: this.state.pagination.total,
-                position: ["bottomCenter"],
-                showSizeChanger: true
-              }}
-              onChange={this.onShowSizeChange}
-            />
-          </Spin>
-        </div>
-        {/* Add Modal */}
-        <Modal
-          open={this.state.addSubscription}
-          onClose={this.handleAddSubscriptionClose.bind(this)}
-          modalId="subscriptionmodal"
-          overlayId="overlay"
-        >
-          <div className="backtext">
-            <h3 className="eduser">Add Subscription</h3>
-            <img
-              src={CloseIcon}
-              alt="CloseIcon"
-              className="closeicon"
-              onClick={this.handleAddSubscriptionClose.bind(this)}
-            />
+                expandIconColumnIndex={this.state.mobileView ? 8 : -1}
+                expandIconAsCell={false}
+                dataSource={this.state.subscriptionData}
+                pagination={{
+                  current: this.state.pagination.current,
+                  pageSize: this.state.pagination.pageSize,
+                  total: this.state.pagination.total,
+                  position: ["bottomCenter"],
+                  showSizeChanger: true
+                }}
+                onChange={this.onShowSizeChange}
+              />
+            </Spin>
           </div>
-          <div className="edituser">
-            <div className="row">
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-                <label>Subscription Name *</label>
-                <input
-                  type="text"
-                  placeholder="Enter Subscription Name"
-                  name="subscription"
-                  value={this.state.subscription}
-                  onChange={this.handleOnChange.bind(this)}
-                />
-                {this.state.subscription.length === 0 && this.state.touched && (
-                  <span className="Error">Required.</span>
-                )}
-                </div>
-              </div>
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-                <label>Checkout Options *</label>
-                <select
-                  name="checkoutOpt"
-                  value={this.state.checkoutOpt}
-                  onChange={this.handleOnChange.bind(this)}
-                >
-                  <option value={0}>Select Checkout Options</option>
-                  {/* <option value={301}>One Click</option> */}
-                  <option value={302}>Split Payment</option>
-                  {/* <option value={303}>Both</option> */}
-                </select>
-                {this.state.checkoutOpt === 0 && this.state.touched && (
-                  <span className="Error">Required.</span>
-                )}
-                </div>
-              </div>
+          {/* Add Modal */}
+          <Modal
+            open={this.state.addSubscription}
+            onClose={this.handleAddSubscriptionClose.bind(this)}
+            modalId="subscriptionmodal"
+            overlayId="overlay"
+          >
+            <div className="backtext">
+              <h3 className="eduser">Add Subscription</h3>
+              <img
+                src={CloseIcon}
+                alt="CloseIcon"
+                className="closeicon"
+                onClick={this.handleAddSubscriptionClose.bind(this)}
+              />
             </div>
-            <div className="row">
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-                <label>Subscription Price *</label>
-                <input
-                  type="text"
-                  placeholder="Enter Subscription Price"
-                  name="subscriptionPrice"
-                  value={this.state.subscriptionPrice}
-                  onChange={this.handleOnChangeNumber.bind(this)}
-                />
-                {this.state.subscriptionPrice.length === 0 &&
-                  this.state.touched && (
-                    <span className="Error">Required.</span>
-                  )}
+            <div className="edituser">
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Subscription Name *</label>
+                    <input
+                      type="text"
+                      placeholder="Enter Subscription Name"
+                      name="subscription"
+                      value={this.state.subscription}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
+                    {this.state.subscription.length === 0 && this.state.touched && (
+                      <span className="Error">Required.</span>
+                    )}
                   </div>
-              </div>
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-                <label>Duration Available *</label>
-                <select
-                  name="durationAval"
-                  value={this.state.durationAval}
-                  onChange={this.handleOnChange.bind(this)}
-                >
-                  <option value={0}>Select Durations</option>
-                  <option value={310}>3M</option>
-                  <option value={311}>6M</option>
-                  <option value={312}>9M</option>
-                  <option value={313}>12M</option>
-                </select>
-                {this.state.durationAval === 0 && this.state.touched && (
-                  <span className="Error">Required.</span>
-                )}
+                </div>
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Checkout Options *</label>
+                    <select
+                      name="checkoutOpt"
+                      value={this.state.checkoutOpt}
+                      onChange={this.handleOnChange.bind(this)}
+                    >
+                      <option value={0}>Select Checkout Options</option>
+                      {/* <option value={301}>One Click</option> */}
+                      <option value={302}>Split Payment</option>
+                      {/* <option value={303}>Both</option> */}
+                    </select>
+                    {this.state.checkoutOpt === 0 && this.state.touched && (
+                      <span className="Error">Required.</span>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-12 col-md-12">
-              <div class="marginbot">
-                <label>Subscription Info *</label>
-                <textarea
-                  placeholder="Enter Subscription Info"
-                  name="subscriptionInfo"
-                  value={this.state.subscriptionInfo}
-                  onChange={this.handleOnChange.bind(this)}
-                ></textarea>
-                {this.state.subscriptionInfo.length === 0 &&
-                  this.state.touched && (
-                    <span className="Error">Required.</span>
-                  )}
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Subscription Price *</label>
+                    <input
+                      type="text"
+                      placeholder="Enter Subscription Price"
+                      name="subscriptionPrice"
+                      value={this.state.subscriptionPrice}
+                      onChange={this.handleOnChangeNumber.bind(this)}
+                    />
+                    {this.state.subscriptionPrice.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
                   </div>
+                </div>
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Duration Available *</label>
+                    <select
+                      name="durationAval"
+                      value={this.state.durationAval}
+                      onChange={this.handleOnChange.bind(this)}
+                    >
+                      <option value={0}>Select Durations</option>
+                      <option value={310}>3M</option>
+                      <option value={311}>6M</option>
+                      <option value={312}>9M</option>
+                      <option value={313}>12M</option>
+                    </select>
+                    {this.state.durationAval === 0 && this.state.touched && (
+                      <span className="Error">Required.</span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12 col-md-12">
+                  <div class="marginbot">
+                    <label>Subscription Info *</label>
+                    <textarea
+                      placeholder="Enter Subscription Info"
+                      name="subscriptionInfo"
+                      value={this.state.subscriptionInfo}
+                      onChange={this.handleOnChange.bind(this)}
+                    ></textarea>
+                    {this.state.subscriptionInfo.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <label>Status</label>
+                  <label className="switch">
+                    <input
+                      type="checkbox"
+                      name="status"
+                      checked={this.state.status}
+                      onClick={() =>
+                        this.setState({ status: !this.state.status })
+                      }
+                    />
+                    <span className="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <div className="Editbtn">
+                <button
+                  className="btn"
+                  onClick={this.handleSubscriptionSubmit.bind(this)}
+                >
+                  Add
+                </button>
               </div>
             </div>
-            <div className="row">
-              <div className="col-12 col-md-6">
-                <label>Status</label>
-                <label className="switch">
-                  <input
-                    type="checkbox"
-                    name="status"
-                    checked={this.state.status}
-                    onClick={() =>
-                      this.setState({ status: !this.state.status })
-                    }
-                  />
-                  <span className="slider round"></span>
-                </label>
-              </div>
+          </Modal>
+          {/* Edit Modal */}
+          <Modal
+            open={this.state.editSubscription}
+            onClose={this.handleEditSubscriptionClose.bind(this)}
+            modalId="subscriptionmodal"
+            overlayId="overlay"
+          >
+            <div className="backtext">
+              <h3 className="eduser">Edit Subscription</h3>
+              <img
+                src={CloseIcon}
+                alt="CloseIcon"
+                className="closeicon"
+                onClick={this.handleEditSubscriptionClose.bind(this)}
+              />
             </div>
-            <div className="Editbtn">
-              <button
-                className="btn"
-                onClick={this.handleSubscriptionSubmit.bind(this)}
-              >
-                Add
-              </button>
-            </div>
-          </div>
-        </Modal>
-        {/* Edit Modal */}
-        <Modal
-          open={this.state.editSubscription}
-          onClose={this.handleEditSubscriptionClose.bind(this)}
-          modalId="subscriptionmodal"
-          overlayId="overlay"
-        >
-          <div className="backtext">
-            <h3 className="eduser">Edit Subscription</h3>
-            <img
-              src={CloseIcon}
-              alt="CloseIcon"
-              className="closeicon"
-              onClick={this.handleEditSubscriptionClose.bind(this)}
-            />
-          </div>
-          <div className="edituser">
-            <div className="row">
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-                <label>Subscription Name *</label>
-                <input
-                  type="text"
-                  placeholder="Enter Subscription Name"
-                  name="editSubscriptionName"
-                  value={this.state.editSubscriptionName}
-                  onChange={this.handleOnChange.bind(this)}
-                />
+            <div className="edituser">
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Subscription Name *</label>
+                    <input
+                      type="text"
+                      placeholder="Enter Subscription Name"
+                      name="editSubscriptionName"
+                      value={this.state.editSubscriptionName}
+                      onChange={this.handleOnChange.bind(this)}
+                    />
 
-                {this.state.editSubscriptionName.length === 0 &&
-                  this.state.touched && (
-                    <span className="Error">Required.</span>
-                  )}
+                    {this.state.editSubscriptionName.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
                   </div>
-              </div>
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-                <label>Checkout Options *</label>
-                <select
-                  name="editCheckoutOpt"
-                  value={this.state.editCheckoutOpt}
-                  onChange={this.handleOnChange.bind(this)}
-                >
-                  <option value={0}>Select Checkout Options</option>
-                  {/* <option value={301}>One Click</option> */}
-                  <option value={302}>Split Payment</option>
-                  {/* <option value={303}>Both</option> */}
-                </select>
-                {this.state.editCheckoutOpt === 0 && this.state.touched && (
-                  <span className="Error">Required.</span>
-                )}
+                </div>
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Checkout Options *</label>
+                    <select
+                      name="editCheckoutOpt"
+                      value={this.state.editCheckoutOpt}
+                      onChange={this.handleOnChange.bind(this)}
+                    >
+                      <option value={0}>Select Checkout Options</option>
+                      {/* <option value={301}>One Click</option> */}
+                      <option value={302}>Split Payment</option>
+                      {/* <option value={303}>Both</option> */}
+                    </select>
+                    {this.state.editCheckoutOpt === 0 && this.state.touched && (
+                      <span className="Error">Required.</span>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-                <label>Subscription Price *</label>
-                <input
-                  type="text"
-                  placeholder="Enter Subscription Price"
-                  name="editSubscriptionPrice"
-                  value={this.state.editSubscriptionPrice}
-                  onChange={this.handleOnChangeNumber.bind(this)}
-                />
-                {this.state.editSubscriptionPrice.length === 0 &&
-                  this.state.touched && (
-                    <span className="Error">Required.</span>
-                  )}
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Subscription Price *</label>
+                    <input
+                      type="text"
+                      placeholder="Enter Subscription Price"
+                      name="editSubscriptionPrice"
+                      value={this.state.editSubscriptionPrice}
+                      onChange={this.handleOnChangeNumber.bind(this)}
+                    />
+                    {this.state.editSubscriptionPrice.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
                   </div>
-              </div>
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-                <label>Duration Available *</label>
-                <select
-                  name="editDurationAval"
-                  value={this.state.editDurationAval}
-                  onChange={this.handleOnChange.bind(this)}
-                >
-                  <option value={0}>Select Durations</option>
-                  <option value={310}>3M</option>
-                  <option value={311}>6M</option>
-                  <option value={312}>9M</option>
-                  <option value={313}>12M</option>
-                </select>
-                {this.state.editDurationAval === 0 && this.state.touched && (
-                  <span className="Error">Required.</span>
-                )}
+                </div>
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Duration Available *</label>
+                    <select
+                      name="editDurationAval"
+                      value={this.state.editDurationAval}
+                      onChange={this.handleOnChange.bind(this)}
+                    >
+                      <option value={0}>Select Durations</option>
+                      <option value={310}>3M</option>
+                      <option value={311}>6M</option>
+                      <option value={312}>9M</option>
+                      <option value={313}>12M</option>
+                    </select>
+                    {this.state.editDurationAval === 0 && this.state.touched && (
+                      <span className="Error">Required.</span>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-12 col-md-12">
-              <div class="marginbot">
-                <label>Subscription Info *</label>
-                <textarea
-                  placeholder="Enter Subscription Info"
-                  name="editSubscriptionInfo"
-                  value={this.state.editSubscriptionInfo}
-                  onChange={this.handleOnChange.bind(this)}
-                ></textarea>
-                {this.state.editSubscriptionInfo.length === 0 &&
-                  this.state.touched && (
-                    <span className="Error">Required.</span>
-                  )}
+              <div className="row">
+                <div className="col-12 col-md-12">
+                  <div class="marginbot">
+                    <label>Subscription Info *</label>
+                    <textarea
+                      placeholder="Enter Subscription Info"
+                      name="editSubscriptionInfo"
+                      value={this.state.editSubscriptionInfo}
+                      onChange={this.handleOnChange.bind(this)}
+                    ></textarea>
+                    {this.state.editSubscriptionInfo.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
                   </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <label>Status</label>
+                  <label className="switch">
+                    <input
+                      type="checkbox"
+                      name="editStatus"
+                      checked={this.state.editStatus}
+                      onClick={() =>
+                        this.setState({ editStatus: !this.state.editStatus })
+                      }
+                    />
+                    <span className="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <div className="Editbtn">
+                <button
+                  className="btn"
+                  onClick={this.handleSubscriptionUpdate.bind(this)}
+                >
+                  Edit
+                </button>
               </div>
             </div>
-            <div className="row">
-              <div className="col-12 col-md-6">
-                <label>Status</label>
-                <label className="switch">
-                  <input
-                    type="checkbox"
-                    name="editStatus"
-                    checked={this.state.editStatus}
-                    onClick={() =>
-                      this.setState({ editStatus: !this.state.editStatus })
-                    }
-                  />
-                  <span className="slider round"></span>
-                </label>
-              </div>
-            </div>
-            <div className="Editbtn">
-              <button
-                className="btn"
-                onClick={this.handleSubscriptionUpdate.bind(this)}
-              >
-                Edit
-              </button>
-            </div>
-          </div>
-        </Modal>
+          </Modal>
+        </div>
       </div>
     );
   }

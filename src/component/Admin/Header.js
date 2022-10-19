@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import dashboard from "./../../assets/Images/dashboard.png";
 import merchant from "./../../assets/Images/merchant.png";
 import user from "./../../assets/Images/user.png";
-import Bluser from "./../../assets/Images/BlUser.png";
+import Bluser from "./../../assets/Images/Bluser.png";
 import setting from "./../../assets/Images/setting.png";
 import notification from "./../../assets/Images/notification.png";
 import profile from "./../../assets/Images/profile.jpg";

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import CSV from "./../../../../assets/Images/csv.png";
+import CSV from "./../../../../assets/Images/smallicons/Exportcsv.png";
 import { Table, Popover, Select, Spin } from "antd";
 import InfoIcon from "./../../../../assets/Images/Infoblue.png";
-import RedDelete from "./../../../../assets/Images/delete.png";
+import RedDelete from "./../../../../assets/Images/smallicons/redDelete.png";
 import BlueEdit from "./../../../../assets/Images/editt.png";
 import Modal from "react-responsive-modal";
 import CloseIcon from "./../../../../assets/Images/CloseWhBold.png";
@@ -12,6 +12,7 @@ import { authHeader } from "../../helpers/splitAuthHeader";
 import { NotificationManager } from "react-notifications";
 import { CSVLink } from "react-csv";
 import Down from "./../../../../assets/Images/download.png";
+import BackBtn from "./BackBtn";
 
 class splitRolesPermission extends Component {
   constructor(props) {
@@ -581,6 +582,8 @@ class splitRolesPermission extends Component {
     ];
 
     return (
+      <div>
+        <BackBtn />
       <div className="roles">
         <h3 className="Usermana">Roles & Permissions</h3>
         <div className="exfilter">
@@ -598,7 +601,7 @@ class splitRolesPermission extends Component {
             <img src={CSV} alt="Export" />
             Export to CSV
           </CSVLink>
-          <label className="add" onClick={this.handleaddRoleOpen.bind(this)}>
+          <label className="add add_new_btn" onClick={this.handleaddRoleOpen.bind(this)}>
             Add New
           </label>
         </div>
@@ -914,6 +917,8 @@ class splitRolesPermission extends Component {
           </div>
         </Modal>
       </div>
+      </div>
+
     );
   }
 }

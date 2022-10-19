@@ -397,7 +397,8 @@ class splitUserDashboard extends Component {
               </NavLink>
             </ul>
           </div>
-
+          <div className="transaction_details">
+          <h3 className="dash">Dashboard</h3>
           <div className="row card_row">
             <div className="col-12 col-sm-6 col-md-6 col-lg-3 hover_card">
               <NavLink to="/onePayUser/userTransaction">
@@ -594,6 +595,7 @@ class splitUserDashboard extends Component {
               </div>
             </div>
           </Modal>
+          </div>
         </div>
       </div>
     );

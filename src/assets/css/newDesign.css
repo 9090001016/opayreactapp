@@ -995,21 +995,58 @@ font-size: 16px;
 }
 .dash_link .header-left {
     background-color: #e5e5e5;
-    width: 50vw;
+    width: 45vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    height: 8vh;
+    height: 6vh;
     
 }
+
 .dash_link .header-left a{
-    width: 16vw;
+    width: 15vw;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    height: 8vh;
+    height: 6vh;
+}
+
+.setting_dashboard .dash_link .header-left{
+    background-color: #e5e5e5;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+
+.setting_dashboard .dash_link .header-left a{
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+
+.setting_dashboard .dash_link .header-left li:nth-child(1) a{
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+.setting_dashboard .dash_link .header-left li:nth-child(4) a{
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
 }
 /* .dash_link .header-left a:nth-child(1){
     margin-left: -10px;
@@ -1108,6 +1145,7 @@ font-size: 25px;
   }
   .card_para{
     margin-top: 3rem;
+    
   }
   .card_btn{
     display: flex;
@@ -1117,6 +1155,31 @@ font-size: 25px;
   .transaction_details{
     margin-top: 2rem;
   }
+  .transaction_details1{
+    margin-top: 3rem;
+  }
+  .card_new{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .blue_back_btn{
+    margin: 3vh 0vw 0vh 2.5vw;
+    cursor: pointer;
+    display: flex;
+  }
+  .blue_back_btn p{
+    color: #101D40;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .add_new_btn{
+    background-color: #4075FF;
+    color: #fff!important;
+  }
+  
   
 
 

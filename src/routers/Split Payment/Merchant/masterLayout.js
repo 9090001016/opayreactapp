@@ -8,7 +8,7 @@ export default class masterLayout extends Component {
     return (
       <Aux>
         <Header />
-        <div className="main-content" style={{ backgroundColor: "#f5f8f9" }}>
+        <div className="main-content">
           {children}
         </div>
       </Aux>

@@ -860,6 +860,7 @@ class SplitPaymentCardDetail extends Component {
           </div>
           
           {/* Add Role */}
+          <div className='card_new'>
           <Modal
             open={this.state.addCard}
             onClose={this.handleaddCardClose.bind(this)}
@@ -954,6 +955,7 @@ class SplitPaymentCardDetail extends Component {
               </div>
             </form>
           </Modal>
+          </div>
           {/* Edit Role */}
 
           <Modal
@@ -1041,7 +1043,7 @@ class SplitPaymentCardDetail extends Component {
             </div>
           </Modal>
           {/* addd neww */}
-          <div className="">
+          <div className="card_new">
             <Modal
               open={this.state.newAddCard}
               onClose={this.handlenewAddCardClose.bind(this)}

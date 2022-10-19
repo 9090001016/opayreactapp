@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import CSV from "./../../../../assets/Images/csv.png";
+import CSV from "./../../../../assets/Images/smallicons/Exportcsv.png";
 import BlueEdit from "./../../../../assets/Images/editt.png";
-import RedDelete from "./../../../../assets/Images/delete.png";
+import RedDelete from "./../../../../assets/Images/smallicons/redDelete.png";
 import CloseIcon from "./../../../../assets/Images/CloseWhBold.png";
 import { Table, Popover, Spin } from "antd";
 import Modal from "react-responsive-modal";
@@ -12,6 +12,9 @@ import { CSVLink } from "react-csv";
 import Down from "./../../../../assets/Images/download.png";
 import InfoIcon from "./../../../../assets/Images/Infoblue.png";
 import { NotificationManager } from "react-notifications";
+
+import blue_back from "./../../../../assets/Images/smallicons/blueBack.png"
+import BackBtn from "./BackBtn";
 
 class splitPaymentManagement extends Component {
   constructor(props) {
@@ -56,7 +59,7 @@ class splitPaymentManagement extends Component {
   }
 
   handleEditSplitOpen(splitPaymentId) {
-    
+
     let self = this;
     self.hide(
       this,
@@ -82,7 +85,7 @@ class splitPaymentManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -140,7 +143,7 @@ class splitPaymentManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -185,7 +188,7 @@ class splitPaymentManagement extends Component {
   }
 
   handleGetSplitPaymentCSV(search, pagination, sorter) {
-    
+
     let self = this;
     var splitPaymentCSVData = [];
     var paging = pagination !== undefined ? pagination : this.state.pagination;
@@ -202,13 +205,13 @@ class splitPaymentManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
           if (data.length !== 0) {
             data.map((item, i) =>
-            splitPaymentCSVData.push({
+              splitPaymentCSVData.push({
                 splitPaymentId: item.splitPaymentId,
                 paymentInterval: item.paymentInterval,
                 orderFromValue: item.orderFromValue,
@@ -265,7 +268,7 @@ class splitPaymentManagement extends Component {
   }
 
   handleSplitPaymentSubmit() {
-    
+
     let self = this;
 
     const { paymentInterval, orderFrom, orderTo } = this.state;
@@ -292,7 +295,7 @@ class splitPaymentManagement extends Component {
         },
       })
         .then(function (res) {
-          
+
           let status = res.data.message;
           let data = res.data.responseData;
           if (status === "Success") {
@@ -318,7 +321,7 @@ class splitPaymentManagement extends Component {
         .catch((data) => {
           console.log(data);
         });
-    } else{
+    } else {
       NotificationManager.error("Order from should be less than order to.")
     }
   }
@@ -335,7 +338,7 @@ class splitPaymentManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         if (status === "Success") {
           NotificationManager.success("Record Deleted Successfully.");
@@ -383,6 +386,7 @@ class splitPaymentManagement extends Component {
     //     "block";
     // }
   }
+ 
 
   render() {
     const headers = [
@@ -504,286 +508,288 @@ class splitPaymentManagement extends Component {
     ];
 
     return (
-      <div className="splitpayment">
-        <h3 className="Usermana">Split Payment Management</h3>
-        <div className="exfilter">
-          <input
-            type="text"
-            placeholder="Search Anything"
-            onChange={this.handleSplitPaymentSearch.bind(this)}
-          />
-          <CSVLink
-            data={this.state.splitPaymentCSVData}
-            headers={headers}
-            filename={"Split Payment.csv"}
-            className="csv"
-          >
-            <img src={CSV} alt="Export" />
-            Export to CSV
-          </CSVLink>
-          <label className="add" onClick={this.handleAddSplitOpen.bind(this)}>
-            Add New
-          </label>
-        </div>
-        <div className="splitpaymenttable">
-          <Spin spinning={this.state.loading}>
-            <Table
-              columns={columns}
-              expandedRowRender={(row) => {
-                return (
-                  <React.Fragment>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Payment Interval:</label>
-                          <label className="expandemailtext">{row.paymentInterval}</label>
+      <div>
+        <BackBtn />
+        <div className="splitpayment">
+          <h3 className="Usermana">Split Payment Management</h3>
+          <div className="exfilter">
+            <input
+              type="text"
+              placeholder="Search Anything"
+              onChange={this.handleSplitPaymentSearch.bind(this)}
+            />
+            <CSVLink
+              data={this.state.splitPaymentCSVData}
+              headers={headers}
+              filename={"Split Payment.csv"}
+              className="csv"
+            >
+              <img src={CSV} alt="Export" />
+              Export to CSV
+            </CSVLink>
+            <label className="add" onClick={this.handleAddSplitOpen.bind(this)}>
+              Add New
+            </label>
+          </div>
+          <div className="splitpaymenttable">
+            <Spin spinning={this.state.loading}>
+              <Table
+                columns={columns}
+                expandedRowRender={(row) => {
+                  return (
+                    <React.Fragment>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Payment Interval:</label>
+                            <label className="expandemailtext">{row.paymentInterval}</label>
+                          </div>
                         </div>
-                      </div>
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Order Value:</label>
-                          <label className="expandemailtext">{row.ordervalue}</label>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Created By:</label>
-                          <div className="amazontext">
-                            <label className="expandemailtext">
-                              {row.createBy}
-                            </label>
-                            <Popover
-                              content={
-                                <div className="userpopover">
-                                  <div className="subsc">
-                                    <label>Created By</label>
-                                    <label>{row.createBy}</label>
-                                  </div>
-                                  <div className="subsc">
-                                    <label>Created On</label>
-                                    <label>{row.createDate}</label>
-                                  </div>
-                                  <div className="subsc">
-                                    <label>Modified By</label>
-                                    <label>{row.updateBy}</label>
-                                  </div>
-                                  <div className="subsc">
-                                    <label>Modified On</label>
-                                    <label>{row.updateDate}</label>
-                                  </div>
-                                </div>
-                              }
-                              placement="bottom"
-                              trigger="click"
-                            >
-                              <img src={InfoIcon} alt="InfoIcon" />
-                            </Popover>
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Order Value:</label>
+                            <label className="expandemailtext">{row.ordervalue}</label>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Status:</label>
-                          <label className="expandemailtext">
-                            {row.isActive ? "Active" : "Inactive"}
-                          </label>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Created By:</label>
+                            <div className="amazontext">
+                              <label className="expandemailtext">
+                                {row.createBy}
+                              </label>
+                              <Popover
+                                content={
+                                  <div className="userpopover">
+                                    <div className="subsc">
+                                      <label>Created By</label>
+                                      <label>{row.createBy}</label>
+                                    </div>
+                                    <div className="subsc">
+                                      <label>Created On</label>
+                                      <label>{row.createDate}</label>
+                                    </div>
+                                    <div className="subsc">
+                                      <label>Modified By</label>
+                                      <label>{row.updateBy}</label>
+                                    </div>
+                                    <div className="subsc">
+                                      <label>Modified On</label>
+                                      <label>{row.updateDate}</label>
+                                    </div>
+                                  </div>
+                                }
+                                placement="bottom"
+                                trigger="click"
+                              >
+                                <img src={InfoIcon} alt="InfoIcon" />
+                              </Popover>
+                            </div>
+                          </div>
                         </div>
                       </div>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Status:</label>
+                            <label className="expandemailtext">
+                              {row.isActive ? "Active" : "Inactive"}
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </React.Fragment>
+                  );
+                }}
+                expandIcon={({ expanded, onExpand, record }) =>
+                  expanded ? (
+                    <div className="expandown1">
+                      <img src={Down} onClick={e => onExpand(record, e)} />
                     </div>
-                  </React.Fragment>
-                );
-              }}
-              expandIcon={({ expanded, onExpand, record }) =>
-                expanded ? (
-                  <div className="expandown1">
-                    <img src={Down} onClick={e => onExpand(record, e)} />
-                  </div>
-                ) : (
+                  ) : (
                     <div className="expandown">
                       <img src={Down} onClick={e => onExpand(record, e)} />
                     </div>
                   )}
-              expandIconColumnIndex={this.state.mobileView ? 5 : -1}
-              expandIconAsCell={false}
-              dataSource={this.state.splitPaymentData}
-              pagination={{
-                current: this.state.pagination.current,
-                pageSize: this.state.pagination.pageSize,
-                total: this.state.pagination.total,
-                position: ["bottomCenter"],
-                showSizeChanger: true
-              }}
-              onChange={this.onShowSizeChange}
-            />
-          </Spin>
-        </div>
-        {/* Edit Modal */}
-        <Modal
-          open={this.state.editSplit}
-          onClose={this.handleEditSplitClose.bind(this)}
-          modalId="EditUserSplitModal"
-          overlayId="overlay"
-        >
-          <div className="backtext">
-            <h3 className="eduser">Edit Split Payment</h3>
-            <img
-              src={CloseIcon}
-              alt="CloseIcon"
-              className="closeicon"
-              onClick={this.handleEditSplitClose.bind(this)}
-            />
+                expandIconColumnIndex={this.state.mobileView ? 5 : -1}
+                expandIconAsCell={false}
+                dataSource={this.state.splitPaymentData}
+                pagination={{
+                  current: this.state.pagination.current,
+                  pageSize: this.state.pagination.pageSize,
+                  total: this.state.pagination.total,
+                  position: ["bottomCenter"],
+                  showSizeChanger: true
+                }}
+                onChange={this.onShowSizeChange}
+              />
+            </Spin>
           </div>
-          <div className="edituser">
-            <div className="row">
-              <div className="col-12 col-md-6 split">
-              <div class="marginbot">
-                <label>Payment Interval *</label>
-                <input
-                  type="text"
-                  placeholder="Duration"
-                  name="paymentInterval"
-                  value={this.state.paymentInterval}
-                  onChange={this.handleOnChangeNumber.bind(this)}
-                />
-                <select
-                  name="duration"
-                  value={this.state.duration}
-                  onChange={this.handleOnChange.bind(this)}
-                >
-                  <option value="W">Week</option>
-                  <option value="M">Month</option>
-                  <option value="D">Days</option>
-                  {/* <option value="Y">Year</option> */}
-                </select>
-                {this.state.paymentInterval.length === 0 &&
-                  this.state.touched && (
-                    <span className="Error">Required.</span>
-                  )}
+          {/* Edit Modal */}
+          <Modal
+            open={this.state.editSplit}
+            onClose={this.handleEditSplitClose.bind(this)}
+            modalId="EditUserSplitModal"
+            overlayId="overlay"
+          >
+            <div className="backtext">
+              <h3 className="eduser">Edit Split Payment</h3>
+              <img
+                src={CloseIcon}
+                alt="CloseIcon"
+                className="closeicon"
+                onClick={this.handleEditSplitClose.bind(this)}
+              />
+            </div>
+            <div className="edituser">
+              <div className="row">
+                <div className="col-12 col-md-6 split">
+                  <div class="marginbot">
+                    <label>Payment Interval *</label>
+                    <input
+                      type="text"
+                      placeholder="Duration"
+                      name="paymentInterval"
+                      value={this.state.paymentInterval}
+                      onChange={this.handleOnChangeNumber.bind(this)}
+                    />
+                    <select
+                      name="duration"
+                      value={this.state.duration}
+                      onChange={this.handleOnChange.bind(this)}
+                    >
+                      <option value="W">Week</option>
+                      <option value="M">Month</option>
+                      <option value="D">Days</option>
+                      {/* <option value="Y">Year</option> */}
+                    </select>
+                    {this.state.paymentInterval.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
                   </div>
-              </div>
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-                <label>Order From (AU$) *</label>
-                <input
-                  type="text"
-                  placeholder="Order From"
-                  name="orderFrom"
-                  value={this.state.orderFrom}
-                  onChange={this.handleOnChangeNumber.bind(this)}
-                />
-                {this.state.orderFrom.length === 0 && this.state.touched && (
-                  <span className="Error">Required.</span>
-                )}
                 </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-              <label>Order To (AU$) *</label>
-                <input
-                  type="text"
-                  placeholder="Order To"
-                  name="orderTo"
-                  value={this.state.orderTo}
-                  onChange={this.handleOnChangeNumber.bind(this)}
-                />
-                {this.state.orderTo.length === 0 && this.state.touched && (
-                  <span className="Error">Required.</span>
-                )}
-                </div>
-              </div>
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-                <label>Status</label>
-                <label className="switch">
-                  <input
-                    type="checkbox"
-                    checked={this.state.status}
-                    onClick={() =>
-                      this.setState({ status: !this.state.status })
-                    }
-                  />
-                  <span className="slider round"></span>
-                </label>
-                </div>
-              </div>
-            </div>
-            <div className="Editbtn">
-              <button
-                className="btn"
-                onClick={this.handleSplitPaymentSubmit.bind(this)}
-              >
-                Edit
-              </button>
-            </div>
-          </div>
-        </Modal>
-        {/* Add Modal */}
-        <Modal
-          open={this.state.addSplit}
-          onClose={this.handleAddSplitClose.bind(this)}
-          modalId="EditUserSplitModal"
-          overlayId="overlay"
-        >
-          <div className="backtext">
-            <h3 className="eduser">Add Split Payment</h3>
-            <img
-              src={CloseIcon}
-              alt="CloseIcon"
-              className="closeicon"
-              onClick={this.handleAddSplitClose.bind(this)}
-            />
-          </div>
-          <div className="edituser">
-            <div className="row">
-              <div className="col-12 col-md-6 split">
-              <div class="marginbot">
-                <label>Payment Interval *</label>
-                <input
-                  type="text"
-                  placeholder="Duration"
-                  name="paymentInterval"
-                  value={this.state.paymentInterval}
-                  onChange={this.handleOnChangeNumber.bind(this)}
-                />
-
-                <select
-                  name="duration"
-                  value={this.state.duration}
-                  onChange={this.handleOnChange.bind(this)}
-                >
-                  <option value="W">Week</option>
-                  <option value="M">Month</option>
-                  <option value="D">Days</option>
-                  {/* <option value="Y">Year</option> */}
-                </select>
-                {this.state.paymentInterval.length === 0 &&
-                  this.state.touched && (
-                    <span className="Error">Required.</span>
-                  )}
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Order From (AU$) *</label>
+                    <input
+                      type="text"
+                      placeholder="Order From"
+                      name="orderFrom"
+                      value={this.state.orderFrom}
+                      onChange={this.handleOnChangeNumber.bind(this)}
+                    />
+                    {this.state.orderFrom.length === 0 && this.state.touched && (
+                      <span className="Error">Required.</span>
+                    )}
                   </div>
+                </div>
               </div>
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-                <label>Order From (AU$) *</label>
-                <input
-                  type="text"
-                  placeholder="Order From"
-                  name="orderFrom"
-                  value={this.state.orderFrom}
-                  onChange={this.handleOnChangeNumber.bind(this)}
-                />
-                {this.state.orderFrom.length === 0 && this.state.touched && (
-                  <span className="Error">Required.</span>
-                )}
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Order To (AU$) *</label>
+                    <input
+                      type="text"
+                      placeholder="Order To"
+                      name="orderTo"
+                      value={this.state.orderTo}
+                      onChange={this.handleOnChangeNumber.bind(this)}
+                    />
+                    {this.state.orderTo.length === 0 && this.state.touched && (
+                      <span className="Error">Required.</span>
+                    )}
+                  </div>
+                </div>
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Status</label>
+                    <label className="switch">
+                      <input
+                        type="checkbox"
+                        checked={this.state.status}
+                        onClick={() =>
+                          this.setState({ status: !this.state.status })
+                        }
+                      />
+                      <span className="slider round"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div className="Editbtn">
+                <button
+                  className="btn"
+                  onClick={this.handleSplitPaymentSubmit.bind(this)}
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
+          </Modal>
+          {/* Add Modal */}
+          <Modal
+            open={this.state.addSplit}
+            onClose={this.handleAddSplitClose.bind(this)}
+            modalId="EditUserSplitModal"
+            overlayId="overlay"
+          >
+            <div className="backtext">
+              <h3 className="eduser">Add Split Payment</h3>
+              <img
+                src={CloseIcon}
+                alt="CloseIcon"
+                className="closeicon"
+                onClick={this.handleAddSplitClose.bind(this)}
+              />
+            </div>
+            <div className="edituser">
+              <div className="row">
+                <div className="col-12 col-md-6 split">
+                  <div class="marginbot">
+                    <label>Payment Interval *</label>
+                    <input
+                      type="text"
+                      placeholder="Duration"
+                      name="paymentInterval"
+                      value={this.state.paymentInterval}
+                      onChange={this.handleOnChangeNumber.bind(this)}
+                    />
 
-               
-                {/* <select
+                    <select
+                      name="duration"
+                      value={this.state.duration}
+                      onChange={this.handleOnChange.bind(this)}
+                    >
+                      <option value="W">Week</option>
+                      <option value="M">Month</option>
+                      <option value="D">Days</option>
+                      {/* <option value="Y">Year</option> */}
+                    </select>
+                    {this.state.paymentInterval.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
+                  </div>
+                </div>
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Order From (AU$) *</label>
+                    <input
+                      type="text"
+                      placeholder="Order From"
+                      name="orderFrom"
+                      value={this.state.orderFrom}
+                      onChange={this.handleOnChangeNumber.bind(this)}
+                    />
+                    {this.state.orderFrom.length === 0 && this.state.touched && (
+                      <span className="Error">Required.</span>
+                    )}
+
+
+                    {/* <select
                                 name="orderValue"
                                 value={this.state.orderValue}
                                 onChange={this.handleOnChange.bind(this)}
@@ -792,51 +798,52 @@ class splitPaymentManagement extends Component {
                                     <option value="500-750">500 - 750</option>
                                     <option value="750-1000">750 - 1000</option>
                                 </select> */}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-              <label>Order To (AU$) *</label>
-                <input
-                  type="text"
-                  placeholder="Order To"
-                  name="orderTo"
-                  value={this.state.orderTo}
-                  onChange={this.handleOnChangeNumber.bind(this)}
-                />
-                {this.state.orderTo.length === 0 && this.state.touched && (
-                  <span className="Error">Required.</span>
-                )}
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Order To (AU$) *</label>
+                    <input
+                      type="text"
+                      placeholder="Order To"
+                      name="orderTo"
+                      value={this.state.orderTo}
+                      onChange={this.handleOnChangeNumber.bind(this)}
+                    />
+                    {this.state.orderTo.length === 0 && this.state.touched && (
+                      <span className="Error">Required.</span>
+                    )}
+                  </div>
+                </div>
+                <div className="col-12 col-md-6">
+                  <div class="marginbot">
+                    <label>Status</label>
+                    <label className="switch">
+                      <input
+                        type="checkbox"
+                        checked={this.state.status}
+                        onClick={() =>
+                          this.setState({ status: !this.state.status })
+                        }
+                      />
+                      <span className="slider round"></span>
+                    </label>
+                  </div>
                 </div>
               </div>
-              <div className="col-12 col-md-6">
-              <div class="marginbot">
-                <label>Status</label>
-                <label className="switch">
-                  <input
-                    type="checkbox"
-                    checked={this.state.status}
-                    onClick={() =>
-                      this.setState({ status: !this.state.status })
-                    }
-                  />
-                  <span className="slider round"></span>
-                </label>
-                </div>
+              <div className="Editbtn">
+                <button
+                  className="btn"
+                  onClick={this.handleSplitPaymentSubmit.bind(this)}
+                >
+                  Add
+                </button>
               </div>
             </div>
-            <div className="Editbtn">
-              <button
-                className="btn"
-                onClick={this.handleSplitPaymentSubmit.bind(this)}
-              >
-                Add
-              </button>
-            </div>
-          </div>
-        </Modal>
+          </Modal>
+        </div>
       </div>
     );
   }
