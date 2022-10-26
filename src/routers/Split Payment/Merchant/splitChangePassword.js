@@ -8,11 +8,12 @@ import {
 } from "react-notifications";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
-import lock from "./../../../assets/Images/lock.png";
+import lock from "./../../../assets/Images/smallicons/password.png";
 import { encryption } from "../../../helpers/Encryption";
-import eye from "./../../../assets/Images/eye.png";
-import hidepassword from "./../../../assets/Images/hidepassword.png";
-import OnePayLogo from "./../../../assets/Images/OnePay-logo.png";
+import eye from "./../../../assets/Images/smallicons/password-eye-2.png";
+import hidepassword from "./../../../assets/Images/smallicons/eye_hidden.png";
+import OnePayLogo from "./../../../assets/Images/smallicons/main_logo.png";
+import { NavLink } from "react-router-dom";
 
 class splitChangePassword extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class splitChangePassword extends Component {
   }
 
   componentDidMount() {
-    
+
     const cameFrom = this.props.location.state.cameFrom;
     this.setState({
       cameFrom,
@@ -41,7 +42,7 @@ class splitChangePassword extends Component {
 
   handleChangePassword = (e) => {
     e.preventDefault();
-    
+
     if (
       this.state.oldPassword &&
       this.state.newPassword &&
@@ -85,7 +86,7 @@ class splitChangePassword extends Component {
         data: json,
       })
         .then(function (res) {
-          
+
           let msg = res.data.message;
           self.setState({
             loading: false,
@@ -96,10 +97,10 @@ class splitChangePassword extends Component {
               "",
               1500
             );
-              setTimeout(() => {
-                self.props.history.push("/onePayMerchant/merchantProfile");
-              }, 1600);
-            
+            setTimeout(() => {
+              self.props.history.push("/onePayMerchant/merchantProfile");
+            }, 1600);
+
           } else if (msg === "Record Not Found") {
             NotificationManager.error("Invalid Current Password");
           } else {
@@ -119,7 +120,7 @@ class splitChangePassword extends Component {
 
   /// handle input onchange
   handleInputOnchange = (e) => {
-    
+
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -142,7 +143,7 @@ class splitChangePassword extends Component {
       <div className="outer-sign-in">
         <NotificationContainer />
         <div className="text-center w-100">
-        <img src={OnePayLogo} className="onepay__logo"/>
+          <img src={OnePayLogo} className="onepay__logo" />
           <div className="sign-in-card">
             <label className="sign-in">Change Password</label>
             <form
@@ -150,9 +151,9 @@ class splitChangePassword extends Component {
               onSubmit={this.handleChangePassword}
             >
               <div className="input-cntr">
-              <div className="input-icons">
+                <div className="input-icons">
                   <img src={lock} alt="icon missing" />
-              </div>
+                </div>
                 <input
                   type={this.state.isRevealOldPassword ? "text" : "password"}
                   placeholder="Old Password"
@@ -166,18 +167,18 @@ class splitChangePassword extends Component {
                   {this.state.isRevealOldPassword ? (
                     <img src={eye} alt="icon missing" />
                   ) : (
-                      // <i
-                      //   class="fa fa-eye-slash icon-eye-slash"
-                      //   aria-hidden="true"
-                      // ></i>
-                      <img src={hidepassword} alt="icon missing" />
-                    )}
+                    // <i
+                    //   class="fa fa-eye-slash icon-eye-slash"
+                    //   aria-hidden="true"
+                    // ></i>
+                    <img src={hidepassword} alt="icon missing" />
+                  )}
                 </div>
               </div>
               <div className="input-cntr">
-              <div className="input-icons">
+                <div className="input-icons">
                   <img src={lock} alt="icon missing" />
-              </div>
+                </div>
                 <input
                   type={this.state.isRevealNewPassword ? "text" : "password"}
                   placeholder="New Password"
@@ -191,18 +192,18 @@ class splitChangePassword extends Component {
                   {this.state.isRevealNewPassword ? (
                     <img src={eye} alt="icon missing" />
                   ) : (
-                      // <i
-                      //   class="fa fa-eye-slash icon-eye-slash"
-                      //   aria-hidden="true"
-                      // ></i>
-                      <img src={hidepassword} alt="icon missing" />
-                    )}
+                    // <i
+                    //   class="fa fa-eye-slash icon-eye-slash"
+                    //   aria-hidden="true"
+                    // ></i>
+                    <img src={hidepassword} alt="icon missing" />
+                  )}
                 </div>
               </div>
               <div className="input-cntr">
-              <div className="input-icons">
+                <div className="input-icons">
                   <img src={lock} alt="icon missing" />
-              </div>
+                </div>
                 <input
                   type={this.state.isRevealPassword ? "text" : "password"}
                   placeholder="Confirm Password"
@@ -216,12 +217,12 @@ class splitChangePassword extends Component {
                   {this.state.isRevealPassword ? (
                     <img src={eye} alt="icon missing" />
                   ) : (
-                      // <i
-                      //   class="fa fa-eye-slash icon-eye-slash"
-                      //   aria-hidden="true"
-                      // ></i>
-                      <img src={hidepassword} alt="icon missing" />
-                    )}
+                    // <i
+                    //   class="fa fa-eye-slash icon-eye-slash"
+                    //   aria-hidden="true"
+                    // ></i>
+                    <img src={hidepassword} alt="icon missing" />
+                  )}
                 </div>
               </div>
               <button
@@ -239,6 +240,11 @@ class splitChangePassword extends Component {
                 )}
                 Change Password
               </button>
+              <div className="back_pwd">
+                <NavLink to="/onePayMerchant/merchantProfile">
+                  Back
+                </NavLink>
+              </div>
             </form>
           </div>
         </div>

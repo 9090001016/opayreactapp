@@ -462,7 +462,6 @@ class splitUserDashboard extends Component {
                 </div>
                 <div className="card_value4">
                   <label>{this.state.totalAmountTransaction}</label>
-
                 </div>
               </NavLink>
             </div>
