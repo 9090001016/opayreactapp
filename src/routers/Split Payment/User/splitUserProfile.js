@@ -190,7 +190,7 @@ class splitUserProfile extends Component {
 handleRemoveProfile = () => {
   this.setState({
     userPic: "",
-
+    newUserPic: ""
   });
 };
 

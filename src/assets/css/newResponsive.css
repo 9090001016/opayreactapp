@@ -586,6 +586,9 @@
     }
 }
 @media(max-width:768px){
+    .merPlanPayment .planpaymcard{
+        margin-top: 3rem;
+    }
    
     .white_bg {
         margin-top: 0rem;
@@ -744,6 +747,20 @@
     }
 }
 @media (max-width:600px){
+    .merPlanPayment .planpaymcard{
+        margin-top: 3rem;
+    }
+    .blue_back_btn {
+       display: none;
+    }
+    .planinput .paybtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35%;
+        height: 5vh;
+        background-color: #101D40;
+      }
     .admin_dashboard .dash_link .header-left{
         width: 100vw;
     }

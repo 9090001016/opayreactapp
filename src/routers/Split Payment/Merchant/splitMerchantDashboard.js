@@ -299,9 +299,9 @@ class splitMerchantDashboard extends Component {
                   return (
                     <li>
                       <NavLink to="/onePayMerchant/dashboard">
-                        <div className="header-icons">
+                        {/* <div className="header-icons">
                           <img src={dashboard} alt="icon missing" />
-                        </div>
+                        </div> */}
                         <span className="ml-2">Dashboard</span>
                       </NavLink>
                     </li>
@@ -313,9 +313,9 @@ class splitMerchantDashboard extends Component {
                   return (
                     <li>
                       <NavLink to="/onePayMerchant/transaction-history">
-                        <div className="header-icons">
+                        {/* <div className="header-icons">
                           <img src={user} alt="icon missing" />
-                        </div>
+                        </div> */}
                         <span className="ml-2">Transaction History</span>
                       </NavLink>
                     </li>
@@ -335,9 +335,9 @@ class splitMerchantDashboard extends Component {
                   return (
                     <li>
                       <NavLink to="/onePayMerchant/merchantSubscription">
-                        <div className="header-icons">
+                        {/* <div className="header-icons">
                           <img src={merchant} alt="icon missing" />
-                        </div>
+                        </div> */}
                         <span className="ml-2">Subscription</span>
                       </NavLink>
                     </li>
@@ -346,57 +346,72 @@ class splitMerchantDashboard extends Component {
               })()}
             </ul>
           </div>
-          <h3 className="dash">Dashboard</h3>
+          <div className="mer_transaction_details">
+            <h3 className="dash">Dashboard</h3>
+          </div>
           <div className="row mt-4">
-            <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 hover_card">
               <NavLink to="/onePayMerchant/transaction-history">
-                <div className="card back1">
+                <div className="card bac1">
                   <div className="image">
                     <img src={salesuseonepay} alt="Card1" />
                   </div>
                   <div className="text">
                     <label>Daily Sales Using One Pay (AU$)</label>
-                    <label>{this.state.dailySales}</label>
+
                   </div>
+                </div>
+                <div className="card_value1">
+                  <label>{this.state.dailySales}</label>
                 </div>
               </NavLink>
             </div>
-            <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 hover_card">
               <NavLink to="/onePayMerchant/transaction-history">
-                <div className="card back2">
+                <div className="card bac2">
                   <div className="image">
                     <img src={sales} alt="Card1" />
                   </div>
                   <div className="text">
                     <label>Current Month Sales (AU$)</label>
-                    <label>{this.state.currentMonthSales}</label>
+
                   </div>
                 </div>
+                <div className="card_value2">
+                  <label>{this.state.currentMonthSales}</label>
+                </div>
+
               </NavLink>
             </div>
-            <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 hover_card">
               <NavLink to="/onePayMerchant/transaction-history">
-                <div className="card back3">
+                <div className="card bac3">
                   <div className="image">
                     <img src={TotalUsers} alt="Card1" />
                   </div>
                   <div className="text">
                     <label>Number of Customers Count</label>
-                    <label>{this.state.numberofUsersCount}</label>
+
                   </div>
+                </div>
+                <div className="card_value3">
+                  <label>{this.state.numberofUsersCount}</label>
+
                 </div>
               </NavLink>
             </div>
-            <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+            <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 hover_card">
               <NavLink to="/onePayMerchant/transaction-history">
-                <div className="card back4">
+                <div className="card bac4">
                   <div className="image">
                     <img src={moneytransfer} alt="Card1" />
                   </div>
                   <div className="text">
                     <label>Total Orders Using One Pay</label>
-                    <label>{this.state.totalOrder}</label>
                   </div>
+                </div>
+                <div className="card_value4">
+                  <label>{this.state.totalOrder}</label>
                 </div>
               </NavLink>
             </div>

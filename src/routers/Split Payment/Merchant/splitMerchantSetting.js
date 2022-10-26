@@ -4,14 +4,14 @@ import RolesPermission from "./../../../assets/Images/Roles-and-Premissions.png"
 import InstantPayUser from "./../../../assets/Images/Instant-Pay-User-Management.png";
 
 class splitMerchantSetting extends Component {
-    render() {
-        return (
-            <div className="adminsetting">
-        <h3 className="Usermana">Merchant Settings</h3>
+  render() {
+    return (
+      <div className="adminsetting">
+        <h3 className="Usermana merchant_menu">Merchant Settings</h3>
         <div className="setting">
           <div className="row mt-4">
             {/* <div className="col-12 col-sm-6 col-md-6 col-lg-3"> */}
-              {/* <Link to="/onePayMerchant/rolespermission">
+            {/* <Link to="/onePayMerchant/rolespermission">
                 <div className="card">
                   <div className="totalmain">
                     <div className="total">
@@ -27,13 +27,13 @@ class splitMerchantSetting extends Component {
                 </div>
               </Link> */}
             {/* </div> */}
-            <div className="col-12 col-sm-6 col-md-6 col-lg-3">
+            <div className="col-12 col-sm-6 col-md-6 col-lg-4">
               <Link to="/onePayMerchant/merchantusermanagement">
                 <div className="card">
                   <div className="totalmain">
-                    <div className="total">
+                    {/* <div className="total">
                       <img src={InstantPayUser} className="Content" />
-                    </div>
+                    </div> */}
                     <label>Merchant User Management</label>
                   </div>
                   <p>
@@ -47,8 +47,8 @@ class splitMerchantSetting extends Component {
           </div>
         </div>
       </div>
-        )
-    }
+    )
+  }
 }
 
 export default splitMerchantSetting

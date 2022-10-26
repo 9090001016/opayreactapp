@@ -21,20 +21,24 @@ class splitMerchantProfile extends Component {
       userName: "",
       userMobileNo: "",
       userEmail: "",
-      country:"",
-      address1 : "",
-      address2 :"",
-      suburb:"",
-      state :"",
-      postCode:"",
+      country: "",
+      address1: "",
+      address2: "",
+      suburb: "",
+      state: "",
+      postCode: "",
       userPic: "",
       newUserPic: "",
+      src: false,
+      changePreview: false,
+      reloading: false,
       loading: false,
+      show: false,
       options: this.options,
       value: {
         value: "AU",
         label: "Australia"
-    },
+      },
     };
     this.handleUserInfo = this.handleUserInfo.bind(this);
     this.handleUpdateUserInfo = this.handleUpdateUserInfo.bind(this);
@@ -44,33 +48,36 @@ class splitMerchantProfile extends Component {
   componentDidMount() {
     this.handleUserInfo();
   }
+  componentDidUpdate(){
+    if(this.state.reloading){
+      this.handleUserInfo()
+    }
+  }
 
   handleUpdateUserInfo = () => {
-    
+
     if (this.state.userName) {
       var self = this;
-      var tempprofilePicture="";
-      if(this.state.userPic)
-      {
-        var s=this.state.userPic.split("/");
-        if(s.length>0)
-        {
-          tempprofilePicture=s[s.length-1]
-        }else{
-          tempprofilePicture = s[s.length-1];
+      var tempprofilePicture = "";
+      if (this.state.userPic) {
+        var s = this.state.userPic.split("/");
+        if (s.length > 0) {
+          tempprofilePicture = s[s.length - 1]
+        } else {
+          tempprofilePicture = s[s.length - 1];
         }
       }
       var json = {
         firstName: this.state.userName,
-        mobileNo : this.state.userMobileNo,
-        emailId : this.state.userEmail,
-        pincode : this.state.postCode,
-        address1 : this.state.address1,
-        address2 : this.state.address2,
-        state : this.state.state,
-        suburb : this.state.suburb,
-        country : this.state.country,
-        profilePicture : tempprofilePicture
+        mobileNo: this.state.userMobileNo,
+        emailId: this.state.userEmail,
+        pincode: this.state.postCode,
+        address1: this.state.address1,
+        address2: this.state.address2,
+        state: this.state.state,
+        suburb: this.state.suburb,
+        country: this.state.country,
+        profilePicture: tempprofilePicture
       };
       const formData = new FormData();
 
@@ -87,13 +94,14 @@ class splitMerchantProfile extends Component {
         data: formData,
       })
         .then(function (res) {
-          
+
           let msg = res.data.message;
           let userPic = res.data.responseData.profilePath;
           if (msg === "Success") {
             NotificationManager.success("Profile updated successfully.");
             self.setState({
               loading: false,
+              reloading:true
             });
             // if (userPic) {
             //   self.setState({
@@ -107,6 +115,7 @@ class splitMerchantProfile extends Component {
           console.log(data);
           self.setState({
             loading: false,
+            reloading: false
           });
         });
     } else {
@@ -117,6 +126,7 @@ class splitMerchantProfile extends Component {
   handleRemoveProfile = () => {
     this.setState({
       userPic: "",
+      newUserPic: ""
     });
   };
 
@@ -135,13 +145,13 @@ class splitMerchantProfile extends Component {
             userName: data.firstName,
             userMobileNo: data.mobileNo,
             userEmail: data.emailId,
-            country : data.country,
+            country: data.country,
             userPic: data.profilePicture,
-            postCode : data.pincode,
-            address1 : data.address1,
-            address2 : data.address2,
-            state : data.state,
-            suburb : data.suburb
+            postCode: data.pincode,
+            address1: data.address1,
+            address2: data.address2,
+            state: data.state,
+            suburb: data.suburb
           });
         }
       })
@@ -151,20 +161,25 @@ class splitMerchantProfile extends Component {
   };
 
   handleInputOnchange = (e) => {
-    
+
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
 
   fileUpload(e) {
-    
     var allFiles = [];
     var selectedFiles = e.target.files;
+    var changePreview = e.target.files[0];
+    var src = URL.createObjectURL(changePreview);
     allFiles.push(selectedFiles[0]);
-    this.setState({
-      newUserPic: allFiles,
-    });
+    if (this.state.userPic) {
+      this.setState({
+        newUserPic: allFiles,
+        src: src,
+        show: true
+      });
+    }
   }
 
   render() {
@@ -180,10 +195,16 @@ class splitMerchantProfile extends Component {
                     <img src={WhCloseIcon} alt="CloseIcon" />
                   </div>
                   <div className="profileimg">
-                    <img
-                      src={this.state.userPic ? this.state.userPic : Bluser}
-                      alt="UserImg"
-                    />
+                    {this.state.show ?
+                      <img src={this.state.src} alt="new_user_pic" />
+                      : this.state.userPic === "" ?
+                        <img src={Bluser} alt="avatar_img" />
+                        :
+                        <img
+                          src={this.state.userPic}
+                          alt="UserImg"
+                        />
+                    }
                   </div>
                   <input
                     type="file"
@@ -292,7 +313,7 @@ class splitMerchantProfile extends Component {
                     <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
                       <label>State</label>
 
-                      {this.state.country =="Australia" ? (
+                      {this.state.country == "Australia" ? (
                         <select
                           name="state"
                           value={this.state.state}

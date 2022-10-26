@@ -6,6 +6,7 @@ import { userAuthHeader } from "../../Split Payment/User/splitUserAuthHeader";
 import Modal from "react-responsive-modal";
 import CloseIcon from "./../../../assets/Images/CloseWhBold.png";
 import Down from "./../../../assets/Images/download.png";
+import BackBtn from './../Setting/Admin/BackBtn.js'
 
 class splitUserNotification extends Component {
   constructor(props) {
@@ -164,6 +165,7 @@ class splitUserNotification extends Component {
     ];
     return (
       <div>
+        <BackBtn />
         <div className="Notification">
           <h3 className="Usermana">Notification</h3>
           {/* <label className="add">Clear All</label> */}

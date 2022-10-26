@@ -149,9 +149,9 @@ export class splitMerchantSubscription extends Component {
                                     return (
                                         <li>
                                             <NavLink to="/onePayMerchant/dashboard">
-                                                <div className="header-icons">
+                                                {/* <div className="header-icons">
                                                     <img src={dashboard} alt="icon missing" />
-                                                </div>
+                                                </div> */}
                                                 <span className="ml-2">Dashboard</span>
                                             </NavLink>
                                         </li>
@@ -163,9 +163,9 @@ export class splitMerchantSubscription extends Component {
                                     return (
                                         <li>
                                             <NavLink to="/onePayMerchant/transaction-history">
-                                                <div className="header-icons">
+                                                {/* <div className="header-icons">
                                                     <img src={user} alt="icon missing" />
-                                                </div>
+                                                </div> */}
                                                 <span className="ml-2">Transaction History</span>
                                             </NavLink>
                                         </li>
@@ -185,9 +185,9 @@ export class splitMerchantSubscription extends Component {
                                     return (
                                         <li>
                                             <NavLink to="/onePayMerchant/merchantSubscription">
-                                                <div className="header-icons">
+                                                {/* <div className="header-icons">
                                                     <img src={merchant} alt="icon missing" />
-                                                </div>
+                                                </div> */}
                                                 <span className="ml-2">Subscription</span>
                                             </NavLink>
                                         </li>

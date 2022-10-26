@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Filter from "./../../../assets/Images/filter.png";
-import CSV from "./../../../assets/Images/csv.png";
+import Filter from "./../../../assets/Images/smallicons/Filteralt.png";
+import CSV from "./../../../assets/Images/smallicons/Exportcsv.png";
 import WhiteDropdown from "./../../../assets/Images/WhiteDropdown.png";
 import InfoIcon from "./../../../assets/Images/Infoblue.png";
 import { Table, Popover, DatePicker, Spin } from "antd";
@@ -507,9 +507,9 @@ class splitTransactionHistory extends Component {
                   return (
                     <li>
                       <NavLink to="/onePayMerchant/dashboard">
-                        <div className="header-icons">
+                        {/* <div className="header-icons">
                           <img src={dashboard} alt="icon missing" />
-                        </div>
+                        </div> */}
                         <span className="ml-2">Dashboard</span>
                       </NavLink>
                     </li>
@@ -521,9 +521,9 @@ class splitTransactionHistory extends Component {
                   return (
                     <li>
                       <NavLink to="/onePayMerchant/transaction-history">
-                        <div className="header-icons">
+                        {/* <div className="header-icons">
                           <img src={user} alt="icon missing" />
-                        </div>
+                        </div> */}
                         <span className="ml-2">Transaction History</span>
                       </NavLink>
                     </li>
@@ -543,9 +543,9 @@ class splitTransactionHistory extends Component {
                   return (
                     <li>
                       <NavLink to="/onePayMerchant/merchantSubscription">
-                        <div className="header-icons">
+                        {/* <div className="header-icons">
                           <img src={merchant} alt="icon missing" />
-                        </div>
+                        </div> */}
                         <span className="ml-2">Subscription</span>
                       </NavLink>
                     </li>
@@ -554,26 +554,28 @@ class splitTransactionHistory extends Component {
               })()}
             </ul>
           </div>
+          <div className="mer_transaction_details">
 
-          <h3 className="Usermana">Transaction History</h3>
-          <div className="exfilter">
-            <CSVLink
-              data={this.state.transactionCSVData}
-              headers={headers}
-              filename={"Transaction History.csv"}
-              className="csv"
-            >
-              <img src={CSV} alt="Export" />
-              Export to CSV
-            </CSVLink>
-            <label
-              className="filte"
-              onClick={this.handleFilterbuttonClick.bind(this)}
-            >
-              <img src={Filter} alt="Export" />
-              Filter
-              <img src={WhiteDropdown} alt="Dropdown" className="WhDrop" />
-            </label>
+            <h3 className="Usermana">Transaction History</h3>
+            <div className="exfilter">
+              <CSVLink
+                data={this.state.transactionCSVData}
+                headers={headers}
+                filename={"Transaction History.csv"}
+                className="csv"
+              >
+                <img src={CSV} alt="Export" />
+                Export to CSV
+              </CSVLink>
+              <label
+                className="filte"
+                onClick={this.handleFilterbuttonClick.bind(this)}
+              >
+                <img src={Filter} alt="Export" />
+                Filter
+                <img src={WhiteDropdown} alt="Dropdown" className="WhDrop" />
+              </label>
+            </div>
           </div>
           <label className="filt" onClick={this.showDrawerFilter.bind(this)}>
             <img src={Filter} alt="Export" />

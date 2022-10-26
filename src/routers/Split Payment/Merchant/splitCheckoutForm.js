@@ -1,6 +1,6 @@
 import React from "react";
 import { ElementsConsumer, CardElement, CardNumberElement, CardExpiryElement, CardCvcElement } from "@stripe/react-stripe-js";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Modal from "react-responsive-modal";
 import CloseIcon from "./../../../assets/Images/CloseWhBold.png";
 import leftarrow from "./../../../assets/Images/leftarrow.png";
@@ -9,6 +9,7 @@ import config from "./../../../helpers/config"
 import axios from "axios"
 import { merchantAuthHeader } from "../../Split Payment/Merchant/splitMerchantAuthHeader"
 import { NotificationManager } from "react-notifications";
+import BackBtn from './../Setting/Admin/BackBtn.js'
 
 
 const Field = ({
@@ -102,7 +103,7 @@ class SplitCheckoutForm extends React.Component {
     }
 
     handleGetSubsciptionPlan() {
-        
+
         let self = this;
         var subscriptionPlan = [];
         var subscriptionId = 0;
@@ -115,7 +116,7 @@ class SplitCheckoutForm extends React.Component {
                 let status = res.data.message;
                 let data = res.data.responseData;
                 if (status === "Success") {
-                    
+
                     // data.filter(subscriptionId => data.subscriptionId == self.state.subscriptionId)
                     data.map(item => {
                         if (item.subscriptionId === self.state.subscriptionId) {
@@ -143,7 +144,7 @@ class SplitCheckoutForm extends React.Component {
                 }
             })
             .catch(function (res) {
-                
+
                 // self.setState({
                 //     loading: false,
                 // });
@@ -152,7 +153,7 @@ class SplitCheckoutForm extends React.Component {
     }
 
     handleSubmit = async event => {
-        
+
         event.preventDefault();
 
         if (this.state.paymentGatewayType.length > 0) {
@@ -217,7 +218,7 @@ class SplitCheckoutForm extends React.Component {
     };
 
     handleSubmitSubscriptionDetails(cardDetails, cardElement) {
-        
+
         let self = this;
         self.setState({
             loading: true
@@ -251,7 +252,7 @@ class SplitCheckoutForm extends React.Component {
                             payment_method: { card: cardElement },
                         }
                     ).then(function (result) {
-                        
+
                         if (result.error) {
                             NotificationManager.error(result.error);
                             self.setState({
@@ -286,7 +287,7 @@ class SplitCheckoutForm extends React.Component {
                 }
             })
             .catch(function (res) {
-                
+
                 // self.setState({
                 //     loading: false,
                 // });
@@ -295,7 +296,7 @@ class SplitCheckoutForm extends React.Component {
     }
 
     handleGetDefaultPaymentGateway() {
-        
+
         let self = this;
         axios({
             method: "get",
@@ -306,7 +307,7 @@ class SplitCheckoutForm extends React.Component {
                 let status = res.data.message;
                 let data = res.data.responseData;
                 if (status === "Success") {
-                    
+
                     self.setState({
                         paymentGatewayType: data
                     })
@@ -328,7 +329,7 @@ class SplitCheckoutForm extends React.Component {
                 }
             })
             .catch(function (res) {
-                
+
                 // self.setState({
                 //     loading: false,
                 // });
@@ -337,7 +338,7 @@ class SplitCheckoutForm extends React.Component {
     }
 
     handleFinalPayment(cardDetails, finalPaymentDetails) {
-        
+
         let self = this;
         axios({
             method: "post",
@@ -377,7 +378,7 @@ class SplitCheckoutForm extends React.Component {
                 let status = res.data.message;
                 let data = res.data.responseData;
                 if (status === "Success") {
-                    
+
                     self.setState({
                         loading: false,
                     });
@@ -385,7 +386,7 @@ class SplitCheckoutForm extends React.Component {
                         NotificationManager.success("Your payment has been done successfully."),
                         NotificationManager.success(data)
                         , 1000);
-                        window.location.href = "./merchantSubscription";
+                    window.location.href = "./merchantSubscription";
                     // NotificationManager.success("Record Saved Successfully");
                     // NotificationManager.success(data);
                     // setTimeout(function () {
@@ -404,7 +405,7 @@ class SplitCheckoutForm extends React.Component {
                 }
             })
             .catch(function (res) {
-                
+
                 // self.setState({
                 //     loading: false,
                 // });
@@ -419,7 +420,7 @@ class SplitCheckoutForm extends React.Component {
     }
 
     handleSubmitCASubscriptionDetails() {
-        
+
         let self = this;
         self.setState({
             loading: true
@@ -474,7 +475,7 @@ class SplitCheckoutForm extends React.Component {
                 }
             })
             .catch(function (res) {
-                
+
                 // self.setState({
                 //     loading: false,
                 // });
@@ -483,7 +484,7 @@ class SplitCheckoutForm extends React.Component {
     }
 
     handleOnChangeExpiryMonth(e) {
-        
+
         var month = e.target.value;
         if (parseInt(month) > 12) {
             month = this.state.expiryMonth;
@@ -494,7 +495,7 @@ class SplitCheckoutForm extends React.Component {
     }
 
     handleOnChangeExpiryYear(e) {
-        
+
         var value = e.target.value;
         this.setState({
             [e.target.name]: value
@@ -516,11 +517,14 @@ class SplitCheckoutForm extends React.Component {
                 <div className="merPlanPayment planpaymcard">
                     <form className="Form" onSubmit={this.handleSubmit}>
                         <div className="merPlanPayment planpaymcard">
-                            <h3 className="Usermana"><a href="./merchantSubscription"><img src={leftarrow} alt="backarrow" /></a> Plan Payment</h3>
+                            <BackBtn />
+                            <h3 className="Usermana">
+                                Plan Payment
+                            </h3>
                             {this.state.paymentGatewayType.length > 0 && (this.state.paymentGatewayType[0].paymentGatewayName).toLowerCase().trim() == "stripe" ? (
                                 <div className="card planinput">
                                     <div className="row">
-                                        <div className="col-12 col-md-6">
+                                        <div className="col-12 col-md-12">
                                             <div className="marginbot">
                                                 <label>Card Number</label>
                                                 <div className="inpuu">
@@ -530,7 +534,10 @@ class SplitCheckoutForm extends React.Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-12 col-md-6">
+
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-12 col-md-12">
                                             <div className="marginbot">
                                                 <label>Card Name</label>
                                                 <input type="text" placeholder="Enter Card Name"
@@ -540,6 +547,7 @@ class SplitCheckoutForm extends React.Component {
                                                 />
                                             </div>
                                         </div>
+
                                     </div>
                                     <div className="row">
                                         <div className="col-12 col-md-6">
@@ -562,60 +570,77 @@ class SplitCheckoutForm extends React.Component {
                                     <div className="paybtn">
                                         <SubmitButton className="start" processing={processing} error={error} disabled={this.state.loading}>
                                             Pay
-                                    </SubmitButton>
+                                        </SubmitButton>
                                     </div>
-                                </div>) : (<div className="card planinput">
-                                    <div className="row">
-                                        <div className="col-12 col-md-6">
-                                            <div className="marginbot">
-                                                <label>Card Number</label>
-                                                <input type="text" placeholder="Enter Card Number"
-                                                    name="cACardNumber"
-                                                    value={this.state.cACardNumber}
-                                                    onChange={this.handleOnChange.bind(this)}
-                                                />
+                                    <NavLink to="/onePayMerchant/merchantSubscription" className="select_plan">
+                                        <div>
+                                            Select Plan/ change plan
+                                        </div>
+                                    </NavLink>
+                                </div>) :
+                                (
+                                    <div className="card planinput">
+                                        <div className="row">
+                                            <div className="col-12 col-md-12">
+                                                <div className="marginbot">
+                                                    <label>Card Number</label>
+                                                    <input type="text" placeholder="Enter Card Number"
+                                                        name="cACardNumber"
+                                                        value={this.state.cACardNumber}
+                                                        onChange={this.handleOnChange.bind(this)}
+                                                    />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-12 col-md-12">
+                                                <div className="marginbot">
+                                                    <label>Card Name</label>
+                                                    <input type="text" placeholder="Enter Card Name"
+                                                        name="cACardHolderName"
+                                                        value={this.state.cACardHolderName}
+                                                        onChange={this.handleOnChange.bind(this)}
+                                                    />
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div className="row">
+                                            <div className="col-12 col-md-6">
+                                                <div className="marginbot">
+                                                    <label>Expiry Date</label>
+                                                    <input type="text"
+                                                        name="expiryMonth"
+                                                        value={this.state.expiryMonth}
+                                                        onChange={this.handleOnChangeExpiryMonth.bind(this)}
+                                                        placeholder="MM" maxLength="2"
+                                                    />
+                                                    <input type="text"
+                                                        name="expiryYear"
+                                                        value={this.state.expiryYear}
+                                                        onChange={this.handleOnChangeExpiryYear.bind(this)}
+                                                        placeholder="YY" maxLength="2"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="col-12 col-md-6">
+                                                <div className="marginbot">
+                                                    <label>CVC</label>
+                                                    <input type="text" placeholder="Enter CVC" />
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className="col-12 col-md-6">
-                                            <div className="marginbot">
-                                                <label>Card Name</label>
-                                                <input type="text" placeholder="Enter Card Name"
-                                                    name="cACardHolderName"
-                                                    value={this.state.cACardHolderName}
-                                                    onChange={this.handleOnChange.bind(this)}
-                                                />
-                                            </div>
+                                        <div className="paybtn">
+                                            <button type="submit" className="start" disabled={this.state.loading}>Pay</button>
                                         </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-12 col-md-6">
-                                            <div className="marginbot">
-                                                <label>Expiry Date</label>
-                                                <input type="text"
-                                                    name="expiryMonth"
-                                                    value={this.state.expiryMonth}
-                                                    onChange={this.handleOnChangeExpiryMonth.bind(this)}
-                                                    placeholder="MM" maxLength="2"
-                                                />
-                                                <input type="text"
-                                                    name="expiryYear"
-                                                    value={this.state.expiryYear}
-                                                    onChange={this.handleOnChangeExpiryYear.bind(this)}
-                                                    placeholder="YY" maxLength="2"
-                                                />
+                                        <NavLink to="/onePayMerchant/merchantSubscription" >
+                                            <div className="">
+                                                Select Plan/ change plan
                                             </div>
-                                        </div>
-                                        <div className="col-12 col-md-6">
-                                            <div className="marginbot">
-                                                <label>CVC</label>
-                                                <input type="text" placeholder="Enter CVC" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="paybtn">
-                                        <button type="submit" className="start" disabled={this.state.loading}>Pay</button>
-                                    </div>
-                                </div>)}
+                                        </NavLink>
+                                    </div>)}
                         </div>
                     </form>
                     {/* // ) */}

@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import dashboard from "./../../../assets/Images/dashboard.png";
 import merchant from "./../../../assets/Images/merchant.png";
 import user from "./../../../assets/Images/user.png";
-import setting from "./../../../assets/Images/setting.png";
-import notification from "./../../../assets/Images/notification.png";
+import setting from "./../../../assets/Images/smallicons/Settings.png";
+import notification from "./../../../assets/Images/smallicons/notify.png";
 import profile from "./../../../assets/Images/profile.jpg";
 import Edit from "./../../../assets/Images/edit.png";
 import Modal from "react-responsive-modal";
@@ -17,7 +17,7 @@ import { NotificationManager } from "react-notifications";
 import { Drawer, Button, Space } from "antd";
 import menu from "./../../../assets/Images/menu.png";
 import logoutwhite from "./../../../assets/Images/logoutwhite.png";
-import OnePayLogo from "./../../../assets/Images/OnePay-logo.png";
+import OnePayLogo from "./../../../assets/Images/smallicons/main_logo.png";
 
 const cookies = new Cookies();
 

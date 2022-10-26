@@ -83,7 +83,7 @@ input:-webkit-autofill::first-line {
   text-align: center;
   margin-top: 30px;
   background: #4075FF;
-   border-radius: 33px;
+   /* border-radius: 33px; */
 }
 .flex-parted {
   display: flex;
@@ -717,7 +717,7 @@ font-weight: 400;
 }
 .profile {
   border-radius: 5px;
-  background-color: rgb(245, 248, 249);
+  background-color: #fff;
   border-radius: 6px;
   /* width: 70%;
   margin: 0 auto; */
@@ -725,7 +725,9 @@ font-weight: 400;
 .profile .card {
   height: auto;
   border: 0;
-  background-color: rgb(245, 248, 249);
+  background-color: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 1rem;
 }
 .profile .prof {
   margin: auto;
@@ -735,7 +737,7 @@ font-weight: 400;
   font-size: 24px;
   font-weight: 500;
   padding: 0 0 20px 0;
-  color: #4f4f4f;
+  color: #101D40;
   text-transform: capitalize;
 }
 .profile .closeicon {
@@ -800,6 +802,7 @@ font-weight: 400;
   line-height: 25px;
   padding: 0 0 0 10px;
   opacity: 0.8;
+  color: #101D40;
 }
 .formdata input,
 .formdata select {
@@ -812,7 +815,8 @@ font-weight: 400;
   font-weight: 400;
   margin-bottom: 20px;
   /* font-family: Lato; */
-  color: #47525e;
+  color: #101D40;
+  background-color: #F0F0F0;
 }
 .formdata input:disabled {
   color: #c5bcbc;
@@ -830,7 +834,7 @@ font-weight: 400;
   margin: 0 0 20px 0;
 }
 .save button {
-  background: #3636ba;
+  background: #4075FF;
   /* background-image: linear-gradient(0deg, #003280 0%, #009bdd 100%); */
   color: #fff;
   font-size: 16px;
@@ -849,7 +853,7 @@ font-weight: 400;
 }
 .save p {
   margin: 0 0;
-  color: #3636ba;
+  color: #4075FF;
   font-size: 12px;
   font-weight: 600;
   padding: 20px 0;
@@ -872,7 +876,7 @@ font-weight: 400;
 .UserTrans,
 .instalmentDetail {
   background: #fff;
-  padding: 30px 35px;
+  /* padding: 30px 35px; */
   margin-top: 25px;
 }
 .userManagement .Usermana,
@@ -3486,7 +3490,7 @@ header .signbtn .sigup {
   line-height: 20px;
   padding: 10px 0 10px 0;
   min-height: 70px;
-  color: #3636ba;
+  color: #4075FF;
 }
 .merSubsc .card h3 span,
 .merPlanPayment .card h3 span {
@@ -3550,7 +3554,7 @@ header .signbtn .sigup {
 .merSubsc .card select,
 .merPlanPayment .card select {
   border-radius: 5px;
-  border: 1px solid #ededed;
+  border: 1px solid #000000;
   padding: 10px;
   width: 100%;
   font-size: 14px;
@@ -3586,7 +3590,7 @@ header .signbtn .sigup {
 }
 .merPlanPayment .planinput input {
   border-radius: 5px;
-  border: 1px solid #ededed;
+  border: 1px solid #000000;
   padding: 10px;
   width: 100%;
   font-size: 14px;
@@ -3596,7 +3600,7 @@ header .signbtn .sigup {
   color: #47525e;
 }
 .merPlanPayment .paybtn {
-  margin: 20px 0 0 0;
+  margin: 20px auto  0;
 }
 .merPlanPayment .paybtn h3 {
   font-size: 16px;
@@ -3885,7 +3889,7 @@ header .signbtn .sigup {
   margin: auto;
 }
 .planpaymcard .card {
-  width: 60%;
+  width: 45%;
   margin: auto;
 }
 .cardmersub .card {

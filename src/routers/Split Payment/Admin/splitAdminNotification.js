@@ -6,7 +6,7 @@ import { authHeader } from "../helpers/splitAuthHeader";
 import Modal from "react-responsive-modal";
 import CloseIcon from "./../../../assets/Images/CloseWhBold.png";
 import Down from "./../../../assets/Images/download.png";
-
+import BackBtn from './../Setting/Admin/BackBtn.js'
 class splitAdminNotification extends Component {
   constructor(props) {
     super(props);
@@ -148,6 +148,7 @@ class splitAdminNotification extends Component {
     ];
     return (
       <div>
+        <BackBtn />
         <div className="Notification">
           <h3 className="Usermana">Notification</h3>
           {/* <label className="add">Clear All</label> */}
