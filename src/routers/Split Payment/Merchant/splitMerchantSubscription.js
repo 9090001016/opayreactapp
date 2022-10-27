@@ -194,6 +194,17 @@ export class splitMerchantSubscription extends Component {
                                     )
                                 }
                             })()}
+                            {(() => {
+                                if (this.state.module.includes('Settings')) {
+                                    return (
+                                        <li>
+                                            <NavLink to="/onePayMerchant/merchantSetting" id="splitMerchantSett">
+                                                <span className="ml-2">Settings</span>
+                                            </NavLink>
+                                        </li>
+                                    )
+                                }
+                            })()}
                         </ul>
                     </div>
                     <div className="card">
