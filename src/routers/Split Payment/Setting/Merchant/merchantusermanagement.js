@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CSV from "./../../../../assets/Images/csv.png";
+import CSV from "./../../../../assets/Images/smallicons/Exportcsv.png";
 import { Table, Popover, Spin } from "antd";
 import InfoIcon from "./../../../../assets/Images/Infoblue.png";
 import RedDelete from "./../../../../assets/Images/delete.png";
@@ -13,6 +13,7 @@ import { NotificationManager } from "react-notifications";
 import { CSVLink } from "react-csv";
 import Down from "./../../../../assets/Images/download.png";
 import PhoneInput from 'react-phone-input-2';
+import BackBtn from "../Admin/BackBtn";
 
 class merchantusermanagement extends Component {
   constructor(props) {
@@ -82,7 +83,7 @@ class merchantusermanagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -122,7 +123,7 @@ class merchantusermanagement extends Component {
   }
 
   handleGetMerchantUserCSV(search, pagination, sorter) {
-    
+
     let self = this;
     var merchantUserDataCSV = [];
     var paging = pagination !== undefined ? pagination : this.state.pagination;
@@ -139,12 +140,12 @@ class merchantusermanagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
           data.map((item, i) =>
-          merchantUserDataCSV.push({
+            merchantUserDataCSV.push({
               userID: item.userID,
               userName: item.userName,
               email: item.email,
@@ -184,7 +185,7 @@ class merchantusermanagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         if (status === "Success") {
           NotificationManager.success("User deleted successfully.");
@@ -208,7 +209,7 @@ class merchantusermanagement extends Component {
       headers: merchantAuthHeader(),
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -228,7 +229,7 @@ class merchantusermanagement extends Component {
 
   handleAddMerchantUser() {
     let self = this;
-    
+
     let headers = merchantAuthHeader();
     // let domain = "http://localhost:3000";
     // let domain = "https://k2ui.dcdev.brainvire.net";
@@ -266,7 +267,7 @@ class merchantusermanagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         if (status === "Success") {
           NotificationManager.success("User created successfully.");
@@ -292,7 +293,7 @@ class merchantusermanagement extends Component {
   }
 
   handleInputOnchange = (e) => {
-    
+
     let userInfo = { ...this.state.userInfo };
     if (e.target.name === "status") {
       userInfo[e.target.name] = e.target.checked;
@@ -353,7 +354,7 @@ class merchantusermanagement extends Component {
 
   handleEditMerchantUser() {
     let self = this;
-    
+
 
     const { name, emailId, contactNo, role } = this.state.userInfo;
 
@@ -383,7 +384,7 @@ class merchantusermanagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         if (status === "Success") {
           NotificationManager.success("User updated successfully.");
@@ -412,7 +413,7 @@ class merchantusermanagement extends Component {
     });
   }
   handleEditUserOpen(user) {
-    
+
     this.setState({
       editUser: true,
       userInfo: {
@@ -420,7 +421,7 @@ class merchantusermanagement extends Component {
         emailId: user.email,
         contactNo: user.contactNumber.split('+')[1],
         role: user.roleID,
-        status: user.status == "Active"?true:false,
+        status: user.status == "Active" ? true : false,
       },
       userId: user.userID,
       touched: true,
@@ -626,401 +627,403 @@ class merchantusermanagement extends Component {
     ];
 
     return (
-      <div className="merusermana">
-        <h3 className="Usermana">Merchant User Management</h3>
-        <div className="exfilter">
-          <input
-            type="text"
-            placeholder="Search Anything"
-            onChange={this.handleMerchantUserSearch.bind(this)}
-          />
-          <CSVLink
-            data={this.state.merchantUserDataCSV}
-            headers={headers}
-            filename={"Merchant User Management.csv"}
-            className="csv"
-          >
-            <img src={CSV} alt="Export" />
-            Export to CSV
-          </CSVLink>
-          <label className="add" onClick={this.handleaddUserOpen.bind(this)}>
-            Add User
-          </label>
-        </div>
-        <div className="merusermanatable tabmerchant">
-          <Spin spinning={this.state.loading}>
-            <Table
-              columns={columns}
-              expandedRowRender={(row) => {
-                return (
-                  <React.Fragment>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">User ID:</label>
-                          <label className="expandemailtext">{row.userID}</label>
+      <div>
+        <BackBtn />
+        <div className="merusermana">
+          <h3 className="Usermana">Merchant User Management</h3>
+          <div className="exfilter">
+            <input
+              type="text"
+              placeholder="Search Anything"
+              onChange={this.handleMerchantUserSearch.bind(this)}
+            />
+            <CSVLink
+              data={this.state.merchantUserDataCSV}
+              headers={headers}
+              filename={"Merchant User Management.csv"}
+              className="csv"
+            >
+              <img src={CSV} alt="Export" />
+              Export to CSV
+            </CSVLink>
+            <label className="add adding" onClick={this.handleaddUserOpen.bind(this)}>
+              Add User
+            </label>
+          </div>
+          <div className="merusermanatable tabmerchant">
+            <Spin spinning={this.state.loading}>
+              <Table
+                columns={columns}
+                expandedRowRender={(row) => {
+                  return (
+                    <React.Fragment>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">User ID:</label>
+                            <label className="expandemailtext">{row.userID}</label>
+                          </div>
                         </div>
-                      </div>
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Name:</label>
-                          <label className="expandemailtext">{row.userName}</label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Email:</label>
-                          <label className="expandemailtext">{row.email}</label>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Contact No:</label>
-                          <label className="expandemailtext">{row.contactNumber}</label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Role:</label>
-                          <label className="expandemailtext">{row.roleName}</label>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Created By:</label>
-                          <div className="amazontext">
-                            <label className="expandemailtext">
-                              {row.createBy}
-                            </label>
-                            <Popover
-                              content={
-                                <div className="userpopover">
-                                  <div className="subsc">
-                                    <label>Created By</label>
-                                    <label>{row.createBy}</label>
-                                  </div>
-                                  <div className="subsc">
-                                    <label>Created On</label>
-                                    <label>{row.createDate}</label>
-                                  </div>
-                                  <div className="subsc">
-                                    <label>Modified By</label>
-                                    <label>{row.updateBy}</label>
-                                  </div>
-                                  <div className="subsc">
-                                    <label>Modified On</label>
-                                    <label>{row.updateDate}</label>
-                                  </div>
-                                </div>
-                              }
-                              placement="bottom"
-                              trigger="click"
-                            >
-                              <img src={InfoIcon} alt="InfoIcon" />
-                            </Popover>
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Name:</label>
+                            <label className="expandemailtext">{row.userName}</label>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-sm-6 mb-3">
-                        <div className="mobilevi">
-                          <label className="expandemail">Status:</label>
-                          <label className="expandemailtext">
-                            {row.isActive ? "Active" : "Inactive"}
-                          </label>
+
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Email:</label>
+                            <label className="expandemailtext">{row.email}</label>
+                          </div>
+                        </div>
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Contact No:</label>
+                            <label className="expandemailtext">{row.contactNumber}</label>
+                          </div>
                         </div>
                       </div>
+
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Role:</label>
+                            <label className="expandemailtext">{row.roleName}</label>
+                          </div>
+                        </div>
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Created By:</label>
+                            <div className="amazontext">
+                              <label className="expandemailtext">
+                                {row.createBy}
+                              </label>
+                              <Popover
+                                content={
+                                  <div className="userpopover">
+                                    <div className="subsc">
+                                      <label>Created By</label>
+                                      <label>{row.createBy}</label>
+                                    </div>
+                                    <div className="subsc">
+                                      <label>Created On</label>
+                                      <label>{row.createDate}</label>
+                                    </div>
+                                    <div className="subsc">
+                                      <label>Modified By</label>
+                                      <label>{row.updateBy}</label>
+                                    </div>
+                                    <div className="subsc">
+                                      <label>Modified On</label>
+                                      <label>{row.updateDate}</label>
+                                    </div>
+                                  </div>
+                                }
+                                placement="bottom"
+                                trigger="click"
+                              >
+                                <img src={InfoIcon} alt="InfoIcon" />
+                              </Popover>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-12 col-sm-6 mb-3">
+                          <div className="mobilevi">
+                            <label className="expandemail">Status:</label>
+                            <label className="expandemailtext">
+                              {row.isActive ? "Active" : "Inactive"}
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </React.Fragment>
+                  );
+                }}
+                expandIcon={({ expanded, onExpand, record }) =>
+                  expanded ? (
+                    <div className="expandown1">
+                      <img src={Down} onClick={e => onExpand(record, e)} />
                     </div>
-                  </React.Fragment>
-                );
-              }}
-              expandIcon={({ expanded, onExpand, record }) =>
-                expanded ? (
-                  <div className="expandown1">
-                    <img src={Down} onClick={e => onExpand(record, e)} />
-                  </div>
-                ) : (
+                  ) : (
                     <div className="expandown">
                       <img src={Down} onClick={e => onExpand(record, e)} />
                     </div>
                   )}
-              expandIconColumnIndex={this.state.mobileView ? 8 : -1}
-              expandIconAsCell={false}
-              dataSource={this.state.merchantUserData}
-              pagination={{
-                current: this.state.pagination.current,
-                pageSize: this.state.pagination.pageSize,
-                total: this.state.pagination.total,
-                position: ["bottomCenter"],
-                showSizeChanger: true
-              }}
-              onChange={this.onShowSizeChange}
-            />
-          </Spin>
-        </div>
-        {/* Add Role */}
-        <Modal
-          open={this.state.addUser}
-          onClose={this.handleaddUserClose.bind(this)}
-          modalId="meradduserModal"
-          overlayId="overlay"
-        >
-          <div className="backtext">
-            <h3 className="eduser">Add Merchant User</h3>
-            <img
-              src={CloseIcon}
-              alt="CloseIcon"
-              className="closeicon"
-              onClick={this.handleaddUserClose.bind(this)}
-            />
+                expandIconColumnIndex={this.state.mobileView ? 8 : -1}
+                expandIconAsCell={false}
+                dataSource={this.state.merchantUserData}
+                pagination={{
+                  current: this.state.pagination.current,
+                  pageSize: this.state.pagination.pageSize,
+                  total: this.state.pagination.total,
+                  position: ["bottomCenter"],
+                  showSizeChanger: true
+                }}
+                onChange={this.onShowSizeChange}
+              />
+            </Spin>
           </div>
-          <div className="edituser">
-            <div className="row">
-              <div className="col-12 col-md-6">
-                <div className="marginbot">
-                  <label>Name</label>
-                  <input
-                    type="text"
-                    placeholder="Enter Name"
-                    name="name"
-                    value={this.state.userInfo.name}
-                    onChange={this.handleInputOnchange}
-                  />
-                  {this.state.userInfo.name.length === 0 &&
-                    this.state.touched && (
-                      <span className="Error">Required.</span>
-                    )}
-                </div>
-              </div>
-              <div className="col-12 col-md-6">
-                <div className="marginbot">
-                  <label>Email</label>
-                  <input
-                    type="text"
-                    placeholder="Enter Email"
-                    name="emailId"
-                    value={this.state.userInfo.emailId}
-                    onChange={this.handleInputOnchange}
-                  />
-                  {this.state.validEmail && (
-                    <span className="Error">Invalid Email.</span>
-                  )}
-                  {this.state.userInfo.emailId.length === 0 &&
-                    this.state.touched && (
-                      <span className="Error">Required.</span>
-                    )}
-                </div>
-              </div>
+          {/* Add Role */}
+          <Modal
+            open={this.state.addUser}
+            onClose={this.handleaddUserClose.bind(this)}
+            modalId="meradduserModal"
+            overlayId="overlay"
+          >
+            <div className="backtext">
+              <h3 className="eduser">Add Merchant User</h3>
+              <img
+                src={CloseIcon}
+                alt="CloseIcon"
+                className="closeicon"
+                onClick={this.handleaddUserClose.bind(this)}
+              />
             </div>
-            <div className="row">
-              <div className="col-12 col-md-6">
-                <div className="marginbot pincontactno">
-                  <label>Contact No.</label>
-                  <PhoneInput
-                    country={'au'}
-                    name="contactNo"
-                    value={this.state.userInfo.contactNo}
-                    onChange={this.handlePhoneOnChange}
-                    maxLength="10"
-                  />
-                  {this.state.validNo && (
-                    <span className="Error">Invalid Number.</span>
-                  )}
-                  {this.state.userInfo.contactNo.length === 0 &&
-                    this.state.touched && (
-                      <span className="Error">Required.</span>
-                    )}
-                </div>
-              </div>
-              <div className="col-12 col-md-6">
-                <div className="marginbot">
-                  <label>Role</label>
-                  <select
-                    name="role"
-                    value={this.state.userInfo.role}
-                    onChange={this.handleInputOnchange}
-                  >
-                    <option hidden>Select Role</option>
-                    {this.state.roles &&
-                      this.state.roles.map((role) => (
-                        <option key={role.id} value={role.id}>
-                          {role.roleName}
-                        </option>
-                      ))}
-                  </select>
-                  {this.state.userInfo.role.length === 0 &&
-                    this.state.touched && (
-                      <span className="Error">Required.</span>
-                    )}
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12 col-md-6">
-                <div className="marginbot">
-                  <label>Status</label>
-                  <label className="switch">
+            <div className="edituser">
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div className="marginbot">
+                    <label>Name</label>
                     <input
-                      type="checkbox"
-                      name="status"
-                      value={this.state.userInfo.status}
+                      type="text"
+                      placeholder="Enter Name"
+                      name="name"
+                      value={this.state.userInfo.name}
                       onChange={this.handleInputOnchange}
-                      checked={this.state.userInfo.status}
                     />
-                    <span className="slider round"></span>
-                  </label>
+                    {this.state.userInfo.name.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="Editbtn">
-              <button
-                className="btn"
-                onClick={this.handleAddMerchantUser.bind(this)}
-              >
-                Add
-              </button>
-            </div>
-          </div>
-        </Modal>
-        {/* Edit Role */}
-        <Modal
-          open={this.state.editUser}
-          onClose={this.handleEditUserClose.bind(this)}
-          modalId="meradduserModal"
-          overlayId="overlay"
-        >
-          <div className="backtext">
-            <h3 className="eduser">Edit Merchant User</h3>
-            <img
-              src={CloseIcon}
-              alt="CloseIcon"
-              className="closeicon"
-              onClick={this.handleEditUserClose.bind(this)}
-            />
-          </div>
-          <div className="edituser">
-            <div className="row">
-              <div className="col-12 col-md-6">
-                <div className="marginbot">
-                  <label>Name</label>
-                  <input
-                    type="text"
-                    placeholder="Enter Name"
-                    name="name"
-                    value={this.state.userInfo.name}
-                    onChange={this.handleInputOnchange}
-                  />
-                  {this.state.userInfo.name.length === 0 &&
-                    this.state.touched && (
-                      <span className="Error">Required.</span>
+                <div className="col-12 col-md-6">
+                  <div className="marginbot">
+                    <label>Email</label>
+                    <input
+                      type="text"
+                      placeholder="Enter Email"
+                      name="emailId"
+                      value={this.state.userInfo.emailId}
+                      onChange={this.handleInputOnchange}
+                    />
+                    {this.state.validEmail && (
+                      <span className="Error">Invalid Email.</span>
                     )}
+                    {this.state.userInfo.emailId.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
+                  </div>
                 </div>
               </div>
-              <div className="col-12 col-md-6">
-                <div className="marginbot">
-                  <label>Email</label>
-                  <input
-                    type="text"
-                    placeholder="Enter Email"
-                    name="emailId"
-                    value={this.state.userInfo.emailId}
-                    onChange={this.handleInputOnchange}
-                  />
-                  {this.state.validEmail && (
-                    <span className="Error">Invalid Email.</span>
-                  )}
-                  {this.state.userInfo.emailId.length === 0 &&
-                    this.state.touched && (
-                      <span className="Error">Required.</span>
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div className="marginbot pincontactno">
+                    <label>Contact No.</label>
+                    <PhoneInput
+                      country={'au'}
+                      name="contactNo"
+                      value={this.state.userInfo.contactNo}
+                      onChange={this.handlePhoneOnChange}
+                      maxLength="10"
+                    />
+                    {this.state.validNo && (
+                      <span className="Error">Invalid Number.</span>
                     )}
+                    {this.state.userInfo.contactNo.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
+                  </div>
                 </div>
+                <div className="col-12 col-md-6">
+                  <div className="marginbot">
+                    <label>Role</label>
+                    <select
+                      name="role"
+                      value={this.state.userInfo.role}
+                      onChange={this.handleInputOnchange}
+                    >
+                      <option hidden>Select Role</option>
+                      {this.state.roles &&
+                        this.state.roles.map((role) => (
+                          <option key={role.id} value={role.id}>
+                            {role.roleName}
+                          </option>
+                        ))}
+                    </select>
+                    {this.state.userInfo.role.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div className="marginbot">
+                    <label>Status</label>
+                    <label className="switch">
+                      <input
+                        type="checkbox"
+                        name="status"
+                        value={this.state.userInfo.status}
+                        onChange={this.handleInputOnchange}
+                        checked={this.state.userInfo.status}
+                      />
+                      <span className="slider round"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div className="Editbtn">
+                <button
+                  className="btn"
+                  onClick={this.handleAddMerchantUser.bind(this)}
+                >
+                  Add
+                </button>
               </div>
             </div>
-            <div className="row">
-              <div className="col-12 col-md-6">
-                <div className="marginbot pincontactno">
-                  <label>Contact No.</label>
-                  {/* <input
+          </Modal>
+          {/* Edit Role */}
+          <Modal
+            open={this.state.editUser}
+            onClose={this.handleEditUserClose.bind(this)}
+            modalId="meradduserModal"
+            overlayId="overlay"
+          >
+            <div className="backtext">
+              <h3 className="eduser">Edit Merchant User</h3>
+              <img
+                src={CloseIcon}
+                alt="CloseIcon"
+                className="closeicon"
+                onClick={this.handleEditUserClose.bind(this)}
+              />
+            </div>
+            <div className="edituser">
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div className="marginbot">
+                    <label>Name</label>
+                    <input
+                      type="text"
+                      placeholder="Enter Name"
+                      name="name"
+                      value={this.state.userInfo.name}
+                      onChange={this.handleInputOnchange}
+                    />
+                    {this.state.userInfo.name.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
+                  </div>
+                </div>
+                <div className="col-12 col-md-6">
+                  <div className="marginbot">
+                    <label>Email</label>
+                    <input
+                      type="text"
+                      placeholder="Enter Email"
+                      name="emailId"
+                      value={this.state.userInfo.emailId}
+                      onChange={this.handleInputOnchange}
+                    />
+                    {this.state.validEmail && (
+                      <span className="Error">Invalid Email.</span>
+                    )}
+                    {this.state.userInfo.emailId.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div className="marginbot pincontactno">
+                    <label>Contact No.</label>
+                    {/* <input
                     type="text"
                     placeholder="Enter Contact No."
                     name="contactNo"
                     value={this.state.userInfo.contactNo}
                     onChange={this.handleInputOnchange}
                   /> */}
-                  <PhoneInput
-                    country={'au'}
-                    name="contactNo"
-                    value={this.state.userInfo.contactNo}
-                    onChange={this.handlePhoneOnChange}
-                    maxLength="10"
-                  />
-                  {this.state.validNo && (
-                    <span className="Error">Invalid Number.</span>
-                  )}
-                  {this.state.userInfo.contactNo.length === 0 &&
-                    this.state.touched && (
-                      <span className="Error">Required.</span>
-                    )}
-                </div>
-              </div>
-              <div className="col-12 col-md-6">
-                <div className="marginbot">
-                  <label>Role</label>
-                  <select
-                    name="role"
-                    value={this.state.userInfo.role}
-                    onChange={this.handleInputOnchange}
-                  >
-                    <option hidden>Select Role</option>
-                    {this.state.roles &&
-                      this.state.roles.map((role) => (
-                        <option key={role.id} value={role.id}>
-                          {role.roleName}
-                        </option>
-                      ))}
-                  </select>
-                  {this.state.userInfo.role.length === 0 &&
-                    this.state.touched && (
-                      <span className="Error">Required.</span>
-                    )}
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12 col-md-6">
-                <div className="marginbot">
-                  <label>Status</label>
-                  <label className="switch">
-                    <input
-                      type="checkbox"
-                      name="status"
-                      value={this.state.userInfo.status}
-                      onChange={this.handleInputOnchange}
-                      checked={this.state.userInfo.status}
+                    <PhoneInput
+                      country={'au'}
+                      name="contactNo"
+                      value={this.state.userInfo.contactNo}
+                      onChange={this.handlePhoneOnChange}
+                      maxLength="10"
                     />
-                    <span className="slider round"></span>
-                  </label>
+                    {this.state.validNo && (
+                      <span className="Error">Invalid Number.</span>
+                    )}
+                    {this.state.userInfo.contactNo.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
+                  </div>
+                </div>
+                <div className="col-12 col-md-6">
+                  <div className="marginbot">
+                    <label>Role</label>
+                    <select
+                      name="role"
+                      value={this.state.userInfo.role}
+                      onChange={this.handleInputOnchange}
+                    >
+                      <option hidden>Select Role</option>
+                      {this.state.roles &&
+                        this.state.roles.map((role) => (
+                          <option key={role.id} value={role.id}>
+                            {role.roleName}
+                          </option>
+                        ))}
+                    </select>
+                    {this.state.userInfo.role.length === 0 &&
+                      this.state.touched && (
+                        <span className="Error">Required.</span>
+                      )}
+                  </div>
                 </div>
               </div>
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div className="marginbot">
+                    <label>Status</label>
+                    <label className="switch">
+                      <input
+                        type="checkbox"
+                        name="status"
+                        value={this.state.userInfo.status}
+                        onChange={this.handleInputOnchange}
+                        checked={this.state.userInfo.status}
+                      />
+                      <span className="slider round"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div className="Editbtn">
+                <button
+                  className="btn"
+                  onClick={this.handleEditMerchantUser.bind(this)}
+                >
+                  Edit
+                </button>
+              </div>
             </div>
-            <div className="Editbtn">
-              <button
-                className="btn"
-                onClick={this.handleEditMerchantUser.bind(this)}
-              >
-                Edit
-              </button>
-            </div>
-          </div>
-        </Modal>
-        {/* <div className="pagination">
+          </Modal>
+          {/* <div className="pagination">
           <ul>
             <li>
               <a hrf="">&lt;</a>
@@ -1052,6 +1055,7 @@ class merchantusermanagement extends Component {
             </select>
           </div>
         </div> */}
+        </div>
       </div>
     );
   }

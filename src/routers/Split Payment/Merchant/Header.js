@@ -163,17 +163,7 @@ class Header extends Component {
                   )
                 }
               })()}
-              {(() => {
-                if (this.state.module.includes('Settings')) {
-                  return (
-                    <li className="header-icons">
-                      <Link to="/onePayMerchant/merchantSetting">
-                        <img src={setting} alt="icon missing" />
-                      </Link>
-                    </li>
-                  )
-                }
-              })()}
+              
             </ul>
             <div className="user-profile">
               <div

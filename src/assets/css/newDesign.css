@@ -990,7 +990,6 @@ font-size: 16px;
 .dash_link{
     display: flex;
     justify-content: space-around;
-    /* background-color:  #E5E5E5;; */
     margin-top: 2rem 0;
 }
 .dash_link .header-left {
@@ -1003,6 +1002,42 @@ font-size: 16px;
     height: 6vh;
     
 }
+.Merchantdashboard .dash_link .header-left {
+    background-color: #e5e5e5;
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+.MerTraHistory .dash_link .header-left {
+    background-color: #e5e5e5;
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+.merSubsc .dash_link .header-left {
+    background-color: #e5e5e5;
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+.adminsetting .dash_link .header-left {
+    background-color: #e5e5e5;
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
 
 .dash_link .header-left a{
     width: 15vw;
@@ -1011,6 +1046,90 @@ font-size: 16px;
     align-items: center;
     border-radius: 10px;
     height: 6vh;
+}
+.Merchantdashboard .dash_link .header-left li:nth-child(1) a{
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+.Merchantdashboard .dash_link .header-left li:nth-child(4) a{
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+.Merchantdashboard .dash_link .header-left a{
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+.MerTraHistory .dash_link .header-left li:nth-child(1) a{
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+.MerTraHistory .dash_link .header-left li:nth-child(4) a{
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+.MerTraHistory .dash_link .header-left a{
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+.merSubsc .dash_link .header-left li:nth-child(1) a{
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+.merSubsc .dash_link .header-left li:nth-child(4) a{
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+.merSubsc .dash_link .header-left a{
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+
+.adminsetting .dash_link .header-left a{
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 6vh;
+}
+.adminsetting .Usermana{
+    margin-top: 3rem;
 }
 
 .setting_dashboard .dash_link .header-left{
@@ -1048,6 +1167,7 @@ font-size: 16px;
     border-radius: 10px;
     height: 6vh;
 }
+
 /* .dash_link .header-left a:nth-child(1){
     margin-left: -10px;
 }
@@ -1240,6 +1360,10 @@ font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .adding{
+    background-color: #4075FF;
+    color: #fff!important;
   }
   
   
