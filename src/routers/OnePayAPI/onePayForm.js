@@ -320,6 +320,7 @@ class onePayForm extends Component {
     })
     window.location.href = "/"
   }
+
   handleclosefailedPop = () => {
     this.setState({
       isPaymentFalied: false
@@ -435,30 +436,7 @@ class onePayForm extends Component {
             ) : (
               <>
 
-                <Modal
-                  open={this.state.successModal}
-                  onClose={this.handleclosesuccessPop}
-                  modalId="openModalId"
-                  overlayId="overlay"
-                  classNames={{
-                    modal: 'contant__modal'
-                  }}
-                >
-                  <div className="col-md-12 mx-auto">
-                    <div className="form__fields p-4 m-4">
-                      <div className="input__block text-center">
-                        <img src={OnePayLogo} width={80} alt="img" />
-                      </div>
-
-                      <div className="input__block text-center mt-4">
-                        <img src={GreenCheck} width={40} alt="img" />
-                        <p className="mt-4">Congratulations! <br /> Your Order is Completed and have been placed successfully</p>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </Modal>
+                
 
                 <Modal
                   open={this.state.isPaymentFalied}
@@ -490,6 +468,30 @@ class onePayForm extends Component {
               </>
             )}{" "}
           </div>
+          <Modal
+                  open={this.state.successModal}
+                  onClose={this.handleclosesuccessPop}
+                  modalId="openModalId"
+                  overlayId="overlay"
+                  classNames={{
+                    modal: 'contant__modal'
+                  }}
+                >
+                  <div className="col-md-12 mx-auto">
+                    <div className="form__fields p-4 m-4">
+                      <div className="input__block text-center">
+                        <img src={OnePayLogo} width={80} alt="img" />
+                      </div>
+
+                      <div className="input__block text-center mt-4">
+                        <img src={GreenCheck} width={40} alt="img" />
+                        <p className="mt-4">Congratulations! <br /> Your Order is Completed and have been placed successfully</p>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </Modal>
           <p className="textcenter mbtom10">
             <img className="lockpng" src={lock} alt="visa" />
             This payment is secured by K2.
