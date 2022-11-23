@@ -26,6 +26,7 @@ class onePayForm extends Component {
       loading: false,
       duration: "",
       totalAmount: 0,
+      
     };
   }
 
@@ -33,6 +34,7 @@ class onePayForm extends Component {
     var cookie = this.state.cookie;
     var _cookietoken = cookies.get("onepayusertoken");
     var _token = window.localStorage.getItem("onepayusertoken");
+    // var _merchantToken = window.localStorage.getItem("onepaymerchanttoken");
     var url = window.location.href;
     window.localStorage.setItem("iframeUrl", url);
     if (_token === null || _token === "" || _token === undefined) {

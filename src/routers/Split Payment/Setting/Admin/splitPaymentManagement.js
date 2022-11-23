@@ -39,7 +39,7 @@ class splitPaymentManagement extends Component {
         pageSize: 10,
         total: 0
       },
-      regexp: /^[0-9\b]+$/,
+      regexp: /^[0-9]*$/,
       searchBy: "",
       visible: {}
     };
@@ -110,7 +110,6 @@ class splitPaymentManagement extends Component {
     this.setState({
       addSplit: true,
       paymentInterval: "",
-
       orderFrom: "",
       orderTo: "",
       status: false,
@@ -510,7 +509,7 @@ class splitPaymentManagement extends Component {
     return (
       <div>
         <BackBtn />
-        <div className="splitpayment">
+        <div className="splitpayment common_table">
           <h3 className="Usermana">Split Payment Management</h3>
           <div className="exfilter">
             <input
@@ -531,7 +530,7 @@ class splitPaymentManagement extends Component {
               Add New
             </label>
           </div>
-          <div className="splitpaymenttable">
+          <div className="splitpaymenttable common_one">
             <Spin spinning={this.state.loading}>
               <Table
                 columns={columns}

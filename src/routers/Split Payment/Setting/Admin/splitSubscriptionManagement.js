@@ -49,7 +49,7 @@ class splitSubscriptionManagement extends Component {
       },
       searchBy: "",
       visible: {},
-      regexp: /^[0-9\b]+$/
+      regexp: /^[0-9]*$/
     };
   }
 
@@ -661,7 +661,7 @@ class splitSubscriptionManagement extends Component {
     return (
       <div>
         <BackBtn />
-        <div className="subscription">
+        <div className="subscription common_table">
           <h3 className="Usermana">Subscription Management</h3>
           <div className="exfilter">
             <input
@@ -685,7 +685,7 @@ class splitSubscriptionManagement extends Component {
               Add New
             </label>
           </div>
-          <div className="subscriptiontable">
+          <div className="subscriptiontable common_one">
             <Spin spinning={this.state.loading}>
               <Table
                 columns={columns}

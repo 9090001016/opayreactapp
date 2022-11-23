@@ -1119,6 +1119,9 @@ font-size: 16px;
     border-radius: 10px;
     height: 6vh;
 }
+.merSubsc .dash_link{
+    margin-top: 3rem;
+}
 
 .adminsetting .dash_link .header-left a{
     width: 15vw;
@@ -1131,10 +1134,13 @@ font-size: 16px;
 .adminsetting .Usermana{
     margin-top: 3rem;
 }
+.adminsetting .dash_link{
+    margin-top: 3rem;
+}
 
 .setting_dashboard .dash_link .header-left{
     background-color: #e5e5e5;
-    width: 70vw;
+    width: 74vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1143,7 +1149,7 @@ font-size: 16px;
 }
 
 .setting_dashboard .dash_link .header-left a{
-    width: 20vw;
+    width: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1275,14 +1281,19 @@ font-size: 25px;
   .transaction_details{
     margin-top: 2rem;
   }
+  .transaction_details .Usermana{
+    margin-left: 2rem;
+  }
   .transaction_details1{
     margin-top: 3rem;
+    margin-left: 2rem;
   }
   .MerTraHistory .dash_link{
     margin-top: 3rem;
   }
   .mer_transaction_details{
     margin-top: 3rem;
+    margin-left: 2rem;
   }
   .mer_transaction_details h3{
     margin-left: 1rem;
@@ -1309,7 +1320,7 @@ font-size: 25px;
     color: #fff!important;
   }
   .mersubcard .card{
-    margin-top: 2rem;
+    margin-top: 3rem;
     box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.25);
   }
   .planpaymcard .card{
@@ -1365,6 +1376,26 @@ font-size: 25px;
     background-color: #4075FF;
     color: #fff!important;
   }
+  .notifitable{
+    width: 100%!important;
+    margin-top: 2rem;
+  }
+  .userpaymenttable{
+    margin-top: 2rem;
+    width: 100%;
+  }
+  .transaction_details1  .setting{
+    margin-left: -2rem;
+  }
+  
+  .common_table .common_one{
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .end_user .header-left{
+    margin-top: 2rem;
+  }
+  
   
   
 

@@ -48,7 +48,7 @@ class subscriptionManagement extends Component {
       },
       searchBy: "",
       visible: {},
-      regexp: /^[0-9\b]+$/
+      regexp:/^[0-9]*$/
     };
   }
 

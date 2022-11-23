@@ -835,7 +835,7 @@ class splitAlertTemplateManagement extends Component {
       <div>
         <BackBtn/>
       
-      <div className="alerttemplate">
+      <div className="alerttemplate common_table">
         <h3 className="Usermana">Alert Template Management</h3>
         <div className="exfilter">
           <input
@@ -856,7 +856,7 @@ class splitAlertTemplateManagement extends Component {
             Add New
           </label>
         </div>
-        <div className="alerttable">
+        <div className="alerttable common_one">
           <Spin spinning={this.state.loading}>
             <Table
               columns={columns}

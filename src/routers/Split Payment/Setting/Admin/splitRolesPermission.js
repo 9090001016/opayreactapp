@@ -584,7 +584,7 @@ class splitRolesPermission extends Component {
     return (
       <div>
         <BackBtn />
-      <div className="roles">
+      <div className="roles common_table">
         <h3 className="Usermana">Roles & Permissions</h3>
         <div className="exfilter">
           <input
@@ -605,7 +605,7 @@ class splitRolesPermission extends Component {
             Add New
           </label>
         </div>
-        <div className="roletable">
+        <div className="roletable common_one">
           <Spin spinning={this.state.loading}>
             <Table
               columns={columns}

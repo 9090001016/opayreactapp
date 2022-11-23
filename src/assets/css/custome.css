@@ -1161,6 +1161,8 @@ font-weight: 500;
 .Userdashtable,
 .userpaymenttable {
   margin-top: 25px;
+  width: 95%;
+  margin: auto;
 }
 .usmanatable .ant-table-thead > tr > th,
 .mermanatable .ant-table-thead > tr > th,
