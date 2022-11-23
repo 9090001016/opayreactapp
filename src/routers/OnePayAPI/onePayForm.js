@@ -7,6 +7,10 @@ import config from "../../helpers/config";
 import { Link } from "react-router-dom";
 import { notification } from "antd";
 import { NotificationManager } from "react-notifications";
+import { Modal } from 'react-responsive-modal';
+
+import GreenCheck from "./../../assets/Images/check-green.png";
+import OnePayLogo from "./../../assets/Images/allicons/main-logo 1.png";
 
 const cookies = new Cookies();
 class onePayForm extends Component {
@@ -26,7 +30,8 @@ class onePayForm extends Component {
       loading: false,
       duration: "",
       totalAmount: 0,
-      
+      successModal: false,
+      isPaymentFalied: false
     };
   }
 
@@ -34,7 +39,6 @@ class onePayForm extends Component {
     var cookie = this.state.cookie;
     var _cookietoken = cookies.get("onepayusertoken");
     var _token = window.localStorage.getItem("onepayusertoken");
-    // var _merchantToken = window.localStorage.getItem("onepaymerchanttoken");
     var url = window.location.href;
     window.localStorage.setItem("iframeUrl", url);
     if (_token === null || _token === "" || _token === undefined) {
@@ -253,8 +257,9 @@ class onePayForm extends Component {
             }, 1000);
           }
           self.setState({
-            message: "Your payment has done successfully.",
+            // message: "Your payment has done successfully.",
             loading: false,
+            successModal: true,
             // installmentDetails: data
           });
         } else if (message == "Invalid") {
@@ -274,6 +279,7 @@ class onePayForm extends Component {
           self.setState({
             message: data,
             loading: false,
+            isPaymentFalied: true
           });
         } else {
           self.setState({
@@ -308,7 +314,19 @@ class onePayForm extends Component {
     this.setState({ rdDuration, loanPeriod: e.target.value, duration });
     this.handleGetInstallmentDetails(e.target.value, duration);
   }
+  handleclosesuccessPop = () => {
+    this.setState({
+      successModal: false
+    })
+    window.location.href = "/"
+  }
 
+  handleclosefailedPop = () => {
+    this.setState({
+      isPaymentFalied: false
+    })
+    window.location.href = "/"
+  }
   render() {
     return (
       <div className={this.state.loading ? "oopasity" : ""}>
@@ -416,9 +434,64 @@ class onePayForm extends Component {
                 )}{" "}
               </>
             ) : (
-              <label> {this.state.message} </label>
+              <>
+
+                
+
+                <Modal
+                  open={this.state.isPaymentFalied}
+                  onClose={this.handleclosefailedPop}
+                  modalId="openModalId"
+                  overlayId="overlay"
+                  classNames={{
+                    modal: 'contant__modal'
+                  }}
+                >
+
+                  <div className="col-md-12 mx-auto">
+                    <div className="form__fields p-4 m-4">
+                      <div className="input__block text-center">
+                        <img src={OnePayLogo} width={80} alt="img" />
+                      </div>
+
+                      <div className="input__block text-center mt-4">
+                        <i class="fa fa-times-circle-o cross__red" aria-hidden="true"></i>
+                        <p className="mt-4">{this.state.message}</p>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                </Modal>
+
+              </>
             )}{" "}
           </div>
+          <Modal
+                  open={this.state.successModal}
+                  onClose={this.handleclosesuccessPop}
+                  modalId="openModalId"
+                  overlayId="overlay"
+                  classNames={{
+                    modal: 'contant__modal'
+                  }}
+                >
+                  <div className="col-md-12 mx-auto">
+                    <div className="form__fields p-4 m-4">
+                      <div className="input__block text-center">
+                        <img src={OnePayLogo} width={80} alt="img" />
+                      </div>
+
+                      <div className="input__block text-center mt-4">
+                        <img src={GreenCheck} width={40} alt="img" />
+                        <p className="mt-4">Congratulations! <br /> Your Order is Completed and have been placed successfully</p>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </Modal>
           <p className="textcenter mbtom10">
             <img className="lockpng" src={lock} alt="visa" />
             This payment is secured by K2.
