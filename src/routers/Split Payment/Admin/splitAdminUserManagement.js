@@ -127,10 +127,12 @@ class splitAdminUserManagement extends Component {
         UserName: this.state.userName,
         UserEmailId: this.state.userEmailId,
         UserContactNo: this.state.userContactNo,
+
         UserTotalTransactionCountFrom: -1,
         UserTotalTransactionCountTo: this.state.userTotalTransactionCountTo
           ? parseInt(this.state.userTotalTransactionCountTo)
           : -1,
+          
         UserTotalTransactionAmountFrom: -1,
         UserTotalTransactionAmountTo: this.state.userTotalTransactionAmountTo
           ? parseInt(this.state.userTotalTransactionAmountTo)
@@ -138,6 +140,7 @@ class splitAdminUserManagement extends Component {
         StartDate: startDate,
         EndDate: endDate,
         Status: this.state.status,
+        
         SortColumn: sorter !== undefined ? (sorter.field !== undefined ? sorter.field : "userId") : "userId",
         SortBy: sorter !== undefined ? (sorter.order !== undefined ? (sorter.order == "ascend" ? "asc" : "desc") : "desc") : "desc",
         Page: (paging.current).toString(),
@@ -440,7 +443,7 @@ class splitAdminUserManagement extends Component {
         <div className="blue_line">
         </div>
         <div className="userManagement setting_dashboard">
-          <div className="dash_link">
+          <div className="dash_link end_user">
             <ul className="header-left">
               {(() => {
                 if (this.state.module.includes('Dashboard')) {
@@ -616,7 +619,6 @@ class splitAdminUserManagement extends Component {
                 </select>
               </div>
               <div className="col-12 col-md-3">
-
               </div>
               <div className="col-12 col-md-12">
                 <div className="search">

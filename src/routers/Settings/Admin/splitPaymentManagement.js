@@ -36,7 +36,7 @@ class splitPaymentManagement extends Component {
         pageSize: 10,
         total: 0
       },
-      regexp: /^[0-9\b]+$/,
+      regexp: /^[0-9]*$/,
       searchBy: "",
       visible: {}
     };

@@ -173,12 +173,13 @@ class adminMerchantManagement extends Component {
         MerchantName: this.state.merchantName,
         MerchantEmailId: this.state.merchantEmailId,
         MerchantContactNo: this.state.merchantContactNo,
-        // MerchantTotalTransactionCountFrom: 0,
-        // MerchantTotalTransactionCountTo: this.state
-        //   .merchantTotalTransactionCountTo
-        //   ? parseInt(this.state.merchantTotalTransactionCountTo)
-        //   : 0,
-        // MerchantTotalTransactionAmountFrom: -1,
+
+        MerchantTotalTransactionCountFrom: -1,
+        MerchantTotalTransactionCountTo: this.state.merchantTotalTransactionCountTo
+          ? parseInt(this.state.merchantTotalTransactionCountTo)
+          : -1,
+
+        MerchantTotalTransactionAmountFrom: -1,
         MerchantTotalTransactionAmountTo: this.state
           .merchantTotalTransactionAmountTo
           ? parseInt(this.state.merchantTotalTransactionAmountTo)
@@ -274,12 +275,13 @@ class adminMerchantManagement extends Component {
         MerchantName: this.state.merchantName,
         MerchantEmailId: this.state.merchantEmailId,
         MerchantContactNo: this.state.merchantContactNo,
-        // MerchantTotalTransactionCountFrom: 0,
-        // MerchantTotalTransactionCountTo: this.state
-        //   .merchantTotalTransactionCountTo
-        //   ? parseInt(this.state.merchantTotalTransactionCountTo)
-        //   : 0,
-        // MerchantTotalTransactionAmountFrom: -1,
+
+        MerchantTotalTransactionCountFrom: -1,
+        MerchantTotalTransactionCountTo: this.state.merchantTotalTransactionCountTo
+          ? parseInt(this.state.merchantTotalTransactionCountTo)
+          : -1,
+          
+        MerchantTotalTransactionAmountFrom: -1,
         MerchantTotalTransactionAmountTo: this.state
           .merchantTotalTransactionAmountTo
           ? parseInt(this.state.merchantTotalTransactionAmountTo)

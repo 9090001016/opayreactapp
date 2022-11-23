@@ -700,7 +700,7 @@ class splitInstantPayUserManagement extends Component {
     return (
       <div>
         <BackBtn />
-        <div className="instantpay">
+        <div className="instantpay common_table">
           <h3 className="Usermana">One Pay User Management</h3>
           <div className="exfilter">
             <input
@@ -1004,7 +1004,7 @@ class splitInstantPayUserManagement extends Component {
               </div>
             </div>
           </Modal>
-          <div className="instantpaytable">
+          <div className="instantpaytable common_one">
             <Spin spinning={this.state.loading}>
               <Table
                 columns={columns}

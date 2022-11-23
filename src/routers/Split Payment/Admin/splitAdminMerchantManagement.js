@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Filter from "./../../../assets/Images/filter.png";
-import CSV from "./../../../assets/Images/csv.png";
+import Filter from "./../../../assets/Images/smallicons/Filteralt.png";
+import CSV from "./../../../assets/Images/smallicons/Exportcsv.png";
 import WhiteDropdown from "./../../../assets/Images/WhiteDropdown.png";
 import CloseIcon from "./../../../assets/Images/cross-icon.png";
 import { Table, Popover, DatePicker, Spin } from "antd";
@@ -84,10 +84,12 @@ class splitAdminMerchantManagement extends Component {
     document.getElementById("splitMerchantSett").classList.remove("active");
     this.handleGetMerchantManagementList();
     this.handleSubscriptionTypePeriodList();
+    this.setState({
+      module
+    })
     if (window.screen.width > 768) {
       this.setState({
         mobileView: false,
-        module
       });
     } else {
       this.setState({
@@ -181,12 +183,14 @@ class splitAdminMerchantManagement extends Component {
         MerchantName: this.state.merchantName,
         MerchantEmailId: this.state.merchantEmailId,
         MerchantContactNo: this.state.merchantContactNo,
+
         // MerchantTotalTransactionCountFrom: 0,
         // MerchantTotalTransactionCountTo: this.state
         //   .merchantTotalTransactionCountTo
         //   ? parseInt(this.state.merchantTotalTransactionCountTo)
         //   : 0,
-        // MerchantTotalTransactionAmountFrom: -1,
+
+        MerchantTotalTransactionAmountFrom: -1,
         MerchantTotalTransactionAmountTo: this.state
           .merchantTotalTransactionAmountTo
           ? parseInt(this.state.merchantTotalTransactionAmountTo)
@@ -198,6 +202,7 @@ class splitAdminMerchantManagement extends Component {
         SubscriptionPeriod: this.state.subscriptionPeriod,
         SubscriptionStatus: this.state.subscriptionStatus,
         ApprovalStatus: this.state.approvalStatus !== "" ? (this.state.approvalStatus == "Approved" ? "1" : "0") : "",
+
         SortColumn: sorter !== undefined ? (sorter.field !== undefined ? sorter.field : "merchantId") : "merchantId",
         SortBy: sorter !== undefined ? (sorter.order !== undefined ? (sorter.order == "ascend" ? "asc" : "desc") : "desc") : "desc",
         Page: (paging.current).toString(),
@@ -282,12 +287,14 @@ class splitAdminMerchantManagement extends Component {
         MerchantName: this.state.merchantName,
         MerchantEmailId: this.state.merchantEmailId,
         MerchantContactNo: this.state.merchantContactNo,
+
         // MerchantTotalTransactionCountFrom: 0,
         // MerchantTotalTransactionCountTo: this.state
         //   .merchantTotalTransactionCountTo
         //   ? parseInt(this.state.merchantTotalTransactionCountTo)
         //   : 0,
-        // MerchantTotalTransactionAmountFrom: -1,
+
+        MerchantTotalTransactionAmountFrom: -1,
         MerchantTotalTransactionAmountTo: this.state
           .merchantTotalTransactionAmountTo
           ? parseInt(this.state.merchantTotalTransactionAmountTo)
@@ -588,6 +595,13 @@ class splitAdminMerchantManagement extends Component {
         dataIndex: "merchantTotalTransactionCount",
         key: "merchantTotalTransactionCount",
         className: "mob-none",
+        render: (row,item) =>{
+          return (
+            <div className="totalTran">
+              <label>{item.merchantTotalTransactionCount}</label>
+            </div>
+          );
+        },
         sorter: true,
         sortDirections: ['ascend', 'descend', 'ascend']
       },
@@ -631,7 +645,7 @@ class splitAdminMerchantManagement extends Component {
         key: "paymentGApprovalStatus",
         dataIndex: "paymentGApprovalStatus",
         className: "mob-none",
-        sorter: true,
+        // sorter: true,
         sortDirections: ['ascend', 'descend', 'ascend']
       },
       {
@@ -777,7 +791,7 @@ class splitAdminMerchantManagement extends Component {
         <div className="blue_line">
         </div>
         <div className="merchManagement setting_dashboard">
-          <div className="dash_link">
+          <div className="dash_link end_user">
             <ul className="header-left">
               {(() => {
                 if (this.state.module.includes('Dashboard')) {

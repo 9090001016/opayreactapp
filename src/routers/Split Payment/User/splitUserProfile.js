@@ -9,7 +9,8 @@ import config from "./../../../helpers/config";
 import { NotificationManager } from "react-notifications";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
-import countryList from 'react-select-country-list'
+import countryList from 'react-select-country-list';
+import BackBtn from './../../Split Payment/Setting/Admin/BackBtn.js';
 
 
 
@@ -185,213 +186,217 @@ class splitUserProfile extends Component {
         show: true
       })
     }
-}
+  }
 
-handleRemoveProfile = () => {
-  this.setState({
-    userPic: "",
-    newUserPic: ""
-  });
-};
+  handleRemoveProfile = () => {
+    this.setState({
+      userPic: "",
+      newUserPic: ""
+    });
+  };
 
-render() {
-  return (
-    <div className="mainprofile">
-      <h3>Personal Information</h3>
-      <div className="profile">
-        <div className="row m-0">
-          <div className="col-12 col-sm-12 col-md-8 col-lg-6 prof">
-            <div className="card">
-              <div className="upload">
-                <div className="closeicon" onClick={this.handleRemoveProfile}>
-                  <img src={WhCloseIcon} alt="CloseIcon" />
-                </div>
-                <div className="profileimg">
-                  {this.state.show ?
-                    <img src={this.state.src} alt="new_user_pic" />
-                    : this.state.userPic === "" ?
-                      <img src={Bluser} alt="avatar_img" />
-                      :
-                      <img
-                        src={this.state.userPic}
-                        alt="UserImg"
-                      />
-                  }
-                </div>
-                <input
-                  type="file"
-                  className="d-none"
-                  id="img-upload"
-                  onChange={this.fileUpload.bind(this)}
-                />
-                <label className="uploadicon" htmlFor="img-upload">
-                  <img src={Camera} />
-                </label>
-              </div>
-              <div className="formdata">
-                <div className="row m-0">
-                  <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
-                    <label>Name</label>
+  render() {
+    return (
+      <div>
+        <BackBtn />
+        <div className="mainprofile">
+          <h3>Personal Information</h3>
+          <div className="profile">
+            <div className="row m-0">
+              <div className="col-12 col-sm-12 col-md-8 col-lg-6 prof">
+                <div className="card">
+                  <div className="upload">
+                    <div className="closeicon" onClick={this.handleRemoveProfile}>
+                      <img src={WhCloseIcon} alt="CloseIcon" />
+                    </div>
+                    <div className="profileimg">
+                      {this.state.show ?
+                        <img src={this.state.src} alt="new_user_pic" />
+                        : this.state.userPic === "" ?
+                          <img src={Bluser} alt="avatar_img" />
+                          :
+                          <img
+                            src={this.state.userPic}
+                            alt="UserImg"
+                          />
+                      }
+                    </div>
                     <input
-                      type="text"
-                      placeholder="Name"
-                      name="userName"
-                      value={this.state.userName}
-                      onChange={this.handleInputOnchange}
+                      type="file"
+                      className="d-none"
+                      id="img-upload"
+                      onChange={this.fileUpload.bind(this)}
                     />
+                    <label className="uploadicon" htmlFor="img-upload">
+                      <img src={Camera} />
+                    </label>
                   </div>
-                </div>
-                <div className="row m-0">
-                  <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
-                    <label>Mobile No.</label>
-                    <input
-                      type="text"
-                      placeholder="Mobile No."
-                      name="userMobileNo"
-                      value={this.state.userMobileNo}
-                      onChange={this.handleInputOnchange}
-                    />
-                  </div>
-                </div>
-                <div className="row m-0">
-                  <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
-                    <label>Email ID</label>
-                    <input
-                      type="text"
-                      placeholder="Email ID"
-                      name="userEmail"
-                      value={this.state.userEmail}
-                      onChange={this.handleInputOnchange}
-                    />
-                  </div>
-                </div>
+                  <div className="formdata">
+                    <div className="row m-0">
+                      <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                        <label>Name</label>
+                        <input
+                          type="text"
+                          placeholder="Name"
+                          name="userName"
+                          value={this.state.userName}
+                          onChange={this.handleInputOnchange}
+                        />
+                      </div>
+                    </div>
+                    <div className="row m-0">
+                      <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                        <label>Mobile No.</label>
+                        <input
+                          type="text"
+                          placeholder="Mobile No."
+                          name="userMobileNo"
+                          value={this.state.userMobileNo}
+                          onChange={this.handleInputOnchange}
+                        />
+                      </div>
+                    </div>
+                    <div className="row m-0">
+                      <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                        <label>Email ID</label>
+                        <input
+                          type="text"
+                          placeholder="Email ID"
+                          name="userEmail"
+                          value={this.state.userEmail}
+                          onChange={this.handleInputOnchange}
+                        />
+                      </div>
+                    </div>
 
-                <div className="row m-0">
-                  <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
-                    <label>Country</label>
-                    <select
-                      name="country"
-                      value={this.state.country}
-                      onChange={this.handleInputOnchange}
-                    >
-                      <option>Select Country</option>
-                      {this.state.options.map((option, index) => {
-                        return (
-                          <option key={index} value={option.label}>
-                            {option.label}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </div>
-                </div>
-                <div className="row m-0">
-                  <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
-                    <label>Address 1</label>
-                    <input
-                      type="text"
-                      placeholder="Address 1"
-                      name="address1"
-                      value={this.state.address1}
-                      onChange={this.handleInputOnchange}
-                    />
-                  </div>
-                </div>
-                <div className="row m-0">
-                  <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
-                    <label>Address 2</label>
-                    <input
-                      type="text"
-                      placeholder="Address 2"
-                      name="address2"
-                      value={this.state.address2}
-                      onChange={this.handleInputOnchange}
-                    />
-                  </div>
-                </div>
-                <div className="row m-0">
-                  <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
-                    <label>Suburb</label>
-                    <input
-                      type="text"
-                      placeholder="Suburb"
-                      name="suburb"
-                      value={this.state.suburb}
-                      onChange={this.handleInputOnchange}
-                    />
-                  </div>
-                </div>
-                <div className="row m-0">
-                  <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
-                    <label>State</label>
+                    <div className="row m-0">
+                      <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                        <label>Country</label>
+                        <select
+                          name="country"
+                          value={this.state.country}
+                          onChange={this.handleInputOnchange}
+                        >
+                          <option>Select Country</option>
+                          {this.state.options.map((option, index) => {
+                            return (
+                              <option key={index} value={option.label}>
+                                {option.label}
+                              </option>
+                            );
+                          })}
+                        </select>
+                      </div>
+                    </div>
+                    <div className="row m-0">
+                      <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                        <label>Address 1</label>
+                        <input
+                          type="text"
+                          placeholder="Address 1"
+                          name="address1"
+                          value={this.state.address1}
+                          onChange={this.handleInputOnchange}
+                        />
+                      </div>
+                    </div>
+                    <div className="row m-0">
+                      <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                        <label>Address 2</label>
+                        <input
+                          type="text"
+                          placeholder="Address 2"
+                          name="address2"
+                          value={this.state.address2}
+                          onChange={this.handleInputOnchange}
+                        />
+                      </div>
+                    </div>
+                    <div className="row m-0">
+                      <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                        <label>Suburb</label>
+                        <input
+                          type="text"
+                          placeholder="Suburb"
+                          name="suburb"
+                          value={this.state.suburb}
+                          onChange={this.handleInputOnchange}
+                        />
+                      </div>
+                    </div>
+                    <div className="row m-0">
+                      <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                        <label>State</label>
 
-                    {this.state.country == "Australia" ? (
-                      <select
-                        name="state"
-                        value={this.state.state}
-                        onChange={this.handleInputOnchange}
-                      >
-                        <option value={0}>Select State</option>
-                        <option value={"NSW"}>NSW</option>
-                        <option value={"ACT"}>ACT</option>
-                        <option value={"VIC"}>VIC</option>
-                        <option value={"SA"}>SA</option>
-                        <option value={"NT"}>NT</option>
-                        <option value={"TAS"}>TAS</option>
-                        <option value={"QLD"}>QLD</option>
-                        <option value={"WA"}>WA</option>
-                      </select>
-                    ) : (
-                      <input
-                        type="text"
-                        placeholder="State *"
-                        name="state"
-                        value={this.state.state}
-                        onChange={this.handleInputOnchange.bind(this)}
-                      />
-                    )}
-                  </div>
-                </div>
-                <div className="row m-0">
-                  <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
-                    <label>PostCode</label>
-                    <input
-                      type="text"
-                      placeholder="PostCode"
-                      name="postCode"
-                      value={this.state.postCode}
-                      onChange={this.handleInputOnchange}
-                    />
-                  </div>
-                </div>
-
-                <div className="row m-0">
-                  <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
-                    <div className="save">
-                      <button
-                        type="button"
-                        className="btn"
-                        onClick={this.handleUpdateUserInfo}
-                        disabled={this.state.loading}
-                      >
-                        {this.state.loading && (
-                          <FontAwesomeIcon
-                            className="mr-2"
-                            icon={faCircleNotch}
-                            size="sm"
-                            spin
+                        {this.state.country == "Australia" ? (
+                          <select
+                            name="state"
+                            value={this.state.state}
+                            onChange={this.handleInputOnchange}
+                          >
+                            <option value={0}>Select State</option>
+                            <option value={"NSW"}>NSW</option>
+                            <option value={"ACT"}>ACT</option>
+                            <option value={"VIC"}>VIC</option>
+                            <option value={"SA"}>SA</option>
+                            <option value={"NT"}>NT</option>
+                            <option value={"TAS"}>TAS</option>
+                            <option value={"QLD"}>QLD</option>
+                            <option value={"WA"}>WA</option>
+                          </select>
+                        ) : (
+                          <input
+                            type="text"
+                            placeholder="State *"
+                            name="state"
+                            value={this.state.state}
+                            onChange={this.handleInputOnchange.bind(this)}
                           />
                         )}
-                        Save
-                      </button>
-                      <Link
-                        to={{
-                          pathname: "/instantPayUserChangePassword",
-                          state: { cameFrom: "User" },
-                        }}
-                      >
-                        <p>Change Password</p>
-                      </Link>
+                      </div>
+                    </div>
+                    <div className="row m-0">
+                      <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                        <label>PostCode</label>
+                        <input
+                          type="text"
+                          placeholder="PostCode"
+                          name="postCode"
+                          value={this.state.postCode}
+                          onChange={this.handleInputOnchange}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="row m-0">
+                      <div className="col-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                        <div className="save">
+                          <button
+                            type="button"
+                            className="btn"
+                            onClick={this.handleUpdateUserInfo}
+                            disabled={this.state.loading}
+                          >
+                            {this.state.loading && (
+                              <FontAwesomeIcon
+                                className="mr-2"
+                                icon={faCircleNotch}
+                                size="sm"
+                                spin
+                              />
+                            )}
+                            Save
+                          </button>
+                          <Link
+                            to={{
+                              pathname: "/instantPayUserChangePassword",
+                              state: { cameFrom: "User" },
+                            }}
+                          >
+                            <p>Change Password</p>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -400,9 +405,9 @@ render() {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
+
+    );
+  }
 }
 
 export default splitUserProfile;

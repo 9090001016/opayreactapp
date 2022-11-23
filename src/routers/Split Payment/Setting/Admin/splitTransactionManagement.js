@@ -53,6 +53,7 @@ class paymentManagement extends Component {
       endDate: null,
       userName: "",
       merchantName: "",
+      filterData : [],
       totalTransactionAmount: "",
       paymentProcessor: "",
       status: "",
@@ -63,7 +64,8 @@ class paymentManagement extends Component {
       hdnPaymentProcessor: true,
       hdnDate: true,
       hdnStatus: true,
-      customerTransactionsDataCSV: []
+      customerTransactionsDataCSV: [],
+      setName:""
     };
   }
   showDrawerFilter = () => {
@@ -89,7 +91,7 @@ class paymentManagement extends Component {
   }
 
   handleInstallmentsDetails(installmentsDetails) {
-    
+
 
     this.props.history.push({
       pathname: "installmentDetails",
@@ -131,9 +133,11 @@ class paymentManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
+        
+        
         if (status === "Success") {
           if (data.length !== 0) {
             // paging.current = paging.current;
@@ -143,7 +147,8 @@ class paymentManagement extends Component {
               customerTransactionsData: data,
               loadingCustomer: false,
               paginationCustomer: paging,
-              loadingSearchCustomer: false
+              loadingSearchCustomer: false,
+              filterData : data
             });
           } else {
             paging.total = 0;
@@ -201,7 +206,7 @@ class paymentManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -267,7 +272,7 @@ class paymentManagement extends Component {
       },
     })
       .then(function (res) {
-        
+
         let status = res.data.message;
         let data = res.data.responseData;
         if (status === "Success") {
@@ -292,7 +297,7 @@ class paymentManagement extends Component {
   }
 
   handleUserDetails(orderId, merchantId, userId) {
-    
+
 
     this.props.history.push({
       pathname: "installmentDetails",
@@ -305,7 +310,7 @@ class paymentManagement extends Component {
   }
 
   handleMerchantDetails(merchantId) {
-    
+
 
     this.props.history.push({
       pathname: "merchantDetails",
@@ -382,8 +387,23 @@ class paymentManagement extends Component {
       pageSize: 10,
       total: 0
     }
+    // this.filterData.filter((val)=>{
+    //   if(this.state.userName == ""){
+    //     return val
+    //   }else if(val.orderId.includes(this.state.orderId)){
+    //     return val.orderId
+    //   }else if(val.userName.toLowerCase().includes(this.state.userName.toLowerCase())){
+    //     return val.userName
+    //   }else if(val.merchantName.toLowerCase().includes(this.state.merchantName.toLowerCase())){
+    //     return val.merchantName
+    //   }
+    // })
+    console.log(this.state.filterData.map((e)=>{
+      return e.orderId
+    }))
     this.handleGetCustomerTransactionsList(pagination);
     this.handleGetMerchantTransactionsList(pagination);
+    
   }
 
   handleDateOnChange = (dates, dateStrings) => {
@@ -446,19 +466,19 @@ class paymentManagement extends Component {
           item.installment === "-" ? (
             item.installment
           ) : (
-              <span
-                className="custom-link"
-                onClick={() =>
-                  this.handleInstallmentsDetails({
-                    orderId: item.orderId,
-                    merchantId: item.merchantId,
-                    userId: item.userId,
-                  })
-                }
-              >
-                {item.installment}
-              </span>
-            ),
+            <span
+              className="custom-link"
+              onClick={() =>
+                this.handleInstallmentsDetails({
+                  orderId: item.orderId,
+                  merchantId: item.merchantId,
+                  userId: item.userId,
+                })
+              }
+            >
+              {item.installment}
+            </span>
+          ),
         sorter: true,
         sortDirections: ['ascend', 'descend', 'ascend']
       },
@@ -674,8 +694,8 @@ class paymentManagement extends Component {
           ) : item.customerCard.toLowerCase().trim() === "diner club" ? (
             <img src={DinerClub} alt="icon missing" className="cards-icon" />
           ) : (
-                    item.customerCard
-                  ),
+            item.customerCard
+          ),
         sorter: true,
         sortDirections: ['ascend', 'descend', 'ascend']
       },
@@ -740,12 +760,12 @@ class paymentManagement extends Component {
                 <div className="deletepopover text-center" id={"merchant" + item.merchantId}>
                   <h3>Are you sure to refund ?</h3>
                   <button className="delete"
-                  onClick={() =>
-                    this.hide(
-                      this,
-                      "merchant" + item.merchantId
-                    )
-                  }
+                    onClick={() =>
+                      this.hide(
+                        this,
+                        "merchant" + item.merchantId
+                      )
+                    }
                   >Cancel</button>
                   <button className="refundbt">Refund</button>
                 </div>
@@ -755,15 +775,15 @@ class paymentManagement extends Component {
             >
               <div className="refund">
                 <button
-                onClick={() =>
-                  this.show(this, "merchant" + item.merchantId)
-                } 
+                  onClick={() =>
+                    this.show(this, "merchant" + item.merchantId)
+                  }
                 >Refund</button>
               </div>
             </Popover>
           ) : (
-              "-"
-            );
+            "-"
+          );
         },
       },
     ];
@@ -790,71 +810,71 @@ class paymentManagement extends Component {
     return (
       <div>
         <BackBtn />
-      <div className="paymentmana">
-        <h3 className="Usermana">End Customer Transaction Management</h3>
-        <div className="exfilter">
-          {this.state.activeTab == "customer" ? (
-            <CSVLink
-              data={this.state.customerTransactionsDataCSV}
-              headers={headersEndCustomer}
-              filename={"End Customer.csv"}
-              className="csv"
-            >
-              <img src={CSV} alt="Export" />
-            Export to CSV
-            </CSVLink>) : (<CSVLink
-              data={this.state.merchantTransactionsData}
-              headers={headersMerchant}
-              filename={"Merchant.csv"}
-              className="csv"
-            >
-              <img src={CSV} alt="Export" />
-            Export to CSV
-            </CSVLink>)}
-          <label className="filte" onClick={this.handleFilterbuttonClick.bind(this)}>
+        <div className="paymentmana common_table">
+          <h3 className="Usermana">End Customer Transaction Management</h3>
+          <div className="exfilter">
+            {this.state.activeTab == "customer" ? (
+              <CSVLink
+                data={this.state.customerTransactionsDataCSV}
+                headers={headersEndCustomer}
+                filename={"End Customer.csv"}
+                className="csv"
+              >
+                <img src={CSV} alt="Export" />
+                Export to CSV
+              </CSVLink>) : (<CSVLink
+                data={this.state.merchantTransactionsData}
+                headers={headersMerchant}
+                filename={"Merchant.csv"}
+                className="csv"
+              >
+                <img src={CSV} alt="Export" />
+                Export to CSV
+              </CSVLink>)}
+            <label className="filte" onClick={this.handleFilterbuttonClick.bind(this)}>
+              <img src={Filter} alt="Export" />
+              Filter
+              <img src={WhiteDropdown} alt="Dropdown" className="WhDrop" />
+            </label>
+          </div>
+          <label className="filt" onClick={this.showDrawerFilter.bind(this)}>
             <img src={Filter} alt="Export" />
-            Filter
-            <img src={WhiteDropdown} alt="Dropdown" className="WhDrop" />
           </label>
-        </div>
-        <label className="filt" onClick={this.showDrawerFilter.bind(this)}>
-          <img src={Filter} alt="Export" />
-        </label>
-        {this.state.isFilter ? (
-          <div className="row m-0 w-100 back">
-            <div className="col-12 col-md-3" hidden={this.state.hdnOrderId}>
-              <input type="text"
-                placeholder="Enter Order Id"
-                name="orderId"
-                value={this.state.orderId}
-                onChange={this.handleOnChange.bind(this)}
-              />
-            </div>
-            <div className="col-12 col-md-3" hidden={this.state.hdnTransactionId}>
-              <input type="text"
-                placeholder="Enter Transaction Id"
-                name="transactionId"
-                value={this.state.transactionId}
-                onChange={this.handleOnChange.bind(this)}
-              />
-            </div>
-            <div className="col-12 col-md-3" hidden={this.state.hdnUserName}>
-              <input type="text"
-                placeholder="Enter User Name"
-                name="userName"
-                value={this.state.userName}
-                onChange={this.handleOnChange.bind(this)}
-              />
-            </div>
-            <div className="col-12 col-md-3">
-              <input type="text"
-                placeholder="Enter Merchant Name"
-                name="merchantName"
-                value={this.state.merchantName}
-                onChange={this.handleOnChange.bind(this)}
-              />
-            </div>
-            {/* <div className="col-12 col-md-3">
+          {this.state.isFilter ? (
+            <div className="row m-0 w-100 back">
+              <div className="col-12 col-md-3" hidden={this.state.hdnOrderId}>
+                <input type="text"
+                  placeholder="Enter Order Id"
+                  name="orderId"
+                  // value={this.state.orderId}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              <div className="col-12 col-md-3" hidden={this.state.hdnTransactionId}>
+                <input type="text"
+                  placeholder="Enter Transaction Id"
+                  name="transactionId"
+                  value={this.state.transactionId}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              <div className="col-12 col-md-3" hidden={this.state.hdnUserName}>
+                <input type="text"
+                  placeholder="Enter User Name"
+                  name="userName"
+                  value={this.state.userName}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              <div className="col-12 col-md-3">
+                <input type="text"
+                  placeholder="Enter Merchant Name"
+                  name="merchantName"
+                  value={this.state.merchantName}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              {/* <div className="col-12 col-md-3">
               <input
                 type="text"
                 placeholder="Enter Total Amount Txn upto"
@@ -863,59 +883,59 @@ class paymentManagement extends Component {
                 onChange={this.handleOnChange.bind(this)}
               />
             </div> */}
-            <div className="col-12 col-md-3" hidden={this.state.hdnPaymentProcessor}>
-              <input
-                type="text"
-                placeholder="Enter Payment Processor"
-                name="paymentProcessor"
-                value={this.state.paymentProcessor}
-                onChange={this.handleOnChange.bind(this)}
-              />
-            </div>
-            <div className="col-12 col-md-3" hidden={this.state.hdnDate}>
-              <RangePicker
-                className="calendar"
-                format={dateFormat}
-                onChange={this.handleDateOnChange}
-                disabledDate={disabledDate}
-              ></RangePicker>
-            </div>
-            <div className="col-12 col-md-3" hidden={this.state.hdnStatus}>
-              <select
-                name="status"
-                value={this.state.status}
-                onChange={this.handleOnChange.bind(this)}
-              >
-                <option value="">Select Status</option>
-                <option value="Refund Init">Refund Init</option>
-                <option value="Progress">Progress</option>
-                <option value="Success">Success</option>
-                <option value="Failed">Failed</option>
-                <option value="Refunded">Refunded</option>
-              </select>
-            </div>
-            <div className="col-12 col-md-3">
-              <div className="search" style={{textAlign:"left"}}>
-                <button className="m-0" onClick={this.handleSearchCustomer.bind(this)}
-                  disabled={this.state.loadingSearchCustomer}>
-                  {this.state.loadingSearchCustomer && (
-                    <FontAwesomeIcon
-                      className="mr-2"
-                      icon={faCircleNotch}
-                      size="sm"
-                      spin
-                    />
-                  )}
-                Search
-                </button>
+              <div className="col-12 col-md-3" hidden={this.state.hdnPaymentProcessor}>
+                <input
+                  type="text"
+                  placeholder="Enter Payment Processor"
+                  name="paymentProcessor"
+                  value={this.state.paymentProcessor}
+                  onChange={this.handleOnChange.bind(this)}
+                />
+              </div>
+              <div className="col-12 col-md-3" hidden={this.state.hdnDate}>
+                <RangePicker
+                  className="calendar"
+                  format={dateFormat}
+                  onChange={this.handleDateOnChange}
+                  disabledDate={disabledDate}
+                ></RangePicker>
+              </div>
+              <div className="col-12 col-md-3" hidden={this.state.hdnStatus}>
+                <select
+                  name="status"
+                  value={this.state.status}
+                  onChange={this.handleOnChange.bind(this)}
+                >
+                  <option value="">Select Status</option>
+                  <option value="Refund Init">Refund Init</option>
+                  <option value="Progress">Progress</option>
+                  <option value="Success">Success</option>
+                  <option value="Failed">Failed</option>
+                  <option value="Refunded">Refunded</option>
+                </select>
+              </div>
+              <div className="col-12 col-md-3">
+                <div className="search" style={{ textAlign: "left" }}>
+                  <button className="m-0" onClick={this.handleSearchCustomer.bind(this)}
+                    disabled={this.state.loadingSearchCustomer}>
+                    {this.state.loadingSearchCustomer && (
+                      <FontAwesomeIcon
+                        className="mr-2"
+                        icon={faCircleNotch}
+                        size="sm"
+                        spin
+                      />
+                    )}
+                    Search
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ) : null}
-        <div className="paytab">
-          <div className="secondtab mb-4 mt-4 w-100">
-            <ul className="nav nav-tabs w-100" role="tablist">
-              {/* <li className="nav-item">
+          ) : null}
+          <div className="paytab">
+            <div className="secondtab mb-4 mt-4 w-100">
+              <ul className="nav nav-tabs w-100" role="tablist">
+                {/* <li className="nav-item">
                 <a
                   className="nav-link active"
                   data-toggle="tab"
@@ -928,7 +948,7 @@ class paymentManagement extends Component {
                   End Customer
                 </a>
               </li> */}
-              {/* <li className="nav-item">
+                {/* <li className="nav-item">
                 <a
                   className="nav-link"
                   data-toggle="tab"
@@ -941,249 +961,249 @@ class paymentManagement extends Component {
                   Merchant
                 </a>
               </li> */}
-            </ul>
-          </div>
-          <div className="tab-content">
-            <div
-              className="tab-pane fade active show"
-              id="noti-Tab"
-              role="tabpanel"
-              aria-labelledby="noti-Tab"
-            >
-              <div className="paymenttable">
-                <Spin spinning={this.state.loadingCustomer}>
-                  <Table
-                    columns={columnsCustomer}
-                    expandedRowRender={(row) => {
-                      return (
-                        <React.Fragment>
-                          <div className="row">
-                            <div className="col-12 col-sm-6 mb-3">
-                              <div className="mobilevi">
-                                <label className="expandemail">OrderId:</label>
-                                <label className="expandemailtext">{row.orderId}</label>
+              </ul>
+            </div>
+            <div className="tab-content">
+              <div
+                className="tab-pane fade active show"
+                id="noti-Tab"
+                role="tabpanel"
+                aria-labelledby="noti-Tab"
+              >
+                <div className="paymenttable common_one">
+                  <Spin spinning={this.state.loadingCustomer}>
+                    <Table
+                      columns={columnsCustomer}
+                      expandedRowRender={(row) => {
+                        return (
+                          <React.Fragment>
+                            <div className="row">
+                              <div className="col-12 col-sm-6 mb-3">
+                                <div className="mobilevi">
+                                  <label className="expandemail">OrderId:</label>
+                                  <label className="expandemailtext">{row.orderId}</label>
+                                </div>
                               </div>
-                            </div>
-                            <div className="col-12 col-sm-6 mb-3">
-                              <div className="mobilevi">
-                                <label className="expandemail">transactionID:</label>
-                                <label className="expandemailtext">{row.transactionID}</label>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="col-12 col-sm-6 mb-3">
-                              <div className="mobilevi">
-                                <label className="expandemail">Trasaction Date:</label>
-                                <label className="expandemailtext">{row.transactionDate}</label>
-                              </div>
-                            </div>
-                            <div className="col-12 col-sm-6 mb-3">
-                              <div className="mobilevi">
-                                <label className="expandemail">Installments:</label>
-                                <label className="expandemailtext">{row.installment}</label>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="col-12 col-sm-6 mb-3">
-                              <div className="mobilevi">
-                                <label className="expandemail">Amount Transacted (AU$):</label>
-                                <label className="expandemailtext">{row.transactionAmount}</label>
-                              </div>
-                            </div>
-                            <div className="col-12 col-sm-6 mb-3">
-                              <div className="mobilevi">
-                                <label className="expandemail">User:</label>
-                                <label className="expandemailtext">{row.userName}</label>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="col-12 col-sm-6 mb-3">
-                              <div className="mobilevi">
-                                <label className="expandemail">MerchantName:</label>
-                                <label className="expandemailtext">{row.merchantName}</label>
-                              </div>
-                            </div>
-                            <div className="col-12 col-sm-6 mb-3">
-                              <div className="mobilevi">
-                                <label className="expandemail">Payment Processor:</label>
-                                <label className="expandemailtext">{row.paymentProcessor}</label>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="col-12 col-sm-6 mb-3">
-                              <div className="mobilevi">
-                                <label className="expandemail">customerCard:</label>
-                                <label className="expandemailtext">{row.customerCard}</label>
-                              </div>
-                            </div>
-                            <div className="col-12 col-sm-6 mb-3">
-                              <div className="mobilevi">
-                                <label className="expandemail">Created By:</label>
-                                <div className="amazontext">
-                                  <label className="expandemailtext">
-                                    {row.createBy}
-                                  </label>
-                                  <Popover
-                                    content={
-                                      <div className="userpopover">
-                                        <div className="subsc">
-                                          <label>Created By</label>
-                                          <label>{row.createBy}</label>
-                                        </div>
-                                        <div className="subsc">
-                                          <label>Created On</label>
-                                          <label>{row.createDate}</label>
-                                        </div>
-                                        <div className="subsc">
-                                          <label>Modified By</label>
-                                          <label>{row.updateBy}</label>
-                                        </div>
-                                        <div className="subsc">
-                                          <label>Modified On</label>
-                                          <label>{row.updateDate}</label>
-                                        </div>
-                                      </div>
-                                    }
-                                    placement="bottom"
-                                    trigger="click"
-                                  >
-                                    <img src={InfoIcon} alt="InfoIcon" />
-                                  </Popover>
+                              <div className="col-12 col-sm-6 mb-3">
+                                <div className="mobilevi">
+                                  <label className="expandemail">transactionID:</label>
+                                  <label className="expandemailtext">{row.transactionID}</label>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div className="row">
-                            <div className="col-12 col-sm-6 mb-3">
-                              <div className="mobilevi">
-                                <label className="expandemail">Status:</label>
-                                <label className="expandemailtext">
-                                  {row.isActive ? "Active" : "Inactive"}
-                                </label>
+                            <div className="row">
+                              <div className="col-12 col-sm-6 mb-3">
+                                <div className="mobilevi">
+                                  <label className="expandemail">Trasaction Date:</label>
+                                  <label className="expandemailtext">{row.transactionDate}</label>
+                                </div>
+                              </div>
+                              <div className="col-12 col-sm-6 mb-3">
+                                <div className="mobilevi">
+                                  <label className="expandemail">Installments:</label>
+                                  <label className="expandemailtext">{row.installment}</label>
+                                </div>
                               </div>
                             </div>
+                            <div className="row">
+                              <div className="col-12 col-sm-6 mb-3">
+                                <div className="mobilevi">
+                                  <label className="expandemail">Amount Transacted (AU$):</label>
+                                  <label className="expandemailtext">{row.transactionAmount}</label>
+                                </div>
+                              </div>
+                              <div className="col-12 col-sm-6 mb-3">
+                                <div className="mobilevi">
+                                  <label className="expandemail">User:</label>
+                                  <label className="expandemailtext">{row.userName}</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-12 col-sm-6 mb-3">
+                                <div className="mobilevi">
+                                  <label className="expandemail">MerchantName:</label>
+                                  <label className="expandemailtext">{row.merchantName}</label>
+                                </div>
+                              </div>
+                              <div className="col-12 col-sm-6 mb-3">
+                                <div className="mobilevi">
+                                  <label className="expandemail">Payment Processor:</label>
+                                  <label className="expandemailtext">{row.paymentProcessor}</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-12 col-sm-6 mb-3">
+                                <div className="mobilevi">
+                                  <label className="expandemail">customerCard:</label>
+                                  <label className="expandemailtext">{row.customerCard}</label>
+                                </div>
+                              </div>
+                              <div className="col-12 col-sm-6 mb-3">
+                                <div className="mobilevi">
+                                  <label className="expandemail">Created By:</label>
+                                  <div className="amazontext">
+                                    <label className="expandemailtext">
+                                      {row.createBy}
+                                    </label>
+                                    <Popover
+                                      content={
+                                        <div className="userpopover">
+                                          <div className="subsc">
+                                            <label>Created By</label>
+                                            <label>{row.createBy}</label>
+                                          </div>
+                                          <div className="subsc">
+                                            <label>Created On</label>
+                                            <label>{row.createDate}</label>
+                                          </div>
+                                          <div className="subsc">
+                                            <label>Modified By</label>
+                                            <label>{row.updateBy}</label>
+                                          </div>
+                                          <div className="subsc">
+                                            <label>Modified On</label>
+                                            <label>{row.updateDate}</label>
+                                          </div>
+                                        </div>
+                                      }
+                                      placement="bottom"
+                                      trigger="click"
+                                    >
+                                      <img src={InfoIcon} alt="InfoIcon" />
+                                    </Popover>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-12 col-sm-6 mb-3">
+                                <div className="mobilevi">
+                                  <label className="expandemail">Status:</label>
+                                  <label className="expandemailtext">
+                                    {row.isActive ? "Active" : "Inactive"}
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </React.Fragment>
+                        );
+                      }}
+                      expandIcon={({ expanded, onExpand, record }) =>
+                        expanded ? (
+                          <div className="expandown1">
+                            <img src={Down} onClick={e => onExpand(record, e)} />
                           </div>
-                        </React.Fragment>
-                      );
-                    }}
-                    expandIcon={({ expanded, onExpand, record }) =>
-                      expanded ? (
-                        <div className="expandown1">
-                          <img src={Down} onClick={e => onExpand(record, e)} />
-                        </div>
-                      ) : (
+                        ) : (
                           <div className="expandown">
                             <img src={Down} onClick={e => onExpand(record, e)} />
                           </div>
                         )}
-                    expandIconColumnIndex={this.state.mobileView ? 8 : -1}
-                    expandIconAsCell={false}
-                    dataSource={this.state.customerTransactionsData}
-                    pagination={{
-                      current: this.state.paginationCustomer.current,
-                      pageSize: this.state.paginationCustomer.pageSize,
-                      total: this.state.paginationCustomer.total,
-                      position: ["bottomCenter"],
-                      showSizeChanger: true
-                    }}
-                    onChange={this.onShowSizeChangeCustomer}
-                  />
-                </Spin>
+                      expandIconColumnIndex={this.state.mobileView ? 8 : -1}
+                      expandIconAsCell={false}
+                      dataSource={this.state.customerTransactionsData}
+                      pagination={{
+                        current: this.state.paginationCustomer.current,
+                        pageSize: this.state.paginationCustomer.pageSize,
+                        total: this.state.paginationCustomer.total,
+                        position: ["bottomCenter"],
+                        showSizeChanger: true
+                      }}
+                      onChange={this.onShowSizeChangeCustomer}
+                    />
+                  </Spin>
+                </div>
               </div>
-            </div>
-            <div
-              className="tab-pane fade"
-              id="email-Tab"
-              role="tabpanel"
-              aria-labelledby="email-Tab"
-            >
-              <div className="paymenttable">
-                <Spin spinning={this.state.loadingMerchant}>
-                  <Table
-                    columns={columnsMerchant}
-                    dataSource={this.state.merchantTransactionsData}
-                    pagination={{
-                      current: this.state.paginationMerchant.current,
-                      pageSize: this.state.paginationMerchant.pageSize,
-                      total: this.state.paginationMerchant.total,
-                      position: ["bottomCenter"],
-                      showSizeChanger: true
-                    }}
-                    onChange={this.onShowSizeChangeMerchant}
-                  />
-                </Spin>
+              <div
+                className="tab-pane fade"
+                id="email-Tab"
+                role="tabpanel"
+                aria-labelledby="email-Tab"
+              >
+                <div className="paymenttable">
+                  <Spin spinning={this.state.loadingMerchant}>
+                    <Table
+                      columns={columnsMerchant}
+                      dataSource={this.state.merchantTransactionsData}
+                      pagination={{
+                        current: this.state.paginationMerchant.current,
+                        pageSize: this.state.paginationMerchant.pageSize,
+                        total: this.state.paginationMerchant.total,
+                        position: ["bottomCenter"],
+                        showSizeChanger: true
+                      }}
+                      onChange={this.onShowSizeChangeMerchant}
+                    />
+                  </Spin>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="fl">
-          <Drawer
-            placement={placement}
-            closable={false}
-            onClose={this.onCloseFilter}
-            visible={visibleFilter}
-            key={placement}
-            className="f2"
-          >
-            <div className="drarfilter">
-              <div className="row m-0 w-100 back">
-                <div className="col-12 col-md-3">
-                  <input type="text" placeholder="Enter User Id" />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input type="text" placeholder="Enter Name" />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input type="text" placeholder="Enter Email" />
-                </div>
-                <div className="col-12 col-md-3">
-                  <input type="text" placeholder="Enter Contact No." />
-                </div>
-                <div className="col-12 col-md-3">
-                  <label className="Totalamount">
-                    Total No. of Transaction upto
-                  </label>
-                  <div className="slidecontainer">
-                    <input type="range" min="1" max="100" value="50" />
+          <div className="fl">
+            <Drawer
+              placement={placement}
+              closable={false}
+              onClose={this.onCloseFilter}
+              visible={visibleFilter}
+              key={placement}
+              className="f2"
+            >
+              <div className="drarfilter">
+                <div className="row m-0 w-100 back">
+                  <div className="col-12 col-md-3">
+                    <input type="text" placeholder="Enter User Id" />
                   </div>
-                </div>
-                <div className="col-12 col-md-3">
-                  <label className="Totalamount">
-                    Total Amount Transacted upto
-                  </label>
-                  <div className="slidecontainer">
-                    <input type="range" min="1" max="100" value="50" />
+                  <div className="col-12 col-md-3">
+                    <input type="text" placeholder="Enter Name" />
                   </div>
-                </div>
-                <div className="col-12 col-md-3">
-                  <input
-                    type="text"
-                    className="calendar"
-                    placeholder="Start Date - End Date"
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <select>
-                    <option>Select Status</option>
-                    <option>Select Status 1</option>
-                    <option>Select Status 2</option>
-                  </select>
-                </div>
-                <div className="col-12 col-md-12">
-                  <div className="search">
-                    <button onClick={this.onCloseFilter.bind(this)} className="mr-1">Cancel</button>
-                    <button>Search</button>
+                  <div className="col-12 col-md-3">
+                    <input type="text" placeholder="Enter Email" />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input type="text" placeholder="Enter Contact No." />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <label className="Totalamount">
+                      Total No. of Transaction upto
+                    </label>
+                    <div className="slidecontainer">
+                      <input type="range" min="1" max="100" value="50" />
+                    </div>
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <label className="Totalamount">
+                      Total Amount Transacted upto
+                    </label>
+                    <div className="slidecontainer">
+                      <input type="range" min="1" max="100" value="50" />
+                    </div>
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <input
+                      type="text"
+                      className="calendar"
+                      placeholder="Start Date - End Date"
+                    />
+                  </div>
+                  <div className="col-12 col-md-3">
+                    <select>
+                      <option>Select Status</option>
+                      <option>Select Status 1</option>
+                      <option>Select Status 2</option>
+                    </select>
+                  </div>
+                  <div className="col-12 col-md-12">
+                    <div className="search">
+                      <button onClick={this.onCloseFilter.bind(this)} className="mr-1">Cancel</button>
+                      <button>Search</button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </Drawer>
+            </Drawer>
+          </div>
         </div>
-      </div>
       </div>
     );
   }
