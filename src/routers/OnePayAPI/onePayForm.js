@@ -9,7 +9,7 @@ import { notification } from "antd";
 import { NotificationManager } from "react-notifications";
 import { Modal } from 'react-responsive-modal';
 
-import GreenCheck from "./../../assets/Images/check-green.png";
+import GreenCheck from "./../../assets/Images/check.png";
 import OnePayLogo from "./../../assets/Images/allicons/main-logo 1.png";
 
 const cookies = new Cookies();
