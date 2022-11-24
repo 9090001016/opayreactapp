@@ -17,29 +17,115 @@ import FooterMobile from './FooterMobile'
 import OnePayLogo from "../../../assets/Images/allicons/main-logo 1.png";
 import { useEffect } from 'react';
 import { Link } from 'react-scroll'
+import { NotificationManager, NotificationContainer } from "react-notifications";
+import axios from "axios";
+import config from '../../../helpers/config'
+
+import { Modal } from 'react-responsive-modal';
 
 const SplitHomes = () => {
     let isDesktop = true;
+
     const [footerSize, setFooterSize] = useState(window.innerWidth);
-    const [navbar,setNavbar] = useState(false);
+    const [contactUsMdl, setCotactUsMdl] = useState(false);
+    const [contact_name, setContact_name] = useState("");
+    const [contact_companyName, setContact_companyName] = useState("");
+    const [contact_mail, setContact_mail] = useState("");
+    const [contact_mobileNo, setContact_mobileNo] = useState("");
+    const [contact_name_valid, setContact_name_valid] = useState(false);
+    const [contact_companyName_valid, setContact_companyName_valid] = useState(false);
+    const [contact_address_valid, setContact_address_valid] = useState(false);
+    const [contact_mobileNo_valid, setContact_mobileNo_valid] = useState(false);
 
     const setFooter = () => {
         setFooterSize(window.innerWidth);
         isDesktop = window.innerWidth > 912 ? true : false;
     }
     useEffect(() => {
+        setTimeout(() => {
+            setCotactUsMdl(true)
+        }, 3000);
         window.addEventListener('resize', setFooter);
-        setNavbar(true);
 
         return () => {
             window.removeEventListener('resize', setFooter);
         };
     }, []);
+    const handleConactUsInputOnchange = (e) => {
+        if (e.target.name === "contact_name") {
+            setContact_name(e.target.value)
+            setContact_name_valid(false)
+        }
+        if (e.target.name === "contact_companyName") {
+            setContact_companyName(e.target.value)
+            setContact_companyName_valid(false)
+        }
+        if (e.target.name === "contact_mail") {
+            setContact_mail(e.target.value)
+            setContact_address_valid(false)
+        }
+        if (e.target.name === "contact_mobileNo") {
+            setContact_mobileNo(e.target.value)
+            setContact_mobileNo_valid(false)
+        }
+    }
+
+    const handleCheckValidation = () => {
+        if (contact_name === "") {
+            setContact_name_valid(true)
+            return false
+        }
+        if (contact_companyName === "") {
+            setContact_companyName_valid(true)
+            return false
+        }
+        if (contact_mail === "") {
+            setContact_address_valid(true)
+            return false
+        }
+        if (contact_mobileNo === "") {
+            setContact_mobileNo_valid(true)
+            return false
+        }
+        handleSubmitData()
+    }
+
+    const handleSubmitData = () => {
+        axios({
+            method: "post",
+            url: config.apiUrl + "ContactUs/savecontactusdetails",
+            data: {
+                UserName: contact_name,
+                CompanyName: contact_companyName,
+                EmailId: contact_mail,
+                MobileNo: contact_mobileNo
+            },
+        })
+            .then(function (res) {
+                if (res.status === 200) {
+                    setCotactUsMdl(false)
+                    NotificationManager.success("Requist Submitted");
+                } else {
+                    NotificationManager.error("Failed");
+                }
+            })
+            .catch((data) => {
+                console.log(data);
+            });
+    }
+
+
+    const handleContactMdlOpen = () => {
+        setCotactUsMdl(true)
+    }
+
+    const handleCloseModal = () => {
+        setCotactUsMdl(false)
+    }
 
 
     return (
         <div className='whole_page'>
-
             <section className='landing_section'>
                 <div className='header_part'>
                     <nav className="navbar navbar-expand-sm navbar-light bg-light">
@@ -53,17 +139,11 @@ const SplitHomes = () => {
                             </button>
                             <div className="collapse navbar-collapse " id="collapsibleNavId">
                                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0 own_link white_bg">
-                                    <li className={navbar?"nav-item1":"nav-item"}>
-                                        <NavLink className={navbar?"nav-link1 foryou":"nav-link foryou"}
-                                            aria-current="page" to="/">
-                                            For Me
-                                        </NavLink>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link foryou" aria-current="page" to="/">For Me</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link foryou"
-                                            to="/onePayforbusiness">
-                                            For Business
-                                        </NavLink>
+                                        <NavLink className="nav-link foryou" to="/onePayforbusiness">For Business</NavLink>
                                     </li>
                                 </ul>
                             </div>
@@ -229,7 +309,6 @@ const SplitHomes = () => {
                     </button>
                 </NavLink>
             </section>
-
             {footerSize > 912 ?
                 <>
                     <Footer />
@@ -241,7 +320,59 @@ const SplitHomes = () => {
                     <div className='support'>© Text, Inc. 2019. We love our users!</div>
                 </>
             }
+
+            <Modal
+                open={contactUsMdl}
+                onClose={handleCloseModal}
+                modalId="openModalId"
+                overlayId="overlay"
+                classNames={{
+                    modal: 'contant__modal'
+                }}
+            >
+                <div className="contact__form">
+                    <div className="mb-3">
+                        <h3>I am Interested</h3>
+                        <p>Lets scale your brand,together</p>
+                    </div>
+
+                    {/* <form> */}
+                    <div className="input__block">
+                        <input type="text" placeholder="Enter Your Name" name="contact_name" value={contact_name} onChange={handleConactUsInputOnchange} />
+                        {contact_name_valid && (
+                            <p style={{ color: 'red' }}>Name is required</p>
+                        )}
+                    </div>
+                    <div className="input__block">
+                        <input type="text" placeholder="Enter Company Name" name="contact_companyName" value={contact_companyName} onChange={handleConactUsInputOnchange} />
+                        {contact_companyName_valid && (
+                            <p style={{ color: 'red' }}>Company Name is required</p>
+                        )}
+                    </div>
+                    <div className="input__block">
+                        <input type="email" placeholder="Enter Email Address" name="contact_mail" value={contact_mail} onChange={handleConactUsInputOnchange} />
+                        {contact_address_valid && (
+                            <p style={{ color: 'red' }}>EmailId is required</p>
+                        )}
+                    </div>
+                    <div className="input__block">
+                        <input type="text" placeholder="Enter Phone Number" name="contact_mobileNo" value={contact_mobileNo} onChange={handleConactUsInputOnchange} />
+                        {contact_mobileNo_valid && (
+                            <p style={{ color: 'red' }}>MobileNo is required</p>
+                        )}
+                    </div>
+                    <div>
+                        <button className="submit__btn" type="submit" onClick={() => handleCheckValidation()}>Submit</button>
+                    </div>
+
+                    {/* </form> */}
+                </div>
+            </Modal>
+            <NotificationContainer />
+
         </div>
+
+
     )
 }
 
