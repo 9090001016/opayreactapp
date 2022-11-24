@@ -21,6 +21,7 @@ import { Link } from 'react-scroll'
 const SplitHomes = () => {
     let isDesktop = true;
     const [footerSize, setFooterSize] = useState(window.innerWidth);
+    const [navbar,setNavbar] = useState(false)
 
     const setFooter = () => {
         setFooterSize(window.innerWidth);
@@ -28,6 +29,7 @@ const SplitHomes = () => {
     }
     useEffect(() => {
         window.addEventListener('resize', setFooter);
+        setNavbar(true);
 
         return () => {
             window.removeEventListener('resize', setFooter);
@@ -37,6 +39,7 @@ const SplitHomes = () => {
 
     return (
         <div className='whole_page'>
+
             <section className='landing_section'>
                 <div className='header_part'>
                     <nav className="navbar navbar-expand-sm navbar-light bg-light">
@@ -50,11 +53,17 @@ const SplitHomes = () => {
                             </button>
                             <div className="collapse navbar-collapse " id="collapsibleNavId">
                                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0 own_link white_bg">
-                                    <li className="nav-item">
-                                        <NavLink className="nav-link foryou" aria-current="page" to="/">For Me</NavLink>
+                                    <li className={navbar?"nav-item1":"nav-item"}>
+                                        <NavLink className={navbar?"nav-link1 foryou":"nav-link foryou"}
+                                            aria-current="page" to="/">
+                                            For Me
+                                        </NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link foryou" to="/onePayforbusiness">For Business</NavLink>
+                                        <NavLink className="nav-link foryou"
+                                            to="/onePayforbusiness">
+                                            For Business
+                                        </NavLink>
                                     </li>
                                 </ul>
                             </div>
@@ -220,6 +229,7 @@ const SplitHomes = () => {
                     </button>
                 </NavLink>
             </section>
+
             {footerSize > 912 ?
                 <>
                     <Footer />

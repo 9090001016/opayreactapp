@@ -24,6 +24,7 @@ const SplitBusinesses = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [navbar, setNavbar] = useState(true);
   const [offsetY, setOffsetY] = useState(0);
+  const [navbarBar,setNavbarBar] = useState(false)
 
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
@@ -48,6 +49,7 @@ const SplitBusinesses = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+    
   }, []);
 
   useEffect(() => {
@@ -59,6 +61,7 @@ const SplitBusinesses = () => {
 
   useEffect(() => {
     changeBg();
+    setNavbarBar(true)
   }, [navbar])
 
   return (
@@ -88,8 +91,8 @@ const SplitBusinesses = () => {
                   <li className="nav-item">
                     <NavLink className="nav-link foryou" aria-current="page" to="/">For Me</NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link foryou" to="/onePayforbusiness">For Business</NavLink>
+                  <li className={navbarBar?"nav-item2":"nav-item"}>
+                    <NavLink className={navbarBar?"nav-link3 foryou":"nav-link foryou"} to="/onePayforbusiness">For Business</NavLink>
                   </li>
                 </ul>
               </div>
@@ -112,8 +115,8 @@ const SplitBusinesses = () => {
                   <li className="nav-item">
                     <NavLink className="nav-link foryou" aria-current="page" to="/">For Me</NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link foryou" to="/onePayforbusiness">For Business</NavLink>
+                  <li className={navbarBar?"nav-item2":"nav-item"}>
+                    <NavLink className={navbarBar?"nav-link2 foryou":"nav-link foryou"} to="/onePayforbusiness">For Business</NavLink>
                   </li>
                 </ul>
               </div>
