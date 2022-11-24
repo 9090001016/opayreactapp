@@ -7,7 +7,7 @@ import notification from "./../../assets/Images/notification.png";
 import profile from "./../../assets/Images/profile.jpg";
 import Edit from "./../../assets/Images/edit.png";
 import Modal from "react-responsive-modal";
-import Bluser from "./../../assets/Images/Bluser.png";
+import Bluser from "./../../assets/Images/BlUser.png";
 import axios from "axios";
 import config from "./../../helpers/config";
 import { userAuthHeader } from "../../component/User/userAuthHeader";
