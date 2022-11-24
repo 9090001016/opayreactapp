@@ -21,7 +21,7 @@ import { Link } from 'react-scroll'
 const SplitHomes = () => {
     let isDesktop = true;
     const [footerSize, setFooterSize] = useState(window.innerWidth);
-    const [navbar,setNavbar] = useState(false)
+    const [navbar,setNavbar] = useState(false);
 
     const setFooter = () => {
         setFooterSize(window.innerWidth);
