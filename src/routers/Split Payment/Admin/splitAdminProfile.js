@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Bluser from "./../../../assets/Images/Bluser.png";
+import Bluser from "./../../../assets/Images/BlUser.png";
 import Camera from "./../../../assets/Images/camera.png";
 import WhCloseIcon from "./../../../assets/Images/WhiteCancel.png";
 import { Link } from "react-router-dom";

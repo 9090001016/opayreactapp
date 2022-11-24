@@ -1,4 +1,18 @@
 @media (max-width:1500px){
+    .gray_box p img {
+        width: 80%;
+        height: 80%;
+    }
+    .gray_box .shopping img {
+        width: 80%;
+        height: 80%;
+    }
+    .gray_box p {
+        margin-top: 10vh;
+    }
+    .gray_box .shopping {
+        margin-top: 5vh;
+    }
     .sign-in-card {
         padding: 45px 40px;
         width: 700px;
