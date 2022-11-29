@@ -54,7 +54,7 @@ class splitUserSignUp extends Component {
             options: this.options,
             value: {
                 value: "AU",
-                label: "Australia"
+                label: "Country"
             },
             minute: 0,
             second: 0,
@@ -547,7 +547,7 @@ class splitUserSignUp extends Component {
                                             value={this.state.state}
                                             onChange={this.handleOnChange.bind(this)}
                                         >
-                                            <option value={0}>Select State</option>
+                                            <option value={0}>State</option>
                                             <option value={'NSW'}>NSW</option>
                                             <option value={'ACT'}>ACT</option>
                                             <option value={'VIC'}>VIC</option>

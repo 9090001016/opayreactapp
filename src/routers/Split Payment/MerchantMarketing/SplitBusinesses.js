@@ -63,6 +63,11 @@ const SplitBusinesses = () => {
     changeBg();
     setNavbarBar(true)
   }, [navbar])
+  
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
 
   return (
     <div className='whole_business_page'>

@@ -584,7 +584,7 @@ class splitSignUp extends Component {
                                             onChange={this.handleOnChange.bind(this)}
                                             className="select_state"
                                         >
-                                            <option value={0}>Select State</option>
+                                            <option value={0}>State</option>
                                             <option value={'NSW'}>NSW</option>
                                             <option value={'ACT'}>ACT</option>
                                             <option value={'VIC'}>VIC</option>
