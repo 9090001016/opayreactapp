@@ -626,6 +626,39 @@
     }
 }
 @media (max-width:630px){
+    .navbar-light .navbar-nav .nav-link1 {
+        font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      color: #101D40;
+      border-bottom:none;
+      }
+      .navbar-light .navbar-nav .nav-link2 {
+        font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      color: #fff;
+      border-bottom:none;
+      }
+      .navbar-light .navbar-nav .nav-link3 {
+        font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      color: #101D40;
+      border-bottom:none;
+      }
+      .nav-item1{
+        margin-top: 1.5rem;
+        padding: 0rem 1rem;
+      }
+      .nav-item2{
+        margin-top: 0.6rem;
+        padding: 0rem 1rem;
+      }
+      
     .card_para{
         margin-top: 1rem;
         display: flex;
