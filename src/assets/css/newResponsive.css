@@ -1,3 +1,14 @@
+@media(max-width: 2000px){
+    .nav-item1{
+        margin-top: 2.5rem;
+        padding: 0rem 2rem;
+      }
+      .nav-item2{
+        margin-top: 1.4rem;
+        padding: 0rem 2rem;
+      }
+}
+
 @media(max-width:1650){
     .join_section button p {
         margin-left: -5rem;
