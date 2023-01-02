@@ -29,12 +29,53 @@
     }
 }
 @media (max-width:1500px){
+    .nav-item1{
+        margin-top: 2.5rem;
+        padding: 0rem 2rem;
+      }
+      .nav-item2{
+        margin-top: 1.3rem;
+        padding: 0rem 2rem;
+      }
+    
+    .gray_box {
+        width: 23vw;
+        height: 30vh;
+        background: #EFEFEF;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 8px 8px 20px 2px rgb(0 0 0 / 20%);
+    }
+    .pink_box {
+        width: 23vw;
+        height: 30vh;
+        background: #B94368;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 8px 8px 20px 2px rgb(0 0 0 / 20%);
+    }
+    .pink_box:hover{
+        height: 32vh;
+    }
+    .pink_box p img {
+        width: 80%;
+        height: 70%;
+    }
+    .gray_box:hover{
+        height: 32vh;
+    }
     .gray_box p img {
-        width: 70%;
+        width: 85%;
         height: 70%;
     }
     .gray_box .shopping img {
-        width: 70%;
+        width: 80%;
         height: 70%;
     }
     .gray_box p {
@@ -65,7 +106,56 @@
   margin-bottom: 10px;
 }
 }
+
 @media (max-width:1280px){
+    .gray_box {
+        width: 23vw;
+        height: 34vh;
+        background: #EFEFEF;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 8px 8px 20px 2px rgb(0 0 0 / 20%);
+    }
+    .pink_box {
+        width: 23vw;
+        height: 34vh;
+        background: #B94368;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 8px 8px 20px 2px rgb(0 0 0 / 20%);
+    }
+    .pink_box:hover{
+        height: 39vh;
+    }
+    .pink_box p img {
+        width: 65%;
+        height: 70%;
+    }
+    .gray_box:hover{
+        height: 39vh;
+    }
+    .gray_box p img {
+        width: 70%;
+        height: 70%;
+    }
+    .gray_box .shopping img {
+        width: 65%;
+        height: 70%;
+    }
+    .nav-item1{
+        margin-top: 1.5rem;
+        padding: 0rem 2rem;
+      }
+      .nav-item2{
+        margin-top: 0.6rem;
+        padding: 0rem 2rem;
+      }
     .dashboard .card,
     .Merchantdashboard .card,
     .Userdashboard .card {

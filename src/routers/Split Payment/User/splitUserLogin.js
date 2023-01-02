@@ -175,12 +175,12 @@ class splitUserLogin extends Component {
               </div>
               <button
                 type="submit"
-                className="butn mx-auto"
+                className="butn mx-auto signin_hover"
                 disabled={this.state.loading}
               >
                 {this.state.loading && (
                   <FontAwesomeIcon
-                    className="mr-2"
+                    className="mr-2 "
                     icon={faCircleNotch}
                     size="sm"
                     spin

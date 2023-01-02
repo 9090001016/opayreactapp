@@ -375,7 +375,7 @@ class splitMerchantLogin extends Component {
               </div>
               <button
                 type="submit"
-                className="butn mx-auto"
+                className="butn mx-auto signin_hover1"
                 disabled={this.state.loading}
               >
                 {this.state.loading && (

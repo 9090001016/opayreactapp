@@ -807,9 +807,9 @@ text-align: justify;
 .credential_part .butn {
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 800;
+    font-weight: 600;
     height: 45px;
-    font-size: 20px;
+    font-size: 18px;
     min-width: 140px;
     display: flex;
     justify-content: center;
@@ -1395,7 +1395,17 @@ font-size: 25px;
   .end_user .header-left{
     margin-top: 2rem;
   }
-  
+  .signin_hover:hover{
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .signin_hover1:hover{
+    font-weight: 800;
+    font-size: 19px;
+  }
+  .merchantPush:hover{
+    font-weight: 800;
+  }
   
   
 

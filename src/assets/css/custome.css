@@ -97,6 +97,10 @@ input:-webkit-autofill::first-line {
 .color-dark-blue {
   color: #003280;
 }
+.color-dark-blue:hover{
+  font-weight: 600;
+  color: #101D40;
+}
 .underlined-link {
   text-decoration: underline;
 }
@@ -4037,6 +4041,12 @@ header .signbtn .sigup {
 }
 .fsize14 {
   font-size: 14px;
+  color: #101D40;
+}
+.fsize14:hover {
+  font-size: 14px;
+  color: #101D40;
+  font-weight: 500;
 }
 .intpayformheader {
   font-size: 26px;
