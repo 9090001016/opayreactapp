@@ -1,19 +1,39 @@
-@media(max-width: 2000px){
-    .nav-item1{
+@media(max-width: 2000px) {
+    .gray_box p {
+        margin-top: 0vh;
+    }
+    .gray_box p img{
+        width: 100%;
+        height: 100%;
+    }
+    .gray_box{
+        height: 30vh;
+    }
+    .gray_box .shopping{
+        margin-top: 0vh;
+    }
+    .gray_box .shopping img{
+        width: 100%;
+        height: 80%;
+    }
+
+    .nav-item1 {
         margin-top: 2.5rem;
         padding: 0rem 2rem;
-      }
-      .nav-item2{
+    }
+
+    .nav-item2 {
         margin-top: 1.4rem;
         padding: 0rem 2rem;
-      }
+    }
 }
 
-@media(max-width:1650){
+@media(max-width:1650px) {
     .join_section button p {
         margin-left: -5rem;
         font-size: 24px;
     }
+
     .join_section button {
         width: 16vw;
         height: 8vh;
@@ -26,7 +46,8 @@
         align-items: center;
     }
 }
-@media(max-width:1526px){
+
+@media(max-width:1526px) {
     .join_section button {
         width: 13vw;
         height: 8vh;
@@ -39,16 +60,18 @@
         align-items: center;
     }
 }
-@media (max-width:1500px){
-    .nav-item1{
+
+@media (max-width:1500px) {
+    .nav-item1 {
         margin-top: 2.5rem;
         padding: 0rem 2rem;
-      }
-      .nav-item2{
+    }
+
+    .nav-item2 {
         margin-top: 1.3rem;
         padding: 0rem 2rem;
-      }
-    
+    }
+
     .gray_box {
         width: 23vw;
         height: 30vh;
@@ -60,6 +83,7 @@
         align-items: center;
         box-shadow: 8px 8px 20px 2px rgb(0 0 0 / 20%);
     }
+
     .pink_box {
         width: 23vw;
         height: 30vh;
@@ -71,54 +95,64 @@
         align-items: center;
         box-shadow: 8px 8px 20px 2px rgb(0 0 0 / 20%);
     }
-    .pink_box:hover{
+
+    .pink_box:hover {
         height: 32vh;
     }
+
     .pink_box p img {
         width: 80%;
         height: 70%;
     }
-    .gray_box:hover{
+
+    .gray_box:hover {
         height: 32vh;
     }
+
     .gray_box p img {
         width: 85%;
         height: 70%;
     }
+
     .gray_box .shopping img {
         width: 80%;
         height: 70%;
     }
+
     .gray_box p {
         margin-top: 10vh;
     }
+
     .gray_box .shopping {
         margin-top: 5vh;
     }
+
     .sign-in-card {
         padding: 45px 40px;
         width: 700px;
     }
-    .join_section button{
+
+    .join_section button {
         width: 15vw;
     }
+
     .dashboard .card,
-.Merchantdashboard .card,
-.Userdashboard .card {
-  border: 0;
-  box-shadow: 7px 11px 10px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 100px 0px 0px 0px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  height: 350px;
-  margin-bottom: 10px;
-}
+    .Merchantdashboard .card,
+    .Userdashboard .card {
+        border: 0;
+        box-shadow: 7px 11px 10px 1px rgba(0, 0, 0, 0.1);
+        border-radius: 100px 0px 0px 0px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 350px;
+        margin-bottom: 10px;
+    }
 }
 
-@media (max-width:1280px){
+@media (max-width:1280px) {
     .gray_box {
         width: 23vw;
         height: 34vh;
@@ -130,6 +164,7 @@
         align-items: center;
         box-shadow: 8px 8px 20px 2px rgb(0 0 0 / 20%);
     }
+
     .pink_box {
         width: 23vw;
         height: 34vh;
@@ -141,60 +176,72 @@
         align-items: center;
         box-shadow: 8px 8px 20px 2px rgb(0 0 0 / 20%);
     }
-    .pink_box:hover{
+
+    .pink_box:hover {
         height: 39vh;
     }
+
     .pink_box p img {
         width: 65%;
         height: 70%;
     }
-    .gray_box:hover{
+
+    .gray_box:hover {
         height: 39vh;
     }
+
     .gray_box p img {
         width: 70%;
         height: 70%;
     }
+
     .gray_box .shopping img {
         width: 65%;
         height: 70%;
     }
-    .nav-item1{
+
+    .nav-item1 {
         margin-top: 1.5rem;
         padding: 0rem 2rem;
-      }
-      .nav-item2{
+    }
+
+    .nav-item2 {
         margin-top: 0.6rem;
         padding: 0rem 2rem;
-      }
+    }
+
     .dashboard .card,
     .Merchantdashboard .card,
     .Userdashboard .card {
-      border: 0;
-      box-shadow: 7px 11px 10px 1px rgba(0, 0, 0, 0.1);
-      border-radius: 100px 0px 0px 0px;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 90%;
-      height: 270px;
-      margin-bottom: 10px;
+        border: 0;
+        box-shadow: 7px 11px 10px 1px rgba(0, 0, 0, 0.1);
+        border-radius: 100px 0px 0px 0px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 270px;
+        margin-bottom: 10px;
     }
-     .sign_in_image_part {
+
+    .sign_in_image_part {
         width: 100%;
         height: 70vh;
     }
+
     .gray_box .shopping {
         margin-top: 3vh;
     }
+
     .gray_box p {
         margin-top: 10vh;
     }
-    
-    .side_by_side .side_image div p{
+
+    .side_by_side .side_image div p {
         font-size: 16px;
     }
+
     .how_it_works_business .left_side h4 {
         font-size: 30px;
     }
@@ -202,14 +249,17 @@
     .how_it_works_business .left_side h3 {
         font-size: 47px;
     }
-    .business_logo{
+
+    .business_logo {
         margin-top: -3rem;
     }
+
     .main_heading_logo {
         margin-left: 3rem;
         width: 50%;
         height: 50%;
     }
+
     .left_side h1 {
         font-family: "Montserrat";
         font-weight: 800;
@@ -217,12 +267,14 @@
         color: #101D40;
         font-style: normal;
     }
+
     .left_side p {
         font-weight: 500;
         font-family: "Monteserrat";
         font-size: 27px;
         color: #101D40;
     }
+
     .main_section {
         display: flex;
         width: 90vw;
@@ -231,6 +283,7 @@
         align-items: center;
         margin: auto;
     }
+
     .how_it_works {
         width: 100vw;
         display: flex;
@@ -239,6 +292,7 @@
         flex-direction: column;
         margin-top: -1rem;
     }
+
     .header_main {
         font-family: 'Montserrat';
         font-style: normal;
@@ -247,28 +301,36 @@
         text-transform: capitalize;
         color: #101D40;
     }
-    .inner_box img{
+
+    .inner_box img {
         width: 50%;
         height: 50%;
     }
-    .zero_interest_img{
-    width: 50%;
+
+    .zero_interest_img {
+        width: 50%;
     }
-    .zero_interest_img1{
+
+    .zero_interest_img1 {
         width: 40%;
-        }
-    .odd_paragraph{
+    }
+
+    .odd_paragraph {
         width: 50%;
     }
-    .odd_paragraph1{
+
+    .odd_paragraph1 {
         width: 60%;
     }
-    .even_paragraph{
+
+    .even_paragraph {
         width: 50%;
     }
-    .even_paragraph1{
+
+    .even_paragraph1 {
         width: 60%;
     }
+
     .header_para {
         font-family: 'Montserrat';
         font-style: normal;
@@ -276,6 +338,7 @@
         font-size: 31px;
         color: #101D40;
     }
+
     .small_para {
         font-family: 'Montserrat';
         font-style: normal;
@@ -285,6 +348,7 @@
         letter-spacing: 0.05em;
         color: #101D40;
     }
+
     .break_payment_rightside p {
         font-family: 'Montserrat';
         font-style: normal;
@@ -294,6 +358,7 @@
         text-transform: capitalize;
         color: #101D40;
     }
+
     .break_payment_rightside h3 {
         font-family: 'Montserrat';
         font-style: normal;
@@ -301,6 +366,7 @@
         font-size: 40px;
         color: #101D40;
     }
+
     .join_section {
         width: 100vw;
         display: flex;
@@ -309,6 +375,7 @@
         align-items: center;
         margin-top: 2rem;
     }
+
     .join_section h4 {
         font-family: 'Montserrat';
         font-style: normal;
@@ -318,6 +385,7 @@
         color: #101D40;
         width: 60vw;
     }
+
     .join_section button {
         width: 16vw;
         height: 8vh;
@@ -329,33 +397,40 @@
         justify-content: center;
         align-items: center;
     }
+
     .arrow_img {
         margin-top: -2rem;
     }
-    .own_link .nav-item{
+
+    .own_link .nav-item {
         padding: 2rem;
         margin-top: -0.8rem;
     }
-    .pink_box p{
+
+    .pink_box p {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-top: 14vh;
     }
-    .pink_box:hover p{
-        margin-top: 2vh; 
-         transition: 0.3s;
+
+    .pink_box:hover p {
+        margin-top: 2vh;
+        transition: 0.3s;
     }
-    .pink_box .install_pic{
+
+    .pink_box .install_pic {
         margin-top: 7vh;
     }
 }
-@media (max-width:1024px){
-    .signin_link .nav-item{
+
+@media (max-width:1024px) {
+    .signin_link .nav-item {
         padding: 2rem;
         margin-top: -1.5rem;
     }
+
     .side_by_side .side_image div h5 {
         font-size: 30px;
     }
@@ -363,17 +438,21 @@
     .grow_business h1 {
         font-size: 58px;
     }
+
     .grow_business p {
         font-size: 20px;
     }
-    .small_para{
+
+    .small_para {
         font-size: 13px;
     }
+
     .main_heading_logo {
         margin-left: 3rem;
         width: 7rem;
         height: 6rem;
     }
+
     .left_side h1 {
         font-family: "Montserrat";
         font-weight: 800;
@@ -381,19 +460,23 @@
         color: #101D40;
         font-style: normal;
     }
+
     .right_side {
         width: 100%;
         height: 100%;
     }
+
     .left_side {
         width: 100%;
     }
+
     .left_side p {
         font-weight: 500;
         font-family: "Monteserrat";
         font-size: 22px;
         color: #101D40;
     }
+
     .how_it_works {
         width: 100vw;
         display: flex;
@@ -402,72 +485,91 @@
         flex-direction: column;
         margin-top: -10rem;
     }
-    .inner_box img{
+
+    .inner_box img {
         width: 50%;
         height: 50%;
     }
+
     .inner_box p {
         font-size: 24px;
     }
-    .how_it_works_leftside p{
+
+    .how_it_works_leftside p {
         font-size: 40px;
     }
+
     .how_it_works_leftside h2 {
         font-size: 55px;
     }
+
     .zero_interest {
         display: flex;
         gap: 1rem;
     }
-    .header_main{
+
+    .header_main {
         font-size: 42px;
     }
+
     .header_para {
         font-size: 30px;
     }
+
     .break_payment .how_it_works_leftside h2 {
         text-align: center;
 
     }
-    .break_payment_rightside h3{
-        font-size:32px;
+
+    .break_payment_rightside h3 {
+        font-size: 32px;
     }
-    .break_payment_rightside p{
+
+    .break_payment_rightside p {
         font-size: 16px;
     }
-    .join_section{
+
+    .join_section {
         margin-top: 0rem;
     }
+
     .break_payment_rightside button {
         width: 14vw;
         height: 10vh;
     }
-    .join_section button{
+
+    .join_section button {
         width: 21vw;
         height: 10vh;
     }
 }
-@media(max-width: 912px){
+
+@media(max-width: 912px) {
     .dash_link .header-left {
         width: 90vw;
         height: 6vh;
     }
+
     .dash_link .header-left a {
         width: 30vw;
         height: 6vh;
     }
+
     .sign_in_image_part {
         width: 100%;
         height: 55vh;
     }
-    .credential_part{
+
+    .credential_part {
         height: 55vh;
         width: 80%;
     }
+
     .signin_form {
         width: 60%;
         height: 100%;
     }
+
     .business_signin_page .new_input_box {
         background-color: #F0F0F0;
         border-radius: 15px;
@@ -479,103 +581,130 @@
         justify-content: center;
         align-items: center;
     }
-    .new_input_box input::placeholder{
+
+    .new_input_box input::placeholder {
         font-size: 24px;
     }
-    .navbarLoginScroll{
+
+    .navbarLoginScroll {
         height: 6vh;
     }
-    .navbarLogin{
+
+    .navbarLogin {
         height: 6vh;
     }
+
     .pink_box p {
         margin-top: 0vh;
     }
-    .gray_box:hover{
+
+    .gray_box:hover {
         height: 35vh;
     }
-    .side_by_side .side_image{
+
+    .side_by_side .side_image {
         flex-direction: column;
     }
+
     .side_by_side .side_image img {
         width: 100%;
     }
+
     .side_by_side .side_image div {
         width: 100%;
-        
+
     }
+
     .grow_business h1 {
         font-size: 50px;
     }
-    .how_it_works_business .right_side{
+
+    .how_it_works_business .right_side {
         display: flex;
         flex-direction: column;
     }
-    .how_it_works .right_side{
+
+    .how_it_works .right_side {
         display: flex;
         flex-direction: column;
     }
-    .gray_box{
+
+    .gray_box {
         width: 75vw;
         height: 35vh;
     }
-    .pink_box{
+
+    .pink_box {
         width: 75vw;
         height: 35vh;
     }
+
     .pink_box p img {
         width: 80%;
         height: 80%;
     }
+
     .gray_box p img {
         width: 80%;
         height: 80%;
     }
+
     .gray_box .shopping img {
         width: 80%;
         height: 80%;
     }
-    .pink_box p{
+
+    .pink_box p {
         margin-top: 0vh;
     }
-    .gray_box p{
+
+    .gray_box p {
         margin-top: 0vh;
     }
-    .pink_box .install_pic{
+
+    .pink_box .install_pic {
         margin-top: 0vh;
     }
-    .gray_box .shopping{
+
+    .gray_box .shopping {
         margin-top: 0vh;
     }
+
     .pink_box p h5 {
         font-size: 40px;
     }
+
     .pink_box h6 {
         font-size: 30px;
         opacity: 1;
     }
+
     .pink_box:hover {
         height: 35vh;
     }
+
     .gray_box p h5 {
         font-size: 40px;
     }
+
     .gray_box h6 {
         font-size: 30px;
         opacity: 1;
     }
 
-    .white_bg{
+    .white_bg {
         margin-top: 0rem;
         height: 8vh;
     }
-    .left_side .signup_btn{
+
+    .left_side .signup_btn {
         width: 20vw;
     }
-    .landing_section{
+
+    .landing_section {
         background-size: cover;
     }
-    
+
     .main_section {
         display: flex;
         flex-direction: column;
@@ -585,28 +714,35 @@
         align-items: center;
         margin: auto;
     }
+
     .left_side {
         width: 100%;
         height: 50%;
         margin-top: 22rem;
     }
+
     .right_side {
         width: 100%;
         height: 50%;
     }
+
     .left_side h1 {
         font-size: 120px;
     }
+
     .left_side p {
         font-size: 32px;
     }
-    .inner_box img{
+
+    .inner_box img {
         width: 40%;
         height: 50%;
     }
+
     .inner_box p {
         font-size: 30px;
     }
+
     .how_it_works {
         width: 100vw;
         display: flex;
@@ -616,19 +752,23 @@
         margin-top: 3rem;
         margin-top: 0rem;
     }
-    .how_it_works_leftside{
+
+    .how_it_works_leftside {
         height: 15vh;
     }
-    .how_it_works_rightside{
+
+    .how_it_works_rightside {
         height: 80vh;
         display: flex;
         flex-direction: column;
         gap: 2rem;
         margin-top: 2rem;
     }
-    .how_it_works .horizental_line{
+
+    .how_it_works .horizental_line {
         height: 2vh;
     }
+
     .inner_box {
         width: 45vw;
         height: 23vh;
@@ -640,9 +780,11 @@
         align-items: center;
         box-shadow: 8px 8px 20px 2px rgb(0 0 0 / 20%);
     }
-    .how_it_works_leftside h2{
+
+    .how_it_works_leftside h2 {
         text-align: center;
     }
+
     .break_payment_mainDiv {
         display: flex;
         justify-content: center;
@@ -654,14 +796,17 @@
         grid-gap: 3rem;
         gap: 3rem;
     }
+
     .break_payment_leftside {
         width: 80%;
         height: 50%;
     }
+
     .break_payment_rightside {
         width: 80%;
         height: 50%;
     }
+
     .break_payment_mainDiv {
         display: flex;
         justify-content: center;
@@ -670,29 +815,35 @@
         width: 90vw;
         height: 80vh;
         margin: 4rem auto;
-        
+
     }
-    .break_payment_rightside button{
+
+    .break_payment_rightside button {
         height: 6vh;
         width: 20vw;
     }
-    .break_payment_leftside img{
+
+    .break_payment_leftside img {
         height: 80%;
     }
+
     .break_payment_rightside h3 {
         font-size: 50px;
     }
+
     .break_payment_rightside p {
         font-size: 30px;
     }
-    
-    
-    .join_section{
+
+
+    .join_section {
         margin-top: 0rem;
     }
-    .break_payment .horizental_line{
+
+    .break_payment .horizental_line {
         height: 5vh;
     }
+
     .join_section button {
         width: 24vw;
         height: 6vh;
@@ -704,252 +855,309 @@
         justify-content: center;
         align-items: center;
     }
-    .grid_five_columns{
+
+    .grid_five_columns {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
         place-items: center;
         margin: 0 auto;
     }
-    .footer2{
+
+    .footer2 {
         height: 45vh;
         margin-top: 5rem;
     }
 }
-@media (max-width:820px){
+
+@media (max-width:820px) {
     .pink_box p {
         margin-top: 0vh;
     }
+
     .gray_box p {
         margin-top: 0vh;
     }
-    .join_section button{
+
+    .join_section button {
         width: 25vw;
     }
 }
-@media(max-width:768px){
-    .merPlanPayment .planpaymcard{
+
+@media(max-width:768px) {
+    .merPlanPayment .planpaymcard {
         margin-top: 3rem;
     }
-   
+
     .white_bg {
         margin-top: 0rem;
         height: 10vh;
     }
-    .footer2{
+
+    .footer2 {
         width: 100vw;
         height: 50vh;
         background: #101D40;
         color: #fff;
         font-size: 0.7rem;
     }
-    .footer2 div{
+
+    .footer2 div {
         margin: 1rem auto;
     }
+
     .join_section {
         margin-top: 3rem;
     }
-    .join_section button{
+
+    .join_section button {
         width: 26vw;
     }
 }
-@media (max-width:630px){
+
+@media (max-width:630px) {
     .navbar-light .navbar-nav .nav-link1 {
         font-family: 'Montserrat';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 24px;
-      color: #101D40;
-      border-bottom:none;
-      }
-      .navbar-light .navbar-nav .nav-link2 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        color: #101D40;
+        border-bottom: none;
+    }
+
+    .navbar-light .navbar-nav .nav-link2 {
         font-family: 'Montserrat';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 24px;
-      color: #fff;
-      border-bottom:none;
-      }
-      .navbar-light .navbar-nav .nav-link3 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        color: #fff;
+        border-bottom: none;
+    }
+
+    .navbar-light .navbar-nav .nav-link3 {
         font-family: 'Montserrat';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 24px;
-      color: #101D40;
-      border-bottom:none;
-      }
-      .nav-item1{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        color: #101D40;
+        border-bottom: none;
+    }
+
+    .nav-item1 {
         margin-top: 1.5rem;
         padding: 0rem 1rem;
-      }
-      .nav-item2{
+    }
+
+    .nav-item2 {
         margin-top: 0.6rem;
         padding: 0rem 1rem;
-      }
-      
-    .card_para{
+    }
+
+    .card_para {
         margin-top: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
-      }
-    .setting_dashboard .dash_link{
+    }
+
+    .setting_dashboard .dash_link {
         display: none;
     }
-    .dash_link{
+
+    .dash_link {
         display: none;
     }
-    .blue_line{
+
+    .blue_line {
         height: 17vh;
     }
-    .transaction_details1 .Usermana{
+
+    .transaction_details1 .Usermana {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .transaction_details .Usermana{
+
+    .transaction_details .Usermana {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .transaction_details .dash{
+
+    .transaction_details .dash {
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
     .navbarLoginScroll {
         height: 11vh;
     }
+
     .navbarLogin {
         height: 11vh;
     }
-    .inner_box{
-        width:80vw;
+
+    .inner_box {
+        width: 80vw;
         height: 25vh;
     }
+
     .left_side h1 {
         font-size: 62px;
     }
+
     .left_side p {
         font-size: 22px;
     }
+
     .left_side {
         width: 100%;
         height: 50%;
         margin-top: 15rem;
     }
+
     .main_heading_logo {
         margin-left: 3rem;
         width: 7rem;
         height: 6rem;
         margin-top: -1.2rem;
     }
+
     .right_side {
         width: 100%;
         height: 50%;
         margin-top: 1rem;
     }
-    .left_side .signup_btn{
+
+    .left_side .signup_btn {
         height: 5vh;
         font-size: 15px;
     }
+
     .how_it_works_leftside p {
         font-size: 30px;
     }
+
     .how_it_works_leftside h2 {
         font-size: 45px;
     }
+
     .inner_box img {
         width: 35%;
         height: 50%;
     }
+
     .inner_box p {
         font-size: 25px;
     }
-    .zero_interest{
+
+    .zero_interest {
         flex-direction: column;
     }
+
     .zero_interest_img {
         width: 100%;
     }
+
     .zero_interest_img1 {
         width: 100%;
     }
+
     .odd_paragraph {
         width: 100%;
     }
+
     .odd_paragraph1 {
         width: 100%;
     }
+
     .even_paragraph {
         width: 100%;
     }
+
     .even_paragraph1 {
         width: 100%;
     }
+
     .break_payment_rightside h3 {
         font-size: 35px;
     }
+
     .break_payment_rightside p {
         font-size: 20px;
     }
+
     .break_payment_rightside button {
         height: 9vh;
         width: 27vw;
     }
-    .join_section h4{
+
+    .join_section h4 {
         font-size: 25px;
     }
+
     .join_section button {
         width: 37vw;
         height: 9vh;
     }
+
     .footer1 {
         height: 100vh;
     }
+
     .footer1 .wave_img {
         width: 100vw;
         height: 100vh;
     }
-    .grid_five_columns{
-        grid-template-columns: repeat(2,1fr);
+
+    .grid_five_columns {
+        grid-template-columns: repeat(2, 1fr);
         gap: 0rem;
     }
+
     .footer_part {
         width: 90vw;
         height: 70vh;
         margin: -75vh auto 0;
     }
 }
-@media (max-width:600px){
-    .merPlanPayment .planpaymcard{
+
+@media (max-width:600px) {
+    .merPlanPayment .planpaymcard {
         margin-top: 3rem;
     }
+
     .blue_back_btn {
-       display: none;
+        display: none;
     }
-    .planinput .paybtn{
+
+    .planinput .paybtn {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 35%;
         height: 5vh;
         background-color: #101D40;
-      }
-    .admin_dashboard .dash_link .header-left{
+    }
+
+    .admin_dashboard .dash_link .header-left {
         width: 100vw;
     }
-    .admin_dashboard .dash_link .header-left li:nth-child(1) a{
+
+    .admin_dashboard .dash_link .header-left li:nth-child(1) a {
         width: 30vw;
     }
-    .admin_dashboard .dash_link .header-left a{
+
+    .admin_dashboard .dash_link .header-left a {
         width: 40vw;
     }
-    .credential_part{
+
+    .credential_part {
         height: 75vh;
         width: 90%;
     }
-   
+
     /* .mySize{
         margin-top: -5rem;
     }
@@ -959,89 +1167,111 @@
     .already {
         margin-top: 2rem;
     } */
-    .flrx_btn_part{
+    .flrx_btn_part {
         display: flex;
         /* flex-direction: column; */
         align-items: center;
-      }
+    }
+
     .purple_button {
         width: 25vw;
         height: 6vh;
     }
+
     .sign-in-card {
         padding: 45px 40px;
         width: 450px;
     }
 }
-@media(max-width:575px){
+
+@media(max-width:575px) {
     .white_bg {
         margin-top: 0rem;
         height: 22vh;
     }
+
     .own_link .nav-item {
         padding: 1rem;
         margin-top: -0.8rem;
     }
-    .own_link{
+
+    .own_link {
         background-color: #fff;
     }
 }
-@media (max-width:540px){
-    .login_logo{
+
+@media (max-width:540px) {
+    .login_logo {
         margin-top: 1rem;
     }
+
     .goback {
-            font-size: 14px;
-    }
-    .already a{
         font-size: 14px;
     }
+
+    .already a {
+        font-size: 14px;
+    }
+
     .create_acct {
         text-align: center;
         font-size: 21px;
     }
-    .signup .small_logo{
+
+    .signup .small_logo {
         justify-content: center;
     }
-    .common_input{
+
+    .common_input {
         display: flex;
         flex-direction: column;
         gap: 1rem;
     }
-    .common_input .mersign{
+
+    .common_input .mersign {
         width: 100%;
     }
-    .whole_business_page .navbarSSS nav .container-fluid #collapsibleNavId .own_link .nav-item .nav-link{
+
+    .whole_business_page .navbarSSS nav .container-fluid #collapsibleNavId .own_link .nav-item .nav-link {
         color: #101D40;
         margin-top: -1rem;
-        }
-        .merchant_login_page .navbarLoginScroll nav .container-fluid #collapsibleNavId .own_link .nav-item .nav-link {
-            color: #101D40;
-            margin-top: -1.5vh;
-        }
+    }
+
+    .merchant_login_page .navbarLoginScroll nav .container-fluid #collapsibleNavId .own_link .nav-item .nav-link {
+        color: #101D40;
+        margin-top: -1.5vh;
+    }
+
     .sign_in_image_part {
         width: 100%;
         height: 50vh;
     }
-    .new_input_box input::placeholder{
+
+    .new_input_box input::placeholder {
         font-size: 18px;
     }
+
     .business_signin_page .new_input_box {
         height: 50px;
     }
-    .credential_part .sign-in{
+
+    .credential_part .sign-in {
         font-size: 27px;
     }
-    .check_box{
+
+    .check_box {
         font-size: 10px;
     }
-    .forgot_pwd{
+
+    .forgot_pwd {
         font-size: 10px;
     }
-    .switchto{
+
+    .switchto {
         font-size: 10px;
     }
-    .switchto a{
+
+    .switchto a {
         font-size: 10px;
     }
 
@@ -1049,36 +1279,45 @@
         width: 75%;
         height: 100%;
     }
+
     .pink_box p {
         margin-top: 0vh;
     }
+
     .pink_box p img {
         width: 70%;
         height: 70%;
     }
+
     .for_business_how_it_works {
         width: 100vw;
         margin-top: -50vh;
     }
+
     .grow_business h1 {
         font-size: 30px;
     }
+
     .pink_box p h5 {
         font-size: 25px;
         font-weight: 400;
     }
+
     .gray_box p h5 {
         font-size: 25px;
         font-weight: 400;
     }
+
     .pink_box h6 {
         font-size: 15px;
         opacity: 1;
     }
+
     .gray_box h6 {
         font-size: 15px;
         opacity: 1;
     }
+
     /* .pink_box:hover{
         display: none;
     }
@@ -1088,236 +1327,301 @@
     .gray_box p {
         margin-top: 0vh;
     }
-    .business_landing_part img{
+
+    .business_landing_part img {
         width: 100%;
         height: 65%;
     }
+
     .how_it_works .horizental_line {
         margin-top: 3rem;
     }
-    .installment_section{
+
+    .installment_section {
         margin-top: 4rem;
     }
+
     .left_side h1 {
         font-size: 62px;
     }
+
     .left_side p {
         font-size: 22px;
     }
+
     .left_side {
         width: 100%;
         height: 50%;
         margin-top: 15rem;
         text-align: center;
     }
+
     .main_heading_logo {
         margin-left: 3rem;
         width: 7rem;
         height: 6rem;
         margin-top: -1.2rem;
     }
+
     .right_side {
         width: 100%;
         height: 50%;
         margin-top: 1rem;
     }
-    .left_side .signup_btn{
+
+    .left_side .signup_btn {
         height: 5vh;
         font-size: 15px;
     }
+
     .how_it_works_leftside p {
         font-size: 30px;
     }
+
     .how_it_works_leftside h2 {
         font-size: 45px;
     }
+
     .inner_box img {
         width: 20%;
         height: 50%;
     }
+
     .inner_box p {
         font-size: 25px;
     }
-    .zero_interest{
+
+    .zero_interest {
         flex-direction: column;
     }
+
     .zero_interest_img {
         width: 100%;
     }
+
     .zero_interest_img1 {
         width: 100%;
     }
+
     .odd_paragraph {
         width: 100%;
     }
+
     .odd_paragraph1 {
         width: 100%;
     }
+
     .even_paragraph {
         width: 100%;
     }
+
     .even_paragraph1 {
         width: 100%;
     }
+
     .break_payment_rightside h3 {
         font-size: 35px;
     }
+
     .break_payment_rightside p {
         font-size: 20px;
     }
+
     .break_payment_rightside button {
         height: 9vh;
         width: 27vw;
     }
-    .join_section h4{
+
+    .join_section h4 {
         font-size: 25px;
     }
+
     .join_section button {
         width: 37vw;
         height: 9vh;
     }
+
     .footer1 {
         height: 100vh;
     }
+
     .footer1 .wave_img {
         width: 100vw;
         height: 100vh;
     }
-    .grid_five_columns{
-        grid-template-columns: repeat(2,1fr);
+
+    .grid_five_columns {
+        grid-template-columns: repeat(2, 1fr);
         gap: 0rem;
     }
+
     .footer_part {
         width: 90vw;
         height: 70vh;
         margin: -75vh auto 0;
     }
-    .footer2{
+
+    .footer2 {
         height: 65vh;
     }
+
     .grow_business p {
         font-size: 15px;
     }
+
     .how_it_works_business .left_side h3 {
         font-size: 40px;
     }
+
     .how_it_works_business .left_side h4 {
         font-size: 25px;
     }
 }
-@media (max-width:414px){
+
+@media (max-width:414px) {
     .dash_link .header-left {
         width: 100vw;
         height: 6vh;
     }
+
     .dash_link .header-left a {
         width: 30vw;
         height: 6vh;
     }
+
     .dash_link .header-left a:nth-child(3) {
         width: 40vw;
         height: 6vh;
     }
+
     .sign-in-card {
         padding: 45px 40px;
         width: 380px;
     }
+
     .join_section button {
         width: 49vw;
         height: 9vh;
     }
+
     .break_payment_rightside button {
         height: 6vh;
         width: 31vw;
     }
 }
-@media (max-width:394px){
+
+@media (max-width:394px) {
     .join_section button {
         width: 51vw;
         height: 9vh;
     }
+
     .break_payment_rightside button {
         height: 7vh;
         width: 33vw;
     }
 }
-@media (max-width:391px){
+
+@media (max-width:391px) {
     .sign-in-card {
         padding: 45px 40px;
         width: 320px;
     }
+
     .grow_business h1 {
         font-size: 21px;
     }
+
     .grow_business p {
         font-size: 12px;
     }
+
     .how_it_works_business .left_side h3 {
         font-size: 34px;
     }
+
     .footer2 {
         height: 85vh;
     }
+
     .join_section button p {
         font-size: 23px;
     }
+
     .installment_section {
         margin-top: 0rem;
     }
-    .footer_part p{
+
+    .footer_part p {
         font-size: 0.8rem;
     }
+
     .main_heading_logo {
         margin-left: 0rem;
     }
+
     .left_side h1 {
         font-size: 45px;
     }
+
     .left_side .signup_btn {
         height: 5vh;
         font-size: 13px;
     }
+
     .how_it_works_leftside p {
         font-size: 20px;
     }
+
     .how_it_works_leftside h2 {
         font-size: 30px;
     }
+
     .header_main {
         font-size: 33px;
     }
+
     .header_para {
         font-size: 25px;
     }
-    .small_para{
+
+    .small_para {
         font-size: 15px;
     }
-    .break_payment_mainDiv{
+
+    .break_payment_mainDiv {
         gap: 1rem;
     }
+
     .break_payment_rightside h3 {
         font-size: 30px;
     }
+
     .break_payment_rightside p {
         font-size: 15px;
     }
+
     .break_payment_rightside button {
         height: 8vh;
         width: 40vw;
     }
+
     .join_section {
         margin-top: 7rem;
     }
+
     .join_section button {
         width: 52vw;
         height: 10vh;
     }
 }
-@media (max-width:360px){
+
+@media (max-width:360px) {
     .sign-in-card {
         padding: 45px 40px;
         width: 320px;
     }
+
     .join_section button {
         width: 54vw;
         height: 9vh;
