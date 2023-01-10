@@ -39,8 +39,8 @@
 
 @media(max-width:1650px) {
     .gray_box p img{
-        width: 70%;
-        height: 60%;
+        width: 80%;
+        height: 73%;
     }
     .gray_box p{
         margin-top: 5vh;
@@ -58,8 +58,8 @@
         margin-top: 4vh;
     }
     .gray_box .shopping img{
-        width: 70%;
-        height: 60%;
+        width: 80%;
+        height: 65%;
     }
     .gray_box:hover {
         height: 45vh;
