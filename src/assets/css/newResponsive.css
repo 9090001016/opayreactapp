@@ -10,7 +10,7 @@
     .gray_box p{
         margin-top: 5vh;
     }
-    .gray_box:hover .gray_box p{
+    .gray_box:hover p{
         margin-top: -3vh;
     }
     .gray_box .shopping {
