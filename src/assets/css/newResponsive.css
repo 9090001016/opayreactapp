@@ -3,16 +3,17 @@
         width: 85%;
         height: 80%;
     }
-    /* .gray_box:hover p{
-        margin-top: 2vh; 
-         transition: 0.3s;
-    } */
     .gray_box p{
         margin-top: 5vh;
     }
     .gray_box:hover p{
-        margin-top: -3vh; 
+        margin-top: -2vh; 
         transition: 0.3s;
+    }
+    .gray_box:hover h6 {
+        opacity: 1;
+        transition: .3s;
+        margin-top: 1rem;
     }
     .gray_box .shopping {
         margin-top: 4vh;
@@ -29,9 +30,42 @@
         margin-top: 1.4rem;
         padding: 0rem 2rem;
     }
+    .gray_box:hover {
+        height: 40vh;
+        transition: 0.3s;
+        animation: cardExtend 0.3s ease;
+    }
 }
 
 @media(max-width:1650px) {
+    .gray_box p img{
+        width: 70%;
+        height: 60%;
+    }
+    .gray_box p{
+        margin-top: 5vh;
+    }
+    .gray_box:hover p{
+        margin-top: -2vh; 
+        transition: 0.3s;
+    }
+    .gray_box:hover h6 {
+        opacity: 1;
+        transition: .3s;
+        margin-top: 1rem;
+    }
+    .gray_box .shopping {
+        margin-top: 4vh;
+    }
+    .gray_box .shopping img{
+        width: 70%;
+        height: 60%;
+    }
+    .gray_box:hover {
+        height: 45vh;
+        transition: 0.3s;
+        animation: cardExtend 0.3s ease;
+    }
     .join_section button p {
         margin-left: -5rem;
         font-size: 24px;
