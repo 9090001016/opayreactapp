@@ -67,7 +67,7 @@
         animation: cardExtend 0.3s ease;
     }
     .join_section button p {
-        margin-left: -5rem;
+        margin-left: -4.7rem;
         font-size: 24px;
     }
 
@@ -225,6 +225,15 @@
 
     .gray_box:hover {
         height: 39vh;
+    }
+    .gray_box:hover p{
+        margin-top: -2vh; 
+        transition: 0.3s;
+    }
+    .gray_box:hover h6 {
+        opacity: 1;
+        transition: .3s;
+        margin-top: 0rem;
     }
 
     .gray_box p img {
