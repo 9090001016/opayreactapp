@@ -10,8 +10,11 @@
     .gray_box p{
         margin-top: 5vh;
     }
+    .gray_box:hover .gray_box p{
+        margin-top: -3vh;
+    }
     .gray_box .shopping {
-        margin-top: 5vh;
+        margin-top: 4vh;
     }
     .gray_box .shopping img{
         width: 80%;
