@@ -11,7 +11,8 @@
         margin-top: 5vh;
     }
     .gray_box:hover p{
-        margin-top: -3vh;
+        margin-top: -3vh; 
+        transition: 0.3s;
     }
     .gray_box .shopping {
         margin-top: 4vh;
