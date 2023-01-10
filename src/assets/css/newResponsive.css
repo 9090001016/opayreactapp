@@ -1,24 +1,18 @@
 @media(max-width: 2000px) {
-    /* .gray_box p {
-        margin-top: 1vh;
-    } */
     .gray_box p img{
-        width: 80%;
+        width: 85%;
         height: 80%;
     }
-    /* .gray_box{
-        height: 32vh;
-    }
-    .gray_box:hover{
-        height: 35vh;
-    } */
     /* .gray_box:hover p{
         margin-top: 2vh; 
          transition: 0.3s;
     } */
-    /* .gray_box .shopping{
-        margin-top: 0vh;
-    } */
+    .gray_box p{
+        margin-top: 5vh;
+    }
+    .gray_box .shopping {
+        margin-top: 5vh;
+    }
     .gray_box .shopping img{
         width: 80%;
         height: 70%;

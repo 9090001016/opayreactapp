@@ -211,6 +211,7 @@ class splitSignUp extends Component {
             .catch((data) => {
                 console.log(data);
             });
+            
 
     }
 
