@@ -3,6 +3,15 @@
         width: 85%;
         height: 80%;
     }
+    .gray_box h6 {
+        text-align: center;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        color: #101D40;
+        opacity: 0;
+    }
     .gray_box p{
         margin-top: 5vh;
     }
@@ -16,7 +25,7 @@
         margin-top: 1rem;
     }
     .gray_box .shopping {
-        margin-top: 4vh;
+        margin-top: 3vh;
     }
     .gray_box .shopping img{
         width: 80%;
@@ -42,6 +51,15 @@
         width: 80%;
         height: 73%;
     }
+    .gray_box h6 {
+        text-align: center;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        color: #101D40;
+        opacity: 0;
+    }
     .gray_box p{
         margin-top: 5vh;
     }
@@ -55,7 +73,7 @@
         margin-top: 1rem;
     }
     .gray_box .shopping {
-        margin-top: 4vh;
+        margin-top: 3vh;
     }
     .gray_box .shopping img{
         width: 80%;

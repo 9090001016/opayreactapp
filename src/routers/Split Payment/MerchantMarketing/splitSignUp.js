@@ -693,7 +693,7 @@ class splitSignUp extends Component {
                         {this.state.isEmailOtpVerified ?
                             (<p className="Verify">Verified</p>) :
                             (this.state.isEmailOTPVerifySend ? ((this.state.emailMinute > 0 || this.state.emailSecond > 0) ? (<p className="Verify">OTP Sent</p>) : (<p className="Verify"></p>)) :
-                                (<p className="Verify" onClick={this.handleVerifyEmailFieldClick}>Verify OTP</p>))}
+                                (<p className="Verify" onClick={this.handleVerifyEmailFieldClick}></p>))}
 
                         {this.state.isVerifyEmail ?
                             (<><div className="mersign">
