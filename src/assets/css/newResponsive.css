@@ -3,6 +3,10 @@
         width: 85%;
         height: 80%;
     }
+    .pink_box p img {
+        width: 85%;
+        height: 80%;
+    }
     .gray_box h6 {
         text-align: center;
         font-family: 'Montserrat';
@@ -12,11 +16,27 @@
         color: #101D40;
         opacity: 0;
     }
+    .pink_box h6 {
+        text-align: center;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 23px;
+        color: #fff;
+        opacity: 0;
+    }
     .gray_box p{
+        margin-top: 5vh;
+    }
+    .pink_box p {
         margin-top: 5vh;
     }
     .gray_box:hover p{
         margin-top: -2vh; 
+        transition: 0.3s;
+    }
+    .pink_box:hover p{
+        margin-top: -2vh;
         transition: 0.3s;
     }
     .gray_box:hover h6 {
@@ -24,12 +44,24 @@
         transition: .3s;
         margin-top: 1rem;
     }
+    .pink_box:hover h6 {
+        opacity: 1;
+        transition: .3s;
+        margin-top: 1rem;
+    }
     .gray_box .shopping {
         margin-top: 3vh;
+    }
+    .pink_box .install_pic {
+        margin-top: 2vh;
     }
     .gray_box .shopping img{
         width: 80%;
         height: 70%;
+    }
+    .pink_box .install_pic img{
+        width: 85%;
+        height: 80%;
     }
     .nav-item1 {
         margin-top: 2.5rem;
@@ -39,7 +71,18 @@
         margin-top: 1.4rem;
         padding: 0rem 2rem;
     }
+    .navbars .own_link .nav-item{
+        margin-top: -1.6rem;
+    }
+    .navbars .own_link .nav-item2{
+        margin-top: -0.2rem;
+    }
     .gray_box:hover {
+        height: 40vh;
+        transition: 0.3s;
+        animation: cardExtend 0.3s ease;
+    }
+    .pink_box:hover {
         height: 40vh;
         transition: 0.3s;
         animation: cardExtend 0.3s ease;
@@ -48,6 +91,10 @@
 
 @media(max-width:1650px) {
     .gray_box p img{
+        width: 80%;
+        height: 73%;
+    }
+    .pink_box p img{
         width: 80%;
         height: 73%;
     }
@@ -60,10 +107,26 @@
         color: #101D40;
         opacity: 0;
     }
+    .pink_box h6 {
+        text-align: center;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 21px;
+        color: #fff;
+        opacity: 0;
+    }
     .gray_box p{
         margin-top: 5vh;
     }
+    .pink_box p{
+        margin-top: 5vh;
+    }
     .gray_box:hover p{
+        margin-top: -2vh; 
+        transition: 0.3s;
+    }
+    .pink_box:hover p{
         margin-top: -2vh; 
         transition: 0.3s;
     }
@@ -72,14 +135,31 @@
         transition: .3s;
         margin-top: 1rem;
     }
+    .pink_box:hover h6 {
+        opacity: 1;
+        transition: .3s;
+        margin-top: 1rem;
+    }
     .gray_box .shopping {
+        margin-top: 3vh;
+    }
+    .gray_box .install_pic {
         margin-top: 3vh;
     }
     .gray_box .shopping img{
         width: 80%;
         height: 65%;
     }
+    .pink_box .install_pic img{
+        width: 80%;
+        height: 65%;
+    }
     .gray_box:hover {
+        height: 45vh;
+        transition: 0.3s;
+        animation: cardExtend 0.3s ease;
+    }
+    .pink_box:hover {
         height: 45vh;
         transition: 0.3s;
         animation: cardExtend 0.3s ease;
@@ -500,6 +580,15 @@
 }
 
 @media (max-width:1024px) {
+    .pink_box h6 {
+        text-align: center;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        color: #fff;
+        opacity: 0;
+    }
     .signin_link .nav-item {
         padding: 2rem;
         margin-top: -1.5rem;

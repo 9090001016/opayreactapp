@@ -146,6 +146,7 @@ class splitTransactionHistory extends Component {
 
           let status = res.data.message;
           let data = res.data.responseData;
+          
           if (status === "Success") {
             paging.total = parseInt(data[0].totalRowCount);
             self.setState({

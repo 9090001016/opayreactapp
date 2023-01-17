@@ -20,7 +20,7 @@ import Select from 'react-select'
 import countryList from 'react-select-country-list'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
-import url from "./../../../assets/Images/url.png";
+import url from "./../../../assets/Images/smallicons/merchantImg.png";
 import address from "./../../../assets/Images/smallicons/location.png";
 import post from "./../../../assets/Images/smallicons/postcode.png";
 import country from "./../../../assets/Images/smallicons/map.png";
@@ -692,8 +692,14 @@ class splitSignUp extends Component {
 
                         {this.state.isEmailOtpVerified ?
                             (<p className="Verify">Verified</p>) :
-                            (this.state.isEmailOTPVerifySend ? ((this.state.emailMinute > 0 || this.state.emailSecond > 0) ? (<p className="Verify">OTP Sent</p>) : (<p className="Verify"></p>)) :
-                                (<p className="Verify" onClick={this.handleVerifyEmailFieldClick}></p>))}
+                            (this.state.isEmailOTPVerifySend ?
+                                 ((this.state.emailMinute > 0 || this.state.emailSecond > 0) 
+                                 ? (<p className="Verify">OTP Sent</p>)
+                                  : (<p className="Verify"></p>)) :
+                                (
+                                <p className="Verify" onClick={this.handleVerifyEmailFieldClick}>
+                                    Verify OTP
+                                </p>))}
 
                         {this.state.isVerifyEmail ?
                             (<><div className="mersign">
