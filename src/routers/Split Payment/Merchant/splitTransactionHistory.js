@@ -375,7 +375,10 @@ class splitTransactionHistory extends Component {
         title: "Order Id",
         dataIndex: "orderId",
         key: "orderId",
-        sorter: true,
+        sorter:(record1,record2)=>{
+          return record1.orderId > record2.orderId
+        },
+        // sorter:true,
         sortDirections: ['ascend', 'descend', 'ascend']
 
       },

@@ -90,6 +90,12 @@
 }
 
 @media(max-width:1650px) {
+    .navbarS .own_link .nav-item{
+        margin-top: -1rem;
+    }
+    .navbarS .own_link .nav-item2{
+        margin-top: 0.5rem;
+    }
     .gray_box p img{
         width: 80%;
         height: 73%;
