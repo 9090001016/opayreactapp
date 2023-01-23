@@ -376,7 +376,7 @@ class splitTransactionHistory extends Component {
         dataIndex: "orderId",
         key: "orderId",
         sorter:(record1,record2)=>{
-          return record1.orderId > record2.orderId
+          return record1.orderId.localeCompare(record2.orderId)
         },
         // sorter:true,
         sortDirections: ['ascend', 'descend', 'ascend']
@@ -404,14 +404,18 @@ class splitTransactionHistory extends Component {
               {item.installment}
             </span>
           ),
-        sorter: true,
+          sorter:(record1,record2)=>{
+            return record1.installment.localeCompare(record2.installment)
+          },
         sortDirections: ['ascend', 'descend', 'ascend']
       },
       {
         title: "Customer Name",
         dataIndex: "userName",
         key: "userName",
-        sorter: true,
+        sorter:(record1,record2)=>{
+          return record1.userName.localeCompare(record2.userName)
+        },
         sortDirections: ['ascend', 'descend', 'ascend']
 
       },
@@ -419,7 +423,9 @@ class splitTransactionHistory extends Component {
         title: "Merchant Order Id",
         dataIndex: "merchantOrderID",
         key: "merchantOrderID",
-        sorter: true,
+        sorter:(record1,record2)=>{
+          return record1.merchantOrderID.localeCompare(record2.merchantOrderID)
+        },
         sortDirections: ['ascend', 'descend', 'ascend']
 
       },
@@ -436,7 +442,9 @@ class splitTransactionHistory extends Component {
             </div>
           );
         },
-        sorter: true,
+        sorter:(record1,record2)=>{
+          return record1.amount.localeCompare(record2.amount)
+        },
         sortDirections: ['ascend', 'descend', 'ascend']
       },
       {
@@ -682,6 +690,7 @@ class splitTransactionHistory extends Component {
               </div>
             </div>
           ) : null}
+          
           <div className="MerchantrHistorytable">
             <Spin spinning={this.state.loading}>
               <Table

@@ -602,6 +602,9 @@ class splitAdminMerchantManagement extends Component {
             </div>
           );
         },
+        // sorter:(record1,record2)=>{
+        //   return record1.merchantTotalTransactionCount > record2.merchantTotalTransactionCount
+        // },
         sorter: true,
         sortDirections: ['ascend', 'descend', 'ascend']
       },

@@ -70,10 +70,10 @@ class splitSignUp extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    //     this.handleBusinessTypeList();
-    // }
+    componentDidMount() {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        this.handleBusinessTypeList();
+    }
 
     handleVerifyMobileFieldClick = () => {
 

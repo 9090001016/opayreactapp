@@ -314,7 +314,9 @@ class splitUserTransaction extends Component {
             </div>
           );
         },
-        // sorter: true,
+        sorter: (a,b)=>{
+          return a.transactionAmount > b.transactionAmount
+        },
         sortDirections: ['ascend', 'descend', 'ascend']
       },
       {

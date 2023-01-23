@@ -510,7 +510,7 @@ class paymentManagement extends Component {
             </div>
           );
         },
-        sorter: true,
+        sorter: false,
         sortDirections: ['ascend', 'descend', 'ascend']
       },
       {
@@ -840,8 +840,11 @@ class paymentManagement extends Component {
           <label className="filt" onClick={this.showDrawerFilter.bind(this)}>
             <img src={Filter} alt="Export" />
           </label>
-          {this.state.isFilter ? (
+          
+          {
+          this.state.isFilter ? (
             <div className="row m-0 w-100 back">
+
               <div className="col-12 col-md-3" hidden={this.state.hdnOrderId}>
                 <input type="text"
                   placeholder="Enter Order Id"
@@ -850,6 +853,7 @@ class paymentManagement extends Component {
                   onChange={this.handleOnChange.bind(this)}
                 />
               </div>
+
               <div className="col-12 col-md-3" hidden={this.state.hdnTransactionId}>
                 <input type="text"
                   placeholder="Enter Transaction Id"
@@ -858,6 +862,7 @@ class paymentManagement extends Component {
                   onChange={this.handleOnChange.bind(this)}
                 />
               </div>
+
               <div className="col-12 col-md-3" hidden={this.state.hdnUserName}>
                 <input type="text"
                   placeholder="Enter User Name"
@@ -866,6 +871,7 @@ class paymentManagement extends Component {
                   onChange={this.handleOnChange.bind(this)}
                 />
               </div>
+
               <div className="col-12 col-md-3">
                 <input type="text"
                   placeholder="Enter Merchant Name"
@@ -892,6 +898,7 @@ class paymentManagement extends Component {
                   onChange={this.handleOnChange.bind(this)}
                 />
               </div>
+
               <div className="col-12 col-md-3" hidden={this.state.hdnDate}>
                 <RangePicker
                   className="calendar"
@@ -900,6 +907,7 @@ class paymentManagement extends Component {
                   disabledDate={disabledDate}
                 ></RangePicker>
               </div>
+
               <div className="col-12 col-md-3" hidden={this.state.hdnStatus}>
                 <select
                   name="status"
@@ -914,6 +922,7 @@ class paymentManagement extends Component {
                   <option value="Refunded">Refunded</option>
                 </select>
               </div>
+
               <div className="col-12 col-md-3">
                 <div className="search" style={{ textAlign: "left" }}>
                   <button className="m-0" onClick={this.handleSearchCustomer.bind(this)}
@@ -930,8 +939,11 @@ class paymentManagement extends Component {
                   </button>
                 </div>
               </div>
+              
             </div>
-          ) : null}
+          ) : null
+          }
+
           <div className="paytab">
             <div className="secondtab mb-4 mt-4 w-100">
               <ul className="nav nav-tabs w-100" role="tablist">
